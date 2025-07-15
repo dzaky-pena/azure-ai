@@ -1,0 +1,94 @@
+### YamlMime:Landing
+
+title: Azure AI Search documentation # < 60 chars
+summary: Information retrieval at scale for agentic retrieval, with vector and text content in traditional or generative search scenarios.
+metadata:
+  title: Azure AI Search documentation
+  description: Information retrieval at scale for agentic retrieval, with vector and text content in traditional or generative search scenarios.
+  author: HeidiSteen
+  ms.author: heidist
+  ms.date: 05/12/2025
+  ms.service: azure-ai-search
+  ms.topic: landing-page
+  ms.custom:
+    - ignite-2023
+    - ignite-2024
+    - build-2025
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
+
+landingContent:
+# Cards and links should be based on top customer tasks or top subjects
+# Start card title with a verb
+  # Card
+  - title: About Azure AI Search
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: What is Azure AI Search?
+            url: search-what-is-azure-search.md
+          - text: AI enrichment
+            url: cognitive-search-concept-intro.md
+          - text: Semantic ranking
+            url: semantic-search-overview.md
+      - linkListType: how-to-guide
+        links:
+          - text: Create a search service
+            url: search-create-service-portal.md
+          - text: Configure a search service
+            url: search-manage.md
+          - text: Create a search index
+            url: search-get-started-portal.md
+          - text: Add vectors to an index
+            url: search-get-started-vector.md
+          - text: Query a vector index
+            url: vector-search-how-to-query.md
+
+  # Card
+  - title: Agentic retrieval and vectors
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Retrieval Augmented Generation (RAG)
+            url: retrieval-augmented-generation-overview.md
+          - text: Agentic retrieval
+            url: search-agentic-retrieval-concept.md        
+          - text: Vector search
+            url: vector-search-overview.md
+          - text: Multimodal search
+            url: multimodal-search-overview.md
+          - text: Built-in vectorization
+            url: vector-search-integrated-vectorization.md
+          - text: Built-in compression
+            url: vector-search-how-to-quantization.md
+      - linkListType: quickstart
+        links:
+          - text: 'Classic RAG'
+            url: search-get-started-agentic-retrieval.md
+          - text: 'Agentic retrieval'
+            url: search-get-started-agentic-retrieval.md
+
+
+
+  # Card
+  - title: Code
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Python samples
+            url: samples-python.md
+          - text: .NET samples
+            url: samples-dotnet.md
+          - text: Vector samples
+            url: https://github.com/Azure/azure-search-vector-samples
+      - linkListType: reference
+        links:
+          - text: Azure REST API Reference
+            url: /rest/api/searchservice/
+          - text: Azure SDK for .NET
+            url: /dotnet/api/overview/azure/search.documents-readme
+          - text: Azure SDK for Python
+            url: /python/api/overview/azure/search-documents-readme
+          - text: Azure SDK for Java
+            url: /java/api/overview/azure/search-documents-readme
+          - text: Azure SDK for JavaScript
+            url: /javascript/api/overview/azure/search-documents-readme

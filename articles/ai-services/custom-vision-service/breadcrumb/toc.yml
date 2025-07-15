@@ -1,0 +1,11 @@
+- name: Azure
+  tocHref: /azure/
+  topicHref: /azure/index
+  items:
+  - name: Azure AI Foundry
+    tocHref: /azure/ai-foundry/
+    topicHref: /azure/ai-foundry/index
+    items:
+    - name: Custom Vision Service
+      tocHref: /azure/ai-foundry/
+      topicHref: /azure/ai-services/custom-vision-service/index
