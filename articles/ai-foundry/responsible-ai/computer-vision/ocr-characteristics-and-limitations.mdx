@@ -1,18 +1,11 @@
 ---
-title: Capabilities and limitations of optical character recognition (OCR) - Azure AI Vision
-titleSuffix: Azure AI services
+title: "Capabilities and limitations of optical character recognition (OCR) - Azure AI Vision"
 description: Characteristics and limitations for optical character recognition (OCR) of images and documents with printed and handwritten text using the Azure AI Vision API.
-author: sanjeev3
-ms.author: sajagtap
-manager: nitinme
-ms.service: azure-ai-vision
-ms.topic: article
-ms.date: 02/12/2021
 ---
 
 # Capabilities and limitations of optical character recognition
 
-[!INCLUDE [non-english-translation](../includes/non-english-translation.md)]
+[!INCLUDE [non-english-translation](../includes/non-english-translation)]
 
 In this section, we'll review what accuracy means for OCR and how to assess it for your context.
 
@@ -22,7 +15,9 @@ Text is composed of lines, words, and characters. A popular measure of accuracy 
 
 WER is defined as:
 
-:::image border type="content" source="./media/ocr/wer-definition.png" alt-text="An illustration that shows a WER definition.":::
+<Frame>
+    ![](/images/ai-foundry/responsible-ai/computer-vision/media/ocr/wer-definition.png)
+</Frame>
 
 Where:
 
@@ -54,7 +49,9 @@ Document scan quality, resolution, contrast, light conditions, rotation, and tex
 
 The following example shows a few difficult cases for OCR where you see missed and incorrect text extractions.
 
-:::image type="content" source="media/ocr/ocr-difficult-images-demo.gif" alt-text="An illustration that shows blurry and hard-to-read OCR demos.":::
+<Frame>
+    ![](/images/ai-foundry/responsible-ai/computer-vision/media/ocr/ocr-difficult-images-demo.gif)
+</Frame>
 
 The current version supports handwriting or cursive-style text only for English. This limitation also affects any related features such as print vs. handwriting-style classification (preview) for each text line.
 

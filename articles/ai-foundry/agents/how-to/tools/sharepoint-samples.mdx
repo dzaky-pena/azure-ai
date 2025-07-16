@@ -1,47 +1,42 @@
 ---
-title: 'How to use the SharePoint tool'
-titleSuffix: Azure AI Foundry
+title: "How to use the SharePoint tool"
 description: Find examples on how to ground agents with SharePoint.
-services: cognitive-services
-manager: nitinme
-ms.service: azure-ai-agent-service
-ms.topic: how-to
-ms.date: 07/09/2025
-author: aahill
-ms.author: aahi
-ms.custom: azure-ai-agents-code
-zone_pivot_groups: selection-agent-sharepoint
 ---
 
 # How to use the SharePoint tool
 
-> [!NOTE]
-> This article describes the Microsoft SharePoint tool for Azure AI Foundry Agent Service. For information on using and deploying SharePoint sites, see the [SharePoint documentation](/sharepoint/). 
+<Note>
+This article describes the Microsoft SharePoint tool for Azure AI Foundry Agent Service. For information on using and deploying SharePoint sites, see the [SharePoint documentation](/sharepoint/). 
+</Note>
 
 Use this article to find step-by-step instructions and code samples for using the SharePoint tool in Azure AI Foundry Agent Service.
 
-:::zone pivot="python"
+<Tab title="Python">
 
 ## Prerequisites
 
 * Your Azure AI Foundry Project endpoint.
 
-    [!INCLUDE [endpoint-string-portal](../../includes/endpoint-string-portal.md)]
+    [!INCLUDE [endpoint-string-portal](../../includes/endpoint-string-portal)]
 
     Save this endpoint to an environment variable named `PROJECT_ENDPOINT`. 
 
 
 * The name of your SharePoint connection name. You can find it in the Azure AI Foundry portal by selecting **Management center** from the left navigation menu. Then selecting **Connected resources**.
     
-    :::image type="content" source="../../media/tools/sharepoint-connection.png" alt-text="A screenshot showing the SharePoint connection name. " lightbox="../../media/tools/sharepoint-connection.png":::
+    <Frame>
+      ![](/images/ai-foundry/agents/media/tools/sharepoint-connection.png)
+    </Frame>
 
     Save this endpoint to an environment variable named `SHAREPOINT_RESOURCE_NAME`
 
 
 * The names of your model's deployment name. You can find it in **Models + Endpoints** in the left navigation menu. 
 
-    :::image type="content" source="../../media/tools/model-deployment-portal.png" alt-text="A screenshot showing the model deployment screen the AI Foundry portal." lightbox="../../media/tools/model-deployment-portal.png":::
-    
+    <Frame>
+      ![](/images/ai-foundry/agents/media/tools/model-deployment-portal.png)
+    </Frame>
+
     Save the name of your model deployment name as an environment variable named `MODEL_DEPLOYMENT_NAME`. 
 
 ## Create a project client
@@ -127,9 +122,9 @@ for msg in messages:
         print(f"{msg.role}: {last_text.text.value}")
 ```
 
-:::zone-end
+</Tab>
 
-:::zone pivot="rest"
+<Tab title="REST API">
 
 ## Create an agent
 
@@ -210,4 +205,4 @@ curl --request GET \
   -H "Authorization: Bearer $AGENT_TOKEN"
 ```
 
-:::zone-end
+</Tab>

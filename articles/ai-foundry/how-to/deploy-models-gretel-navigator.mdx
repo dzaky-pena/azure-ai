@@ -1,31 +1,20 @@
 ---
-title: How to use Gretel Navigator chat model with Azure AI Foundry
-titleSuffix: Azure AI Foundry
+title: "How to use Gretel Navigator chat model with Azure AI Foundry"
 description: Learn how to use Gretel Navigator chat model with Azure AI Foundry.
-ms.service: azure-ai-foundry
-manager: scottpolly
-ms.topic: how-to
-ms.date: 05/19/2025
-ms.reviewer: anupamawal
-reviewer: anupamawalaus
-ms.author: mopeakande
-author: msakande
-ms.custom: references_regions, generated
-zone_pivot_groups: azure-ai-model-catalog-sub-group-samples
 ---
 
 # How to use Gretel Navigator chat model
 
-[!INCLUDE [feature-preview](../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview)]
 
 In this article, you learn about Gretel Navigator chat model and how to use it.
 Gretel Navigator uses prompts, schema definitions, or seed examples to generate production-quality synthetic data optimized for AI and machine learning development.
 
-[!INCLUDE [models-preview](../includes/models-preview.md)]
+[!INCLUDE [models-preview](../includes/models-preview)]
 
 
 
-::: zone pivot="programming-language-python"
+<Tab title="Python">
 
 ## Gretel Navigator chat model
 
@@ -44,8 +33,9 @@ You can learn more about the models in their respective model card:
 * [gretel-navigator](https://aka.ms/aistudio/landing/gretel-navigator-tabular-v1)
 
 
-> [!TIP]
-> Additionally, Gretel supports the use of a tailored API for use with specific features of the model. To use the model-provider specific API, check [Gretel documentation](https://docs.gretel.ai/) or see the [inference examples](#more-inference-examples) section to code examples.
+<Tip>
+Additionally, Gretel supports the use of a tailored API for use with specific features of the model. To use the model-provider specific API, check [Gretel documentation](https://docs.gretel.ai/) or see the [inference examples](#more-inference-examples) section to code examples.
+</Tip>
 
 ## Prerequisites
 
@@ -57,10 +47,10 @@ To use Gretel Navigator chat model with Azure AI Foundry, you need the following
 
 Gretel Navigator chat model can be deployed to serverless API. This kind of deployment provides a way to consume models as an API without hosting them on your subscription, while keeping the enterprise security and compliance that organizations need. 
 
-Deployment to a serverless API doesn't require quota from your subscription. If your model isn't deployed already, use the Azure AI Foundry portal, Azure Machine Learning SDK for Python, the Azure CLI, or ARM templates to [deploy the model as a serverless API](deploy-models-serverless.md).
+Deployment to a serverless API doesn't require quota from your subscription. If your model isn't deployed already, use the Azure AI Foundry portal, Azure Machine Learning SDK for Python, the Azure CLI, or ARM templates to [deploy the model as a serverless API](deploy-models-serverless).
 
 > [!div class="nextstepaction"]
-> [Deploy the model to serverless API](deploy-models-serverless.md)
+> [Deploy the model to serverless API](deploy-models-serverless)
 
 ### The inference package installed
 
@@ -82,8 +72,9 @@ Read more about the [Azure AI inference package and reference](https://aka.ms/az
 
 In this section, you use the [Azure AI Model Inference API](https://aka.ms/azureai/modelinference) with a chat completions model for chat.
 
-> [!TIP]
-> The [Model Inference API](https://aka.ms/azureai/modelinference) allows you to talk with most models deployed in Azure AI Foundry portal with the same code and structure, including Gretel Navigator chat model.
+<Tip>
+The [Model Inference API](https://aka.ms/azureai/modelinference) allows you to talk with most models deployed in Azure AI Foundry portal with the same code and structure, including Gretel Navigator chat model.
+</Tip>
 
 ### Create a client to consume the model
 
@@ -132,8 +123,9 @@ Model provider name: Gretel
 
 The following example shows how you can create a basic chat completions request to the model.
 
-> [!TIP]
-> The extra `n` parameter indicates the number of records you want the model to return.
+<Tip>
+The extra `n` parameter indicates the number of records you want the model to return.
+</Tip>
 
 ```python
 from azure.ai.inference.models import SystemMessage, UserMessage
@@ -146,8 +138,9 @@ response = client.complete(
 )
 ```
 
-> [!NOTE]
-> Gretel-navigator doesn't support system messages (`role="system"`).
+<Note>
+Gretel-navigator doesn't support system messages (`role="system"`).
+</Note>
 
 The response is as follows, where you can see the model's usage statistics:
 
@@ -266,12 +259,12 @@ except HttpResponseError as ex:
 
 ```
 
-[!INCLUDE [content-safety-serverless-apis-note](../includes/content-safety-serverless-apis-note.md)]
+[!INCLUDE [content-safety-serverless-apis-note](../includes/content-safety-serverless-apis-note)]
 
 
-::: zone-end
+</Tab>
 
-::: zone pivot="programming-language-rest"
+<Tab title="REST API">
 
 ## Gretel Navigator chat model
 
@@ -290,8 +283,9 @@ You can learn more about the models in their respective model card:
 * [gretel-navigator](https://aka.ms/aistudio/landing/gretel-navigator-tabular-v1)
 
 
-> [!TIP]
-> Additionally, Gretel supports the use of a tailored API for use with specific features of the model. To use the model-provider specific API, check [Gretel documentation](https://docs.gretel.ai/) or see the [inference examples](#more-inference-examples) section to code examples.
+<Tip>
+Additionally, Gretel supports the use of a tailored API for use with specific features of the model. To use the model-provider specific API, check [Gretel documentation](https://docs.gretel.ai/) or see the [inference examples](#more-inference-examples) section to code examples.
+</Tip>
 
 ## Prerequisites
 
@@ -303,10 +297,10 @@ To use Gretel Navigator chat model with Azure AI Foundry, you need the following
 
 Gretel Navigator chat model can be deployed to serverless API. This kind of deployment provides a way to consume models as an API without hosting them on your subscription, while keeping the enterprise security and compliance that organizations need. 
 
-Deployment to a serverless API doesn't require quota from your subscription. If your model isn't deployed already, use the Azure AI Foundry portal, Azure Machine Learning SDK for Python, the Azure CLI, or ARM templates to [deploy the model as a serverless API](deploy-models-serverless.md).
+Deployment to a serverless API doesn't require quota from your subscription. If your model isn't deployed already, use the Azure AI Foundry portal, Azure Machine Learning SDK for Python, the Azure CLI, or ARM templates to [deploy the model as a serverless API](deploy-models-serverless).
 
 > [!div class="nextstepaction"]
-> [Deploy the model to serverless API](deploy-models-serverless.md)
+> [Deploy the model to serverless API](deploy-models-serverless)
 
 ### A REST client
 
@@ -319,8 +313,9 @@ Models deployed with the [Model Inference API](https://aka.ms/azureai/modelinfer
 
 In this section, you use the [Model Inference API](https://aka.ms/azureai/modelinference) with a chat completions model for chat.
 
-> [!TIP]
-> The [Model Inference API](https://aka.ms/azureai/modelinference) allows you to talk with most models deployed in Azure AI Foundry portal with the same code and structure, including Gretel Navigator chat model.
+<Tip>
+The [Model Inference API](https://aka.ms/azureai/modelinference) allows you to talk with most models deployed in Azure AI Foundry portal with the same code and structure, including Gretel Navigator chat model.
+</Tip>
 
 ### Create a client to consume the model
 
@@ -352,8 +347,9 @@ The response is as follows:
 
 The following example shows how you can create a basic chat completions request to the model. 
 
-> [!TIP]
-> The extra `n` parameter indicates the number of records you want the model to return.
+<Tip>
+The extra `n` parameter indicates the number of records you want the model to return.
+</Tip>
 
 ```json
 {
@@ -369,8 +365,9 @@ The following example shows how you can create a basic chat completions request 
 }
 ```
 
-> [!NOTE]
-> Gretel-navigator doesn't support system messages (`role="system"`).
+<Note>
+Gretel-navigator doesn't support system messages (`role="system"`).
+</Note>
 
 The response is as follows, where you can see the model's usage statistics:
 
@@ -509,10 +506,10 @@ The following example shows how to handle events when the model detects harmful 
 }
 ```
 
-[!INCLUDE [content-safety-serverless-apis-note](../includes/content-safety-serverless-apis-note.md)]
+[!INCLUDE [content-safety-serverless-apis-note](../includes/content-safety-serverless-apis-note)]
 
 
-::: zone-end
+</Tab>
 
 ## More inference examples
 
@@ -536,8 +533,8 @@ For more information on how to track costs, see [Monitor costs for models offere
 
 ## Related content
 
-* [Model Inference API](../../ai-foundry/model-inference/reference/reference-model-inference-api.md)
-* [Deploy models as serverless APIs](deploy-models-serverless.md)
-* [Consume serverless APIs from a different Azure AI Foundry project or hub](deploy-models-serverless-connect.md)
-* [Region availability for models in serverless APIs](deploy-models-serverless-availability.md)
+* [Model Inference API](../../ai-foundry/model-inference/reference/reference-model-inference-api)
+* [Deploy models as serverless APIs](deploy-models-serverless)
+* [Consume serverless APIs from a different Azure AI Foundry project or hub](deploy-models-serverless-connect)
+* [Region availability for models in serverless APIs](deploy-models-serverless-availability)
 * [Plan and manage costs (marketplace)](costs-plan-manage.md#monitor-costs-for-models-offered-through-the-azure-marketplace)

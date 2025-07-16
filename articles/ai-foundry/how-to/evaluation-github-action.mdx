@@ -1,25 +1,17 @@
 ---
-title: How to run an evaluation in GitHub Action 
-titleSuffix: Azure AI Foundry
+title: "How to run an evaluation in GitHub Action "
 description: How to run evaluation in GitHub Action to streamline the evaluation process, allowing you to assess model performance and make informed decisions before deploying to production.
-manager: scottpolly
-ms.service: azure-ai-foundry
-ms.topic: how-to
-ms.date: 06/1/2025
-ms.reviewer: hanch
-ms.author: lagayhar
-author: lgayhardt
 ---
 
 # How to run an evaluation in GitHub Action (preview)
 
-[!INCLUDE [feature-preview](../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview)]
 
 This GitHub Action enables offline evaluation of AI models and agents within your CI/CD pipelines. It's designed to streamline the evaluation process, allowing you to assess model performance and make informed decisions before deploying to production.
 
 Offline evaluation involves testing AI models and agents using test datasets to measure their performance on various quality and safety metrics such as fluency, coherence, and appropriateness. After you select a model in the [Azure AI Model Catalog](https://azure.microsoft.com/products/ai-model-catalog?msockid=1f44c87dd9fa6d1e257fdd6dd8406c42) or [GitHub Model marketplace](https://github.com/marketplace/models), offline pre-production evaluation is crucial for AI application validation during integration testing. This process allows developers to identify potential issues and make improvements before deploying the model or application to production, such as when creating and updating agents.
 
-[!INCLUDE [features](../includes/evaluation-github-action-azure-devops-features.md)]
+[!INCLUDE [features](../includes/evaluation-github-action-azure-devops-features)]
 
 - **Seamless Integration**: Easily integrate with existing GitHub workflows to run evaluation based on rules that you specify in your workflows (for examples, when changes are committed to agent versions, prompt templates, or feature flag configuration).
 - **Statistical Analysis**: Evaluation results include confidence intervals and test for statistical significance to determine if changes are meaningful and not due to random variation.
@@ -27,15 +19,16 @@ Offline evaluation involves testing AI models and agents using test datasets to 
 
 ## Prerequisites
 
-Foundry project or Hubs based project. To learn more, see [Create a project](create-projects.md).
+Foundry project or Hubs based project. To learn more, see [Create a project](create-projects).
 
 Two GitHub Actions are available for evaluating AI applications: **ai-agent-evals** and **genai-evals**.
 
 - If your application is already using AI Foundry agents, **ai-agent-evals** is well-suited as it offers a simplified setup process and direct integration with agent-based workflows.
 - **genai-evals** is intended for evaluating generative AI models outside of the agent framework.
 
-> [!NOTE]
-> The **ai-agent-evals** interface is more straightforward to configure. In contrast, **genai-evals** requires you to prepare structured evaluation input data. Code samples are provided to help with setup.
+<Note>
+The **ai-agent-evals** interface is more straightforward to configure. In contrast, **genai-evals** requires you to prepare structured evaluation input data. Code samples are provided to help with setup.
+</Note>
 
 ## How to set up AI agent evaluations
 
@@ -96,8 +89,9 @@ Here's a sample of the dataset:
 
 To use the GitHub Action, add the GitHub Action to your CI/CD workflows and specify the trigger criteria (for example, on commit) and file paths to trigger your automated workflows.
 
-> [!TIP]
-> To minimize costs, you should avoid running evaluation on every commit.  
+<Tip>
+To minimize costs, you should avoid running evaluation on every commit.  
+</Tip>
 
 This example illustrates how Azure Agent AI Evaluation can be run when comparing different agents with agent IDs.
 
@@ -194,11 +188,15 @@ The result includes two main parts:
 
 Multi agent evaluation result:
 
-:::image type="content" source="../media/evaluations/github-action-multi-agent-result.png" alt-text="Screenshot of multi agent evaluation result in GitHub Action." lightbox="../media/evaluations/github-action-multi-agent-result.png":::
+<Frame>
+    ![](/images/ai-foundry/media/evaluations/github-action-multi-agent-result.png)
+</Frame>
 
 Single agent evaluation result:
 
-:::image type="content" source="../media/evaluations/github-action-single-agent-output.png" alt-text="Screenshot of single agent evaluation result in GitHub Action." lightbox="../media/evaluations/github-action-single-agent-output.png":::
+<Frame>
+    ![](/images/ai-foundry/media/evaluations/github-action-single-agent-output.png)
+</Frame>
 
 ## How to set up genAI evaluations
 
@@ -238,8 +236,9 @@ Evaluation configuration file:
 
 This example illustrates how Azure AI Evaluation can be run when changes are committed to specific files in your repo.
 
-> [!NOTE]
-> Update `GENAI_EVALS_DATA_PATH` to point to the correct directory in your repo.
+<Note>
+Update `GENAI_EVALS_DATA_PATH` to point to the correct directory in your repo.
+</Note>
 
 ```yml
 name: Sample Evaluate Action 
@@ -299,9 +298,11 @@ The results include three parts:
 - Average scores: the average score of each evaluator for each variant.
 - Individual test scores: detailed result for each individual test case.
 
-:::image type="content" source="../media/evaluations/github-action-output-results.png" alt-text="Screenshot of result output including test variants, average score, and individual test in GitHub Action." lightbox="../media/evaluations/github-action-output-results.png":::
+<Frame>
+    ![](/images/ai-foundry/media/evaluations/github-action-output-results.png)
+</Frame>
 
 ## Related content
 
-- [How to evaluate generative AI models and applications with Azure AI Foundry](./evaluate-generative-ai-app.md)
-- [How to view evaluation results in Azure AI Foundry portal](./evaluate-results.md)
+- [How to evaluate generative AI models and applications with Azure AI Foundry](./evaluate-generative-ai-app)
+- [How to view evaluation results in Azure AI Foundry portal](./evaluate-results)

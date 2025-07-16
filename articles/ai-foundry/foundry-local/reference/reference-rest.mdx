@@ -1,25 +1,16 @@
 ---
-title: Foundry Local REST API Reference
-titleSuffix: Foundry Local
+title: "Foundry Local REST API Reference"
 description: Complete reference guide for the Foundry Local REST API.
-manager: scottpolly
-ms.service: azure-ai-foundry
 ms.subservice: foundry-local
-ms.custom: build-2025
-ms.author: jburchel
-ms.reviewer: samkemp
-author: jburchel
-reviewer: samuel100
-ms.topic: concept-article
-ms.date: 07/03/2025
 ---
 
 # Foundry Local REST API Reference
 
-[!INCLUDE [foundry-local-preview](./../includes/foundry-local-preview.md)]
+[!INCLUDE [foundry-local-preview](./../includes/foundry-local-preview)]
 
-> [!CAUTION]
-> This API is under active development and may include breaking changes without notice. We strongly recommend monitoring the changelog before building production applications.
+<Danger>
+This API is under active development and may include breaking changes without notice. We strongly recommend monitoring the changelog before building production applications.
+</Danger>
 
 ## OpenAI v1 compatibility
 
@@ -432,8 +423,9 @@ Sets the active GPU device.
 
 Downloads a model to local storage.
 
-> [!NOTE]
-> Model downloads can take significant time, especially for large models. We recommend setting a high timeout for this request to avoid premature termination.
+<Note>
+Model downloads can take significant time, especially for large models. We recommend setting a high timeout for this request to avoid premature termination.
+</Note>
 
 **Request Body:**
 

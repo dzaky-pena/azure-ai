@@ -1,19 +1,12 @@
 ---
-title: Transparency note for LUIS
-titleSuffix: Azure AI services
+title: "Transparency note for LUIS"
 description: Transparency Note for Language Understanding
-author: skandil
-ms.author: sarakandil
-manager: nitinme
-ms.service: azure-ai-language
-ms.topic: article
 ms.subservice: azure-ai-luis
-ms.date: 02/08/2024
 ---
 
 # Use cases for Language Understanding
 
-[!INCLUDE [non-english-translation](../includes/non-english-translation.md)]
+[!INCLUDE [non-english-translation](../includes/non-english-translation)]
 
 ## What is a Transparency Note?
 
@@ -66,12 +59,12 @@ LUIS can be used in multiple scenarios across a variety of industries. Some exam
 * **Don’t use LUIS for decisions that may have serious adverse impacts,** such as use cases that include identifying whether to accept or reject an insurance claim based on a user's description of an incident. Additionally, it is advisable to include human review of decisions that have the potential for serious impacts on individuals.
 * **Avoid creating custom entities that extract unnecessary or sensitive information.** It's your responsibility to ensure that the entities being created only extract the necessary information for your end-to-end scenario. Avoid extracting sensitive user information if it is not required for your scenario. For example, if your scenario requires extracting your user's city and country, create entities that extract only the city and country from a user's address, and don't create one that would extract their full address. To ensure that your model is inclusive, make sure you represent a variety of cities, countries, and address formats within your training data (example utterances).
 * **Avoid storing users' personal data.** LUIS doesn't retain end user data by default, but LUIS customers have the option to retain the data if they opt to, which should then be relayed appropriately to the end users. If you do opt to retain user data, avoid storing private user data (like name, date of birth, or other identifying information) or sending requests to LUIS that contain private user data. You can deploy a private user data detector or a profanity filter on the original text prior to sending it to the LUIS model. 
-* [!INCLUDE [regulatory-considerations](../includes/regulatory-considerations.md)]
+* [!INCLUDE [regulatory-considerations](../includes/regulatory-considerations)]
 
 ## Next steps
 
 * [Introduction to Language Understanding](/azure/ai-services/luis/what-is-luis)
-* [Characteristics and limitations for using Language Understanding](characteristics-and-limitations.md)
-* [Data, privacy and security](data-privacy-security.md)
+* [Characteristics and limitations for using Language Understanding](characteristics-and-limitations)
+* [Data, privacy and security](data-privacy-security)
 * [Microsoft AI principles](https://www.microsoft.com/ai/responsible-ai?rtc=1&activetab=pivot1%3aprimaryr6)
 * [Building responsible bots](https://www.microsoft.com/research/uploads/prod/2018/11/Bot_Guidelines_Nov_2018.pdf)

@@ -1,23 +1,16 @@
 ---
-title: 'How to generate text with the legacy completions API'
-titleSuffix: Azure OpenAI
+title: "How to generate text with the legacy completions API"
 description: Learn how to generate or manipulate text, including code by using the legacy completion endpoint in Azure OpenAI in Azure AI Foundry Models.
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: how-to
-ms.date: 07/02/2025
-author: mrbullwinkle
-ms.author: mbullwin
-recommendations: false
 
 ---
 
 # Learn how to generate or manipulate text using the legacy completions API
 
-Azure OpenAI in Azure AI Foundry Models provides a **completion endpoint** that can be used for a wide variety of tasks. The endpoint supplies a simple yet powerful text-in, text-out interface to any [Azure OpenAI model](../concepts/models.md). To trigger the completion, you input some text as a prompt. The model generates the completion and attempts to match your context or pattern. Suppose you provide the prompt "As Descartes said, I think, therefore" to the API. For this prompt, Azure OpenAI returns the completion endpoint " I am" with high probability.
+Azure OpenAI in Azure AI Foundry Models provides a **completion endpoint** that can be used for a wide variety of tasks. The endpoint supplies a simple yet powerful text-in, text-out interface to any [Azure OpenAI model](../concepts/models). To trigger the completion, you input some text as a prompt. The model generates the completion and attempts to match your context or pattern. Suppose you provide the prompt "As Descartes said, I think, therefore" to the API. For this prompt, Azure OpenAI returns the completion endpoint " I am" with high probability.
 
-> [!IMPORTANT]
-> Unless you have a specific use case that requires the completions endpoint, we recommend instead using the [responses API](./responses.md) of [chat completions endpoint](./chatgpt.md) which allows you to take advantage of the latest models like GPT-4o, GPT-4o mini, and GPT-4 Turbo. 
+<Info>
+Unless you have a specific use case that requires the completions endpoint, we recommend instead using the [responses API](./responses) of [chat completions endpoint](./chatgpt) which allows you to take advantage of the latest models like GPT-4o, GPT-4o mini, and GPT-4 Turbo. 
+</Info>
 
 The best way to start exploring completions is through the playground in [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs). It's a simple text box where you enter a prompt to generate a completion. You can start with a simple prompt like this one:
 
@@ -35,8 +28,9 @@ The completion results that you see can differ because the Azure OpenAI API prod
 
 The simple text-in, text-out interface means you can "program" the Azure OpenAI model by providing instructions or just a few examples of what you'd like it to do. The output success generally depends on the complexity of the task and quality of your prompt. A general rule is to think about how you would write a word problem for a pre-teenage student to solve. A well-written prompt provides enough information for the model to know what you want and how it should respond.
 
-> [!NOTE]
-> The model training data can be different for each model type. Depending on your prompt, the model might not have knowledge of related current events.
+<Note>
+The model training data can be different for each model type. Depending on your prompt, the model might not have knowledge of related current events.
+</Note>
 
 ## Design prompts
 
@@ -144,12 +138,13 @@ Message sentiment ratings:
 
 This demonstration shows the API how to classify text messages by sentiment. You provide a numbered list of messages and a list of sentiment ratings with the same number index. The API uses the information in the first demonstration to learn how to classify sentiment for a single text message. In the second demonstration, the model learns how to apply the sentiment classification to a list of text messages. This approach allows the API to rate five (and even more) text messages in a single API call.
 
-> [!IMPORTANT]
-> When you ask the API to create lists or evaluate text, it's important to help the API avoid drift. Here are some points to follow:
->
-> - Pay careful attention to your values for the `Top P` or `Temperature` probability settings. 
-> - Run multiple tests to make sure your probability settings are calibrated correctly.
-> - Don't use long lists. Long lists can lead to drift.
+<Info>
+When you ask the API to create lists or evaluate text, it's important to help the API avoid drift. Here are some points to follow:
+
+- Pay careful attention to your values for the `Top P` or `Temperature` probability settings. 
+- Run multiple tests to make sure your probability settings are calibrated correctly.
+- Don't use long lists. Long lists can lead to drift.
+</Info>
 
 ## Trigger ideas
 
@@ -374,9 +369,9 @@ Let's review the guidelines to help limit the likelihood of the API making up an
 
 The Codex model series is a descendant of OpenAI's base GPT-3 series that's been trained on both natural language and billions of lines of code. It's most capable in Python and proficient in over a dozen languages including C#, JavaScript, Go, Perl, PHP, Ruby, Swift, TypeScript, SQL, and even Shell. 
 
-For more information about generating code completions, see [Codex models and Azure OpenAI](./work-with-code.md).
+For more information about generating code completions, see [Codex models and Azure OpenAI](./work-with-code).
 
 ## Next steps
 
 - Learn how to work with the [GPT-35-Turbo and GPT-4 models](/azure/ai-services/openai/how-to/chatgpt?pivots=programming-language-chat-completions).
-- Learn more about the [Azure OpenAI models](../concepts/models.md).
+- Learn more about the [Azure OpenAI models](../concepts/models).

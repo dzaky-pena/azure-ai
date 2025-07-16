@@ -1,15 +1,6 @@
 ---
-title: Best practices for using Azure OpenAI On Your Data
-titleSuffix: Azure OpenAI in Azure AI Foundry Models
+title: "Best practices for using Azure OpenAI On Your Data in Azure AI Foundry Models"
 description: Learn about the best practices for using Azure OpenAI On Your Data, along with how to fix common problems.
-ms.service: azure-ai-openai
-ms.topic: conceptual
-ms.date: 04/29/2025
-ms.custom: references_regions, build-2023, build-2023-dataai, refefences_regions
-manager: nitinme
-author: aahill
-ms.author: aahi
-recommendations: false
 ---
 
 # Troubleshooting and best practices for Azure OpenAI On Your Data
@@ -70,7 +61,7 @@ If the correct document chunks don't appear in the retrieved documents, you need
 
 * Do you have semistructured data in your documents, such as numerous tables? There might be an ingestion problem. Your data might need special handling during ingestion.
 
-  * If the file format is PDF, we offer optimized ingestion for tables by using the offline scripts available on [GitHub](https://github.com/microsoft/sample-app-aoai-chatGPT/tree/main/scripts). To use the scripts, you need to have a [Document Intelligence](../../../ai-services/document-intelligence/overview.md) resource and use the [layout model](../../../ai-services/document-intelligence/concept-layout.md).
+  * If the file format is PDF, we offer optimized ingestion for tables by using the offline scripts available on [GitHub](https://github.com/microsoft/sample-app-aoai-chatGPT/tree/main/scripts). To use the scripts, you need to have a [Document Intelligence](../../../ai-services/document-intelligence/overview) resource and use the [layout model](../../../ai-services/document-intelligence/concept-layout).
   
   * You can adjust your [chunk size](../concepts/use-your-data.md#chunk-size-preview) to make sure your largest table fits within it.
 
@@ -106,8 +97,9 @@ See the preceding debugging process, starting at [step 1](#step-1-check-for-retr
 
 * By using the REST API, check if the generated search intents are the same both times. If the intents are different, try a more powerful model such as GPT-4 to see if the chosen model affects the problem. If the intents are the same or similar, try reducing `strictness` or increasing `topNDocuments`.
 
-> [!NOTE]
-> Although the question is the same, the conversation history is added to the context and affects how the model responds to the same question over a long session.
+<Note>
+Although the question is the same, the conversation history is added to the context and affects how the model responds to the same question over a long session.
+</Note>
 
 ### Intents are empty or wrong
 

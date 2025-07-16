@@ -1,13 +1,6 @@
 ---
-title: 'Computer Use (preview) in Azure OpenAI'
-titleSuffix: Azure OpenAI
+title: "Computer Use (preview) in Azure OpenAI"
 description: Learn about Computer Use in Azure OpenAI, which allows AI to interact with computer applications.
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: how-to
-ms.date: 06/30/2025
-author: aahill
-ms.author: aahi
 ---
 
 # Computer Use (preview) in Azure OpenAI
@@ -38,14 +31,15 @@ Computer Use is available in the following regions:
 
 ## Sending an API call to the Computer Use model using the responses API
 
-The Computer Use tool is accessed through the [responses API](./responses.md). The tool operates in a continuous loop that sends actions such as typing text or performing a click. Your code executes these actions on a computer, and sends screenshots of the outcome to the model. 
+The Computer Use tool is accessed through the [responses API](./responses). The tool operates in a continuous loop that sends actions such as typing text or performing a click. Your code executes these actions on a computer, and sends screenshots of the outcome to the model. 
 
 In this way, your code simulates the actions of a human using a computer interface, while the model uses the screenshots to understand the state of the environment and suggest next actions.
 
 The following examples show a basic API call. 
 
-> [!NOTE]
-> You need an Azure OpenAI resource with a `computer-use-preview` model deployment in a [supported region](#regional-support).
+<Note>
+You need an Azure OpenAI resource with a `computer-use-preview` model deployment in a [supported region](#regional-support).
+</Note>
 
 ## [Python](#tab/python)
 
@@ -363,8 +357,9 @@ In all cases where `pending_safety_checks` are returned, actions should be hande
 
 In this section, we provide a simple example script that integrates Azure OpenAI's `computer-use-preview` model with [Playwright](https://playwright.dev/) to automate basic browser interactions. Combining the model with [Playwright](https://playwright.dev/) allows the model to see the browser screen, make decisions, and perform actions like clicking, typing, and navigating websites. You should exercise caution when running this example code. This code is designed to be run locally but should only be executed in a test environment. Use a human to confirm decisions and don't give the model access to sensitive data.
 
-:::image type="content" source="../media/computer-use-preview.gif" alt-text="Animated gif of computer-use-preview model integrated with playwright." lightbox="../media/computer-use-preview.gif":::
-
+<Frame>
+    ![](/images/ai-foundry/openai/media/computer-use-preview.gif)
+</Frame>
 First you'll need to install the Python library for [Playwright](https://playwright.dev/).
 
 ```cmd
@@ -823,8 +818,9 @@ The main function:
 
 ### Complete script
 
-> [!CAUTION]
-> This code is experimental and for demonstration purposes only. It's only intended to illustrate the basic flow of the responses API and the `computer-use-preview` model. While you can execute this code on your local computer, we strongly recommend running this code on a low privilege virtual machine with no access to sensitive data. This code is for basic testing purposes only.
+<Danger>
+This code is experimental and for demonstration purposes only. It's only intended to illustrate the basic flow of the responses API and the `computer-use-preview` model. While you can execute this code on your local computer, we strongly recommend running this code on a low privilege virtual machine with no access to sensitive data. This code is for basic testing purposes only.
+</Danger>
 
 ```python
 import os
@@ -1193,6 +1189,6 @@ if __name__ == "__main__":
 
 ## See also
 
-* [Responses API](./responses.md)
+* [Responses API](./responses)
     * [Computer Use with playwright](./responses.md#computer-use)
 * [Computer Use Assistant sample on GitHub](https://github.com/Azure-Samples/computer-use-model)

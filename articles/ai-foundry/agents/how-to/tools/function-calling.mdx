@@ -1,25 +1,16 @@
 ---
-title: 'How to use Azure AI Foundry Agent Service with function calling'
-titleSuffix: Azure AI Foundry
+title: "How to use Azure AI Foundry Agent Service with function calling"
 description: Learn how to use Azure AI Agents with function calling.
-services: cognitive-services
-manager: nitinme
-ms.service: azure-ai-agent-service
-ms.topic: how-to
-ms.date: 07/11/2025
-author: aahill
-ms.author: aahi
-zone_pivot_groups: selection-function-calling
-ms.custom: azure-ai-agents
 ---
 
 # Azure AI Agents function calling
 
 Azure AI Agents supports function calling, which allows you to describe the structure of functions to an agent and then return the functions that need to be called along with their arguments.
 
-> [!NOTE]
-> * Runs expire 10 minutes after creation. Be sure to submit your tool outputs before the expiration.
-> * Although function calling isn't supported in the Azure AI Foundry portal, agents will appear in the portal after creation. Agents run in the portal won't perform function calling.
+<Note>
+* Runs expire 10 minutes after creation. Be sure to submit your tool outputs before the expiration.
+* Although function calling isn't supported in the Azure AI Foundry portal, agents will appear in the portal after creation. Agents run in the portal won't perform function calling.
+</Note>
 
 ### Usage support
 
@@ -27,7 +18,7 @@ Azure AI Agents supports function calling, which allows you to describe the stru
 |---------|---------|---------|---------|---------|---------|---------|
 |      | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 
-::: zone pivot="python"
+<Tab title="Python">
 
 
 ## Define a function for your agent to call
@@ -56,15 +47,9 @@ user_functions = {fetch_weather}
 
 ## Create a client and agent
 
-<!--
-In the sample below we create a client and define a `toolset` which will be used to process the functions defined in `user_functions`.
-
-`toolset`: When using the toolset parameter, you provide not only the function definitions and descriptions but also their implementations. The SDK will execute these functions within `create_and_run_process` or streaming. These functions will be invoked based on their definitions.
--->
-
-> [!NOTE]
-> You can find a streaming example on [GitHub](https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/ai/azure-ai-agents/samples/agents_streaming/sample_agents_stream_eventhandler_with_functions.py).
-
+<Note>
+You can find a streaming example on [GitHub](https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/ai/azure-ai-agents/samples/agents_streaming/sample_agents_stream_eventhandler_with_functions.py).
+</Note>
 
 ```python
 import os, time
@@ -140,12 +125,13 @@ project_client.agents.delete_agent(agent.id)
 print("Deleted agent")
 ```
 
-::: zone-end
+</Tab>
 
-::: zone pivot="csharp"
+<Tab title="C#">
 
-> [!NOTE]
-> You can find a streaming example on [GitHub](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/ai/Azure.AI.Agents.Persistent/samples/Sample8_PersistentAgents_FunctionsWithStreaming.md).
+<Note>
+You can find a streaming example on [GitHub](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/ai/Azure.AI.Agents.Persistent/samples/Sample8_PersistentAgents_FunctionsWithStreaming).
+</Note>
 
 ## Configure client and define functions
 
@@ -391,9 +377,9 @@ client.Threads.DeleteThread(threadId: thread.Id);
 client.Administration.DeleteAgent(agentId: agent.Id);
 ```
 
-::: zone-end
+</Tab>
 
-::: zone pivot="javascript"
+<Tab title="JavaScript">
 
 ## Define a function for your agent to call
 
@@ -585,9 +571,9 @@ console.log(`Deleted agent, agent ID: ${agent.id}`);
 
 ```
 
-::: zone-end
+</Tab>
 
-::: zone pivot="rest"
+<Tab title="REST API">
 
 ## Define a function for your agent to call
 
@@ -675,4 +661,4 @@ curl --request GET \
   -H "Authorization: Bearer $AGENT_TOKEN"
 ```
 
-::: zone-end
+</Tab>

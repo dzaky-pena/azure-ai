@@ -1,14 +1,6 @@
 ﻿---
-title: What is Azure AI Foundry Agent Service?
-titleSuffix: Azure AI Foundry
+title: "What is Azure AI Foundry Agent Service?"
 description: Learn how to create agents that apply advanced language models for workflow automation.
-manager: nitinme
-author: aahill
-ms.author: aahi
-ms.service: azure-ai-agent-service
-ms.topic: overview
-ms.date: 06/25/2025
-ms.custom: azure-ai-agents
 ---
 
 
@@ -76,7 +68,7 @@ Then, equip your agent with tools. These let it access enterprise knowledge (suc
     :::column span="1":::
 ### 4. Orchestration
 
-Next, the agent needs coordination. [Connected agents](how-to\connected-agents.md) orchestrates the full lifecycle such as handling tool calls, updating thread state, managing retries, and logging outputs.
+Next, the agent needs coordination. [Connected agents](how-to\connected-agents) orchestrates the full lifecycle such as handling tool calls, updating thread state, managing retries, and logging outputs.
 
     :::column-end:::
     :::column span="1":::
@@ -101,17 +93,17 @@ Azure AI Foundry Agent Service provides a production-ready foundation for deploy
 |------------|--------------------------------|
 | **1. Visibility into conversations** | Full access to structured [threads](./concepts/threads-runs-messages.md#threads), including both user↔agent and agent↔agent messages. Ideal for UIs, debugging, and training |
 | **2. Multi-agent coordination** | Built-in support for agent-to-agent messaging. |
-| **3. Tool orchestration** | Server-side execution and retry of [tool calls](how-to\tools\overview.md) with structured logging. No manual orchestration required. |
-| **4. Trust and safety** | Integrated [content filters](../openai/how-to/content-filters.md) help prevent misuse and mitigate prompt injection risks (XPIA). all outputs are policy-governed. |
-| **5. Enterprise integration** | Bring your own [storage](./how-to/use-your-own-resources.md#use-an-existing-azure-cosmos-db-for-nosql-account-for-thread-storage), [Azure AI Search index](./how-to/use-your-own-resources.md#use-an-existing-azure-ai-search-resource), and [virtual network](how-to\virtual-networks.md) to meet compliance needs. |
-| **6. Observability and debugging** | Threads, tool invocations, and message traces are [fully traceable](concepts\tracing.md); [Application Insights integration](./how-to/metrics.md) for telemetry |
+| **3. Tool orchestration** | Server-side execution and retry of [tool calls](how-to\tools\overview) with structured logging. No manual orchestration required. |
+| **4. Trust and safety** | Integrated [content filters](../openai/how-to/content-filters) help prevent misuse and mitigate prompt injection risks (XPIA). all outputs are policy-governed. |
+| **5. Enterprise integration** | Bring your own [storage](./how-to/use-your-own-resources.md#use-an-existing-azure-cosmos-db-for-nosql-account-for-thread-storage), [Azure AI Search index](./how-to/use-your-own-resources.md#use-an-existing-azure-ai-search-resource), and [virtual network](how-to\virtual-networks) to meet compliance needs. |
+| **6. Observability and debugging** | Threads, tool invocations, and message traces are [fully traceable](concepts\tracing); [Application Insights integration](./how-to/metrics) for telemetry |
 | **7. Identity and policy control** | Built on Microsoft Entra with full support for RBAC, audit logs, and enterprise conditional access. |
 
 ## Get started with Foundry Agent Service
 
 To get started with Foundry Agent Service, you need to create an Azure AI Foundry project in your Azure subscription. 
 
-Start with the [environment setup](environment-setup.md) and [quickstart](quickstart.md) guide if it's your first time using the service.
+Start with the [environment setup](environment-setup) and [quickstart](quickstart) guide if it's your first time using the service.
 1. You can create a project with the required resources. 
 1. After you create a project, you can deploy a compatible model such as GPT-4o.
 1. When you have a deployed model, you can also start making API calls to the service using the SDKs.
@@ -119,4 +111,4 @@ Start with the [environment setup](environment-setup.md) and [quickstart](quicks
 
 ## Next steps
 
-Learn more about the [models that power agents](concepts\model-region-support.md).
+Learn more about the [models that power agents](concepts\model-region-support).

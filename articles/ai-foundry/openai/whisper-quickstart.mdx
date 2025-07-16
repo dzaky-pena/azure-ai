@@ -1,63 +1,53 @@
 ---
-title: Convert speech to text with Azure OpenAI in Azure AI Foundry Models
-titleSuffix: Azure OpenAI
+title: "Convert speech to text with Azure OpenAI in Azure AI Foundry Models"
 description: Learn how to use the Azure OpenAI Whisper model for speech to text conversion.
-manager: nitinme
-ms.service: azure-ai-openai
-ms.custom: devx-track-python
-ms.topic: quickstart
-ms.date: 5/23/2025
-ms.reviewer: eur
-ms.author: eur
-author: eric-urban
-recommendations: false
-zone_pivot_groups: programming-languages-rest-ps-py-js-cs
 ---
 
 # Quickstart: Speech to text with the Azure OpenAI Whisper model
 
-This quickstart explains how to use the [Azure OpenAI Whisper model](../../ai-services/speech-service/whisper-overview.md) for speech to text conversion. The Whisper model can transcribe human speech in numerous languages, and it can also translate other languages into English.
+This quickstart explains how to use the [Azure OpenAI Whisper model](../../ai-services/speech-service/whisper-overview) for speech to text conversion. The Whisper model can transcribe human speech in numerous languages, and it can also translate other languages into English.
 
-> [!NOTE]
-> For information about other audio models that you can use with Azure OpenAI, see [Audio models](./concepts/models.md?tabs=standard-audio#standard-deployment-regional-models-by-endpoint).
+<Note>
+For information about other audio models that you can use with Azure OpenAI, see [Audio models](./concepts/models.md?tabs=standard-audio#standard-deployment-regional-models-by-endpoint).
+</Note>
 
 The file size limit for the Whisper model is 25 MB. If you need to transcribe a file larger than 25 MB, you can use the Azure AI Speech [batch transcription](../../ai-services/speech-service/batch-transcription-create.md#use-a-whisper-model) API.
 
-::: zone pivot="rest-api"
+<Tab title="REST API">
 
-[!INCLUDE [REST API quickstart](includes/whisper-rest.md)]
+[!INCLUDE [REST API quickstart](includes/whisper-rest)]
 
-::: zone-end
+</Tab>
 
-::: zone pivot="programming-language-python"
+<Tab title="Python">
 
-[!INCLUDE [Python SDK quickstart](includes/whisper-python.md)]
+[!INCLUDE [Python SDK quickstart](includes/whisper-python)]
 
-::: zone-end
+</Tab>
 
-::: zone pivot="programming-language-dotnet"
+<Tab title="C#">
 
-[!INCLUDE [.NET SDK quickstart](includes/whisper-dotnet.md)]
+[!INCLUDE [.NET SDK quickstart](includes/whisper-dotnet)]
 
-::: zone-end
+</Tab>
 
-::: zone pivot="programming-language-javascript"
+<Tab title="JavaScript">
 
-[!INCLUDE [JavaScript quickstart](includes/whisper-javascript.md)]
+[!INCLUDE [JavaScript quickstart](includes/whisper-javascript)]
 
-::: zone-end
+</Tab>
 
-::: zone pivot="programming-language-typescript"
+<Tab title="TypeScript">
 
-[!INCLUDE [JavaScript quickstart](includes/whisper-typescript.md)]
+[!INCLUDE [JavaScript quickstart](includes/whisper-typescript)]
 
-::: zone-end
+</Tab>
 
-::: zone pivot="programming-language-powershell"
+<Tab title="PowerShell">
 
-[!INCLUDE [PowerShell quickstart](includes/whisper-powershell.md)]
+[!INCLUDE [PowerShell quickstart](includes/whisper-powershell)]
 
-::: zone-end
+</Tab>
 
 ## Clean up resources
 
@@ -68,5 +58,5 @@ If you want to clean up and remove an Azure OpenAI resource, you can delete the 
 
 ## Next steps
 
-* To learn how to convert audio data to text in batches, see [Create a batch transcription](../../ai-services/speech-service/batch-transcription-create.md).
+* To learn how to convert audio data to text in batches, see [Create a batch transcription](../../ai-services/speech-service/batch-transcription-create).
 * For more examples, check out the [Azure OpenAI Samples GitHub repository](https://github.com/Azure-Samples/openai).

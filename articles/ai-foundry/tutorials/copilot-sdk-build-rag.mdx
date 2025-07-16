@@ -1,42 +1,33 @@
 ---
 title: "Part 2: Build a custom knowledge retrieval (RAG) app with the Azure AI Foundry SDK"
-titleSuffix: Azure AI Foundry
 description:  Learn how to build a RAG-based chat app using the Azure AI Foundry SDK. This tutorial is part 2 of a 3-part tutorial series.
-manager: scottpolly
-ms.service: azure-ai-foundry
-ms.topic: tutorial
-ms.date: 06/27/2025
-ms.reviewer: lebaro
-ms.author: sgilley
-author: sdgilley
-ms.custom: copilot-learning-hub, ignite-2024
-#customer intent: As a developer, I want to learn how to use the prompt flow SDK so that I can build a RAG-based chat app.
 ---
 
 # Tutorial:  Part 2 - Build a custom knowledge retrieval (RAG) app with the Azure AI Foundry SDK
 
 In this tutorial, you use the [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs) SDK (and other libraries) to build, configure, and evaluate a chat app for your retail company called Contoso Trek. Your retail company specializes in outdoor camping gear and clothing. The chat app should answer questions about your products and services. For example, the chat app can answer questions such as "which tent is the most waterproof?" or "what is the best sleeping bag for cold weather?".
 
-This part two shows you how to enhance a basic chat application by adding [retrieval augmented generation (RAG)](../concepts/retrieval-augmented-generation.md) to ground the responses in your custom data. Retrieval Augmented Generation (RAG) is a pattern that uses your data with a large language model (LLM) to generate answers specific to your data. In this part two, you learn how to:
+This part two shows you how to enhance a basic chat application by adding [retrieval augmented generation (RAG)](../concepts/retrieval-augmented-generation) to ground the responses in your custom data. Retrieval Augmented Generation (RAG) is a pattern that uses your data with a large language model (LLM) to generate answers specific to your data. In this part two, you learn how to:
 
-> [!div class="checklist"]
-> - Get example data
-> - Create a search index of the data for the chat app to use
-> - Develop custom RAG code
+<Check>
+- Get example data
+- Create a search index of the data for the chat app to use
+- Develop custom RAG code
+</Check>
 
 This tutorial is part two of a three-part tutorial.
 
 ## Prerequisites
 
-[!INCLUDE [hub-only-tutorial](../includes/hub-only-tutorial.md)]
+[!INCLUDE [hub-only-tutorial](../includes/hub-only-tutorial)]
 
-* Complete [Tutorial:  Part 1 - Create resources for building a custom chat application with the Azure AI SDK](copilot-sdk-create-resources.md) to:
+* Complete [Tutorial:  Part 1 - Create resources for building a custom chat application with the Azure AI SDK](copilot-sdk-create-resources) to:
 
     * Create a project with a connected Azure AI Search index
     * Install the Azure CLI, Python, and required packages
     * Configure your environment variables
 
-* Use the same **[!INCLUDE [hub](../includes/hub-project-name.md)]** you created in part 1. 
+* Use the same **[!INCLUDE [hub](../includes/hub-project-name)]** you created in part 1. 
 
 
 ## Create example data for your chat app
@@ -162,7 +153,9 @@ To enable logging of telemetry to your project:
 
 1. Add an Application Insights resource to your project.  Navigate to the **Tracing** tab in the [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs), and create a new resource if you don't already have one.
 
-    :::image type="content" source="../media/tutorials/develop-rag-copilot-sdk/add-app-insights.png" alt-text="A screenshot of the tracing screen in the Azure AI Foundry portal." lightbox="../media/tutorials/develop-rag-copilot-sdk/add-app-insights.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/tutorials/develop-rag-copilot-sdk/add-app-insights.png)
+    </Frame>
 
 1. Install `azure-monitor-opentelemetry`:
 
@@ -182,9 +175,9 @@ Follow the link in the console output to see the telemetry data in your Applicat
 
 To avoid incurring unnecessary Azure costs, you should delete the resources you created in this tutorial if they're no longer needed. To manage resources, you can use the [Azure portal](https://portal.azure.com?azure-portal=true).
 
-But don't delete them yet, if you want to deploy your chat app to Azure in [the next part of this tutorial series](copilot-sdk-evaluate.md).
+But don't delete them yet, if you want to deploy your chat app to Azure in [the next part of this tutorial series](copilot-sdk-evaluate).
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Part 3: Evaluate your chat app to Azure](copilot-sdk-evaluate.md)
+> [Part 3: Evaluate your chat app to Azure](copilot-sdk-evaluate)

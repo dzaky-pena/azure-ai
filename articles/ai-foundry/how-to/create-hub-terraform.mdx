@@ -1,15 +1,6 @@
 ---
-title: 'Use Terraform to create an Azure AI Foundry hub'
+title: "Use Terraform to create an Azure AI Foundry hub"
 description: In this article, you create an Azure AI Foundry hub, an Azure AI Foundry project, an AI services resource, and more resources.
-ms.topic: how-to
-ms.date: 04/29/2025
-titleSuffix: Azure AI Foundry 
-ms.service: azure-ai-foundry
-manager: scottpolly 
-ms.reviewer: andyaviles 
-ms.author: sgilley
-author: sdgilley
-ms.custom: devx-track-terraform
 content_well_notification: 
   - AI-contribution
 ai-usage: ai-assisted
@@ -18,20 +9,21 @@ ai-usage: ai-assisted
 
 # Use Terraform to create an Azure AI Foundry hub
 
-[!INCLUDE [hub-only-alt](../includes/uses-hub-only-alt.md)]
+[!INCLUDE [hub-only-alt](../includes/uses-hub-only-alt)]
 
 In this article, you use Terraform to create an [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs) hub, a project, and AI services connection. A hub is a central place for data scientists and developers to collaborate on machine learning projects. It provides a shared, collaborative space to build, train, and deploy machine learning models. The hub is integrated with Azure Machine Learning and other Azure services, making it a comprehensive solution for machine learning tasks. The hub also allows you to manage and monitor your AI deployments, ensuring they're performing as expected.
 
-[!INCLUDE [About Terraform](~/azure-dev-docs-pr/articles/terraform/includes/abstract.md)]
+[!INCLUDE [About Terraform](~/azure-dev-docs-pr/articles/terraform/includes/abstract)]
 
-> [!div class="checklist"]
-> * Create a resource group
-> * Set up a storage account
-> * Establish a key vault
-> * Configure AI services
-> * Build an Azure AI Foundry hub
-> * Develop an Azure AI Foundry project
-> * Establish an AI services connection
+<Check>
+* Create a resource group
+* Set up a storage account
+* Establish a key vault
+* Configure AI services
+* Build an Azure AI Foundry hub
+* Develop an Azure AI Foundry project
+* Establish an AI services connection
+</Check>
 
 ## Prerequisites
 
@@ -41,10 +33,11 @@ In this article, you use Terraform to create an [Azure AI Foundry](https://ai.az
 
 ## Implement the Terraform code
 
-> [!NOTE]
-> The sample code for this article is located in the [Azure Terraform GitHub repo](https://github.com/Azure/terraform/tree/master/quickstart/101-azure-ai-foundry). You can view the log file containing the [test results from current and previous versions of Terraform](https://github.com/Azure/terraform/tree/master/quickstart/101-azure-ai-foundry/TestRecord.md). You may need to update the resource provider versions used in the template to use the latest available versions.
-> 
-> See more [articles and sample code showing how to use Terraform to manage Azure resources](/azure/terraform)
+<Note>
+The sample code for this article is located in the [Azure Terraform GitHub repo](https://github.com/Azure/terraform/tree/master/quickstart/101-azure-ai-foundry). You can view the log file containing the [test results from current and previous versions of Terraform](https://github.com/Azure/terraform/tree/master/quickstart/101-azure-ai-foundry/TestRecord). You may need to update the resource provider versions used in the template to use the latest available versions.
+ 
+See more [articles and sample code showing how to use Terraform to manage Azure resources](/azure/terraform)
+</Note>
 
 1. Create a directory in which to test and run the sample Terraform code and make it the current directory.
 
@@ -66,15 +59,15 @@ In this article, you use Terraform to create an [Azure AI Foundry](https://ai.az
 
 ## Initialize Terraform
 
-[!INCLUDE [terraform-init.md](~/azure-dev-docs-pr/articles/terraform/includes/terraform-init.md)]
+[!INCLUDE [terraform-init.md](~/azure-dev-docs-pr/articles/terraform/includes/terraform-init)]
 
 ## Create a Terraform execution plan
 
-[!INCLUDE [terraform-plan.md](~/azure-dev-docs-pr/articles/terraform/includes/terraform-plan.md)]
+[!INCLUDE [terraform-plan.md](~/azure-dev-docs-pr/articles/terraform/includes/terraform-plan)]
 
 ## Apply a Terraform execution plan
 
-[!INCLUDE [terraform-apply-plan.md](~/azure-dev-docs-pr/articles/terraform/includes/terraform-apply-plan.md)]
+[!INCLUDE [terraform-apply-plan.md](~/azure-dev-docs-pr/articles/terraform/includes/terraform-apply-plan)]
 
 ## Verify the results
 
@@ -124,7 +117,7 @@ In this article, you use Terraform to create an [Azure AI Foundry](https://ai.az
 
 ## Clean up resources
 
-[!INCLUDE [terraform-plan-destroy.md](~/azure-dev-docs-pr/articles/terraform/includes/terraform-plan-destroy.md)]
+[!INCLUDE [terraform-plan-destroy.md](~/azure-dev-docs-pr/articles/terraform/includes/terraform-plan-destroy)]
 
 ## Troubleshoot Terraform on Azure
 

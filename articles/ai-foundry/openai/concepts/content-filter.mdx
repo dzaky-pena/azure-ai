@@ -1,29 +1,23 @@
 ---
-title: Azure OpenAI in Azure AI Foundry Models content filtering
-titleSuffix: Azure OpenAI
+title: "Azure OpenAI in Azure AI Foundry Models content filtering"
 description: Learn about the content filtering capabilities of Azure OpenAI.
-author: PatrickFarley
-ms.author: pafarley
-ms.service: azure-ai-openai
-ms.topic: conceptual
-ms.date: 5/28/2025
-ms.custom: template-concept, devx-track-python
-manager: nitinme
 ---
 
 # Content filtering overview
 
 Azure OpenAI includes a content filtering system that works alongside core models, including image generation models. This system works by running both the prompt and completion through a set of classification models designed to detect and prevent the output of harmful content. The content filtering system detects and takes action on specific categories of potentially harmful content in both input prompts and output completions. Variations in API configurations and application design might affect completions and thus filtering behavior.
 
-> [!IMPORTANT]
-> The content filtering system isn't applied to prompts and completions processed by the audio models such as Whisper in Azure OpenAI in Azure AI Foundry Models. Learn more about the [Audio models in Azure OpenAI](models.md?tabs=standard-audio#standard-deployment-regional-models-by-endpoint).
+<Info>
+The content filtering system isn't applied to prompts and completions processed by the audio models such as Whisper in Azure OpenAI in Azure AI Foundry Models. Learn more about the [Audio models in Azure OpenAI](models.md?tabs=standard-audio#standard-deployment-regional-models-by-endpoint).
+</Info>
 
 In addition to the content filtering system, Azure OpenAI performs monitoring to detect content and/or behaviors that suggest use of the service in a manner that might violate applicable product terms. For more information about understanding and mitigating risks associated with your application, see the [Transparency Note for Azure OpenAI](/azure/ai-foundry/responsible-ai/openai/transparency-note?tabs=text). For more information about how data is processed for content filtering and abuse monitoring, see [Data, privacy, and security for Azure OpenAI](/azure/ai-foundry/responsible-ai/openai/data-privacy#preventing-abuse-and-harmful-content-generation).  
 
 The articles in this section provide information about the content filtering categories, the filtering severity levels and their configurability, and API scenarios to be considered in application design and implementation. 
 
-> [!NOTE]
-> No prompts or completions are stored for the purposes of content filtering. No prompts or completions are used to train, retrain, or improve the content filtering system without your consent. For more information, see [Data, privacy, and security](/azure/ai-foundry/responsible-ai/openai/data-privacy).
+<Note>
+No prompts or completions are stored for the purposes of content filtering. No prompts or completions are used to train, retrain, or improve the content filtering system without your consent. For more information, see [Data, privacy, and security](/azure/ai-foundry/responsible-ai/openai/data-privacy).
+</Note>
 
 ## Content filter types
 
@@ -38,13 +32,13 @@ The following table summarizes the risk categories supported by Azure OpenAI's c
 
 |Category|Description|
 |--------|-----------|
-| [Hate and Fairness](/azure/ai-services/openai/concepts/content-filter-severity-levels)      | Hate and fairness-related harms refer to any content that attacks or uses discriminatory language with reference to a person or Identity group based on certain differentiating attributes of these groups. <br><br>This includes, but is not limited to:<ul><li>Race, ethnicity, nationality</li><li>Gender identity groups and expression</li><li>Sexual orientation</li><li>Religion</li><li>Personal appearance and body size</li><li>Disability status</li><li>Harassment and bullying</li></ul> |
-| [Sexual](/azure/ai-services/openai/concepts/content-filter-severity-levels)  | Sexual describes language related to anatomical organs and genitals, romantic relationships and sexual acts, acts portrayed in erotic or affectionate terms, including those portrayed as an assault or a forced sexual violent act against one’s will. <br><br> This includes but is not limited to:<ul><li>Vulgar content</li><li>Prostitution</li><li>Nudity and Pornography</li><li>Abuse</li><li>Child exploitation, child abuse, child grooming</li></ul>   |
-| [Violence](/azure/ai-services/openai/concepts/content-filter-severity-levels)  | Violence describes language related to physical actions intended to hurt, injure, damage, or kill someone or something; describes weapons, guns and related entities. <br><br>This includes, but isn't limited to:  <ul><li>Weapons</li><li>Bullying and intimidation</li><li>Terrorist and violent extremism</li><li>Stalking</li></ul>  |
-| [Self-Harm](/azure/ai-services/openai/concepts/content-filter-severity-levels)  | Self-harm describes language related to physical actions intended to purposely hurt, injure, damage one’s body or kill oneself. <br><br> This includes, but isn't limited to: <ul><li>Eating Disorders</li><li>Bullying and intimidation</li></ul>  |
+| [Hate and Fairness](/azure/ai-services/openai/concepts/content-filter-severity-levels)      | Hate and fairness-related harms refer to any content that attacks or uses discriminatory language with reference to a person or Identity group based on certain differentiating attributes of these groups. <br/><br/>This includes, but is not limited to:<ul><li>Race, ethnicity, nationality</li><li>Gender identity groups and expression</li><li>Sexual orientation</li><li>Religion</li><li>Personal appearance and body size</li><li>Disability status</li><li>Harassment and bullying</li></ul> |
+| [Sexual](/azure/ai-services/openai/concepts/content-filter-severity-levels)  | Sexual describes language related to anatomical organs and genitals, romantic relationships and sexual acts, acts portrayed in erotic or affectionate terms, including those portrayed as an assault or a forced sexual violent act against one’s will. <br/><br/> This includes but is not limited to:<ul><li>Vulgar content</li><li>Prostitution</li><li>Nudity and Pornography</li><li>Abuse</li><li>Child exploitation, child abuse, child grooming</li></ul>   |
+| [Violence](/azure/ai-services/openai/concepts/content-filter-severity-levels)  | Violence describes language related to physical actions intended to hurt, injure, damage, or kill someone or something; describes weapons, guns and related entities. <br/><br/>This includes, but isn't limited to:  <ul><li>Weapons</li><li>Bullying and intimidation</li><li>Terrorist and violent extremism</li><li>Stalking</li></ul>  |
+| [Self-Harm](/azure/ai-services/openai/concepts/content-filter-severity-levels)  | Self-harm describes language related to physical actions intended to purposely hurt, injure, damage one’s body or kill oneself. <br/><br/> This includes, but isn't limited to: <ul><li>Eating Disorders</li><li>Bullying and intimidation</li></ul>  |
 |[User Prompt Attacks](/azure/ai-services/openai/concepts/content-filter-prompt-shields) |User prompt attacks are User Prompts designed to provoke the Generative AI model into exhibiting behaviors it was trained to avoid or to break the rules set in the System Message. Such attacks can vary from intricate roleplay to subtle subversion of the safety objective. |
-|[Indirect Attacks](/azure/ai-services/openai/concepts/content-filter-prompt-shields) |Indirect Attacks, also referred to as Indirect Prompt Attacks or Cross-Domain Prompt Injection Attacks, are a potential vulnerability where third parties place malicious instructions inside of documents that the Generative AI system can access and process. Requires [document embedding and formatting](./content-filter-document-embedding.md). |
-| [Groundedness](/azure/ai-services/openai/concepts/content-filter-groundedness)<sup>2</sup> | Groundedness detection flags whether the text responses of large language models (LLMs) are grounded in the source materials provided by the users. Ungrounded material refers to instances where the LLMs produce information that is non-factual or inaccurate from what was present in the source materials. Requires [document embedding and formatting](./content-filter-document-embedding.md). |
+|[Indirect Attacks](/azure/ai-services/openai/concepts/content-filter-prompt-shields) |Indirect Attacks, also referred to as Indirect Prompt Attacks or Cross-Domain Prompt Injection Attacks, are a potential vulnerability where third parties place malicious instructions inside of documents that the Generative AI system can access and process. Requires [document embedding and formatting](./content-filter-document-embedding). |
+| [Groundedness](/azure/ai-services/openai/concepts/content-filter-groundedness)<sup>2</sup> | Groundedness detection flags whether the text responses of large language models (LLMs) are grounded in the source materials provided by the users. Ungrounded material refers to instances where the LLMs produce information that is non-factual or inaccurate from what was present in the source materials. Requires [document embedding and formatting](./content-filter-document-embedding). |
 | [Protected Material for Text](/azure/ai-services/openai/concepts/content-filter-protected-material)<sup>1</sup> | Protected material text describes known text content (for example, song lyrics, articles, recipes, and selected web content) that can be outputted by large language models.|
 | [Protected Material for Code](/azure/ai-services/openai/concepts/content-filter-protected-material) | Protected material code describes source code that matches a set of source code from public repositories, which can be outputted by large language models without proper citation of source repositories.|
 
@@ -289,8 +283,8 @@ As part of your application design, consider the following best practices to del
 
 ## Related content
 
-- Learn about the [content filtering categories and severity levels](./content-filter-severity-levels.md).
-- Learn more about the [underlying models that power Azure OpenAI](../concepts/models.md).
+- Learn about the [content filtering categories and severity levels](./content-filter-severity-levels).
+- Learn more about the [underlying models that power Azure OpenAI](../concepts/models).
 - Apply for modified content filters via [this form](https://ncv.microsoft.com/uEfCgnITdR).
 - Azure OpenAI content filtering is powered by [Azure AI Content Safety](https://azure.microsoft.com/products/cognitive-services/ai-content-safety).
 - Learn more about understanding and mitigating risks associated with your application: [Overview of Responsible AI practices for Azure OpenAI models](/azure/ai-foundry/responsible-ai/openai/overview).

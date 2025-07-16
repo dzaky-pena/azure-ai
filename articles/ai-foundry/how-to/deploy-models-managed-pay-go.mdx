@@ -1,16 +1,7 @@
 ---
-title: Deploy Azure AI Foundry Models to managed compute with pay-as-you-go billing 
-titleSuffix: Azure AI Foundry
+title: "Deploy Azure AI Foundry Models to managed compute with pay-as-you-go billing "
 description: Learn how to deploy protected models from partners and community on Azure AI Foundry managed compute and understand how pay-as-you-go surcharge billing works.
-manager: scottpolly
-ms.service: azure-ai-foundry
 ms.custom:
-ms.topic: how-to
-ms.date: 06/24/2025
-ms.reviewer: tinaem
-reviewer: tinaem
-ms.author: mopeakande
-author: msakande
 ---
 
 # Deploy Azure AI Foundry Models to managed compute with pay-as-you-go billing 
@@ -22,7 +13,7 @@ Azure AI Foundry Models include a comprehensive catalog of models organized into
 
 - An Azure subscription with a valid payment method. Free or trial Azure subscriptions won't work. If you don't have an Azure subscription, create a [paid Azure account](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to begin.
 
-- If you don't have one, [create a [!INCLUDE [hub](../includes/hub-project-name.md)]](create-projects.md?pivots=hub-project).
+- If you don't have one, [create a [!INCLUDE [hub](../includes/hub-project-name)]](create-projects.md?pivots=hub-project).
 
 - [Azure Marketplace purchases enabled](/azure/cost-management-billing/manage/enable-marketplace-purchases) for your Azure subscription.
 
@@ -58,8 +49,9 @@ Pay-as-you-go billing of Azure compute and model surcharge is pro-rated per minu
 
 A user's subscription to Azure Marketplace offers are scoped to the project resource within Azure AI Foundry. If a subscription to the Azure Marketplace offer for a particular model already exists within the project, the user is informed in the deployment wizard that the subscription already exists for the project. 
 
-> [!NOTE]
-> For [NVIDIA inference microservices (NIM)](#nvidia), multiple models are associated with a single marketplace offer, so you only have to subscribe to the NIM offer once within a project to be able to deploy all NIMs offered by NVIDIA in the AI Foundry model catalog. If you want to deploy NIMs in a different project with no existing SaaS subscription, you need to resubscribe to the offer.  
+<Note>
+For [NVIDIA inference microservices (NIM)](#nvidia), multiple models are associated with a single marketplace offer, so you only have to subscribe to the NIM offer once within a project to be able to deploy all NIMs offered by NVIDIA in the AI Foundry model catalog. If you want to deploy NIMs in a different project with no existing SaaS subscription, you need to resubscribe to the offer.  
+</Note>
 
 To find all the SaaS subscriptions that exist in an Azure subscription:
 
@@ -75,7 +67,7 @@ The consumption-based surcharge is accrued to the associated SaaS subscription a
 
 ## Subscribe and deploy on managed compute
 
-[!INCLUDE [tip-left-pane](../includes/tip-left-pane.md)]
+[!INCLUDE [tip-left-pane](../includes/tip-left-pane)]
 
 1. Sign in to [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs).
 1. If you're not already in your project, select it. 
@@ -86,13 +78,15 @@ The consumption-based surcharge is accrued to the associated SaaS subscription a
 1. Choose from one of the supported VM SKUs for the model. You need to have Azure Machine Learning Compute quota for that SKU in your Azure subscription.
 1. Select **Customize** to specify your deployment configuration for parameters such as the instance count. You can also select an existing endpoint for the deployment or create a new one. For this example, we specify an instance count of **1** and create a new endpoint for the deployment.
 
-    :::image type="content" source="../media/deploy-models-managed-pay-go/deployment-configuration.png" alt-text="Screenshot of the deployment configuration screen for a protected model in Azure AI Foundry." lightbox="../media/deploy-models-managed-pay-go/deployment-configuration.png":::
-
+    <Frame>
+      ![](/images/ai-foundry/media/deploy-models-managed-pay-go/deployment-configuration.png)
+    </Frame>
 1. Select **Next** to proceed to the *pricing breakdown* page.
 1. Review the pricing breakdown for the deployment, terms of use, and license agreement associated with the model's offer on Azure Marketplace. The pricing breakdown tells you what the aggregated pricing for the deployed model would be, where the surcharge for the model is a function of the number of GPUs in the VM instance that is selected in the previous steps. In addition to the applicable surcharge for the model, Azure compute charges also apply, based on your deployment configuration. If you have existing reservations or Azure savings plan, the invoice for the compute charges honors and reflects the discounted VM pricing.
 
-    :::image type="content" source="../media/deploy-models-managed-pay-go/pricing-breakdown.png" alt-text="Screenshot of the pricing breakdown page for a protected model deployment in Azure AI Foundry." lightbox="../media/deploy-models-managed-pay-go/pricing-breakdown.png":::
-
+    <Frame>
+      ![](/images/ai-foundry/media/deploy-models-managed-pay-go/pricing-breakdown.png)
+    </Frame>
 1. Select the checkbox to acknowledge that you understand and agree to the terms of use. Then, select **Deploy**. Azure AI Foundry creates the user's subscription to the marketplace offer and then creates the deployment of the model on a managed compute. It takes about 15-20 minutes for the deployment to complete.
 
 ## Consume deployments
@@ -195,6 +189,6 @@ You can refer to the _last updated time_ for the NIM on the right pane of the mo
 
 ## Related content
 
-* [How to deploy and inference a managed compute deployment](deploy-models-managed.md)
-* [Explore Azure AI Foundry Models](../concepts/foundry-models-overview.md)
+* [How to deploy and inference a managed compute deployment](deploy-models-managed)
+* [Explore Azure AI Foundry Models](../concepts/foundry-models-overview)
 

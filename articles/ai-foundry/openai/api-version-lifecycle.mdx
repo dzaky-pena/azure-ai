@@ -1,14 +1,6 @@
 ---
-title: Azure OpenAI in Azure AI Foundry Models API version lifecycle
+title: "Azure OpenAI in Azure AI Foundry Models API version lifecycle"
 description: Learn more about API version retirement in Azure OpenAI.
-services: cognitive-services
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: conceptual 
-ms.date: 05/25/2025
-author: mrbullwinkle
-ms.author: mbullwin
-recommendations: false
 ms.custom:
 ---
 
@@ -16,10 +8,11 @@ ms.custom:
 
 This article is to help you understand the support lifecycle for Azure OpenAI APIs.
 
-> [!NOTE]
-> New API response objects may be added to the API response without version changes. We recommend you only parse the response objects you require.
->
-> The `2025-04-01-preview` Azure OpenAI spec uses OpenAPI 3.1, is a known issue that this is currently not fully supported by [Azure API Management](/azure/api-management/api-management-key-concepts)
+<Note>
+New API response objects may be added to the API response without version changes. We recommend you only parse the response objects you require.
+
+The `2025-04-01-preview` Azure OpenAI spec uses OpenAPI 3.1, is a known issue that this is currently not fully supported by [Azure API Management](/azure/api-management/api-management-key-concepts)
+</Note>
 
 ## API evolution
 
@@ -261,14 +254,14 @@ curl -X POST https://YOUR-RESOURCE-NAME.openai.azure.com/openai/v1/responses?api
 
 Azure OpenAI API latest releases:
 
-- [**NEW** v1 Preview API](reference-preview-latest.md)
-- Inference: [2025-04-01-preview](reference-preview.md)
-- Authoring: [2025-04-01-preview](authoring-reference-preview.md)
+- [**NEW** v1 Preview API](reference-preview-latest)
+- Inference: [2025-04-01-preview](reference-preview)
+- Authoring: [2025-04-01-preview](authoring-reference-preview)
 
 ## Changes between v1 preview release and 2025-04-01-preview
 
 - [v1 preview API](#api-evolution)
-- [Video generation support](./concepts/video-generation.md)
+- [Video generation support](./concepts/video-generation)
 - **NEW** Responses API features:
     * Remote Model Context Protocol (MCP) servers tool integration
     * Support for asynchronous background tasks
@@ -283,8 +276,8 @@ Azure OpenAI API latest releases:
 
 ## Changes between 2025-03-01-preview and 2025-02-01-preview
 
-- [Responses API](./how-to/responses.md)
-- [Computer use](./how-to/computer-use.md)
+- [Responses API](./how-to/responses)
+- [Computer use](./how-to/computer-use)
 
 ## Changes between 2025-02-01-preview and 2025-01-01-preview
 
@@ -292,13 +285,13 @@ Azure OpenAI API latest releases:
 
 ## Changes between 2025-01-01-preview and 2024-12-01-preview
 
-- `prediction` parameter added for [predicted outputs](./how-to/predicted-outputs.md) support.
-- `gpt-4o-audio-preview` [model support](./audio-completions-quickstart.md).
+- `prediction` parameter added for [predicted outputs](./how-to/predicted-outputs) support.
+- `gpt-4o-audio-preview` [model support](./audio-completions-quickstart).
 
 ## Changes between 2024-12-01-preview and 2024-10-01-preview
 
-- `store`, and `metadata` parameters added for [stored completions support](./how-to/stored-completions.md).
-- `reasoning_effort` added for latest [reasoning models](./how-to/reasoning.md).
+- `store`, and `metadata` parameters added for [stored completions support](./how-to/stored-completions).
+- `reasoning_effort` added for latest [reasoning models](./how-to/reasoning).
 - `user_security_context` added for [Microsoft Defender for Cloud integration](https://aka.ms/TP4AI/Documentation/EndUserContext).
 
 ## Changes between 2024-09-01-preview and 2024-08-01-preview
@@ -310,7 +303,7 @@ Azure OpenAI API latest releases:
 
 ## Changes between 2024-07-01-preview and 2024-08-01-preview API specification
 
-- [Structured outputs support](./how-to/structured-outputs.md).
+- [Structured outputs support](./how-to/structured-outputs).
 - Large file upload API added.
 - On your data changes:
     * [Mongo DB integration](./reference-preview.md#example-7).
@@ -321,7 +314,7 @@ Azure OpenAI API latest releases:
 
 ## Changes between 2024-5-01-preview and 2024-07-01-preview API specification
 
-- [Batch API support added](./how-to/batch.md)
+- [Batch API support added](./how-to/batch)
 - [Vector store chunking strategy parameters](/azure/ai-services/openai/reference-preview?#request-body-17)
 - `max_num_results` that the file search tool should output.
 
@@ -342,7 +335,7 @@ Azure OpenAI API latest releases:
 
 ## Latest GA API release
 
-Azure OpenAI API version [2024-10-21](./reference.md) is currently the latest GA API release. This API version is the replacement for the previous `2024-06-01` GA API release.
+Azure OpenAI API version [2024-10-21](./reference) is currently the latest GA API release. This API version is the replacement for the previous `2024-06-01` GA API release.
 
 ## Updating API versions
 
@@ -354,5 +347,5 @@ If you're using one of the Azure OpenAI SDKs for C#, Go, or Java, you'll instead
 
 ## Next steps
 
-- [Learn more about Azure OpenAI](overview.md)
-- [Learn about working with Azure OpenAI models](./how-to/working-with-models.md)
+- [Learn more about Azure OpenAI](overview)
+- [Learn about working with Azure OpenAI models](./how-to/working-with-models)

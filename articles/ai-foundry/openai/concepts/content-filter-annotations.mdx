@@ -1,12 +1,6 @@
 ---
-title: Content Filter Annotations
+title: "Content Filter Annotations"
 description: Learn about annotations for content filtering in Azure OpenAI, including severity levels and optional models.
-author: PatrickFarley
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: conceptual
-ms.date: 05/07/2025
-ms.author: pafarley
 ---
 
 # Content filtering annotations
@@ -28,11 +22,11 @@ When annotations are enabled as shown in the code snippets below, the following 
 
 |Model| Output|
 |--|--|
-|User prompt attack|detected (true or false), </br>filtered (true or false)|
-|indirect attacks|detected (true or false), </br>filtered (true or false)|
-|protected material text|detected (true or false), </br>filtered (true or false)|
-|protected material code|detected (true or false), </br>filtered (true or false), </br>Example citation of public GitHub repository where code snippet was found, </br>The license of the repository|
-|Groundedness | detected (true or false)</br>filtered (true or false) </br>details (`completion_end_offset`, `completion_start_offset`) |
+|User prompt attack|detected (true or false), filtered (true or false)|
+|indirect attacks|detected (true or false), filtered (true or false)|
+|protected material text|detected (true or false), filtered (true or false)|
+|protected material code|detected (true or false), filtered (true or false), Example citation of public GitHub repository where code snippet was found, The license of the repository|
+|Groundedness | detected (true or false)filtered (true or false) details (`completion_end_offset`, `completion_start_offset`) |
 
 When displaying code in your application, we strongly recommend that the application also displays the example citation from the annotations. Compliance with the cited license may also be required for Customer Copyright Commitment coverage.
 
@@ -170,7 +164,7 @@ print(response.model_dump_json(indent=2))
 
 # [OpenAI Python 0.28.1](#tab/python)
 
-[!INCLUDE [Deprecation](../includes/deprecation.md)]
+[!INCLUDE [Deprecation](../includes/deprecation)]
 
 ```python
 # os.getenv() for the endpoint and key assumes that you are using environment variables.
@@ -419,7 +413,7 @@ violence  : @{filtered=False; severity=safe}
 
 ---
 
-For details on the inference REST API endpoints for Azure OpenAI and how to create Chat and Completions, follow [Azure OpenAI REST API reference guidance](../reference.md). Annotations are returned for all scenarios when using any preview API version starting from `2023-06-01-preview`, as well as the GA API version `2024-02-01`.
+For details on the inference REST API endpoints for Azure OpenAI and how to create Chat and Completions, follow [Azure OpenAI REST API reference guidance](../reference). Annotations are returned for all scenarios when using any preview API version starting from `2023-06-01-preview`, as well as the GA API version `2024-02-01`.
 
 ## Groundedness
 
@@ -453,42 +447,3 @@ Blocks completion content when ungrounded completion content was detected.
   } 
 } 
 ```
-
-<!--
-### Example scenario: An input prompt containing content that is classified at a filtered category and severity level is sent to the completions API
-
-```json
-{
-    "error": {
-        "message": "The response was filtered due to the prompt triggering Azure Content management policy. 
-                   Please modify your prompt and retry. To learn more about our content filtering policies
-                   please read our documentation: https://go.microsoft.com/fwlink/?linkid=21298766",
-        "type": null,
-        "param": "prompt",
-        "code": "content_filter",
-        "status": 400,
-        "innererror": {
-            "code": "ResponsibleAIPolicyViolation",
-            "content_filter_results": {
-                "hate": {
-                    "filtered": true,
-                    "severity": "high"
-                },
-                "self-harm": {
-                    "filtered": true,
-                    "severity": "high"
-                },
-                "sexual": {
-                    "filtered": false,
-                    "severity": "safe"
-                },
-                "violence": {
-                    "filtered":true,
-                    "severity": "medium"
-                }
-            }
-        }
-    }
-}
-```
--->

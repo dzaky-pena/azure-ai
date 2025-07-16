@@ -1,12 +1,6 @@
 ---
-title: Azure OpenAI in Azure AI Foundry Models quotas and limits
+title: "Azure OpenAI in Azure AI Foundry Models quotas and limits"
 description: Quick reference, detailed description, and best practices on the quotas and limits for the OpenAI service in Azure AI services.
-author: mrbullwinkle
-ms.author: mbullwin
-manager: nitinme
-ms.date: 07/11/2025
-ms.service: azure-ai-openai
-ms.topic: conceptual
 ms.custom:
   - ignite-2023
   - references_regions
@@ -25,7 +19,7 @@ This article contains a quick reference and a detailed description of the quotas
 **Regional quota allocation:**
 
 - Tokens per minute (TPM) and requests per minute (RPM) limits are defined **per region, per subscription, and per model/deployment type**.
-- For example, if the `gpt-4.1` global standard model is listed with a quota of **5 million TPM and 5,000 RPM**, then **each region** where that [model/deployment type is available](./concepts/models.md) has its own dedicated pool of quota of that amount for **each of your Azure subscriptions**. So within a single Azure subscription, it is possible to use a larger quantity of total TPM/RPM quota for a given model/deployment type, as long as you have resources/model deployments spread across multiple regions.
+- For example, if the `gpt-4.1` global standard model is listed with a quota of **5 million TPM and 5,000 RPM**, then **each region** where that [model/deployment type is available](./concepts/models) has its own dedicated pool of quota of that amount for **each of your Azure subscriptions**. So within a single Azure subscription, it is possible to use a larger quantity of total TPM/RPM quota for a given model/deployment type, as long as you have resources/model deployments spread across multiple regions.
 
 ## Quotas and limits reference
 
@@ -39,7 +33,7 @@ The following sections provide you with a quick guide to the default quotas and 
 | Default GPT-image-1 quota limits | 2 capacity units (6 requests per minute) |
 | Default Sora quota limits | 60 requests per minute |
 | Default speech to text audio API quota limits | 3 requests per minute |
-| Maximum prompt tokens per request | Varies per model. For more information, see [Azure OpenAI models](./concepts/models.md)|
+| Maximum prompt tokens per request | Varies per model. For more information, see [Azure OpenAI models](./concepts/models)|
 | Max Standard deployments per resource | 32 |
 | Max fine-tuned model deployments | 5 |
 | Total number of training jobs per resource | 100 |
@@ -61,17 +55,18 @@ The following sections provide you with a quick guide to the default quotas and 
 | Max size for all uploaded files for Assistants |200 GB |
 | Assistants token limit | 2,000,000 token limit |
 | GPT-4o and GPT-4.1 max images per request (# of images in the messages array/conversation history) | 50 |
-| GPT-4 `vision-preview` & GPT-4 `turbo-2024-04-09` default max tokens | 16 <br><br> Increase the `max_tokens` parameter value to avoid truncated responses. GPT-4o max tokens defaults to 4096. |
+| GPT-4 `vision-preview` & GPT-4 `turbo-2024-04-09` default max tokens | 16 <br/><br/> Increase the `max_tokens` parameter value to avoid truncated responses. GPT-4o max tokens defaults to 4096. |
 | Max number of custom headers in API requests<sup>1</sup> | 10 |
 | Message character limit | 1048576 |
 | Message size for audio files | 20 MB |
 
 <sup>1</sup> Our current APIs allow up to 10 custom headers, which are passed through the pipeline, and returned. Some customers now exceed this header count resulting in HTTP 431 errors. There's no solution for this error, other than to reduce header volume. **In future API versions we will no longer pass through custom headers**. We recommend customers not depend on custom headers in future system architectures.
 
-> [!NOTE]
-> Quota limits are subject to change. 
+<Note>
+Quota limits are subject to change. 
+</Note>
 
-[!INCLUDE [Quota](./includes/global-batch-limits.md)]
+[!INCLUDE [Quota](./includes/global-batch-limits)]
 
 
 ## GPT-4 rate limits
@@ -130,20 +125,21 @@ The following sections provide you with a quick guide to the default quotas and 
 
 ## o-series rate limits
 
-> [!IMPORTANT]
-> The ratio of Requests Per Minute (RPM) to Tokens Per Minute (TPM) for quota can vary by model. When you deploy a model programmatically or [request a quota increase](https://aka.ms/oai/stuquotarequest) you don't have granular control over TPM and RPM as independent values. Quota is allocated in terms of units of capacity which have corresponding amounts of RPM & TPM:
->
-> | Model                  | Capacity   | Requests Per Minute (RPM)  | Tokens Per Minute (TPM) |
-> |------------------------|:----------:|:--------------------------:|:-----------------------:|
-> | **Older chat models:** | 1 Unit     | 6 RPM                      | 1,000 TPM               |
-> | **o1 & o1-preview:**   | 1 Unit     | 1 RPM                      | 6,000 TPM               |
-> | **o3**                 | 1 Unit     | 1 RPM                      | 1,000 TPM               |
-> | **o4-mini**            | 1 Unit     | 1 RPM                      | 1,000 TPM               |
-> | **o3-mini:**           | 1 Unit     | 1 RPM                      | 10,000 TPM              |
-> | **o1-mini:**           | 1 Unit     | 1 RPM                      | 10,000 TPM              |
-> | **o3-pro:**            | 1 Unit     | 1 RPM                      | 10,000 TPM              |
->
-> This is particularly important for programmatic model deployment as changes in RPM/TPM ratio can result in accidental  misallocation of quota.
+<Info>
+The ratio of Requests Per Minute (RPM) to Tokens Per Minute (TPM) for quota can vary by model. When you deploy a model programmatically or [request a quota increase](https://aka.ms/oai/stuquotarequest) you don't have granular control over TPM and RPM as independent values. Quota is allocated in terms of units of capacity which have corresponding amounts of RPM & TPM:
+
+| Model                  | Capacity   | Requests Per Minute (RPM)  | Tokens Per Minute (TPM) |
+|------------------------|:----------:|:--------------------------:|:-----------------------:|
+| **Older chat models:** | 1 Unit     | 6 RPM                      | 1,000 TPM               |
+| **o1 & o1-preview:**   | 1 Unit     | 1 RPM                      | 6,000 TPM               |
+| **o3**                 | 1 Unit     | 1 RPM                      | 1,000 TPM               |
+| **o4-mini**            | 1 Unit     | 1 RPM                      | 1,000 TPM               |
+| **o3-mini:**           | 1 Unit     | 1 RPM                      | 10,000 TPM              |
+| **o1-mini:**           | 1 Unit     | 1 RPM                      | 10,000 TPM              |
+| **o3-pro:**            | 1 Unit     | 1 RPM                      | 10,000 TPM              |
+
+This is particularly important for programmatic model deployment as changes in RPM/TPM ratio can result in accidental  misallocation of quota.
+</Info>
 
 ### o-series global standard
 
@@ -249,8 +245,9 @@ Global standard deployments use Azure's global infrastructure, dynamically routi
 
 The Usage Limit determines the level of usage above which customers might see larger variability in response latency. A customer’s usage is defined per model and is the total tokens consumed across all deployments in all subscriptions in all regions for a given tenant.
 
-> [!NOTE]
-> Usage tiers only apply to standard, data zone standard, and global standard deployment types. Usage tiers don't apply to global batch and provisioned throughput deployments.
+<Note>
+Usage tiers only apply to standard, data zone standard, and global standard deployment types. Usage tiers don't apply to global batch and provisioned throughput deployments.
+</Note>
 
 ### Global standard, data zone standard, & standard
 
@@ -273,12 +270,12 @@ If your Azure subscription is linked to certain [offer types](https://azure.micr
 
 |Tier| Quota Limit in tokens per minute (TPM) |
 |---|:---|
-|`Azure for Students` | 1 K (all models) <br>Exception o-series & GPT-4.1 & GPT 4.5 Preview: 0|
-| `MSDN` | GPT-4o-mini: 200 K <br> GPT 3.5 Turbo Series: 200 K <br> GPT-4 series: 50 K <br>computer-use-preview: 8 K <br> gpt-4o-realtime-preview: 1 K <br> o-series: 0 <br> GPT 4.5 Preview: 0 <br> GPT-4.1: 50 K <br> GPT-4.1-nano: 200 K  |
-|`Standard` | GPT-4o-mini: 200 K <br> GPT 3.5 Turbo Series: 200 K <br> GPT-4 series: 50 K <br>computer-use-preview: 30 K <br> o-series: 0 <br> GPT 4.5 Preview: 0  <br> GPT-4.1: 50 K <br> GPT-4.1-nano: 200 K  |
-| `Azure_MS-AZR-0111P`  <br> `Azure_MS-AZR-0035P` <br> `Azure_MS-AZR-0025P` <br> `Azure_MS-AZR-0052P` <br>| GPT-4o-mini: 200 K <br> GPT 3.5 Turbo Series: 200 K <br> GPT-4 series: 50 K |
+|`Azure for Students` | 1 K (all models) <br/>Exception o-series & GPT-4.1 & GPT 4.5 Preview: 0|
+| `MSDN` | GPT-4o-mini: 200 K <br/> GPT 3.5 Turbo Series: 200 K <br/> GPT-4 series: 50 K <br/>computer-use-preview: 8 K <br/> gpt-4o-realtime-preview: 1 K <br/> o-series: 0 <br/> GPT 4.5 Preview: 0 <br/> GPT-4.1: 50 K <br/> GPT-4.1-nano: 200 K  |
+|`Standard` | GPT-4o-mini: 200 K <br/> GPT 3.5 Turbo Series: 200 K <br/> GPT-4 series: 50 K <br/>computer-use-preview: 30 K <br/> o-series: 0 <br/> GPT 4.5 Preview: 0  <br/> GPT-4.1: 50 K <br/> GPT-4.1-nano: 200 K  |
+| `Azure_MS-AZR-0111P`  <br/> `Azure_MS-AZR-0035P` <br/> `Azure_MS-AZR-0025P` <br/> `Azure_MS-AZR-0052P` <br/>| GPT-4o-mini: 200 K <br/> GPT 3.5 Turbo Series: 200 K <br/> GPT-4 series: 50 K |
 | `CSP Integration Sandbox` <sup>*</sup> | All models: 0 |
-| `Lightweight trial`<br>`Free Trials`<br>`Azure Pass`  | All models: 0 |
+| `Lightweight trial`<br/>`Free Trials`<br/>`Azure Pass`  | All models: 0 |
 
 
 
@@ -336,8 +333,8 @@ az rest --method GET --uri "https://management.azure.com/subscriptions/{sub-id}?
 | Azure Pass             | `AzurePass_2014-09-01` |
 | Azure_MS-AZR-0111P            | `AzureInOpen_2014-09-01` |
 | Azure_MS-AZR-0150P  | `LightweightTrial_2016-09-01` |
-| Azure_MS-AZR-0035P <br> Azure_MS-AZR-0025P <br> Azure_MS-AZR-0052P <br>| `MPN_2014-09-01` |
-| Azure_MS-AZR-0023P <br> Azure_MS-AZR-0060P <br> Azure_MS-AZR-0148P <br> Azure_MS-AZR-0148G | `MSDNDevTest_2014-09-01`|
+| Azure_MS-AZR-0035P <br/> Azure_MS-AZR-0025P <br/> Azure_MS-AZR-0052P <br/>| `MPN_2014-09-01` |
+| Azure_MS-AZR-0023P <br/> Azure_MS-AZR-0060P <br/> Azure_MS-AZR-0148P <br/> Azure_MS-AZR-0148G | `MSDNDevTest_2014-09-01`|
 | Default | Any quota ID not listed in this table  |
 
 ### General best practices to remain within rate limits
@@ -361,8 +358,9 @@ You can view quota availability by region for your subscription in the [Azure AI
 
 Alternatively to view quota capacity by region for a specific model/version you can query the [capacity API](/rest/api/aiservices/accountmanagement/model-capacities/list) for your subscription. Provide a `subscriptionId`, `model_name`, and `model_version` and the API returns the available capacity for that model across all regions, and deployment types for your subscription.
 
-> [!NOTE]
-> Currently both the Azure AI Foundry portal and the capacity API return quota/capacity information for models that are [retired](./concepts/model-retirements.md) and no longer available.
+<Note>
+Currently both the Azure AI Foundry portal and the capacity API return quota/capacity information for models that are [retired](./concepts/model-retirements) and no longer available.
+</Note>
 
 [API Reference](/rest/api/aiservices/accountmanagement/model-capacities/list)
 
@@ -396,5 +394,5 @@ print(json.dumps(model_capacity, indent=2))
 
 ## Next steps
 
-Explore how to [manage quota](./how-to/quota.md) for your Azure OpenAI deployments.
-Learn more about the [underlying models that power Azure OpenAI](./concepts/models.md).
+Explore how to [manage quota](./how-to/quota) for your Azure OpenAI deployments.
+Learn more about the [underlying models that power Azure OpenAI](./concepts/models).

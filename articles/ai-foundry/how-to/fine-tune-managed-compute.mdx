@@ -1,23 +1,13 @@
 ---
-title: Fine-tune models using a managed compute with Azure AI Foundry portal (preview)
-titleSuffix: Azure AI Foundry
+title: "Fine-tune models using a managed compute with Azure AI Foundry portal (preview)"
 description: Learn how to fine-tune models using a managed compute with Azure AI Foundry.
-manager: scottpolly
-ms.service: azure-ai-foundry
-ms.topic: how-to
-ms.date: 04/25/2025
-ms.reviewer: vkann
-reviewer: kvijaykannan
-ms.author: mopeakande
-author: msakande
-ms.custom: references_regions
 
 #customer intent: As a data scientist using a managed compute, I want to learn how to fine-tune models to improve model performance for specific tasks. 
 ---
 
 # Fine-tune models using managed compute (preview)
 
-[!INCLUDE [feature-preview](../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview)]
 
 This article explains how to use a managed compute to fine-tune a model in the Azure AI Foundry portal. Fine-tuning involves adapting a pretrained model to a new, related task or domain. When you use a managed compute for fine-tuning, you use your computational resources to adjust training parameters such as learning rate, batch size, and number of training epochs to optimize the model's performance for a specific task. 
 
@@ -28,13 +18,13 @@ To improve model performance, you might consider fine-tuning a foundation model 
 
 ## Prerequisites
 
-[!INCLUDE [hub-only-prereq](../includes/hub-only-prereq.md)]
+[!INCLUDE [hub-only-prereq](../includes/hub-only-prereq)]
 
-- Azure role-based access controls (Azure RBAC) are used to grant access to operations in Azure AI Foundry portal. To perform the steps in this article, your user account must be assigned the __owner__ or __contributor__ role for the Azure subscription. For more information on permissions, see [Role-based access control in Azure AI Foundry portal](../concepts/rbac-azure-ai-foundry.md).
+- Azure role-based access controls (Azure RBAC) are used to grant access to operations in Azure AI Foundry portal. To perform the steps in this article, your user account must be assigned the __owner__ or __contributor__ role for the Azure subscription. For more information on permissions, see [Role-based access control in Azure AI Foundry portal](../concepts/rbac-azure-ai-foundry).
 
 ## Fine-tune a foundation model using managed compute
 
-[!INCLUDE [tip-left-pane](../includes/tip-left-pane.md)]
+[!INCLUDE [tip-left-pane](../includes/tip-left-pane)]
 
 1. Sign in to [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs).
 
@@ -48,7 +38,9 @@ To improve model performance, you might consider fine-tuning a foundation model 
 
     1. Select __Fine-tune__ on the model card to see the available fine-tune options. Some foundation models support only the __Managed compute__ option.
 
-    :::image type="content" source="../media/how-to/fine-tune-managed-compute/fine-tune-options.png" alt-text="Screenshot showing fine-tuning options for a foundation model in Azure AI Foundry." lightbox="../media/how-to/fine-tune-managed-compute/fine-tune-options.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/how-to/fine-tune-managed-compute/fine-tune-options.png)
+    </Frame>
 
 1. Select __Managed compute__ to use your personal compute resources. This action opens up the "Basic settings" page of a window for specifying the fine-tuning settings.
 
@@ -60,7 +52,9 @@ In this section, you go through the steps to configure fine-tuning for your mode
 
 1. Select the Azure Machine Learning compute cluster to use for fine-tuning the model. Fine-tuning runs on GPU compute. Ensure that you have sufficient compute quota for the compute SKUs you plan to use.
 
-    :::image type="content" source="../media/how-to/fine-tune-managed-compute/fine-tune-compute.png" alt-text="Screenshot showing settings for the compute to use for fine-tuning." lightbox="../media/how-to/fine-tune-managed-compute/fine-tune-compute.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/how-to/fine-tune-managed-compute/fine-tune-compute.png)
+    </Frame>
 
 1. Select **Next** to go to the "Training data" page. On this page, the "Task type" is preselected as **Chat completion**.
 
@@ -76,6 +70,6 @@ In this section, you go through the steps to configure fine-tuning for your mode
 
 ## Related Contents
 
-- [Fine-tune models with Azure AI Foundry](../concepts/fine-tuning-overview.md)
+- [Fine-tune models with Azure AI Foundry](../concepts/fine-tuning-overview)
 - [How to generate chat completions with Azure AI Foundry Models](../model-inference/how-to/use-chat-completions.md?context=/azure/ai-foundry/context/context)
-- [Featured models of Azure AI Foundry](../concepts/models-featured.md)
+- [Featured models of Azure AI Foundry](../concepts/models-featured)

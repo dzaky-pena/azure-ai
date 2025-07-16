@@ -1,28 +1,19 @@
 ---
-title: 'How to use the GPT-4o Realtime API for speech and audio with Azure OpenAI'
-titleSuffix: Azure OpenAI in Azure AI Foundry Models
+title: "'How to use the GPT-4o Realtime API for speech and audio with Azure OpenAI' in Azure AI Foundry Models"
 description: Learn how to use the GPT-4o Realtime API for speech and audio with Azure OpenAI.
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: how-to
-ms.date: 7/12/2025
-author: eric-urban
-ms.author: eur
-ms.custom: references_regions
-recommendations: false
 ---
 
 # How to use the GPT-4o Realtime API for speech and audio (Preview)
 
-[!INCLUDE [Feature preview](../includes/preview-feature.md)]
+[!INCLUDE [Feature preview](../includes/preview-feature)]
 
 Azure OpenAI GPT-4o Realtime API for speech and audio is part of the GPT-4o model family that supports low-latency, "speech in, speech out" conversational interactions. The GPT-4o Realtime API is designed to handle real-time, low-latency conversational interactions. Realtime API is a great fit for use cases involving live interactions between a user and a model, such as customer support agents, voice assistants, and real-time translators.
 
 Most users of the Realtime API need to deliver and receive audio from an end-user in real time, including applications that use WebRTC or a telephony system. The Realtime API isn't designed to connect directly to end user devices and relies on client integrations to terminate end user audio streams. 
 
 You can use the Realtime API via WebRTC or WebSocket to send audio input to the model and receive audio responses in real time. In most cases, we recommend using the WebRTC API for low-latency real-time audio streaming. For more information, see:
-- [Realtime API via WebRTC](./realtime-audio-webrtc.md)
-- [Realtime API via WebSockets](./realtime-audio-websockets.md)
+- [Realtime API via WebRTC](./realtime-audio-webrtc)
+- [Realtime API via WebSockets](./realtime-audio-websockets)
 
 ## Supported models
 
@@ -39,11 +30,11 @@ See the [models and versions documentation](../concepts/models.md#audio-models) 
 Before you can use GPT-4o real-time audio, you need:
 
 - An Azure subscription - <a href="https://azure.microsoft.com/free/cognitive-services" target="_blank">Create one for free</a>.
-- An Azure OpenAI resource created in a [supported region](#supported-models). For more information, see [Create a resource and deploy a model with Azure OpenAI](create-resource.md).
-- You need a deployment of the `gpt-4o-realtime-preview` or `gpt-4o-mini-realtime-preview` model in a supported region as described in the [supported models](#supported-models) section. You can deploy the model from the [Azure AI Foundry portal model catalog](../../../ai-foundry/how-to/model-catalog-overview.md) or from your project in Azure AI Foundry portal. 
+- An Azure OpenAI resource created in a [supported region](#supported-models). For more information, see [Create a resource and deploy a model with Azure OpenAI](create-resource).
+- You need a deployment of the `gpt-4o-realtime-preview` or `gpt-4o-mini-realtime-preview` model in a supported region as described in the [supported models](#supported-models) section. You can deploy the model from the [Azure AI Foundry portal model catalog](../../../ai-foundry/how-to/model-catalog-overview) or from your project in Azure AI Foundry portal. 
 
 Here are some of the ways you can get started with the GPT-4o Realtime API for speech and audio:
-- For steps to deploy and use the `gpt-4o-realtime-preview` or `gpt-4o-mini-realtime-preview` model, see [the real-time audio quickstart](../realtime-audio-quickstart.md).
+- For steps to deploy and use the `gpt-4o-realtime-preview` or `gpt-4o-mini-realtime-preview` model, see [the real-time audio quickstart](../realtime-audio-quickstart).
 - Try the [WebRTC via HTML and JavaScript example](./realtime-audio-webrtc.md#webrtc-example-via-html-and-javascript) to get started with the Realtime API via WebRTC.
 - [The Azure-Samples/aisearch-openai-rag-audio repo](https://github.com/Azure-Samples/aisearch-openai-rag-audio) contains an example of how to implement RAG support in applications that use voice as their user interface, powered by the GPT-4o realtime API for audio.
 
@@ -106,8 +97,9 @@ In the same [`response.create`](../realtime-audio-reference.md#realtimeclienteve
 
 When the server responds with a [`response.done`](../realtime-audio-reference.md#realtimeservereventresponsecreated) event, the response contains the metadata you provided. You can identify the corresponding response for the client-sent event via the `response.metadata` field.
 
-> [!IMPORTANT]
-> If you create any responses outside the default conversation, be sure to always check the `response.metadata` field to help you identify the corresponding response for the client-sent event. You should even check the `response.metadata` field for responses that are part of the default conversation. That way, you can ensure that you're handling the correct response for the client-sent event.
+<Info>
+If you create any responses outside the default conversation, be sure to always check the `response.metadata` field to help you identify the corresponding response for the client-sent event. You should even check the `response.metadata` field for responses that are part of the default conversation. That way, you can ensure that you're handling the correct response for the client-sent event.
+</Info>
 
 ### Custom context for out-of-band responses
 
@@ -162,19 +154,9 @@ The session relies on caller-initiated [`input_audio_buffer.commit`](../realtime
 - The server responds by sending the [`input_audio_buffer.committed`](../realtime-audio-reference.md#realtimeservereventinputaudiobuffercommitted) event.
 - The server responds by sending the [`conversation.item.created`](../realtime-audio-reference.md#realtimeservereventconversationitemcreated) event.
 
-:::image type="content" source="../media/how-to/real-time/input-audio-buffer-client-managed.png" alt-text="Diagram of the Realtime API input audio sequence without server decision mode." lightbox="../media/how-to/real-time/input-audio-buffer-client-managed.png":::
-
-<!--
-sequenceDiagram
-  participant Client as Client
-  participant Server as Server
-  Client->>Server: input_audio_buffer.append
-  Server->>Server: Append audio to buffer
-  Client->>Server: input_audio_buffer.commit
-  Server->>Server: Commit audio buffer
-  Server->>Client: input_audio_buffer.committed
-  Server->>Client: conversation.item.created
--->
+<Frame>
+    ![](/images/ai-foundry/openai/media/how-to/real-time/input-audio-buffer-client-managed.png)
+</Frame>
 
 ### Server decision mode
 
@@ -188,21 +170,9 @@ In this case, the server evaluates user audio from the client (as sent via [`inp
 - The server commits the input audio buffer by sending the [`input_audio_buffer.committed`](../realtime-audio-reference.md#realtimeservereventinputaudiobuffercommitted) event.
 - The server sends the [`conversation.item.created`](../realtime-audio-reference.md#realtimeservereventconversationitemcreated) event with the user message item created from the audio buffer.
 
-:::image type="content" source="../media/how-to/real-time/input-audio-buffer-server-vad.png" alt-text="Diagram of the real time API input audio sequence with server decision mode." lightbox="../media/how-to/real-time/input-audio-buffer-server-vad.png":::
-
-
-<!-- 
-sequenceDiagram
-    participant Client as Client
-    participant Server as Server
-    Server->>Client: input_audio_buffer.speech_started
-    Client->>Server: input_audio_buffer.append (optional)
-    Server->>Server: Append audio to buffer
-    Server->>Client: input_audio_buffer.speech_stopped
-    Server->>Server: Commit audio buffer
-    Server->>Client: input_audio_buffer.committed
-    Server->>Client: conversation.item.created
--->
+<Frame>
+    ![](/images/ai-foundry/openai/media/how-to/real-time/input-audio-buffer-server-vad.png)
+</Frame>
 
 ### Semantic VAD
 
@@ -246,23 +216,9 @@ Optionally, the client can truncate or delete items in the conversation:
 - The client deletes an item in the conversation with a [`conversation.item.delete`](../realtime-audio-reference.md#realtimeclienteventconversationitemdelete) event.
 - The server [`conversation.item.deleted`](../realtime-audio-reference.md#realtimeservereventconversationitemdeleted) event is returned to sync the client and server state.
 
-:::image type="content" source="../media/how-to/real-time/conversation-item-sequence.png" alt-text="Diagram of the real-time API conversation item sequence." lightbox="../media/how-to/real-time/conversation-item-sequence.png":::
-
-<!-- 
-sequenceDiagram
-  participant Client as Client
-  participant Server as Server
-  Server->>Client: conversation.created
-  Client->>Server: conversation.item.create
-  Server->>Server: Create item
-  Server->>Client: conversation.item.created
-  Client->>Server: conversation.item.truncate
-  Server->>Server: Truncate item
-  Server->>Client: conversation.item.truncated
-  Client->>Server: conversation.item.delete
-  Server->>Server: Delete item
-  Server->>Client: conversation.item.deleted
--->
+<Frame>
+    ![](/images/ai-foundry/openai/media/how-to/real-time/conversation-item-sequence.png)
+</Frame>
 
 ### Response generation
 
@@ -447,6 +403,6 @@ Eventually, the server sends a [`response.done`](../realtime-audio-reference.md#
 
 ## Related content
 
-* Try the [real-time audio quickstart](../realtime-audio-quickstart.md)
-* See the [Realtime API reference](../realtime-audio-reference.md)
-* Learn more about Azure OpenAI [quotas and limits](../quotas-limits.md)
+* Try the [real-time audio quickstart](../realtime-audio-quickstart)
+* See the [Realtime API reference](../realtime-audio-reference)
+* Learn more about Azure OpenAI [quotas and limits](../quotas-limits)

@@ -1,18 +1,9 @@
 ---
-title: How to get started with Azure AI Foundry SDK
-titleSuffix: Azure AI Foundry
+title: "How to get started with Azure AI Foundry SDK"
 description: This article provides an overview of the Azure AI Foundry SDK and how to get started using it.
-manager: scottpolly
-ms.service: azure-ai-foundry
 ms.custom:
   - build-2024
   - ignite-2024
-ms.topic: how-to
-ms.date: 07/01/2025
-ms.reviewer: dantaylo
-ms.author: sgilley
-author: sdgilley
-zone_pivot_groups: foundry-sdk-overview-languages
 # customer intent: I want to learn how to use the Azure AI Foundry SDK to build AI applications on Azure.
 ---
 
@@ -26,14 +17,15 @@ The Azure AI Foundry SDK is a comprehensive toolchain designed to simplify the d
 
 The Azure AI Foundry SDK is a set of client libraries and services designed to work together. 
 
-> [!NOTE]
-> This article applies to a **[!INCLUDE [fdp](../../includes/fdp-project-name.md)]**. The code shown here doesn't work for a **[!INCLUDE [hub](../../includes/hub-project-name.md)]**. For more information, see [Types of projects](../../what-is-azure-ai-foundry.md#project-types).
+<Note>
+This article applies to a **[!INCLUDE [fdp](../../includes/fdp-project-name)]**. The code shown here doesn't work for a **[!INCLUDE [hub](../../includes/hub-project-name)]**. For more information, see [Types of projects](../../what-is-azure-ai-foundry.md#project-types).
+</Note>
 
 ## Prerequisites
 
 * An Azure subscription. If you don't have one, create a [free account](https://azure.microsoft.com/free/).
-* [Create a [!INCLUDE [fdp-project-name](../../includes/fdp-project-name.md)]](../create-projects.md?pivots=fdp-project) if you don't have one already.
-* [!INCLUDE [find-endpoint](../../includes/find-endpoint.md)]
+* [Create a [!INCLUDE [fdp-project-name](../../includes/fdp-project-name)]](../create-projects.md?pivots=fdp-project) if you don't have one already.
+* [!INCLUDE [find-endpoint](../../includes/find-endpoint)]
 * Sign in with the Azure CLI using the same account that you use to access your project:
 
     ```bash
@@ -44,7 +36,7 @@ The Azure AI Foundry SDK is a set of client libraries and services designed to w
 
 The Azure AI Foundry Projects client library is a unified library that enables you to use multiple client libraries together by connecting to a single project endpoint.
 
-::: zone pivot="programming-language-python"
+<Tab title="Python">
 
 * Install the project client library 
 
@@ -63,11 +55,11 @@ The Azure AI Foundry Projects client library is a unified library that enables y
       credential=DefaultAzureCredential())
     ```
 
-::: zone-end
+</Tab>
 
-::: zone pivot="programming-language-java"
+<Tab title="Java">
 
-[!INCLUDE [feature-preview](../../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../../includes/feature-preview)]
 
 * Add these packages to your installation (preview):
     * `com.azure.ai.projects`
@@ -88,11 +80,11 @@ The Azure AI Foundry Projects client library is a unified library that enables y
         .buildClient();
     ```
 
-::: zone-end
+</Tab>
 
-::: zone pivot="programming-language-javascript"
+<Tab title="JavaScript">
 
-[!INCLUDE [feature-preview](../../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../../includes/feature-preview)]
 
 * Install dependencies (preview):
 
@@ -111,9 +103,9 @@ The Azure AI Foundry Projects client library is a unified library that enables y
     const project = new AIProjectClient(endpoint, new DefaultAzureCredential());
     ```
 
-::: zone-end
+</Tab>
 
-::: zone pivot="programming-language-csharp"
+<Tab title="C#">
 
 * Install packages:
 
@@ -149,48 +141,32 @@ The Azure AI Foundry Projects client library is a unified library that enables y
     );
     ```
 
-::: zone-end
+</Tab>
 
 <a name="azure-ai-foundry-agent-service"></a>
 * Using the project endpoint, you can:
-    - [Use Foundry Model](../../quickstarts/get-started-code.md), including Azure OpenAI
+    - [Use Foundry Model](../../quickstarts/get-started-code), including Azure OpenAI
     - [Use Foundry Agent Service](../../../ai-services/agents/quickstart.md?context=/azure/ai-foundry/context/context)
     - [Run evaluations in the cloud](../../../ai-services/openai/how-to/evaluations.md?context=/azure/ai-foundry/context/context)
-    - [Enable tracing for your app](../../concepts/trace.md) 
+    - [Enable tracing for your app](../../concepts/trace) 
     - Retrieve endpoints and keys for external resource connections
 
 ## Azure AI Services client libraries
 
 To use Azure AI services, you can use the following client libraries with the endpoints listed on the project homepage.
 
-<!-- ::: zone pivot="programming-language-cpp"
-[!INCLUDE [C++ include](../../includes/sdk/cpp.md)]
-::: zone-end -->
+<Tab title="C#">
+[!INCLUDE [C# include](../../includes/sdk/csharp)]
+</Tab>
 
-::: zone pivot="programming-language-csharp"
-[!INCLUDE [C# include](../../includes/sdk/csharp.md)]
-::: zone-end
+<Tab title="Java">
+[!INCLUDE [Java include](../../includes/sdk/java)]
+</Tab>
 
-<!-- ::: zone pivot="programming-language-go"
-[!INCLUDE [Go include](../../includes/sdk/go.md)]
-::: zone-end -->
+<Tab title="JavaScript">
+[!INCLUDE [JavaScript include](../../includes/sdk/javascript)]
+</Tab>
 
-::: zone pivot="programming-language-java"
-[!INCLUDE [Java include](../../includes/sdk/java.md)]
-::: zone-end
-
-::: zone pivot="programming-language-javascript"
-[!INCLUDE [JavaScript include](../../includes/sdk/javascript.md)]
-::: zone-end
-
-<!-- ::: zone pivot="programming-language-objectivec"
-[!INCLUDE [ObjectiveC include](../../includes/sdk/objective-c.md)]
-::: zone-end -->
-
-::: zone pivot="programming-language-python"
-[!INCLUDE [Python include](./../../includes/sdk/python.md)]
-::: zone-end
-
-<!-- ::: zone pivot="programming-language-swift"
-[!INCLUDE [Swift include](../../includes/sdk/swift.md)]
-::: zone-end -->
+<Tab title="Python">
+[!INCLUDE [Python include](./../../includes/sdk/python)]
+</Tab>

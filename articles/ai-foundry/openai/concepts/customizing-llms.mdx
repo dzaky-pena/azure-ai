@@ -1,14 +1,6 @@
 ---
-title: Azure OpenAI in Azure AI Foundry Models getting started with customizing a large language model (LLM)
-titleSuffix: Azure OpenAI
+title: "Azure OpenAI in Azure AI Foundry Models getting started with customizing a large language model (LLM)"
 description: Learn more about the concepts behind customizing an LLM with Azure OpenAI.
-ms.topic: conceptual
-ms.date: 07/02/2025
-ms.service: azure-ai-openai
-manager: nitinme
-author: mrbullwinkle
-ms.author: mbullwin
-recommendations: false
 ---
 
 # Getting started with customizing a large language model (LLM)
@@ -19,7 +11,7 @@ There are several techniques for adapting a pre-trained language model to suit a
 
 ### Definition
 
-[Prompt engineering](./prompt-engineering.md) is a technique that is both art and science, which involves designing prompts for generative AI models. This process utilizes in-context learning ([zero shot and few shot](./prompt-engineering.md#examples)) and, with iteration, improves accuracy and relevancy in responses, optimizing the performance of the model.
+[Prompt engineering](./prompt-engineering) is a technique that is both art and science, which involves designing prompts for generative AI models. This process utilizes in-context learning ([zero shot and few shot](./prompt-engineering.md#examples)) and, with iteration, improves accuracy and relevancy in responses, optimizing the performance of the model.
 
 ### Illustrative use cases
 
@@ -35,8 +27,8 @@ A Marketing Manager at an environmentally conscious company can use prompt engin
 
 ### Getting started
 
-- [Prompt engineering techniques](./prompt-engineering.md)
-- [System messages](./advanced-prompt-engineering.md)
+- [Prompt engineering techniques](./prompt-engineering)
+- [System messages](./advanced-prompt-engineering)
 - [15 tips to become a better prompt engineer for generative AI](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/15-tips-to-become-a-better-prompt-engineer-for-generative-ai/ba-p/3882935)
 - [The basics of prompt engineering (video)](https://www.youtube.com/watch?v=e7w6QV1NX1c)
 
@@ -44,7 +36,7 @@ A Marketing Manager at an environmentally conscious company can use prompt engin
 
 ### Definition 
 
-[RAG (Retrieval Augmented Generation)](../../../ai-foundry/concepts/retrieval-augmented-generation.md) is a method that integrates external data into a Large Language Model prompt to generate relevant responses. This approach is particularly beneficial when using a large corpus of unstructured text based on different topics. It allows for answers to be grounded in the organization’s knowledge base (KB), providing a more tailored and accurate response.
+[RAG (Retrieval Augmented Generation)](../../../ai-foundry/concepts/retrieval-augmented-generation) is a method that integrates external data into a Large Language Model prompt to generate relevant responses. This approach is particularly beneficial when using a large corpus of unstructured text based on different topics. It allows for answers to be grounded in the organization’s knowledge base (KB), providing a more tailored and accurate response.
 
 RAG is also advantageous when answering questions based on an organization’s private data or when the public data that the model was trained on might have become outdated. This helps ensure that the responses are always up-to-date and relevant, regardless of the changes in the data landscape.
 
@@ -58,11 +50,11 @@ A corporate HR department is looking to provide an intelligent assistant that an
 
 - RAG is helpful when there is a need to answer questions based on private proprietary data.
 
-- RAG is helpful when you might want questions answered that are recent (for example, before the cutoff date of when the [model version](./models.md) was last trained).
+- RAG is helpful when you might want questions answered that are recent (for example, before the cutoff date of when the [model version](./models) was last trained).
 
 ### Getting started
 
-- [Retrieval Augmented Generation in Azure AI Foundry portal](../../../ai-foundry/concepts/retrieval-augmented-generation.md)
+- [Retrieval Augmented Generation in Azure AI Foundry portal](../../../ai-foundry/concepts/retrieval-augmented-generation)
 - [Retrieval Augmented Generation (RAG) in Azure AI Search](/azure/search/retrieval-augmented-generation-overview)
 - [Retrieval Augmented Generation using Azure Machine Learning prompt flow (preview)](/azure/machine-learning/concept-retrieval-augmented-generation)
 
@@ -70,7 +62,7 @@ A corporate HR department is looking to provide an intelligent assistant that an
 
 ### Definition
 
-[Fine-tuning](../how-to/fine-tuning.md), specifically [supervised fine-tuning](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/fine-tuning-now-available-with-azure-openai-service/ba-p/3954693?lightbox-message-images-3954693=516596iC5D02C785903595A) in this context, is an iterative process that adapts an existing large language model to a provided training set in order to improve performance, teach the model new skills, or reduce latency. This approach is used when the model needs to learn and generalize over specific topics, particularly when these topics are generally small in scope.
+[Fine-tuning](../how-to/fine-tuning), specifically [supervised fine-tuning](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/fine-tuning-now-available-with-azure-openai-service/ba-p/3954693?lightbox-message-images-3954693=516596iC5D02C785903595A) in this context, is an iterative process that adapts an existing large language model to a provided training set in order to improve performance, teach the model new skills, or reduce latency. This approach is used when the model needs to learn and generalize over specific topics, particularly when these topics are generally small in scope.
 
 Fine-tuning requires the use of high-quality training data, in a [special example based format](../how-to/fine-tuning.md#example-file-format), to create the new fine-tuned Large Language Model. By focusing on specific topics, fine-tuning allows the model to provide more accurate and relevant responses within those areas of focus.
 
@@ -96,7 +88,7 @@ They fine-tune GPT-4o mini with hundreds of requests and correct responses and p
 
 ### Getting started
 
-- [When to use Azure OpenAI fine-tuning](./fine-tuning-considerations.md)
-- [Customize a model with fine-tuning](../how-to/fine-tuning.md)
-- [Azure OpenAI GPT-4o Turbo fine-tuning tutorial](../tutorials/fine-tune.md)
+- [When to use Azure OpenAI fine-tuning](./fine-tuning-considerations)
+- [Customize a model with fine-tuning](../how-to/fine-tuning)
+- [Azure OpenAI GPT-4o Turbo fine-tuning tutorial](../tutorials/fine-tune)
 - [To fine-tune or not to fine-tune? (Video)](https://www.youtube.com/watch?v=0Jo-z-MFxJs)

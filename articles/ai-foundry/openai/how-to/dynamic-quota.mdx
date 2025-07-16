@@ -1,12 +1,6 @@
 ---
-title: Azure OpenAI in Azure AI Foundry Models dynamic quota
+title: "Azure OpenAI in Azure AI Foundry Models dynamic quota"
 description: Learn how to use Azure OpenAI dynamic quota
-author: mrbullwinkle
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: how-to
-ms.date: 04/30/2025
-ms.author: mbullwin
 ---
 
 
@@ -40,8 +34,9 @@ The Azure OpenAI backend decides if, when, and how much extra dynamic quota is a
 
 * There's no extra cost to turn on dynamic quota on a deployment, though the increased throughput could ultimately result in increased cost depending on the amount of traffic your deployment receives.
 
-> [!NOTE]
-> With dynamic quota, there is no call enforcement of a "ceiling" quota or throughput. Azure OpenAI will process as many requests as it can above your baseline quota. If you need to control the rate of spend even when quota is less constrained, your application code needs to hold back requests accordingly.
+<Note>
+With dynamic quota, there is no call enforcement of a "ceiling" quota or throughput. Azure OpenAI will process as many requests as it can above your baseline quota. If you need to control the rate of spend even when quota is less constrained, your application code needs to hold back requests accordingly.
+</Note>
 
 ## How to use dynamic quota
 
@@ -69,7 +64,7 @@ dynamic quota is less likely to be engaged for your deployment if it runs in hea
 
 ## Next steps
 
-* Learn more about how [quota works](./quota.md).
-* Learn more about [monitoring Azure OpenAI](./monitor-openai.md).
+* Learn more about how [quota works](./quota).
+* Learn more about [monitoring Azure OpenAI](./monitor-openai).
 
 

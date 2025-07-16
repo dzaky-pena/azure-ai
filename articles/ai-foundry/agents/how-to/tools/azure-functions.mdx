@@ -1,15 +1,6 @@
 ---
-title: 'Grounding with Azure Functions code samples'
-titleSuffix: Azure AI Foundry
+title: "Grounding with Azure Functions code samples"
 description: Find code samples to enable Azure AI Agents to use Azure Functions.
-services: azure-ai-agent-service
-manager: nitinme
-ms.service: azure-ai-agent-service
-ms.topic: how-to
-ms.date: 04/15/2025
-author: aahill
-ms.author: aahi
-ms.custom: azure-ai-agents
 ---
 
 # Use Azure Functions with Azure AI Foundry Agent Service
@@ -28,8 +19,9 @@ To use all features of function calling including parallel functions, you need t
 
 * [Azure Functions Core Tools v4.x](/azure/azure-functions/functions-run-local)
 * [A deployed agent with the standard setup](../../environment-setup.md#choose-your-setup)
-    > [!NOTE] 
-    > The basic agent setup is not supported.
+    <Note>
+    The basic agent setup is not supported.
+    </Note>
 * [Azurite](https://github.com/Azure/Azurite)
 
 ## Prepare your local environment
@@ -71,8 +63,9 @@ azd provision
 
 ### Create local.settings.json 
 
-> [!NOTE]
-> This file should be in the same folder as `host.json`. It is automatically created if you ran `azd provision`.
+<Note>
+This file should be in the same folder as `host.json`. It is automatically created if you ran `azd provision`.
+</Note>
 
 ```json
 {
@@ -117,8 +110,9 @@ After publish completes successfully, `azd` provides you with the URL endpoints 
 
 You can run the `azd up` command as many times as you need to both provision your Azure resources and deploy code updates to your function app.
 
-> [!NOTE]
-> Deployed code files are always overwritten by the latest deployment package.
+<Note>
+Deployed code files are always overwritten by the latest deployment package.
+</Note>
 
 ## Clean up resources
 

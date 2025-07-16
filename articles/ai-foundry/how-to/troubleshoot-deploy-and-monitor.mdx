@@ -1,24 +1,15 @@
 ---
-title: How to troubleshoot your deployments and monitors in Azure AI Foundry portal
-titleSuffix: Azure AI Foundry
+title: "How to troubleshoot your deployments and monitors in Azure AI Foundry portal"
 description: This article provides instructions on how to troubleshoot your deployments and monitors in Azure AI Foundry portal.
-manager: scottpolly
-ms.service: azure-ai-foundry
 ms.custom:
   - ignite-2023
   - build-2024
   - ignite-2024
-ms.topic: how-to
-ms.date: 04/23/2025
-ms.reviewer: fasantia
-reviewer: santiagxf
-ms.author: mopeakande
-author: msakande
 ---
 
 # How to troubleshoot your deployments and monitors in Azure AI Foundry portal
 
-[!INCLUDE [feature-preview](../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview)]
 
 This article provides instructions on how to troubleshoot your deployments and monitors in Azure AI Foundry portal. 
 
@@ -39,7 +30,7 @@ For more information about managing quota, see:
 
 - [Quota for deploying and inferencing a model](../how-to/deploy-models-openai.md#quota-for-deploying-and-inferencing-a-model)
 - [Manage Azure OpenAI in Azure AI Foundry Models quota documentation](/azure/ai-services/openai/how-to/quota?tabs=rest)
-- [Manage and increase quotas for resources with Azure AI Foundry](quota.md)
+- [Manage and increase quotas for resources with Azure AI Foundry](quota)
 
 ### Error: `ToolLoadError`
 
@@ -47,7 +38,7 @@ After you deployed a prompt flow, you got the error message: "Tool load failed i
 
 To fix this error, take the following steps to manually assign the ML Data scientist role to your endpoint. It might take several minutes for the new role to take effect.
 
-[!INCLUDE [uses-hub-only](../includes/uses-hub-only.md)]
+[!INCLUDE [uses-hub-only](../includes/uses-hub-only)]
 
 1. Go to your project in [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs) and select **Management center** from the left pane to open the settings page.
 1. Under the **Project** heading, select **Overview**.
@@ -77,7 +68,7 @@ This error message refers to a situation where the deployment build failed. You 
 
 __Option 1: Find the build log for the Azure default blob storage.__
 
-[!INCLUDE [uses-hub-only](../includes/uses-hub-only.md)]
+[!INCLUDE [uses-hub-only](../includes/uses-hub-only)]
 
 1. Go to your project in [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs) and select **Management center** from the left pane to open the settings page.
 1. Under the **Hub** heading, select **Overview**.
@@ -88,8 +79,9 @@ __Option 1: Find the build log for the Azure default blob storage.__
 
 __Option 2: Find the build log within Azure Machine Learning studio.__
 
-> [!NOTE]
-> This option to access the build log uses [Azure Machine Learning studio](https://ml.azure.com), which is a different portal than [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs).
+<Note>
+This option to access the build log uses [Azure Machine Learning studio](https://ml.azure.com), which is a different portal than [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs).
+</Note>
 
 1. Go to [Azure Machine Learning studio](https://ml.azure.com).
 2. Select **Endpoints** from the left pane.
@@ -113,5 +105,5 @@ Playground only supports select models, such as Azure OpenAI models and Llama-2.
 
 ## Related content
 
-- [Azure AI Foundry overview](../what-is-azure-ai-foundry.md)
+- [Azure AI Foundry overview](../what-is-azure-ai-foundry)
 - [Azure AI FAQ](../faq.yml)

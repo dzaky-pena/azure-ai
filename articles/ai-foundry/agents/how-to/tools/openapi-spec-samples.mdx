@@ -1,37 +1,32 @@
 ---
 title: "OpenAPI spec code samples"
-titleSuffix: Azure AI Foundry
 description: Find code samples to use OpenAPI tools with agents.
-author: aahill
-ms.author: aahi
-manager: nitinme
-ms.date: 07/02/2025
-ms.service: azure-ai-agent-service
-ms.topic: how-to
-ms.custom:
-  - azure-ai-agents-code
-  - build-2025
-zone_pivot_groups: selection-openapi-function
 ---
 
 # How to use the OpenAPI spec tool
 
 Use this article to find step-by-step instructions and code samples for using OpenAPI based tools.
 
-:::zone pivot="portal"
+<Tab title="Azure AI Foundry portal">
 
 1. Go to the [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs). in the **Agents** screen or **Agent playground**, select your agent.
 1. Scroll down the **Setup** pane to **action**. Then select **Add**.
 
-    :::image type="content" source="../../media\tools\action-tools.png" alt-text="A screenshot showing the available tool categories in the Azure AI Foundry portal." lightbox="../../media\tools\action-tools.png":::
-   
+    <Frame>
+      ![](/images/ai-foundry/agents/media/tools/action-tools.png)
+    </Frame>
+
 1. Select **OpenAPI 3.0 specified tool**.
 
-    :::image type="content" source="../../media\tools\action-tools-list.png" alt-text="A screenshot showing the available action tools in the Azure AI Foundry portal." lightbox="../../media\tools\action-tools-list.png":::
-   
+    <Frame>
+      ![](/images/ai-foundry/agents/media/tools/action-tools-list.png)
+    </Frame>
+
 1. Give your tool a name (required) and a description (optional). The description will be used by the model to decide when and how to use the tool.
 
-   :::image type="content" source="../../media\tools\open-api-details.png" alt-text="A screenshot showing the openAPI tool details in the Azure AI Foundry portal." lightbox="../../media\tools\open-api-details.png":::
+    <Frame>
+      ![](/images/ai-foundry/agents/media/tools/open-api-details.png)
+    </Frame>
 
 1. Select **Next** and select your authentication method.
    1. If you choose `connection`, you need to select the [custom connection](./openapi-spec.md#authenticating-with-api-key) with an API key.
@@ -41,9 +36,9 @@ Use this article to find step-by-step instructions and code samples for using Op
 
 1. Review and add the tool to your agent.
 
-:::zone-end
+</Tab>
 
-:::zone pivot="python"
+<Tab title="Python">
 
 ## Initialization
 The code begins by setting up the necessary imports and initializing the AI Project client:
@@ -168,10 +163,10 @@ After the interaction is complete, the script performs cleanup by deleting the c
             print(f"Message ID: {msg.id}, Role: {msg.role}, Content: {msg.content}")
 ```
 
-:::zone-end
+</Tab>
 
 
-:::zone pivot="javascript"
+<Tab title="JavaScript">
 
 
 ## Create a project client
@@ -272,9 +267,9 @@ await client.deleteAgent(agent.id);
 console.log(`Deleted agent, agent ID: ${agent.id}`);
 ```
 
-:::zone-end
+</Tab>
 
-:::zone pivot="csharp"
+<Tab title="C#">
 
 ## Configure client and OpenAPI tool
 First, retrieve configuration details and create a `PersistentAgentsClient`, then define the `OpenApiToolDefinition` using the OpenAPI specification. You can find an example OpenAPI spec on [GitHub](https://github.com/azure-ai-foundry/foundry-samples/blob/main/samples/microsoft/python/getting-started-agents/openapi/weather_openapi.json).
@@ -378,9 +373,9 @@ client.Threads.DeleteThread(thread.Id);
 client.Administration.DeleteAgent(agent.Id);
 ```
 
-:::zone-end
+</Tab>
 
-:::zone pivot="rest-api"
+<Tab title="REST API">
 
 Follow the [REST API Quickstart](../../quickstart.md?pivots=rest-api#api-call-information) to set the right values for the environment variables `AGENT_TOKEN`, `AZURE_AI_FOUNDRY_PROJECT_ENDPOINT` and `API_VERSION`.
 
@@ -523,4 +518,4 @@ curl --request GET \
   -H "Authorization: Bearer $AGENT_TOKEN"
 ```
 
-:::zone-end
+</Tab>

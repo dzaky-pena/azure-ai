@@ -1,34 +1,28 @@
 ---
-title: Index Lookup tool for flows in Azure AI Foundry portal
-titleSuffix: Azure AI Foundry
+title: "Index Lookup tool for flows in Azure AI Foundry portal"
 description: This article introduces you to the Index Lookup tool for flows in Azure AI Foundry portal.
-manager: scottpolly
-ms.service: azure-ai-foundry
 ms.custom:
   - build-2024
-ms.topic: reference
-ms.date: 6/30/2025
-ms.reviewer: none
-ms.author: lagayhar
-author: lgayhardt
 ms.collection: ce-skilling-ai-copilot, ce-skilling-fresh-tier1
 ms.update-cycle: 180-days
 ---
 
 # Index Lookup tool for Azure AI Foundry
 
-[!INCLUDE [feature-preview](../../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../../includes/feature-preview)]
 
 The prompt flow Index Lookup tool enables the use of common vector indices (such as Azure AI Search, Faiss, and Pinecone) for retrieval augmented generation in prompt flow. The tool automatically detects the indices in the workspace and allows the selection of the index to be used in the flow.
 
 ## Build with the Index Lookup tool
 
-1. Create or open a flow in [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs). For more information, see [Create a flow](../flow-develop.md).
+1. Create or open a flow in [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs). For more information, see [Create a flow](../flow-develop).
 1. Select **+ More tools** > **Index Lookup** to add the Index Lookup tool to your flow.
 
-    :::image type="content" source="../../media/prompt-flow/configure-index-lookup-tool.png" alt-text="Screenshot that shows the Index Lookup tool added to a flow in Azure AI Foundry portal." lightbox="../../media/prompt-flow/configure-index-lookup-tool.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/prompt-flow/configure-index-lookup-tool.png)
+    </Frame>
 
-1. Enter values for the Index Lookup tool [input parameters](#inputs). The large language model [(LLM) tool](llm-tool.md) can generate the vector input.
+1. Enter values for the Index Lookup tool [input parameters](#inputs). The large language model [(LLM) tool](llm-tool) can generate the vector input.
 1. Add more tools to your flow, as needed. Or select **Run** to run the flow.
 1. To learn more about the returned output, see the [Outputs table](#outputs).
 
@@ -145,4 +139,4 @@ The following JSON format response is an example returned by the tool that inclu
 
 ## Related content
 
-- [Learn more about how to create a flow](../flow-develop.md)
+- [Learn more about how to create a flow](../flow-develop)

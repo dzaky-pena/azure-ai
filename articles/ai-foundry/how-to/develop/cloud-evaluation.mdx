@@ -1,26 +1,18 @@
 ---
-title: Cloud Evaluation with the Azure AI Foundry SDK
-titleSuffix: Azure AI Foundry
+title: "Cloud Evaluation with the Azure AI Foundry SDK"
 description: This article provides instructions on how to evaluate a generative AI application in the cloud.
-manager: scottpolly
-ms.service: azure-ai-foundry
 ms.custom:
   - references_regions
   - ignite-2024
-ms.topic: how-to
-ms.date: 05/19/2025
-ms.reviewer: changliu2
-ms.author: lagayhar
-author: lgayhardt
 ---
 
 # Run evaluations in the cloud by using the Azure AI Foundry SDK (preview)
 
-[!INCLUDE [feature-preview](../../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../../includes/feature-preview)]
 
-The Azure AI Evaluation SDK supports running evaluations locally on your own machine and in the cloud. For example, after you run local evaluations on small test data to help assess your generative AI application prototypes, you can move into pre-deployment testing and run evaluations on a large dataset. Evaluating your applications in the cloud frees you from managing your local compute infrastructure. It also enables you to integrate evaluations as tests into your continuous integration and continuous delivery (CI/CD) pipelines. After deployment, you can choose to [continuously evaluate](../online-evaluation.md) your applications for post-deployment monitoring.
+The Azure AI Evaluation SDK supports running evaluations locally on your own machine and in the cloud. For example, after you run local evaluations on small test data to help assess your generative AI application prototypes, you can move into pre-deployment testing and run evaluations on a large dataset. Evaluating your applications in the cloud frees you from managing your local compute infrastructure. It also enables you to integrate evaluations as tests into your continuous integration and continuous delivery (CI/CD) pipelines. After deployment, you can choose to [continuously evaluate](../online-evaluation) your applications for post-deployment monitoring.
 
-In this article, you learn how to run evaluations in the cloud (preview) in pre-deployment testing on a test dataset. When you use the Azure AI Projects SDK, evaluation results are automatically logged into your Azure AI project for better observability. This feature supports all Microsoft-curated [built-in evaluators](../../concepts/observability.md#what-are-evaluators) and your own [custom evaluators](../../concepts/evaluation-evaluators/custom-evaluators.md). Your evaluators can be located in the [Evaluator library](../evaluate-generative-ai-app.md#view-and-manage-the-evaluators-in-the-evaluator-library) and have the same project-scope role-based access control (RBAC).
+In this article, you learn how to run evaluations in the cloud (preview) in pre-deployment testing on a test dataset. When you use the Azure AI Projects SDK, evaluation results are automatically logged into your Azure AI project for better observability. This feature supports all Microsoft-curated [built-in evaluators](../../concepts/observability.md#what-are-evaluators) and your own [custom evaluators](../../concepts/evaluation-evaluators/custom-evaluators). Your evaluators can be located in the [Evaluator library](../evaluate-generative-ai-app.md#view-and-manage-the-evaluators-in-the-evaluator-library) and have the same project-scope role-based access control (RBAC).
 
 ## Prerequisites
 
@@ -30,7 +22,7 @@ In this article, you learn how to run evaluations in the cloud (preview) in pre-
 
 If this is your first time running evaluations and logging it to your Azure AI Foundry project, you might need to do a few additional steps:
 
-1. Create and connect your storage account to your Azure AI Foundry project at the resource level. There are two ways you can do this. You can [use a Bicep template](https://github.com/azure-ai-foundry/foundry-samples/blob/main/samples/microsoft/infrastructure-setup/01-connections/connection-storage-account.bicep), which provisions and connects a storage account to your Foundry project with key authentication. You can also [manually create and provision access](../evaluations-storage-account.md) to your storage account in the Azure portal.
+1. Create and connect your storage account to your Azure AI Foundry project at the resource level. There are two ways you can do this. You can [use a Bicep template](https://github.com/azure-ai-foundry/foundry-samples/blob/main/samples/microsoft/infrastructure-setup/01-connections/connection-storage-account.bicep), which provisions and connects a storage account to your Foundry project with key authentication. You can also [manually create and provision access](../evaluations-storage-account) to your storage account in the Azure portal.
 1. Make sure the connected storage account has access to all projects.
 1. If you connected your storage account with Microsoft Entra ID, make sure to give managed identity **Storage Blob Data Owner** permissions to both your account and the Foundry project resource in the Azure portal.
 
@@ -42,8 +34,9 @@ If this is your first time running evaluations and logging it to your Azure AI F
    uv install azure-ai-projects azure-identity
    ```
 
-   > [!NOTE]
-   > For more detailed information, see [REST API Reference Documentation](/rest/api/aifoundry/aiprojects/evaluations).
+   <Note>
+   For more detailed information, see [REST API Reference Documentation](/rest/api/aifoundry/aiprojects/evaluations).
+   </Note>
 
 2. Set your environment variables for your Azure AI Foundry resources:
 
@@ -151,8 +144,9 @@ print("Status:", evaluation_response.status)
 
 ## Specify custom evaluators
 
-> [!NOTE]
-> Azure AI Foundry projects aren't supported for this feature. Use an Azure AI Foundry hub project instead.
+<Note>
+Azure AI Foundry projects aren't supported for this feature. Use an Azure AI Foundry hub project instead.
+</Note>
 
 ### Code-based custom evaluators
 
@@ -247,9 +241,9 @@ After you log your custom evaluator to your Azure AI project, you can view it in
 
 ## Related content
 
-- [Evaluate your generative AI applications locally](./evaluate-sdk.md)
+- [Evaluate your generative AI applications locally](./evaluate-sdk)
 - [Evaluate your generative AI applications online](https://aka.ms/GenAIMonitoringDoc)
-- [Learn more about simulating test datasets for evaluation](./simulator-interaction-data.md)
-- [View your evaluation results in an Azure AI project](../../how-to/evaluate-results.md)
-- [Get started building a chat app by using the Azure AI Foundry SDK](../../quickstarts/get-started-code.md)
+- [Learn more about simulating test datasets for evaluation](./simulator-interaction-data)
+- [View your evaluation results in an Azure AI project](../../how-to/evaluate-results)
+- [Get started building a chat app by using the Azure AI Foundry SDK](../../quickstarts/get-started-code)
 - [Get started with evaluation samples](https://aka.ms/aistudio/eval-samples)

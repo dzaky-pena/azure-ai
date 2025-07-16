@@ -1,22 +1,17 @@
 ---
-title: Monitor Azure AI Foundry Agent Service
+title: "Monitor Azure AI Foundry Agent Service"
 description: Start here to learn how to use Azure Monitor to capture and analyze metrics for your Azure AI Foundry Agent Service.
-ms.date: 06/02/2025
-ms.custom: horz-monitor, subject-monitoring
-ms.topic: conceptual
-author: aahill
-ms.author: aahi
-ms.service: azure-ai-agent-service
 ---
 
 # Monitor Azure AI Foundry Agent Service
 
-[!INCLUDE [horz-monitor-intro](~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-intro.md)]
+[!INCLUDE [horz-monitor-intro](~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-intro)]
 
-Monitoring is available for agents in a [standard agent setup](../concepts/standard-agent-setup.md).
+Monitoring is available for agents in a [standard agent setup](../concepts/standard-agent-setup).
 
-> [!IMPORTANT]
-> Monitoring support is currently limited to Azure AI Foundry hubs. Azure AI Foundry projects are not supported.
+<Info>
+Monitoring support is currently limited to Azure AI Foundry hubs. Azure AI Foundry projects are not supported.
+</Info>
 
 ## Dashboards
 
@@ -27,8 +22,9 @@ Azure AI Foundry Agent Service provides out-of-box dashboards. There are two key
 
 To access the monitoring dashboards, sign in to the [Azure portal](https://portal.azure.com) and then select **Monitoring** in the left navigation menu, then click **Metrics**.
 
-
-:::image type="content" source="../media/monitoring/dashboard.png" alt-text="Screenshot that shows out-of-box dashboards for a resource in the Azure portal." lightbox="../media/monitoring/dashboard.png" border="false":::
+<Frame>
+    ![](/images/ai-foundry/agents/media/monitoring/dashboard.png)
+</Frame>
 
 ## Azure monitor platform metrics
 
@@ -87,11 +83,11 @@ Depending on what type of application you're developing with your use of Azure A
 
 ### Azure AI Foundry Agent Service alert rules
 
-You can set alerts for any metric listed in the [monitoring data reference](../reference/monitor-service.md).
+You can set alerts for any metric listed in the [monitoring data reference](../reference/monitor-service).
 
-[!INCLUDE [horz-monitor-advisor-recommendations](~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-advisor-recommendations.md)]
+[!INCLUDE [horz-monitor-advisor-recommendations](~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-advisor-recommendations)]
 
 ## Related content
 
-- See [Monitoring data reference](../reference/monitor-service.md) for a reference of the metrics and other important values created for Azure AI Foundry Agent Service.
+- See [Monitoring data reference](../reference/monitor-service) for a reference of the metrics and other important values created for Azure AI Foundry Agent Service.
 - See [Monitoring Azure resources with Azure Monitor](/azure/azure-monitor/essentials/monitor-azure-resource) for general details on monitoring Azure resources.

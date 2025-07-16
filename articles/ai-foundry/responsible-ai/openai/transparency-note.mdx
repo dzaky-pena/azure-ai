@@ -1,18 +1,11 @@
 ---
-title: Transparency Note for Azure OpenAI
-titleSuffix: Azure AI services
+title: "Transparency Note for Azure OpenAI"
 description: Transparency Note for Azure OpenAI Service
-author: PatrickFarley
-ms.author: pafarley
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: article
-ms.date: 04/16/2025
 ---
 
 # Transparency Note for Azure OpenAI Service
 
-[!INCLUDE [non-english-translation](../includes/non-english-translation.md)]
+[!INCLUDE [non-english-translation](../includes/non-english-translation)]
 
 ## What is a Transparency Note?
 
@@ -34,8 +27,8 @@ Azure OpenAI provides customers with a fully managed AI service that lets develo
 | GPT-image-1 |  | ✅ |  |
 |  Whisper|  |  | ✅ |
 |  GPT-4 Turbo with Vision| ✅ | ✅ |  |
-| GPT-4o </br>GPT-4o-mini | ✅ | ✅ | ✅ |
-| GPT-4.1</br>GPT-4.1-mini</br>GPT-4.1-nano | ✅ | ✅ |  |
+| GPT-4o GPT-4o-mini | ✅ | ✅ | ✅ |
+| GPT-4.1GPT-4.1-miniGPT-4.1-nano | ✅ | ✅ |  |
 | GPT-4.5 | ✅ | ✅ |  |
 | o1 series | ✅ | ✅ |  |
 | o3/o3-pro | ✅ | ✅| | 
@@ -59,14 +52,15 @@ Learn more about the training and modeling techniques in OpenAI's [GPT-3](https:
 
 **Fine tuning** refers to using _Supervised Fine Tuning_ to adjust a base model's weights to provide better responses based on a provided training set. All use cases and considerations for large language models apply to fine-tuned models, but there are additional considerations as well.
 
-> [!IMPORTANT]
-> Fine-tuning is only available for text and code models, not vision or speech models.
+<Info>
+Fine-tuning is only available for text and code models, not vision or speech models.
+</Info>
 
 ### Key terms
 
 | **Term** | **Definition** |
 | --- | --- |
-| Prompt | The text you send to the service in the API call. This text is then input into the model. For example, one might input the following prompt:<br><br>`Convert the questions to a command:`<br>`Q: Ask Constance if we need some bread`<br>`A: send-msg 'find constance' Do we need some bread?`<br>`Q: Send a message to Greg to figure out if things are ready for Wednesday.`<br>`A:` |
+| Prompt | The text you send to the service in the API call. This text is then input into the model. For example, one might input the following prompt:<br/><br/>`Convert the questions to a command:`<br/>`Q: Ask Constance if we need some bread`<br/>`A: send-msg 'find constance' Do we need some bread?`<br/>`Q: Send a message to Greg to figure out if things are ready for Wednesday.`<br/>`A:` |
 | Completion or Generation | The text Azure OpenAI outputs in response. For example, the service may respond with the following answer to the above prompt: `send-msg 'find greg' figure out if things are ready for Wednesday.` |
 | Token | Azure OpenAI processes text by breaking it down into tokens. Tokens can be words or just chunks of characters. For example, the word `hamburger` gets broken up into the tokens `ham`, `bur` and `ger`, while a short and common word like `pear` is a single token. Many tokens start with a whitespace, for example ` hello` and ` bye`. |
 |Fine tuning| Supervised fine-tuning (SFT), reinforcement fine-tuning (RFT), and direct preference optimization (DPO, or preference fine-tuning) for large language models refer to the process of taking a pre-trained language model, often trained on a massive dataset, and further training it on a more specific task with labeled data. This involves adjusting the weights of the model using this smaller, specific dataset so that the model becomes more specialized in the tasks it can perform, enhancing its performance and accuracy. |
@@ -99,12 +93,12 @@ The following guidance is drawn from Microsoft research insights and [best pract
 | **Term** | **Definition** |
 | --- | --- |
 | Text-to-image | A capability that enables users to generate images that are based on text prompts. |
-| prompt | The text you send to the service in the API call. This text is then input into the model. For example, a user might input the following prompt for image generation:<br><br> Text prompt: `Image of a botanical garden in the style of Picasso, rendered`<br><br>Generated image: Rendered image of a botanical garden in the style of Picasso. |
+| prompt | The text you send to the service in the API call. This text is then input into the model. For example, a user might input the following prompt for image generation:<br/><br/> Text prompt: `Image of a botanical garden in the style of Picasso, rendered`<br/><br/>Generated image: Rendered image of a botanical garden in the style of Picasso. |
 |Prompt transformation | **DALL·E 3 only**: The process by which all prompts sent to the service APIs are enhanced by using a static metaprompt put in place by OpenAI. This process helps you enhance the quality of your images. |
-| Style (natural or vivid) | **DALL·E 3 only**: DALL·E 3 enables you to choose from two styles when you generate your images. This choice can be made in the API request.<br>Natural Style: Closely resembles DALL·E 2 because generations are more simplistic and realistic. <br>Vivid Style: On by default, this style offers richer and more cinematic image generation.  |
+| Style (natural or vivid) | **DALL·E 3 only**: DALL·E 3 enables you to choose from two styles when you generate your images. This choice can be made in the API request.<br/>Natural Style: Closely resembles DALL·E 2 because generations are more simplistic and realistic. <br/>Vivid Style: On by default, this style offers richer and more cinematic image generation.  |
 | Metaprompt | Sometimes referred to as the system message or system prompt, it's a message written by the developer, in this case, OpenAI, to prime the model with context, instructions, or other information with certain bounds primarily used to enforce safety instructions.  |
-| Zero-shot translation | A machine learning capability of executing on novel categories or samples.<br><br>In the case of the latest image generation models, it's the model's ability to execute on a user-generated text prompt on which it wasn't explicitly trained. This capability allows the model to execute and generalize to any text input. |
-| GPT-4 Turbo with Vision | The content you send to the service in the API call. GPT-4 Turbo with Vision takes in text, image, or text and image interleaved prompts. This prompt is then input into the model. For example, a user might input the following prompt into the system: <br><br>Prompt: `How can I use [Image of a tomato] to make this? [Image of tomato soup]`<br><br>Completion: `Here is a list of recipes using tomatoes from which you can make the best tomato soup!` |
+| Zero-shot translation | A machine learning capability of executing on novel categories or samples.<br/><br/>In the case of the latest image generation models, it's the model's ability to execute on a user-generated text prompt on which it wasn't explicitly trained. This capability allows the model to execute and generalize to any text input. |
+| GPT-4 Turbo with Vision | The content you send to the service in the API call. GPT-4 Turbo with Vision takes in text, image, or text and image interleaved prompts. This prompt is then input into the model. For example, a user might input the following prompt into the system: <br/><br/>Prompt: `How can I use [Image of a tomato] to make this? [Image of tomato soup]`<br/><br/>Completion: `Here is a list of recipes using tomatoes from which you can make the best tomato soup!` |
 |Video enhancement |Enables GPT-4 Turbo with Vision to answer questions by retrieving the video frames most relevant to the user's prompt. |
 |Face blurring |A preprocessing step that blurs all faces detected in image and video inputs when your inputs are processed in the API call. The blurring process is incapable of uniquely identifying individuals. Blurring helps to protect the privacy of individuals and groups while also helping to address other risks related to privacy and the regulations around them.  |
 | Agentic AI systems | Autonomous AI systems that sense and act upon their environment to achieve goals. |
@@ -127,7 +121,7 @@ You can learn more about training and modeling techniques for the Whisper model 
 | Transcription | The text output of the Speech to Text feature. This automatically generated text output leverages _speech models_ and is sometimes referred to as machine transcription or automated speech recognition (ASR). Transcription in this context is fully automated, meaning it's generated by the model, and therefore is different from human transcription, which is text that is generated by human transcribers.   |
 | Automatic Speech Recognition (ASR) | Also known as Speech-to-Text (STT), ASR is the process whereby a model transcribes or processes human speech as audio into text. |
 | Speech Translation | A capability that enables users to translate speech into a designated language. At this time, the Whisper model in Azure OpenAI Service enables users to translate speech audio from non-English into English only. |
-| Prompt | Context or cues that you can provide to the model to improve the quality of transcripts generated for your scenario. The prompt can provide instructions for processing things like jargon or acronyms, or for forcing filler words to be included.   </br></br>Learn more about prompts [here](https://platform.openai.com/docs/guides/speech-to-text/longer-inputs). 
+| Prompt | Context or cues that you can provide to the model to improve the quality of transcripts generated for your scenario. The prompt can provide instructions for processing things like jargon or acronyms, or for forcing filler words to be included.   Learn more about prompts [here](https://platform.openai.com/docs/guides/speech-to-text/longer-inputs). 
 |Completion / Generation | The audio or text Azure OpenAI outputs in response. |
 |Token | Azure OpenAI processes audio and text by breaking it down into tokens. Tokens can be words or just chunks of characters. |
 
@@ -216,8 +210,9 @@ The main capabilities of the Azure OpenAI image generation APIs are:
     |---|---|
     | "Watercolor painting of the Seattle skyline" | ![Watercolor painting of the Seattle skyline](./media/generated-seattle.png) |
 
-    > [!TIP]
-    > Public figures who wish for their depiction not to be generated can opt out by emailing [support@openai.com](mailto:support@openai.com).
+    <Tip>
+    Public figures who wish for their depiction not to be generated can opt out by emailing [support@openai.com](mailto:support@openai.com).
+    </Tip>
 
 - **Prompt transformation**: For DALL·E 3 models: Before a prompt is sent to the model to generate images, a safety and quality mitigation is applied to the prompt. Prompt transformation enhances the prompt with the goal of generating more diverse and higher-quality images. 
 
@@ -246,8 +241,11 @@ The Azure AI Vision Service provides Video enhancement for GPT-4 Turbo with Visi
 
 | **Example prompt** | **Example completion** |
 |---|---|
-| "What is this used for?"<br><br> :::image type="content" source="media/tomatoes.png" alt-text="Photo of tomatoes."::: |These are tomatoes. They are commonly used as a food ingredient in various dishes, both raw and cooked. Tomatoes can be used in salads, sandwiches, sauces, soups, juices, and many other culinary applications. They are also known for their rich nutritional content, including vitamins, minerals, and antioxidants. |
-|How can I use<br> :::image type="content" source="media/tomatoes.png" alt-text="Same photo of tomatoes.":::<br>to make this?<br> :::image type="content" source="media/soup.png" alt-text="Photo of tomato soup."::: | You can use tomatoes to make tomato soup by following these general steps: <br>Ingredients: <ul><li>Tomatoes </li><li>Onion</li><li>Garlic</li><li> Olive oil or butter</li><li> Chicken or vegetable broth</li><li> Salt</li><li> Pepper</li><li> Optional: herbs like basil, oregano, or thyme </li></ul> <br>Instructions: <ol><li>Preparation:<ul><li> Wash the tomatoes thoroughly. </li><li>Cut the tomatoes into halves or quarters. </li><li>Peel and chop onions and garlic… </li></ul></li></ol>|
+| "What is this used for?"<br/><br/> ![](/images/ai-foundry/responsible-ai/openai/media/tomatoes.png) |These are tomatoes. They are commonly used as a food ingredient in various dishes, both raw and cooked. Tomatoes can be used in salads, sandwiches, sauces, soups, juices, and many other culinary applications. They are also known for their rich nutritional content, including vitamins, minerals, and antioxidants. |
+|How can I use<br/> ![](/images/ai-foundry/responsible-ai/openai/media/tomatoes.png) alt-text="Same photo of tomatoes.":::<br/>to make this?<br/> ![](/images/ai-foundry/responsible-ai/openai/media/soup.png.png) | You can use tomatoes to make tomato soup by following these general steps: <br/>Ingredients: <ul><li>Tomatoes </li><li>Onion</li><li>Garlic</li><li> Olive oil or butter</li><li> Chicken or vegetable broth</li><li> Salt</li><li> Pepper</li><li> Optional: herbs like basil, oregano, or thyme </li></ul> <br/>Instructions: <ol><li>Preparation:<ul><li> Wash the tomatoes thoroughly. </li><li>Cut the tomatoes into halves or quarters. </li><li>Peel and chop onions and garlic… </li></ul></li></ol>|
+
+
+
 
 ### Computer Use in Azure OpenAI Service (Preview)
 
@@ -259,15 +257,18 @@ For inputs to GPT-4 Turbo with Vision, GPT-4o, and GPT-4o mini that contain imag
 
 Blurring helps protect the privacy of the individuals and groups involved and protect against restricted use cases. Blurring shouldn't affect the quality of your completions, but you might see the system refer to the blurring of faces in some instances.
 
-> [!IMPORTANT]
-> **GPT-4 Turbo with Vision GPT-4o, and GPT-4o mini only**:
-> Any processing that returns results that purport to identify an individual or infer the individual's emotion is _not_ the result of processing of the face, such as facial recognition, generation and comparison of facial templates, or other facial inferencing. Such results can be returned based on training the model to associate images of an individual with the same name through image tagging, whereby the model returns the name with any subsequent image inputs of that individual. The model can also take contextual cues other than the face, which is how the model can still associate the image with an individual, or describe emotions, even if the face is blurred. For example, if the image contains a photo of a popular athlete wearing their team's jersey and their specific number, the model may still return a result that purports to identify the individual based on those contextual cues. 
+<Info>
+**GPT-4 Turbo with Vision GPT-4o, and GPT-4o mini only**:
+Any processing that returns results that purport to identify an individual or infer the individual's emotion is _not_ the result of processing of the face, such as facial recognition, generation and comparison of facial templates, or other facial inferencing. Such results can be returned based on training the model to associate images of an individual with the same name through image tagging, whereby the model returns the name with any subsequent image inputs of that individual. The model can also take contextual cues other than the face, which is how the model can still associate the image with an individual, or describe emotions, even if the face is blurred. For example, if the image contains a photo of a popular athlete wearing their team's jersey and their specific number, the model may still return a result that purports to identify the individual based on those contextual cues. 
+</Info>
 
-> [!CAUTION]
-> **Computer Use (preview) does not use face blurring**, as it has the potential to obscure UI elements and degrade performance. Computer Use is not designed (or intended) to be a general-purpose image reasoning engine. The model doesn't perform facial recognition or individual identification and is not suitable for any such use cases.
+<Danger>
+**Computer Use (preview) does not use face blurring**, as it has the potential to obscure UI elements and degrade performance. Computer Use is not designed (or intended) to be a general-purpose image reasoning engine. The model doesn't perform facial recognition or individual identification and is not suitable for any such use cases.
+</Danger>
 
-> [!CAUTION]
-> **GPT-image-1 does not use face blurring.** In certain jurisdictions, the way the model processes image input of people may be considered processing of biometric data, in which case you are responsible for: (i) providing notice to data subjects, including with respect to retention periods and destruction; (ii) obtaining consent from data subjects; and (iii) deleting the data, all as appropriate and required under applicable law. For more information on how Azure OpenAI Service processes data, see [Data, privacy, and security for Azure OpenAI Service](/azure/ai-foundry/responsible-ai/openai/data-privacy).
+<Danger>
+**GPT-image-1 does not use face blurring.** In certain jurisdictions, the way the model processes image input of people may be considered processing of biometric data, in which case you are responsible for: (i) providing notice to data subjects, including with respect to retention periods and destruction; (ii) obtaining consent from data subjects; and (iii) deleting the data, all as appropriate and required under applicable law. For more information on how Azure OpenAI Service processes data, see [Data, privacy, and security for Azure OpenAI Service](/azure/ai-foundry/responsible-ai/openai/data-privacy).
+</Danger>
 
 ### Computer Use in Azure OpenAI Service (preview)
 
@@ -383,7 +384,7 @@ We encourage customers to use the Azure OpenAI GPT-4, GPT-3, Codex, and Computer
 - **Carefully consider use cases in high stakes domains or industry:**  Examples include but are not limited to healthcare, medicine, finance, or legal.
 - **Carefully consider well-scoped chatbot scenarios.**  Limiting the use of the service in chatbots to a narrow domain reduces the risk of generating unintended or undesirable responses.
 - **Carefully consider all generative use cases.**  Content generation scenarios may be more likely to produce unintended outputs and these scenarios require careful consideration and mitigations.
-- [!INCLUDE [regulatory-considerations](../includes/regulatory-considerations.md)]
+- [!INCLUDE [regulatory-considerations](../includes/regulatory-considerations)]
 
 When choosing a use case for Computer Use, users should factor in the following considerations in addition to those listed above: 
 
@@ -466,7 +467,7 @@ We encourage customers to use the Azure OpenAI DALL·E 2, DALL·E 3, GPT-4 Turbo
 - **Carefully consider scenarios that involve generating media in the style of known artists with published works.** For example, there could be scenarios in which users distribute generated content that is in a style of an artist who maintains intellectual property (IP) rights in original art. Cases like these could have legal consequences or consequential impacts on opportunities for artists. Consider creating a process for artists to limit the creation of images associated with their names in your product or service.
 - **Carefully consider scenarios that involve generating images that include real people.** Content that includes images of real people could be misused in a way that negatively affects life opportunities or legal status, as well as public perception and trust. Exercise caution when generating images of real people, living or dead, or of similar likeness.
 - **Carefully consider all use cases in high-stakes domains or industry:** Examples include but are not limited to healthcare, education, finance, and legal.
-- [!INCLUDE [regulatory-considerations](../includes/regulatory-considerations.md)]
+- [!INCLUDE [regulatory-considerations](../includes/regulatory-considerations)]
 
 
 When choosing a use case for Computer Use, users should factor in the following considerations in addition to those listed above: 
@@ -509,7 +510,7 @@ We encourage customers to use the `gpt-4o-realtime-preview` and Whisper models i
 - **Avoid scenarios in which the use or misuse of the system could have a consequential impact on life opportunities or legal status.** Examples include scenarios in which the AI system could affect an individual's legal status, legal rights, or their access to credit, education, employment, healthcare, housing, insurance, social welfare benefits, services, opportunities, or the terms on which these items are available. 
 - **Carefully consider all use cases in high-stakes domains or industries:** Examples include but are not limited to healthcare, education, finance, and legal.
 - **Whisper in Azure Speech service:** The OpenAI Whisper model is also available within Azure AI Speech services, enhancing the experience with advanced features like multi-lingual recognition and readability. Depending on your scenario, you might explore [Azure Speech services](https://azure.microsoft.com/products/cognitive-services/speech-to-text/) and the service's additional capabilities like diaritization, customization, or processing multiple audio files per request.
-- [!INCLUDE [regulatory-considerations](../includes/regulatory-considerations.md)]
+- [!INCLUDE [regulatory-considerations](../includes/regulatory-considerations)]
 
 
 ---
@@ -520,8 +521,9 @@ When it comes to large-scale natural language models, vision models, and speech 
 
 ### Technical limitations, operational factors, and ranges
 
-> [!CAUTION]
-> Be advised that this section contains illustrative examples which include terms and language that some individuals might find offensive.
+<Danger>
+Be advised that this section contains illustrative examples which include terms and language that some individuals might find offensive.
+</Danger>
 
 Large-scale natural language, image, and speech models trained with such data can potentially behave in ways that are unfair, unreliable, or offensive, in turn causing harms. Some of the ways are listed here. We emphasize that these types of harms are not mutually exclusive. A single model can exhibit more than one type of harm, potentially relating to multiple different groups of people. For example:
 

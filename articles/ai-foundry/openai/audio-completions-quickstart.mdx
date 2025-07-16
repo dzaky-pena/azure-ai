@@ -1,49 +1,39 @@
 ---
-title: Quickstart - Getting started with Azure OpenAI audio generation
-titleSuffix: Azure OpenAI
+title: "Quickstart - Getting started with Azure OpenAI audio generation"
 description: Walkthrough on how to get started with audio generation using Azure OpenAI.
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: how-to
-ms.date: 5/23/2025
-author: eric-urban
-ms.author: eur
-ms.custom: references_regions
-zone_pivot_groups: audio-completions-quickstart
-recommendations: false
 ---
 
 # Quickstart: Get started using Azure OpenAI audio generation
 
-::: zone pivot="ai-foundry-portal"
+<Tab title="Foundry portal">
 
-[!INCLUDE [AI Foundry](includes/audio-completions-ai-foundry.md)]
+[!INCLUDE [AI Foundry](includes/audio-completions-ai-foundry)]
 
-::: zone-end
+</Tab>
 
-::: zone pivot="programming-language-javascript"
+<Tab title="JavaScript">
 
-[!INCLUDE [JavaScript quickstart](includes/audio-completions-javascript.md)]
+[!INCLUDE [JavaScript quickstart](includes/audio-completions-javascript)]
 
-::: zone-end
+</Tab>
 
-::: zone pivot="programming-language-python"
+<Tab title="Python">
 
-[!INCLUDE [Python SDK quickstart](includes/audio-completions-python.md)]
+[!INCLUDE [Python SDK quickstart](includes/audio-completions-python)]
 
-::: zone-end
+</Tab>
 
-::: zone pivot="rest-api"
+<Tab title="REST API">
 
-[!INCLUDE [REST API quickstart](includes/audio-completions-rest.md)]
+[!INCLUDE [REST API quickstart](includes/audio-completions-rest)]
 
-::: zone-end
+</Tab>
 
-::: zone pivot="programming-language-typescript"
+<Tab title="TypeScript">
 
-[!INCLUDE [TypeScript quickstart](includes/audio-completions-typescript.md)]
+[!INCLUDE [TypeScript quickstart](includes/audio-completions-typescript)]
 
-::: zone-end
+</Tab>
 
 ## Clean-up resources
 
@@ -54,10 +44,11 @@ If you want to clean up and remove an Azure OpenAI resource, you can delete the 
 
 ## Troubleshooting
 
-> [!NOTE]
-> When using `gpt-4o-audio-preview` for chat completions with the audio modality and `stream` is set to true the only supported audio format is pcm16.
+<Note>
+When using `gpt-4o-audio-preview` for chat completions with the audio modality and `stream` is set to true the only supported audio format is pcm16.
+</Note>
 
 ## Related content
 
-* Learn more about Azure OpenAI [deployment types](./how-to/deployment-types.md).
-* Learn more about Azure OpenAI [quotas and limits](quotas-limits.md).
+* Learn more about Azure OpenAI [deployment types](./how-to/deployment-types).
+* Learn more about Azure OpenAI [quotas and limits](quotas-limits).

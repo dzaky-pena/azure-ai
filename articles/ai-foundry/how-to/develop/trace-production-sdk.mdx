@@ -1,43 +1,36 @@
 ---
-title: Enable Tracing and Collect Feedback for a Flow Deployment
-titleSuffix: Azure AI Foundry
+title: "Enable Tracing and Collect Feedback for a Flow Deployment"
 description: This article provides instructions on how to enable tracing and collect feedback for a flow deployment in the Azure AI Foundry portal.
-manager: scottpolly
-ms.service: azure-ai-foundry
 ms.custom:
   - build-2024
-ms.topic: how-to
-ms.date: 06/19/2025
-ms.reviewer: none
-ms.author: lagayhar
-author: lgayhardt
 ms.collection: ce-skilling-ai-copilot, ce-skilling-fresh-tier1
 ms.update-cycle: 180-days
 ---
 
 # Enable tracing and collect feedback for a flow deployment
 
-[!INCLUDE [feature-preview](../../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../../includes/feature-preview)]
 
 After you deploy a generative AI application in production, you might want to enhance your understanding and optimize performance. Trace data for each request, aggregated metrics, and user feedback play critical roles.
 
 In this article, you learn to enable tracing, collect aggregated metrics, and collect user feedback during the inference time of your flow deployment.
 
-> [!NOTE]
-> For an improved way to perform continuous monitoring of deployed applications (other than prompt flow), consider using [Azure AI online evaluation](../online-evaluation.md).
+<Note>
+For an improved way to perform continuous monitoring of deployed applications (other than prompt flow), consider using [Azure AI online evaluation](../online-evaluation).
+</Note>
 
 ## Prerequisites
 
-[!INCLUDE [hub-only-prereq](../../includes/hub-only-prereq.md)]
+[!INCLUDE [hub-only-prereq](../../includes/hub-only-prereq)]
 
 - The Azure CLI and the Azure Machine Learning extension to the Azure CLI.
-- An Azure AI Foundry project. If you don't already have a project, you can [create one](../../how-to/create-projects.md).
+- An Azure AI Foundry project. If you don't already have a project, you can [create one](../../how-to/create-projects).
 - An Application Insights resource. If you don't already have an Application Insights resource, you can [create one](/azure/azure-monitor/app/create-workspace-resource).
-- Azure role-based access controls are used to grant access to operations in Azure Machine Learning. To perform the steps in this article, you must have Owner or Contributor permissions on the selected resource group. For more information, see [Role-based access control in the Azure AI Foundry portal](../../concepts/rbac-azure-ai-foundry.md).
+- Azure role-based access controls are used to grant access to operations in Azure Machine Learning. To perform the steps in this article, you must have Owner or Contributor permissions on the selected resource group. For more information, see [Role-based access control in the Azure AI Foundry portal](../../concepts/rbac-azure-ai-foundry).
 
 ## Deploy a flow for real-time inference
 
-After you test your flow properly (either a flex flow or a DAG flow), you can deploy the flow in production. In this article, we use [Deploy a flow for real-time inference](../../how-to/flow-deploy.md) as the example. For flex flows, you need to [prepare the `flow.flex.yaml` file instead of `flow.dag.yaml`](https://microsoft.github.io/promptflow/how-to-guides/develop-a-flex-flow/index.html).
+After you test your flow properly (either a flex flow or a DAG flow), you can deploy the flow in production. In this article, we use [Deploy a flow for real-time inference](../../how-to/flow-deploy) as the example. For flex flows, you need to [prepare the `flow.flex.yaml` file instead of `flow.dag.yaml`](https://microsoft.github.io/promptflow/how-to-guides/develop-a-flex-flow/index.html).
 
 You can also [deploy to other platforms, such as Docker container and Kubernetes cluster](https://microsoft.github.io/promptflow/how-to-guides/deploy-a-flow/index.html).
 
@@ -60,12 +53,13 @@ environment_variables:
   APPLICATIONINSIGHTS_CONNECTION_STRING: <connection_string>
 ```
 
-> [!NOTE]
-> If you set only `app_insights_enabled: true` but your project doesn't have a linked Application Insights resource, your deployment won't fail but no data is collected.
->
-> If you specify both `app_insights_enabled: true` and the previous environment variable at the same time, the tracing data and metrics are sent to the project linked to Application Insights. If you want to specify different application insights, keep the environment variable only.
-> 
-> If you deploy to other platforms, you can also use the environment variable `APPLICATIONINSIGHTS_CONNECTION_STRING: <connection_string>` to collect trace data and metrics to the application insights that you specified.
+<Note>
+If you set only `app_insights_enabled: true` but your project doesn't have a linked Application Insights resource, your deployment won't fail but no data is collected.
+
+If you specify both `app_insights_enabled: true` and the previous environment variable at the same time, the tracing data and metrics are sent to the project linked to Application Insights. If you want to specify different application insights, keep the environment variable only.
+ 
+If you deploy to other platforms, you can also use the environment variable `APPLICATIONINSIGHTS_CONNECTION_STRING: <connection_string>` to collect trace data and metrics to the application insights that you specified.
+</Note>
 
 ## View tracing data in Application Insights
 
@@ -79,7 +73,7 @@ The **Dependency** type event records calls from your deployments. The name of t
 
 | Metrics name                         | Type      | Dimensions                                | Description                                                                     |
 |--------------------------------------|-----------|-------------------------------------------|---------------------------------------------------------------------------------|
-| `token_consumption`                    | counter   | - `flow` <br> - `node`<br> - `llm_engine`<br> - `token_type`:  `prompt_tokens`: LLM API input tokens;  `completion_tokens`: LLM API response tokens; `total_tokens` = `prompt_tokens + completion tokens`          | OpenAI token consumption metrics.                                                |
+| `token_consumption`                    | counter   | - `flow` <br/> - `node`<br/> - `llm_engine`<br/> - `token_type`:  `prompt_tokens`: LLM API input tokens;  `completion_tokens`: LLM API response tokens; `total_tokens` = `prompt_tokens + completion tokens`          | OpenAI token consumption metrics.                                                |
 | `flow_latency`                         | histogram | `flow`, `response_code`, `streaming`, `response_type` | The request execution cost, `response_type`, means whether it's full or first byte or last byte.|
 | `flow_request`                         | counter   | `flow`, `response_code`, `exception`, `streaming`    | The flow request count.                                                              |
 | `node_latency`                         | histogram | `flow`, `node`, `run_status`                      | The node execution cost.                                                             |
@@ -173,5 +167,5 @@ In some cases, you might want to export the trace data to your deployed OpenTele
 
 ## Related content
 
-- [Get started building a chat app by using the prompt flow SDK](../../quickstarts/get-started-code.md)
-- [Work with projects in Visual Studio Code](vscode.md)
+- [Get started building a chat app by using the prompt flow SDK](../../quickstarts/get-started-code)
+- [Work with projects in Visual Studio Code](vscode)

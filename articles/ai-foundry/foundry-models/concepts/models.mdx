@@ -1,15 +1,6 @@
 ﻿---
-title: Models available in Azure AI Foundry Models
-titleSuffix: Azure AI Foundry
+title: "Models available in Azure AI Foundry Models"
 description: Explore the available Azure AI Foundry Models and their capabilities.
-author: msakande
-ms.author: mopeakande
-manager: scottpolly
-reviewer: santiagxf
-ms.reviewer: fasantia
-ms.date: 07/11/2025
-ms.service: azure-ai-model-inference
-ms.topic: how-to
 ms.custom:
   - references_regions
   - tool_generated
@@ -22,7 +13,7 @@ ms.custom:
 Azure AI Foundry Models gives you access to flagship models in Azure AI Foundry to consume them as APIs with flexible deployment options.
 This article lists a selection of model offerings and their capabilities, excluding [deprecated and legacy models](../../concepts/model-lifecycle-retirement.md#deprecated). 
 
-Depending on what [kind of project](../../what-is-azure-ai-foundry.md#work-in-an-azure-ai-foundry-project) you're using in Azure AI Foundry, you might see a different selection of these models. Specifically, if you're using a Foundry project, built on an Azure AI Foundry resource, you see the models that are available for standard deployment to a Foundry resource. Alternatively, if you're using a hub-based project, hosted by an Azure AI Foundry hub, you see models that are available for deployment to managed compute and serverless APIs. These model selections do overlap in many cases, since many models support the multiple [deployment options](../../concepts/deployments-overview.md). 
+Depending on what [kind of project](../../what-is-azure-ai-foundry.md#work-in-an-azure-ai-foundry-project) you're using in Azure AI Foundry, you might see a different selection of these models. Specifically, if you're using a Foundry project, built on an Azure AI Foundry resource, you see the models that are available for standard deployment to a Foundry resource. Alternatively, if you're using a hub-based project, hosted by an Azure AI Foundry hub, you see models that are available for deployment to managed compute and serverless APIs. These model selections do overlap in many cases, since many models support the multiple [deployment options](../../concepts/deployments-overview). 
 
 Foundry Models in the model catalog belong to two main categories:
 
@@ -37,7 +28,7 @@ Models sold directly by Azure include all Azure OpenAI models and specific, sele
 
 ### Azure OpenAI
 
-Azure OpenAI in Azure AI Foundry Models offers a diverse set of models with different capabilities and price points. Learn more details at [Azure OpenAI Model availability](../../../ai-services/openai/concepts/models.md). These models include:
+Azure OpenAI in Azure AI Foundry Models offers a diverse set of models with different capabilities and price points. Learn more details at [Azure OpenAI Model availability](../../../ai-services/openai/concepts/models). These models include:
 
 - State-of-the-art models designed to tackle reasoning and problem-solving tasks with increased focus and capability
 - Models that can understand and generate natural language and code
@@ -49,7 +40,7 @@ Azure OpenAI in Azure AI Foundry Models offers a diverse set of models with diff
 | [model-router](../../../ai-services/openai/concepts/models.md#model-router) | A model that intelligently selects from a set of underlying chat models to respond to a given prompt. |
 | [computer-use-preview](../../../ai-services/openai/concepts/models.md#computer-use-preview) | An experimental model trained for use with the Responses API computer use tool. |
 | [GPT-4.5 Preview](../../../ai-services/openai/concepts/models.md#gpt-45-preview) |The latest GPT model that excels at diverse text and image tasks.  |
-| [o-series models](../../../ai-services/openai/concepts/models.md#o-series-models) |[Reasoning models](../../../ai-services/openai/how-to/reasoning.md) with advanced problem-solving and increased focus and capability.  |
+| [o-series models](../../../ai-services/openai/concepts/models.md#o-series-models) |[Reasoning models](../../../ai-services/openai/how-to/reasoning) with advanced problem-solving and increased focus and capability.  |
 | [GPT-4o & GPT-4o mini & GPT-4 Turbo](../../../ai-services/openai/concepts/models.md#gpt-4o-and-gpt-4-turbo) | The latest most capable Azure OpenAI models with multimodal versions, which can accept both text and images as input. |
 | [GPT-4](../../../ai-services/openai/concepts/models.md#gpt-4) | A set of models that improve on GPT-3.5 and can understand and generate natural language and code. |
 | [GPT-3.5](../../../ai-services/openai/concepts/models.md#gpt-35) | A set of models that improve on GPT-3 and can understand and generate natural language and code. |
@@ -66,9 +57,9 @@ DeepSeek family of models includes DeepSeek-R1, which excels at reasoning tasks 
 
 | Model  | Type | Capabilities | Project type |
 | ------ | ---- | ------------ | ------------ |
-| [DeepSeek-R1-0528](https://ai.azure.com/explore/models/deepseek-r1-0528/version/1/registry/azureml-deepseek) | chat-completion <br /> [(with reasoning content)](../how-to/use-chat-reasoning.md) | - **Input:** text (163,840 tokens) <br /> - **Output:**  (163,840 tokens) <br /> - **Languages:** `en` and `zh` <br />  - **Tool calling:** No <br /> - **Response formats:** Text. | Foundry, Hub-based |
+| [DeepSeek-R1-0528](https://ai.azure.com/explore/models/deepseek-r1-0528/version/1/registry/azureml-deepseek) | chat-completion <br /> [(with reasoning content)](../how-to/use-chat-reasoning) | - **Input:** text (163,840 tokens) <br /> - **Output:**  (163,840 tokens) <br /> - **Languages:** `en` and `zh` <br />  - **Tool calling:** No <br /> - **Response formats:** Text. | Foundry, Hub-based |
 | [DeepSeek-V3-0324](https://ai.azure.com/explore/models/deepseek-v3-0324/version/1/registry/azureml-deepseek) | chat-completion | - **Input:** text (131,072 tokens) <br /> - **Output:**  (131,072 tokens) <br /> - **Languages:** `en` and `zh` <br />  - **Tool calling:** Yes <br /> - **Response formats:** Text, JSON | Foundry, Hub-based |
-| [DeepSeek-R1](https://ai.azure.com/explore/models/deepseek-r1/version/1/registry/azureml-deepseek) | chat-completion <br /> [(with reasoning content)](../how-to/use-chat-reasoning.md) | - **Input:** text (163,840 tokens) <br /> - **Output:**  (163,840 tokens) <br /> - **Languages:** `en` and `zh` <br />  - **Tool calling:** No <br /> - **Response formats:** Text. | Foundry, Hub-based |
+| [DeepSeek-R1](https://ai.azure.com/explore/models/deepseek-r1/version/1/registry/azureml-deepseek) | chat-completion <br /> [(with reasoning content)](../how-to/use-chat-reasoning) | - **Input:** text (163,840 tokens) <br /> - **Output:**  (163,840 tokens) <br /> - **Languages:** `en` and `zh` <br />  - **Tool calling:** No <br /> - **Response formats:** Text. | Foundry, Hub-based |
 
 See [this model collection in Azure AI Foundry portal](https://ai.azure.com/explore/models?&selectedCollection=deepseek).
 
@@ -93,7 +84,7 @@ Microsoft models include various model groups such as MAI models, Phi models, he
 
 | Model  | Type | Capabilities | Project type |
 | ------ | ---- | ------------ | ------------ |
-| [MAI-DS-R1](https://ai.azure.com/explore/models/MAI-DS-R1/version/1/registry/azureml) | chat-completion <br /> [(with reasoning content)](../how-to/use-chat-reasoning.md) | - **Input:** text (163,840 tokens) <br /> - **Output:**  (163,840 tokens) <br /> - **Languages:** `en` and `zh` <br />  - **Tool calling:** No <br /> - **Response formats:** Text. | Foundry, Hub-based |
+| [MAI-DS-R1](https://ai.azure.com/explore/models/MAI-DS-R1/version/1/registry/azureml) | chat-completion <br /> [(with reasoning content)](../how-to/use-chat-reasoning) | - **Input:** text (163,840 tokens) <br /> - **Output:**  (163,840 tokens) <br /> - **Languages:** `en` and `zh` <br />  - **Tool calling:** No <br /> - **Response formats:** Text. | Foundry, Hub-based |
 
 See [the Microsoft model collection in Azure AI Foundry portal](https://ai.azure.com/explore/models?&selectedCollection=phi). There are also several Microsoft models available [from partners and community](#microsoft).
 
@@ -132,7 +123,7 @@ The Cohere family of models includes various models optimized for different use 
 
 | Model | Type | Capabilities | API Reference | Project type |
 | ------ | ---- | ------------ | ------------- | ------------ |
-| [Cohere-rerank-v3.5](https://ai.azure.com/explore/models/Cohere-rerank-v3.5/version/1/registry/azureml-cohere) | rerank <br> text classification | - **Input:** text <br /> - **Output:** text  <br /> - **Languages:** English, Chinese, French, German, Indonesian, Italian, Portuguese, Russian, Spanish, Arabic, Dutch, Hindi, Japanese, Vietnamese | [Cohere's v2/rerank API](https://docs.cohere.com/v2/reference/rerank) | Hub-based |
+| [Cohere-rerank-v3.5](https://ai.azure.com/explore/models/Cohere-rerank-v3.5/version/1/registry/azureml-cohere) | rerank <br/> text classification | - **Input:** text <br /> - **Output:** text  <br /> - **Languages:** English, Chinese, French, German, Indonesian, Italian, Portuguese, Russian, Spanish, Arabic, Dutch, Hindi, Japanese, Vietnamese | [Cohere's v2/rerank API](https://docs.cohere.com/v2/reference/rerank) | Hub-based |
 
 For more details on pricing for Cohere rerank models, see [Pricing for Cohere rerank models](../../concepts/models-inference-examples.md#pricing-for-cohere-rerank-models).
 
@@ -192,7 +183,7 @@ Mistral AI offers two categories of models: premium models such as Mistral Large
 | [Mistral-small-2503](https://ai.azure.com/explore/models/Mistral-small-2503/version/1/registry/azureml-mistral) | chat-completion | - **Input:** text (32,768 tokens) <br /> - **Output:** text (4,096 tokens) <br /> - **Languages:** fr, de, es, it, and en <br />  - **Tool calling:** Yes <br /> - **Response formats:** Text, JSON | Foundry, Hub-based |
 | [Mistral-medium-2505](https://aka.ms/aistudio/landing/mistral-medium-2505) | chat-completion |  - **Input:** text (128,000 tokens), image <br /> - **Output:** text (128,000 tokens) <br />  - **Tool calling:** No <br /> - **Response formats:** Text, JSON | Foundry, Hub-based|
 | [Mistral-Large-2411](https://ai.azure.com/explore/models/Mistral-Large-2411/version/2/registry/azureml-mistral) | chat-completion | - **Input:** text (128,000 tokens) <br /> - **Output:** text (4,096 tokens) <br /> - **Languages:** `en`, `fr`, `de`, `es`, `it`, `zh`, `ja`, `ko`, `pt`, `nl`, and `pl` <br />  - **Tool calling:** Yes <br /> - **Response formats:** Text, JSON | Foundry, Hub-based |
-| [Mistral-OCR-2503](https://aka.ms/aistudio/landing/mistral-ocr-2503) | image to text |  - **Input:** image or PDF pages (1,000 pages, max 50MB PDF file) <br> - **Output:** text <br /> - **Tool calling:** No <br /> - **Response formats:** Text, JSON, Markdown | Hub-based|
+| [Mistral-OCR-2503](https://aka.ms/aistudio/landing/mistral-ocr-2503) | image to text |  - **Input:** image or PDF pages (1,000 pages, max 50MB PDF file) <br/> - **Output:** text <br /> - **Tool calling:** No <br /> - **Response formats:** Text, JSON, Markdown | Hub-based|
 | [mistralai-Mistral-7B-Instruct-v01](https://ai.azure.com/explore/models/mistralai-Mistral-7B-Instruct-v01/version/11/registry/azureml) | chat-completion | - **Input:** text  <br /> - **Output:** text  <br /> - **Languages:** en <br />  - **Response formats:** Text | Hub-based |
 | [mistralai-Mistral-7B-Instruct-v0-2](https://ai.azure.com/explore/models/mistralai-Mistral-7B-Instruct-v0-2/version/6/registry/azureml) | chat-completion | - **Input:** text <br /> - **Output:** text <br /> - **Languages:** en <br /> - **Response formats:** Text | Hub-based |
 | [mistralai-Mixtral-8x7B-Instruct-v01](https://ai.azure.com/explore/models/mistralai-Mixtral-8x7B-Instruct-v01/version/10/registry/azureml) | chat-completion | - **Input:** text  <br /> - **Output:** text <br /> - **Languages:** en <br /> - **Response formats:** Text | Hub-based |
@@ -239,12 +230,12 @@ See [this model collection in Azure AI Foundry portal](https://ai.azure.com/expl
 
 The model catalog offers a larger selection of models, from a bigger range of providers. For these models, you can't use the option for [standard deployment in Azure AI Foundry resources](../../concepts/deployments-overview.md#standard-deployment-in-azure-ai-foundry-resources), where models are provided as APIs; rather, to deploy these models, you might be required to host them on your infrastructure, create an AI hub, and provide the underlying compute quota to host the models.
 
-Furthermore, these models can be open-access or IP protected. In both cases, you have to deploy them in managed compute offerings in Azure AI Foundry. To get started, see [How-to: Deploy to Managed compute](../../how-to/deploy-models-managed.md).
+Furthermore, these models can be open-access or IP protected. In both cases, you have to deploy them in managed compute offerings in Azure AI Foundry. To get started, see [How-to: Deploy to Managed compute](../../how-to/deploy-models-managed).
 
 
 ## Related content
 
-- [Deployment overview for Azure AI Foundry Models](../../concepts/deployments-overview.md)
-- [Add and configure models to Azure AI Foundry Models](../how-to/create-model-deployments.md)
-- [How to generate chat completions with Azure AI Foundry Models](../how-to/use-chat-completions.md)
-- [Serverless API inference examples for Foundry Models](../../concepts/models-inference-examples.md)
+- [Deployment overview for Azure AI Foundry Models](../../concepts/deployments-overview)
+- [Add and configure models to Azure AI Foundry Models](../how-to/create-model-deployments)
+- [How to generate chat completions with Azure AI Foundry Models](../how-to/use-chat-completions)
+- [Serverless API inference examples for Foundry Models](../../concepts/models-inference-examples)

@@ -1,24 +1,16 @@
 ---
-title: Control model deployment with custom policies
-titleSuffix: Azure AI Foundry
+title: "Control model deployment with custom policies"
 description: "Learn how to use custom Azure Policies to control Azure AI Foundry and Azure OpenAI in Foundry Models deployment with Azure AI Foundry."
-manager: scottpolly
-ms.service: azure-ai-foundry
-ms.topic: how-to #Don't change
-ms.date: 05/05/2025
-ms.author: jburchel 
-author: jonburchel 
-reviewer: santiagxf
-ms.reviewer: fasantia
 
 ---
 
 # Control model deployment with custom policies
 
-When using models from Azure AI Foundry (formerly known Azure AI Services) and Azure OpenAI with [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs), you might need to use custom policies to control which [type of deployment](../../model-inference/concepts/deployment-types.md) options are available to users or which specific models users can deploy. This article guides you on how to create policies to control model deployments using Azure Policies. 
+When using models from Azure AI Foundry (formerly known Azure AI Services) and Azure OpenAI with [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs), you might need to use custom policies to control which [type of deployment](../../model-inference/concepts/deployment-types) options are available to users or which specific models users can deploy. This article guides you on how to create policies to control model deployments using Azure Policies. 
 
-> [!TIP]
-> The steps in this article apply to both a [!INCLUDE [fdp](../../includes/fdp-project-name.md)] and [!INCLUDE [hub](../../includes/hub-project-name.md)].
+<Tip>
+The steps in this article apply to both a [!INCLUDE [fdp](../../includes/fdp-project-name)] and [!INCLUDE [hub](../../includes/hub-project-name)].
+</Tip>
 
 ## Prerequisites
 
@@ -34,7 +26,9 @@ Follow these steps to create and assign an example custom policy to control mode
 
 2. From the left side of the Azure Policy Dashboard, select **Authoring**, **Definitions**, and then select **+ Policy definition** from the top of the page.
 
-    :::image type="content" source="../media/configure-deployment-policies/create-new-policy.png" alt-text="A screenshot showing how to create a new policy definition in Azure Policies." lightbox="../media/configure-deployment-policies/create-new-policy.png":::
+    <Frame>
+      ![](/images/ai-foundry/foundry-models/media/configure-deployment-policies/create-new-policy.png)
+    </Frame>
 
 3. In the **Policy Definition** form, use the following values:
 
@@ -112,8 +106,9 @@ Follow these steps to create and assign an example custom policy to control mode
 
     ---
 
-    > [!TIP]
-    > Azure AI services was originally named Azure Cognitive Services. This name is still used internally by Azure, such as this custom policy where you see a value of `Microsoft.CognitiveServices`. Azure OpenAI is part of Azure AI services, so this policy also applies to Azure OpenAI models.
+    <Tip>
+    Azure AI services was originally named Azure Cognitive Services. This name is still used internally by Azure, such as this custom policy where you see a value of `Microsoft.CognitiveServices`. Azure OpenAI is part of Azure AI services, so this policy also applies to Azure OpenAI models.
+    </Tip>
 
 5. Select **Save** to save the policy definition. After saving, you arrive at the policy definition's overview page.
 
@@ -134,8 +129,9 @@ Follow these steps to create and assign an example custom policy to control mode
 
     From the **Parameters** tab, set **Allowed AI models** to the list of models that you want to allow. The list should be a comma-separated list of model names and approved versions, surrounded by square brackets. For example, `["gpt-4,0613", "gpt-35-turbo,0613"]`.
 
-    > [!TIP]
-    > You can find the model names and their versions in the [Azure AI Foundry Model Catalog](https://ai.azure.com/explore/models). Select the model to view the details, and then copy the model name and their version in the title.
+    <Tip>
+    You can find the model names and their versions in the [Azure AI Foundry Model Catalog](https://ai.azure.com/explore/models). Select the model to view the details, and then copy the model name and their version in the title.
+    </Tip>
 
     # [Enforce specific deployment types](#tab/deployments)
 
@@ -160,7 +156,9 @@ To monitor compliance with the policy, follow these steps:
 
 1. From the left side of the Azure Policy Dashboard, select **Compliance**. Each policy assignment is listed with the compliance status. To view more details, select the policy assignment. The following example shows the compliance report for a policy that blocks deployments of type *Global standard*.
 
-    :::image type="content" source="../media/configure-deployment-policies/policy-compliance.png" alt-text="A screenshot showing an example of a policy compliance report for a policy that blocks Global standard deployment SKUs." lightbox="../media/configure-deployment-policies/policy-compliance.png":::
+    <Frame>
+      ![](/images/ai-foundry/foundry-models/media/configure-deployment-policies/policy-compliance.png)
+    </Frame>
 
 ## Update the policy assignment
 
@@ -183,5 +181,5 @@ To update an existing policy assignment with new models, follow these steps:
 ## Related content
 
 - [Azure Policy overview](/azure/governance/policy/overview)
-- [Deployment types](../../model-inference/concepts/deployment-types.md)
+- [Deployment types](../../model-inference/concepts/deployment-types)
 

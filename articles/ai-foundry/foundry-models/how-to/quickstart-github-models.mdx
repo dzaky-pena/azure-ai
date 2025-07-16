@@ -1,17 +1,6 @@
 ---
-title: Upgrade from GitHub Models to Azure AI Foundry Models
-titleSuffix: Azure AI Foundry for GitHub
+title: "Upgrade from GitHub Models to Azure AI Foundry Models for GitHub"
 description: Learn how to upgrade your endpoint from GitHub Models to Azure AI Foundry Models
-ms.service: azure-ai-model-inference
-ms.topic: how-to
-ms.date: 05/19/2025
-ms.custom: ignite-2024, github-universe-2024
-manager: scottpolly
-author: ssalgadodev
-ms.author: ssalgado
-recommendations: false
-ms.reviewer: fasantia
-reviewer: santiagxf
 ---
 
 # Upgrade from GitHub Models to Azure AI Foundry Models
@@ -41,7 +30,9 @@ To obtain the key and endpoint:
 
 2. Select **Get production key**.
 
-    :::image type="content" source="../media/quickstart-github-models/github-models-upgrade.gif" alt-text="An animation showing how to upgrade GitHub Models to get a production ready resource." lightbox="../media/quickstart-github-models/github-models-upgrade.gif":::
+    <Frame>
+        ![](/images/ai-foundry/foundry-models/media/quickstart-github-models/github-models-upgrade.gif)
+    </Frame>
 
 3. If you don't have an Azure account, select Create my account and follow the steps to create one.
 
@@ -61,7 +52,9 @@ At this point, the model you selected is ready to consume.
 
 Once your Azure AI Services resource is configured, you can start consuming it from your code. To consume the Azure AI Services resource, you need the endpoint URL and key, which are available in the **Overview** section:
 
-:::image type="content" source="../media/overview/overview-endpoint-and-key.png" alt-text="Screenshot showing how to get the URL and key associated with the resource." lightbox="../media/overview/overview-endpoint-and-key.png":::
+<Frame>
+    ![](/images/ai-foundry/foundry-models/media/overview/overview-endpoint-and-key.png)
+</Frame>
 
 You can use any of the supported SDKs to get predictions out from the endpoint. The following SDKs are officially supported:
 
@@ -69,28 +62,29 @@ You can use any of the supported SDKs to get predictions out from the endpoint. 
 * Azure OpenAI SDK
 * Azure AI Inference SDK
 
-See the [supported languages and SDKs](../../model-inference/supported-languages.md) section for more details and examples. The following example shows how to use the Azure AI Foundry Models SDK with the newly deployed model:
+See the [supported languages and SDKs](../../model-inference/supported-languages) section for more details and examples. The following example shows how to use the Azure AI Foundry Models SDK with the newly deployed model:
 
-[!INCLUDE [code-create-chat-client](../../foundry-models/includes/code-create-chat-client.md)]
+[!INCLUDE [code-create-chat-client](../../foundry-models/includes/code-create-chat-client)]
 
 Generate your first chat completion:
 
-[!INCLUDE [code-create-chat-completion](../../foundry-models/includes/code-create-chat-completion.md)]
+[!INCLUDE [code-create-chat-completion](../../foundry-models/includes/code-create-chat-completion)]
 
 Use the parameter `model="<deployment-name>` to route your request to this deployment. *Deployments work as an alias of a given model under certain configurations*. See [Routing](inference.md#routing) concept page to learn how Azure AI Services route deployments.
 
-> [!IMPORTANT]
-> As opposite to GitHub Models where all the models are already configured, the Azure AI Services resource allows you to control which models are available in your endpoint and under which configuration. Add as many models as you plan to use before indicating them in the `model` parameter. Learn how to [add more models](../../model-inference/how-to/create-model-deployments.md) to your resource.
+<Info>
+As opposite to GitHub Models where all the models are already configured, the Azure AI Services resource allows you to control which models are available in your endpoint and under which configuration. Add as many models as you plan to use before indicating them in the `model` parameter. Learn how to [add more models](../../model-inference/how-to/create-model-deployments) to your resource.
+</Info>
 
 ## Explore additional features
 
 Azure AI Foundry Models supports additional features not available in GitHub Models, including:
 
 * [Explore the model catalog](https://ai.azure.com/github/models) to see additional models not available in GitHub Models.
-* Configure [key-less authentication](../../model-inference/how-to/configure-entra-id.md).
-* Configure [content filtering](../../model-inference/how-to/configure-content-filters.md).
+* Configure [key-less authentication](../../model-inference/how-to/configure-entra-id).
+* Configure [content filtering](../../model-inference/how-to/configure-content-filters).
 * Configure rate limiting (for specific models).
-* Explore additional [deployment SKUs (for specific models)](../../model-inference/concepts/deployment-types.md).
+* Explore additional [deployment SKUs (for specific models)](../../model-inference/concepts/deployment-types).
 * Configure [private networking](../../../ai-services/cognitive-services-virtual-networks.md?context=/azure/ai-services/openai/context/context).
 
 ## Got troubles?
@@ -100,4 +94,4 @@ See the [FAQ section](../../foundry-models/faq.yml) to explore more help.
 ## Next steps
 
 * [Explore the model catalog](https://ai.azure.com/github/models) in Azure AI Foundry portal.
-* [Add more models](../../model-inference/how-to/create-model-deployments.md) to your endpoint.
+* [Add more models](../../model-inference/how-to/create-model-deployments) to your endpoint.

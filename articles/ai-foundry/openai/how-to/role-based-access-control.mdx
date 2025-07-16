@@ -1,13 +1,6 @@
 ---
-title: Role-based access control for Azure OpenAI
+title: "Role-based access control for Azure OpenAI"
 description: Learn how to use Azure RBAC for managing individual access to Azure OpenAI resources.
-author: mrbullwinkle
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: how-to
-ms.date: 07/11/2025
-ms.author: mbullwin
-recommendations: false
 ---
 
 # Role-based access control for Azure OpenAI in Azure AI Foundry Models
@@ -19,8 +12,9 @@ Azure OpenAI supports Azure role-based access control (Azure RBAC), an authoriza
 Azure RBAC can be assigned to an Azure OpenAI resource. To grant access to an Azure resource, you add a role assignment.
 1. In the [Azure portal](https://portal.azure.com/), search for **Azure OpenAI**. 
 1. Select **Azure OpenAI**, and navigate to your specific resource.
-   > [!NOTE]
-   > You can also set up Azure RBAC for whole resource groups, subscriptions, or management groups. Do this by selecting the desired scope level and then navigating to the desired item. For example, selecting **Resource groups** and then navigating to a specific resource group.
+   <Note>
+   You can also set up Azure RBAC for whole resource groups, subscriptions, or management groups. Do this by selecting the desired scope level and then navigating to the desired item. For example, selecting **Resource groups** and then navigating to a specific resource group.
+   </Note>
 
 1. Select **Access control (IAM)** on the left pane.
 1. Select **Add**, then select **Add role assignment**.
@@ -37,8 +31,9 @@ Within a few minutes, the target will be assigned the selected role at the selec
 - **Cognitive Services Contributor**
 - **Cognitive Services Usages Reader**
 
-> [!NOTE]
-> Subscription level *Owner* and *Contributor* roles are inherited and take priority over the custom Azure OpenAI roles applied at the Resource Group level.
+<Note>
+Subscription level *Owner* and *Contributor* roles are inherited and take priority over the custom Azure OpenAI roles applied at the Resource Group level.
+</Note>
 
 This section covers common tasks that different accounts and combinations of accounts are able to perform for Azure OpenAI resources. To view the full list of available **Actions** and **DataActions**, an individual role is granted from your Azure OpenAI resource go **Access control (IAM)** > **Roles** > Under the **Details** column for the role you're interested in select **View**. By default the **Actions** radial button is selected. You need to examine both **Actions** and **DataActions** to understand the full scope of capabilities assigned to a role.
 
@@ -46,65 +41,65 @@ This section covers common tasks that different accounts and combinations of acc
 
 If a user were granted role-based access to only this role for an Azure OpenAI resource, they would be able to perform the following common tasks:
 
-✅ View the resource in [Azure portal](https://portal.azure.com) <br>
-✅ View the resource endpoint under **Keys and Endpoint** <br>
-✅ Ability to view the resource and associated model deployments in [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs). <br>
-✅ Ability to view what models are available for deployment in [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs). <br>
-✅ Use the Chat, Completions, and DALL-E (preview) playground experiences to generate text and images with any models that have already been deployed to this Azure OpenAI resource. <br>
+✅ View the resource in [Azure portal](https://portal.azure.com) <br/>
+✅ View the resource endpoint under **Keys and Endpoint** <br/>
+✅ Ability to view the resource and associated model deployments in [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs). <br/>
+✅ Ability to view what models are available for deployment in [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs). <br/>
+✅ Use the Chat, Completions, and DALL-E (preview) playground experiences to generate text and images with any models that have already been deployed to this Azure OpenAI resource. <br/>
 ✅ Make inference API calls with Microsoft Entra ID.
 
 A user with only this role assigned would be unable to:
 
-❌ Create new Azure OpenAI resources <br>
-❌ View/Copy/Regenerate keys under **Keys and Endpoint** <br>
-❌ Create new model deployments or edit existing model deployments <br>
-❌ Create/deploy custom fine-tuned models <br>
-❌ Upload datasets for fine-tuning <br>
-❌ View, query, filter Stored completions data <br>
-❌ Access quota <br>
-❌ Create customized content filters <br>
+❌ Create new Azure OpenAI resources <br/>
+❌ View/Copy/Regenerate keys under **Keys and Endpoint** <br/>
+❌ Create new model deployments or edit existing model deployments <br/>
+❌ Create/deploy custom fine-tuned models <br/>
+❌ Upload datasets for fine-tuning <br/>
+❌ View, query, filter Stored completions data <br/>
+❌ Access quota <br/>
+❌ Create customized content filters <br/>
 ❌ Add a data source for the use your data feature
 
 ### Cognitive Services OpenAI Contributor
 
 This role has all the permissions of Cognitive Services OpenAI User and is also able to perform additional tasks like:
 
-✅ Create custom fine-tuned models <br>
-✅ Upload datasets for fine-tuning <br>
-✅ View, query, filter Stored completions data <br>
-✅ Create new model deployments or edit existing model deployments **[Added Fall 2023]** <br>
-✅ Grant access to the Assistants API <br> 
+✅ Create custom fine-tuned models <br/>
+✅ Upload datasets for fine-tuning <br/>
+✅ View, query, filter Stored completions data <br/>
+✅ Create new model deployments or edit existing model deployments **[Added Fall 2023]** <br/>
+✅ Grant access to the Assistants API <br/> 
 ✅ Add data sources to Azure OpenAI On Your Data. **You must also have the [Cognitive Services Contributor](#cognitive-services-contributor) role as well**.
 
 A user with only this role assigned would be unable to:
 
-❌ Create new Azure OpenAI resources <br>
-❌ View/Copy/Regenerate keys under **Keys and Endpoint** <br>
-❌ Access quota <br>
-❌ Create customized content filters <br>
+❌ Create new Azure OpenAI resources <br/>
+❌ View/Copy/Regenerate keys under **Keys and Endpoint** <br/>
+❌ Access quota <br/>
+❌ Create customized content filters <br/>
 ❌ Add a data source for Azure OpenAI On Your Data
 
 ### Cognitive Services Contributor
 
 This role is typically granted access at the resource group level for a user in conjunction with additional roles. By itself this role would allow a user to perform the following tasks.
 
-✅ Create new Azure OpenAI resources within the assigned resource group. <br>
-✅ View resources in the assigned resource group in the [Azure portal](https://portal.azure.com). <br>
-✅ View the resource endpoint under **Keys and Endpoint** <br>
-✅ View/Copy/Regenerate keys under **Keys and Endpoint** <br>
-✅ Ability to view what models are available for deployment in [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs) <br>
-✅ Use the Chat, Completions, and DALL-E (preview) playground experiences to generate text and images with any models that have already been deployed to this Azure OpenAI resource <br>
-✅ Create customized content filters <br>
+✅ Create new Azure OpenAI resources within the assigned resource group. <br/>
+✅ View resources in the assigned resource group in the [Azure portal](https://portal.azure.com). <br/>
+✅ View the resource endpoint under **Keys and Endpoint** <br/>
+✅ View/Copy/Regenerate keys under **Keys and Endpoint** <br/>
+✅ Ability to view what models are available for deployment in [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs) <br/>
+✅ Use the Chat, Completions, and DALL-E (preview) playground experiences to generate text and images with any models that have already been deployed to this Azure OpenAI resource <br/>
+✅ Create customized content filters <br/>
 ✅ Add data sources to Azure OpenAI On Your Data. **You must also have the [Cognitive Services OpenAI Contributor](#cognitive-services-openai-contributor) role as well**.
-✅ Create new model deployments or edit existing model deployments (via API) <br>
-✅ Create custom fine-tuned models **[Added Fall 2023]**<br>
-✅ Upload datasets for fine-tuning **[Added Fall 2023]**<br>
-✅ Create new model deployments or edit existing model deployments (via Azure AI Foundry) **[Added Fall 2023]**<br>
-✅ View, query, filter Stored completions data <br>
+✅ Create new model deployments or edit existing model deployments (via API) <br/>
+✅ Create custom fine-tuned models **[Added Fall 2023]**<br/>
+✅ Upload datasets for fine-tuning **[Added Fall 2023]**<br/>
+✅ Create new model deployments or edit existing model deployments (via Azure AI Foundry) **[Added Fall 2023]**<br/>
+✅ View, query, filter Stored completions data <br/>
 
 A user with only this role assigned would be unable to:
 
-❌ Access quota <br>
+❌ Access quota <br/>
 ❌ Make inference API calls with Microsoft Entra ID.
 
 ### Cognitive Services Usages Reader
@@ -133,8 +128,8 @@ All the capabilities of Cognitive Services OpenAI Contributor plus the ability t
 
 All the capabilities of Cognitive Services Contributor plus the ability to:
 
-✅ View & edit quota allocations in [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs) <br>
-✅ Create new model deployments or edit existing model deployments (via Azure AI Foundry) <br>
+✅ View & edit quota allocations in [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs) <br/>
+✅ Create new model deployments or edit existing model deployments (via Azure AI Foundry) <br/>
 
 ## Summary
 

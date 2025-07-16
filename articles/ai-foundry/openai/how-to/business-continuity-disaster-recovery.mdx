@@ -1,14 +1,6 @@
 ---
-title: 'Business Continuity and Disaster Recovery (BCDR) with Azure OpenAI in Azure AI Foundry Models'
-titleSuffix: Azure OpenAI
+title: "Business Continuity and Disaster Recovery (BCDR) with Azure OpenAI in Azure AI Foundry Models"
 description: Considerations for implementing Business Continuity and Disaster Recovery (BCDR) with Azure OpenAI 
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: how-to
-ms.date: 07/02/2025
-author: mrbullwinkle    
-ms.author: mbullwin
-recommendations: false
 
 ---
 
@@ -22,8 +14,9 @@ By default, the Azure OpenAI provides a [default SLA](https://www.microsoft.com/
 
 ## Standard Deployments
 
-> [!NOTE]
-> If you can use Global Standard deployments, you should use these instead. Data Zone deployments are the next best option for organizations requiring data processing to happen entirely within a geographic boundary.
+<Note>
+If you can use Global Standard deployments, you should use these instead. Data Zone deployments are the next best option for organizations requiring data processing to happen entirely within a geographic boundary.
+</Note>
 
 1. For Standard Deployments default to Data Zone deployment (US/EU options).
 
@@ -54,12 +47,15 @@ By default, the Azure OpenAI provides a [default SLA](https://www.microsoft.com/
 1. The workload and enterprise PTU pool deployments should protect against regional failures. You could do this by placing the workload PTU pool in Region A and the enterprise PTU pool in Region B.    
 1. This deployment should fail over first to the Enterprise PTU Pool and then to the Standard deployment. This implies that when utilization of the workload PTU deployment exceeds 100%, requests would still be serviced by PTU endpoints, enabling a higher latency SLA for that application.
 
-:::image type="content" source="../how-to/media/disaster-recovery/disaster-recovery-diagram.jpg" alt-text="Disaster recovery architectural diagram." lightbox="../how-to/media/disaster-recovery/disaster-recovery-diagram.jpg":::
+<Frame>
+    ![](/images/ai-foundry/openai/how-to/media/disaster-recovery/disaster-recovery-diagram.jpg)
+</Frame>
 
 The additional benefit of this architecture is that it allows you to stack Standard deployments with Provisioned Deployments so that you can dial in your preferred level of performance and resiliency. This allows you to use PTU for your baseline demand across workloads and leverage standard deployment for spikes in traffic.
 
-:::image type="content" source="../how-to/media/disaster-recovery/scaling.jpg" alt-text="Provisioned scaling diagram." lightbox="../how-to/media/disaster-recovery/scaling.jpg":::
-
+<Frame>
+    ![](/images/ai-foundry/openai/how-to/media/disaster-recovery/scaling.jpg)
+</Frame>
 
 ## Supporting Infrastructure
 
@@ -73,8 +69,9 @@ Organizations consuming the service through the Microsoft public backbone should
 
 1. A public global server load balancer should be used to load balance across the multiple Generative AI Gateway instances in either an active/active or active/passive manner. [Azure FrontDoor](/azure/traffic-manager/traffic-manager-routing-methods) can be used to fulfill this role depending on the organization’s requirements.
 
-:::image type="content" source="../how-to/media/disaster-recovery/recovery.png" alt-text="Failover architectural diagram." lightbox="../how-to/media/disaster-recovery/recovery.png":::
-
+<Frame>
+    ![](/images/ai-foundry/openai/how-to/media/disaster-recovery/recovery.png)
+</Frame>
 
 ### Designing for consumption through the private networking
 

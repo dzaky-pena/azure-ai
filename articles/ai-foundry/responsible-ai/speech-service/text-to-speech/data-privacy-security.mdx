@@ -1,18 +1,11 @@
 ---
-title: Data, privacy, and security for text to speech
-titleSuffix: Azure AI services
+title: "Data, privacy, and security for text to speech"
 description: This document details issues for data, privacy, and security for text to speech in Speech Service.
-author: eric-urban
-ms.author: eur
-manager: nitinme
-ms.service: azure-ai-speech
-ms.topic: article
-ms.date: 02/02/2021
 ---
 
 # Data, privacy, and security for text to speech
 
-[!INCLUDE [non-english-translation](../../includes/non-english-translation.md)]
+[!INCLUDE [non-english-translation](../../includes/non-english-translation)]
 
 This article provides details regarding how data provided by you is processed, used, and stored by Azure AI Speech text to speech. As an important reminder, you are responsible for your use and the implementation of this technology and are required to obtain all necessary permissions, including, if applicable, from voice and avatar talent (and, if applicable, users of your personal voice integration(s)) for the processing of their voice, image, likeness and/or other data to develop synthetic voices and/or avatars.
 
@@ -29,8 +22,9 @@ You are also responsible for obtaining any licenses, permissions, or other right
 
 - **Recorded voice talent acknowledgement statement file**. Customers are required to upload a specific recorded statement spoken by the voice talent in which they acknowledge that you will use their voice to create synthetic voice(s).
 
-    > [!NOTE]
-    > When preparing your recording script, make sure you include the required acknowledgement statement for the voice talent to record. You can find the statement in multiple languages [here](https://github.com/Azure-Samples/Cognitive-Speech-TTS/blob/master/CustomVoice/script/verbal-statement-all-locales.txt). The language of the acknowledgement statement must be the same as the language of the audio recording training data.
+    <Note>
+    When preparing your recording script, make sure you include the required acknowledgement statement for the voice talent to record. You can find the statement in multiple languages [here](https://github.com/Azure-Samples/Cognitive-Speech-TTS/blob/master/CustomVoice/script/verbal-statement-all-locales.txt). The language of the acknowledgement statement must be the same as the language of the audio recording training data.
+    </Note>
 
 - **Training data (including audio files and related text transcripts).** This includes audio recordings from the voice talent who has agreed to use their voice for model training and the related text transcripts. In a custom neural voice pro project, you can provide your own text transcriptions of audio or use the automated speech recognition transcription feature available within Speech Studio to generate a text transcription of the audio. Both the audio recordings and the text transcription files will be used as voice model training data. In a custom neural voice lite project, you will be asked to record the voice speaking the Microsoft defined script in Speech Studio. Text transcripts are not required for personal voice features.
 - **Text as the test script.** You can upload your own text-based scripts to evaluate and test the quality of the custom neural voice model by generating speech synthesis audio samples. This does not apply to personal voice features.
@@ -40,10 +34,12 @@ You are also responsible for obtaining any licenses, permissions, or other right
 
 - **Recorded avatar talent acknowledgement statement file.** Customers are required to upload a specific, video-recorded statement spoken by the avatar talent in which they acknowledge that you will use their voice and image to create avatar model(s).
 
-    > [!NOTE]
-    > When making your video recording plan, make sure you include the required acknowledgement statement for the avatar talent to record. You can find the statement in multiple languages [here](https://github.com/Azure-Samples/Cognitive-Speech-TTS/blob/master/CustomVoice/script/verbal-statement-all-locales.txt). The language of the acknowledgement statement must be the same as the language of the video recording training data.  
-    > 
-    > The acknowledgement statement video is not required to be in the same condition (such as recording environment, avatar talent clothes) as the video recording training data, but the actor’s face should be fully exposed and without any occlusion.
+    <Note>
+    When making your video recording plan, make sure you include the required acknowledgement statement for the avatar talent to record. You can find the statement in multiple languages [here](https://github.com/Azure-Samples/Cognitive-Speech-TTS/blob/master/CustomVoice/script/verbal-statement-all-locales.txt). The language of the acknowledgement statement must be the same as the language of the video recording training data.  
+     
+    The acknowledgement statement video is not required to be in the same condition (such as recording environment, avatar talent clothes) as the video recording training data, but the actor’s face should be fully exposed and without any occlusion.
+    </Note>
+
 - **Training data (including audio files and image/video files).** This includes video and audio recordings from the avatar talent who has agreed to use their image and voice for model training. We don’t require a text transcription of the audio in the video.
 - **Text as the test script.** You can upload your own text-based scripts to evaluate and test the quality of the custom avatar model by generating synthetic avatar video samples.
 - **Text input for speech synthesis.** This is the text you select and send to the text to speech service to generate audio and video output using your custom avatar.
@@ -56,25 +52,33 @@ You are also responsible for obtaining any licenses, permissions, or other right
 
 The diagram below illustrates how your data is processed for synthesis with prebuilt neural voice. The input is text, and the output is audio. Please note that neither input text nor output audio content will be stored in Microsoft logs.
 
-:::image type="content" source="media\prebuilt-voices-data-processing.png" alt-text="diagram of prebuilt neural voice data processing.":::
+<Frame>
+    ![](/images/ai-foundry/responsible-ai/speech-service/text-to-speech/media/prebuilt-voices-data-processing.png)
+</Frame>
 
 ### Custom neural voice
 
 The diagram below illustrates how your data is processed for custom neural voice. This diagram covers three different types of processing: how Microsoft verifies recorded acknowledgement statement files of voice talent prior to custom neural voice model training, how Microsoft creates a custom neural voice model with your training data, and how text to speech processes your text input to generate audio content.
 
-:::image type="content" source="media\data-privacy-image.png" alt-text="How custom neural voice processes data":::
+<Frame>
+    ![](/images/ai-foundry/responsible-ai/speech-service/text-to-speech/media/data-privacy-image.png)
+</Frame>
 
 ### Text to speech avatar
 
 The diagram below illustrates how your data is processed for synthesis with prebuilt text to speech avatar. There are three components in an avatar content generation workflow: text analyzer, the TTS audio synthesizer, and TTS avatar video synthesizer. To generate avatar video, text is first input into the text analyzer, which provides the output in the form of phoneme sequence. Then, the TTS audio synthesizer predicts the acoustic features of the input text and synthesize the voice. These two parts are provided by text to speech voice models. Next, the Neural text to speech Avatar model predicts the image of lip sync with the acoustic features, so that the synthetic video is generated.
 
-:::image type="content" source="media\text-to-speech-avatar-data-process.png" alt-text="A diagram of the text to speech avatar data flow.":::
+<Frame>
+    ![](/images/ai-foundry/responsible-ai/speech-service/text-to-speech/media/text-to-speech-avatar-data-process.png)
+</Frame>
 
 ### Video translation (preview)
 
 The diagram below illustrates how your data is processed with video translation. Customer uploads video as the input for video translation, dialogue audio is extracted and speech to text will transcribe the audio into text content. Then the text content will be translated to the target language content and, using text to speech capability, the translated audio will be merged with original video content as video output.
 
-:::image type="content" source="media\video-translation-data-process.png" alt-text="Diagram of the video translation data flow.":::
+<Frame>
+    ![](/images/ai-foundry/responsible-ai/speech-service/text-to-speech/media/video-translation-data-process.png)
+</Frame>
 
 #### [Custom neural voice](#tab/custom-neural-voice)
 
@@ -156,8 +160,9 @@ Microsoft will secure and store copies of each voice talent's recorded acknowled
 
 You can manage storage of your training data via [BYOS (Bring Your Own Storage)](/azure/ai-services/speech-service/speech-encryption-of-data-at-rest). With this storage method, training data may be accessed only for the purposes of voice model training and will otherwise be stored via BYOS. 
 
-> [!NOTE]
-> Personal voice does not support BYOS. Your data will be stored in Azure storage managed by Microsoft. You can access and delete any of the training data (prompt audio) used to build voice models via API. Microsoft may independently retain a copy of personal voice models for as long as necessary. Microsoft may use your personal voice model for the sole purpose of protecting the security and integrity of Microsoft Azure AI services.
+<Note>
+Personal voice does not support BYOS. Your data will be stored in Azure storage managed by Microsoft. You can access and delete any of the training data (prompt audio) used to build voice models via API. Microsoft may independently retain a copy of personal voice models for as long as necessary. Microsoft may use your personal voice model for the sole purpose of protecting the security and integrity of Microsoft Azure AI services.
+</Note>
 
 #### [Custom text to speech avatar](#tab/custom-avatar)
 

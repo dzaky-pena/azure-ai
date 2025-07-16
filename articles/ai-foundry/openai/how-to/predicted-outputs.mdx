@@ -1,15 +1,6 @@
 ---
-title: 'How to use predicted outputs with Azure OpenAI in Azure AI Foundry Models'
-titleSuffix: Azure OpenAI
+title: "How to use predicted outputs with Azure OpenAI in Azure AI Foundry Models"
 description: Learn how to improve your model response latency with predicted outputs
-services: cognitive-services
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: how-to
-ms.date: 06/17/2025
-author: mrbullwinkle
-ms.author: mbullwin
-recommendations: false
 ---
 
 # Predicted outputs (preview)
@@ -41,8 +32,9 @@ Predicted outputs is currently text-only. These features can't be used in conjun
 - `frequency_penalty` values greater than `0`
 - `max_completion_tokens`
 
-> [!NOTE]
-> The predicted outputs feature is currently unavailable for models in the South East Asia region.
+<Note>
+The predicted outputs feature is currently unavailable for models in the South East Asia region.
+</Note>
 
 ## Getting started
 
@@ -284,8 +276,9 @@ The `accepted_prediction_tokens` help reduce model response latency, but any `re
 
 It's also important to understand, that using predictive outputs doesn't guarantee a reduction in latency. A large request with a greater percentage of rejected prediction tokens than accepted prediction tokens could result in an increase in model response latency, rather than a decrease.  
 
-> [!NOTE]
-> Unlike [prompt caching](./prompt-caching.md) which only works when a set minimum number of initial tokens at the beginning of a request are identical, predicted outputs isn't constrained by token location. Even if your response text contains new output that will be returned prior to the predicted output, `accepted_prediction_tokens` can still occur.
+<Note>
+Unlike [prompt caching](./prompt-caching) which only works when a set minimum number of initial tokens at the beginning of a request are identical, predicted outputs isn't constrained by token location. Even if your response text contains new output that will be returned prior to the predicted output, `accepted_prediction_tokens` can still occur.
+</Note>
 
 ## Streaming
 

@@ -1,13 +1,6 @@
 ---
-title: How to use Risks & Safety monitoring in Azure AI Foundry
-titleSuffix: Azure OpenAI in Azure AI Foundry Models
-description: Learn how to check statistics and insights from your Azure OpenAI content filtering activity.
-author: PatrickFarley 
-ms.author: pafarley 
-ms.service: azure-ai-openai
-ms.topic: how-to
-ms.date: 05/31/2025
-manager: nitinme
+title: "How to use Risks & Safety monitoring in Azure AI Foundry in Azure AI Foundry Models"
+description: Learn how to check statistics and insights from your Azure OpenAI content filtering activity.  
 ---
 
 # Use Risks & Safety monitoring in Azure AI Foundry (preview) 
@@ -33,10 +26,6 @@ Content filtering data is shown in the following ways:
 - **Severity distribution by category**: This view shows the severity levels detected for each harm category, across the whole selected time range. This is not limited to _blocked_ content but rather includes all content that was flagged by the content filters.
 - **Severity rate distribution over time by category**: This view shows the rates of detected severity levels over time, for each harm category. Select the tabs to switch between supported categories.
 
-<!--
-:::image type="content" source="../media/how-to/content-detection.png" alt-text="Screenshot of the content detection pane in the Risks & Safety monitoring page." lightbox="../media/how-to/content-detection.png":::
--->
-
 ### Recommended actions
 
 Adjust your content filter configuration to further align with business needs and Responsible AI principles.
@@ -49,8 +38,9 @@ The **Potentially abusive user detection** pane shows information about users wh
 To use Potentially abusive user detection, you need:
 - A content filter configuration applied to your deployment.
 - You must be sending user ID information in your Chat Completion requests (see the _user_ parameter of the [Completions API](/azure/ai-services/openai/reference#completions), for example).
-    > [!CAUTION]
-    > Use GUID strings to identify individual users. Don't include sensitive personal information in the _user_ field.
+    <Danger>
+    Use GUID strings to identify individual users. Don't include sensitive personal information in the _user_ field.
+    </Danger>
 - An Azure Data Explorer database set up to store the user analysis results (instructions below).
 
 ### Set up your Azure Data Explorer database
@@ -80,10 +70,6 @@ The potentially abusive user detection relies on the user information that custo
     - **Evaluate date**: The date the results were analyzed.  
     - **Total abuse request ratio/count**
     - **Abuse ratio/count by category** 
-
-<!--
-:::image type="content" source="../media/how-to/potentially-abusive-user.png" alt-text="Screenshot of the Potentially abusive user detection pane in the Risks & Safety monitoring page." lightbox="../media/how-to/potentially-abusive-user.png":::
--->
 
 ### Recommended actions
 

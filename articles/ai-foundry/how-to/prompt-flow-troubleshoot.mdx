@@ -1,16 +1,8 @@
 ﻿---
-title: Troubleshoot guidance for prompt flow
-titleSuffix: Azure AI Foundry
+title: "Troubleshoot guidance for prompt flow"
 description: This article addresses frequently asked questions about prompt flow usage.
-manager: scottpolly
-ms.service: azure-ai-foundry
 ms.custom:
   - ignite-2024
-ms.topic: concept-article
-author: lgayhardt
-ms.author: lagayhar
-ms.reviewer: none
-ms.date: 04/30/2025
 ms.collection: ce-skilling-ai-copilot, ce-skilling-fresh-tier1
 ms.update-cycle: 180-days
 ---
@@ -35,17 +27,23 @@ You can view the serverless instance used by a compute session on the compute se
 
 In a prompt flow, on a **Flow** page with a successful run and run detail page, you can find the raw inputs and outputs of the LLM tool in the output section. Select **View full output** to view the full output.
 
-:::image type="content" source="../media/prompt-flow/view-full-output.png" alt-text="Screenshot that shows the View full output button on the LLM node." lightbox = "../media/prompt-flow/view-full-output.png":::
+<Frame>
+    ![](/images/ai-foundry/media/prompt-flow/view-full-output.png)
+</Frame>
 
 The **Trace** section includes each request and response to the LLM tool. You can check the raw message sent to the LLM model and the raw response from the LLM model.
 
-:::image type="content" source="../media/prompt-flow/trace-large-language-model-tool.png" alt-text="Screenshot that shows a raw request send to LLM model and the response from the LLM model." lightbox = "../media/prompt-flow/trace-large-language-model-tool.png":::
+<Frame>
+    ![](/images/ai-foundry/media/prompt-flow/trace-large-language-model-tool.png)
+</Frame>
 
 ### How do I fix a 429 error from Azure OpenAI?
 
-You might encounter a 429 error from Azure OpenAI. This error means that you reached the rate limit of Azure OpenAI. You can check the error message in the output section of the LLM node. To learn more about the rate limit, see [Azure OpenAI rate limit](../openai/quotas-limits.md).
+You might encounter a 429 error from Azure OpenAI. This error means that you reached the rate limit of Azure OpenAI. You can check the error message in the output section of the LLM node. To learn more about the rate limit, see [Azure OpenAI rate limit](../openai/quotas-limits).
 
-:::image type="content" source="../media/prompt-flow/429-rate-limit.png" alt-text="Screenshot that shows a 429 rate limit error from Azure OpenAI." lightbox = "../media/prompt-flow/429-rate-limit.png":::
+<Frame>
+    ![](/images/ai-foundry/media/prompt-flow/429-rate-limit.png)
+</Frame>
 
 ### How do I identify which node consumes the most time?
 
@@ -57,13 +55,17 @@ You might encounter a 429 error from Azure OpenAI. This error means that you rea
 
    - **Case 1:** Python script node runs for a long time.
 
-        :::image type="content" source="../media/prompt-flow/runtime-timeout-running-for-long-time.png" alt-text="Screenshot that shows a time-out run sign." lightbox = "../media/prompt-flow/runtime-timeout-running-for-long-time.png":::
+        <Frame>
+          ![](/images/ai-foundry/media/prompt-flow/runtime-timeout-running-for-long-time.png)
+        </Frame>
 
         In this case, you can see that `PythonScriptNode` was running for a long time (almost 300 seconds). Check the node details to see what's causing the problem.
 
    - **Case 2:** The LLM node runs for a long time.
 
-        :::image type="content" source="../media/prompt-flow/runtime-timeout-by-language-model-timeout.png" alt-text="Screenshot that shows time-out logs caused by an LLM time out." lightbox = "../media/prompt-flow/runtime-timeout-by-language-model-timeout.png":::
+        <Frame>
+          ![](/images/ai-foundry/media/prompt-flow/runtime-timeout-by-language-model-timeout.png)
+        </Frame>
 
         If you see the message `request canceled` in the logs, it might be because the OpenAI API call is taking too long and exceeding the time-out limit.
 
@@ -164,7 +166,9 @@ Consider optimizing the endpoint with the preceding considerations to improve th
 
 After you deploy the endpoint, you need to test it on the **Test** tab on the deployment detail page. To get to the **Test** tab, on the left pane, under **My assets**, select **Models + endpoints**. Then select the deployment to view the details. If the **Test** tab shows **Unable to fetch deployment schema**, try the following two methods to mitigate this issue.
 
-:::image type="content" source="../media/prompt-flow//unable-to-fetch-deployment-schema.png" alt-text="Screenshot that shows the Test tab on the deployment detail page." lightbox = "../media/prompt-flow/unable-to-fetch-deployment-schema.png":::
+<Frame>
+    ![](/images/ai-foundry/media/prompt-flow/unable-to-fetch-deployment-schema.png)
+</Frame>
 
 - Make sure that you granted the correct permission to the endpoint identity. For more information, see [how to grant permission to the endpoint identity](./flow-deploy.md#grant-permissions-to-the-endpoint).
 - Perhaps you ran your flow in an old version runtime and then deployed the flow, so the deployment used the environment of the runtime that was the old version. To update the runtime, follow the steps in [Update a runtime on the UI](./create-manage-compute-session.md#upgrade-compute-instance-runtime). Rerun the flow in the latest runtime, and then deploy the flow again.

@@ -1,29 +1,13 @@
 ---
 title: "Use your own data with Azure OpenAI in Azure AI Foundry Models"
-titleSuffix: Azure OpenAI
 description: Use this article to import and use your data in Azure OpenAI.
-author: aahill
-ms.author: aahi
-manager: nitinme
-ms.date: 04/29/2025
-ms.service: azure-ai-openai
-ms.topic: quickstart
-ms.custom:
-  - devx-track-dotnet
-  - devx-track-extended-java
-  - devx-track-js
-  - devx-track-ts
-  - devx-track-go
-  - devx-track-python
-  - build-2025
-zone_pivot_groups: openai-use-your-data
 ---
 
 # Quickstart: Chat with Azure OpenAI models using your own data
 
 In this quickstart, you can use your own data with Azure OpenAI models. Using Azure OpenAI's models on your data can provide you with a powerful conversational AI platform that enables faster and more accurate communication.
 
-::: zone pivot="ai-foundry-portal"
+<Tab title="Foundry portal">
 
 ## Prerequisites
 
@@ -32,13 +16,13 @@ The following resources:
 - Download the example data from [GitHub](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/openai/contoso_benefits_document_example.pdf) if you don't have your own data.
 
 
-[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio.md)]
+[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio)]
 
-[!INCLUDE [Studio quickstart](includes/use-your-data-studio.md)]
+[!INCLUDE [Studio quickstart](includes/use-your-data-studio)]
 
-::: zone-end
+</Tab>
 
-::: zone pivot="programming-language-csharp"
+<Tab title="C#">
 
 ## Prerequisites
 
@@ -47,13 +31,13 @@ The following resources:
 - Download the example data from [GitHub](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/openai/contoso_benefits_document_example.pdf) if you don't have your own data.
 - The [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 
-[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio.md)]
+[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio)]
 
-[!INCLUDE [Csharp quickstart](includes/use-your-data-dotnet.md)]
+[!INCLUDE [Csharp quickstart](includes/use-your-data-dotnet)]
 
-::: zone-end
+</Tab>
 
-::: zone pivot="programming-language-spring"
+<Tab title="Spring">
 
 [Source code](https://github.com/spring-projects-experimental/spring-ai)| [Source code](https://github.com/Azure/azure-sdk-for-js/tree/main/sdk/openai/openai) | [Sample](https://github.com/rd-1-2022/ai-azure-retrieval-augmented-generation)
 
@@ -67,13 +51,13 @@ The following resources:
     - Be sure that you're assigned at least the [Cognitive Services Contributor](./how-to/role-based-access-control.md#cognitive-services-contributor) role for the Azure OpenAI resource.
 - Download the example data from [GitHub](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/openai/contoso_benefits_document_example.pdf) if you don't have your own data.
     
-[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio.md)]
+[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio)]
 
-[!INCLUDE [Spring quickstart](includes/use-your-data-spring.md)]
+[!INCLUDE [Spring quickstart](includes/use-your-data-spring)]
 
-::: zone-end
+</Tab>
 
-::: zone pivot="programming-language-javascript"
+<Tab title="JavaScript">
 
 [Reference documentation](https://platform.openai.com/docs/api-reference/chat) | [Source code](https://github.com/openai/openai-node) | [Package (npm)](https://www.npmjs.com/package/openai) | [Samples](https://github.com/Azure/azure-sdk-for-js/tree/main/sdk/openai/openai/samples)
 
@@ -94,13 +78,13 @@ For the recommended keyless authentication with Microsoft Entra ID, you need to:
 - Install the [Azure CLI](/cli/azure/install-azure-cli) used for keyless authentication with Microsoft Entra ID.
 - Assign the `Cognitive Services User` role to your user account. You can assign roles in the Azure portal under **Access control (IAM)** > **Add role assignment**.
 
-[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio.md)]
+[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio)]
 
-[!INCLUDE [JavaScript quickstart](includes/use-your-data-javascript.md)]
+[!INCLUDE [JavaScript quickstart](includes/use-your-data-javascript)]
 
-::: zone-end
+</Tab>
 
-::: zone pivot="programming-language-typescript"
+<Tab title="TypeScript">
 
 [Reference documentation](https://platform.openai.com/docs/api-reference/chat) | [Source code](https://github.com/openai/openai-node) | [Package (npm)](https://www.npmjs.com/package/openai) | [Samples](https://github.com/Azure/azure-sdk-for-js/tree/main/sdk/openai/openai/samples)
 
@@ -123,13 +107,13 @@ For the recommended keyless authentication with Microsoft Entra ID, you need to:
 - Install the [Azure CLI](/cli/azure/install-azure-cli) used for keyless authentication with Microsoft Entra ID.
 - Assign the `Cognitive Services User` role to your user account. You can assign roles in the Azure portal under **Access control (IAM)** > **Add role assignment**.
 
-[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio.md)]
+[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio)]
 
-[!INCLUDE [TypeScript quickstart](includes/use-your-data-typescript.md)]
+[!INCLUDE [TypeScript quickstart](includes/use-your-data-typescript)]
 
-::: zone-end
+</Tab>
 
-::: zone pivot="programming-language-python"
+<Tab title="Python">
 
 ## Prerequisites
 
@@ -145,13 +129,13 @@ The following resources:
 
 These links reference the OpenAI API for Python. There's no Azure-specific OpenAI Python SDK. [Learn how to switch between the OpenAI services and Azure OpenA](/azure/ai-services/openai/how-to/switching-endpoints).
 
-[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio.md)]
+[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio)]
 
-[!INCLUDE [Python quickstart](includes/use-your-data-python.md)]
+[!INCLUDE [Python quickstart](includes/use-your-data-python)]
 
-::: zone-end
+</Tab>
 
-::: zone pivot="programming-language-powershell"
+<Tab title="PowerShell">
 
 
 ## Prerequisites
@@ -164,13 +148,13 @@ The following resources:
     - Be sure that you're assigned at least the [Cognitive Services Contributor](./how-to/role-based-access-control.md#cognitive-services-contributor) role for the Azure OpenAI resource.
 - Download the example data from [GitHub](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/openai/contoso_benefits_document_example.pdf) if you don't have your own data.
 
-[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio.md)]
+[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio)]
 
-[!INCLUDE [PowerShell quickstart](includes/use-your-data-powershell.md)]
+[!INCLUDE [PowerShell quickstart](includes/use-your-data-powershell)]
 
-::: zone-end
+</Tab>
 
-::: zone pivot="programming-language-go"
+<Tab title="Go">
 
 
 ## Prerequisites
@@ -185,13 +169,13 @@ The following resources:
 
 [Reference](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go) | [Source code](https://github.com/Azure/azure-sdk-for-go) | [Package (Go)](https://pkg.go.dev/github.com/azure/azure-dev) | [Samples](https://github.com/azure-samples/azure-sdk-for-go-samples)
 
-[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio.md)]
+[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio)]
 
-[!INCLUDE [Go quickstart](includes/use-your-data-go.md)]
+[!INCLUDE [Go quickstart](includes/use-your-data-go)]
 
-::: zone-end
+</Tab>
 
-::: zone pivot="rest-api"
+<Tab title="REST API">
 
 
 ## Prerequisites
@@ -204,11 +188,11 @@ The following resources:
     - Be sure that you're assigned at least the [Cognitive Services Contributor](./how-to/role-based-access-control.md#cognitive-services-contributor) role for the Azure OpenAI resource.
 - Download the example data from [GitHub](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/openai/contoso_benefits_document_example.pdf) if you don't have your own data.
 
-[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio.md)]
+[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio)]
 
-[!INCLUDE [REST API quickstart](includes/use-your-data-rest.md)]
+[!INCLUDE [REST API quickstart](includes/use-your-data-rest)]
 
-::: zone-end
+</Tab>
 
 ## Clean up resources
 
@@ -219,5 +203,5 @@ If you want to clean up and remove an Azure OpenAI or Azure AI Search resource, 
 
 ## Next steps
 
-- Learn more about [using your data in Azure OpenAI in Azure AI Foundry Models](./concepts/use-your-data.md)
+- Learn more about [using your data in Azure OpenAI in Azure AI Foundry Models](./concepts/use-your-data)
 - [Chat app sample code on GitHub](https://go.microsoft.com/fwlink/?linkid=2244395).

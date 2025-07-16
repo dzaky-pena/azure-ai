@@ -1,31 +1,24 @@
 ---
-title: Python tool for flows in Azure AI Foundry portal
-titleSuffix: Azure AI Foundry
+title: "Python tool for flows in Azure AI Foundry portal"
 description: This article introduces you to the Python tool for flows in Azure AI Foundry portal.
-manager: scottpolly
-ms.service: azure-ai-foundry
-ms.custom: ignite-2023, devx-track-python, build-2024, ignite-2024
-ms.topic: reference
-ms.date: 6/30/2025
-ms.reviewer: none
-ms.author: lagayhar
-author: lgayhardt
 ms.collection: ce-skilling-ai-copilot, ce-skilling-fresh-tier1
 ms.update-cycle: 180-days
 ---
 
 # Python tool for flows in Azure AI Foundry portal
 
-[!INCLUDE [feature-preview](../../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../../includes/feature-preview)]
 
 The prompt flow Python tool offers customized code snippets as self-contained executable nodes. You can quickly create Python tools, edit code, and verify results.
 
 ## Build with the Python tool
 
-1. Create or open a flow in [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs). For more information, see [Create a flow](../flow-develop.md).
+1. Create or open a flow in [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs). For more information, see [Create a flow](../flow-develop).
 1. Select **+ Python** to add the Python tool to your flow.
 
-    :::image type="content" source="../../media/prompt-flow/python-tool.png" alt-text="Screenshot that shows the Python tool added to a flow in Azure AI Foundry portal." lightbox="../../media/prompt-flow/python-tool.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/prompt-flow/python-tool.png)
+    </Frame>
 
 1. Enter values for the Python tool input parameters that are described in the [Inputs table](#inputs). For example, in the **Code** input text box, you can enter the following Python code:
 
@@ -82,8 +75,9 @@ Parameters with `Connection` type annotation are treated as connection inputs, w
 - The prompt flow extension shows a selector to select the connection.
 - During execution time, the prompt flow tries to find the connection with the same name from the parameter value that was passed in.
 
-> [!NOTE]
-> The `Union[...]` type annotation is only supported for connection type. An example is `param: Union[CustomConnection, OpenAIConnection]`.
+<Note>
+The `Union[...]` type annotation is only supported for connection type. An example is `param: Union[CustomConnection, OpenAIConnection]`.
+</Note>
 
 ## Python code input requirements
 
@@ -112,15 +106,16 @@ If you're developing a Python tool that requires calling external services with 
 
 Create a custom connection that stores all your large language model API key or other required credentials.
 
-[!INCLUDE [hub-only-prereq](../../includes/hub-only-prereq.md)]
+[!INCLUDE [hub-only-prereq](../../includes/hub-only-prereq)]
 
 1. Go to the **Management center** page for your project. 
 1. Under either the **Hub** or **Project** heading, select **Connected resources**.
 1. Select **+ New Connection**.
 1. Select **Custom** service. You can define your connection name. You can add multiple key-value pairs to store your credentials and keys by selecting **Add key-value pairs**.
 
-    > [!NOTE]
-    > Make sure at least one key-value pair is set as secret. Otherwise, the connection won't be created successfully. To set one key-value pair as secret, select **is secret** to encrypt and store your key value.
+    <Note>
+    Make sure at least one key-value pair is set as secret. Otherwise, the connection won't be created successfully. To set one key-value pair as secret, select **is secret** to encrypt and store your key value.
+    </Note>
 
 ### Consume a custom connection in Python
 
@@ -144,4 +139,4 @@ def my_python_tool(message: str, myconn: CustomConnection) -> str:
 
 ## Next steps
 
-- [Learn more about how to create a flow](../flow-develop.md)
+- [Learn more about how to create a flow](../flow-develop)

@@ -1,17 +1,6 @@
 ---
-title: 'How to use connected agents'
-titleSuffix: Azure AI Foundry
+title: "How to use connected agents"
 description: Learn how to create multi-agentic systems using connected agents in the Azure AI Foundry Agent Service.
-services: cognitive-services
-manager: nitinme
-ms.service: azure
-ms.topic: how-to
-ms.date: 07/11/2025
-author: aahill
-ms.author: aahi
-recommendations: false
-ms.custom: azure-ai-agents-code
-zone_pivot_groups: selection-connected-agents
 ---
 
 # Build collaborative, multi-agent systems with Connected Agents
@@ -73,10 +62,10 @@ Checks the contract against internal standards or uploaded guidelines to identif
 
 ## Limitations
 
-* Connected agents cannot call local functions using the function calling tool. We recommend using the [OpenAPI tool](tools\openapi-spec.md) or [Azure Functions](tools\azure-functions.md) instead.
+* Connected agents cannot call local functions using the function calling tool. We recommend using the [OpenAPI tool](tools\openapi-spec) or [Azure Functions](tools\azure-functions) instead.
 * It is currently not possible to guarantee citations will be passed from connected agents. You can try using prompt engineering combined with different models to try and improve the possibility that citations will be outputted by the main agent, but results are subject to variability. 
 
-:::zone pivot="portal"
+<Tab title="Azure AI Foundry portal">
 
 
 ## Creating a multi-agent setup
@@ -85,7 +74,9 @@ Checks the contract against internal standards or uploaded guidelines to identif
 2. Select an existing agent from the list or create a new one.
 3. Scroll down to the **Connected agents** section in the agent's setup panel and select **Add +**.
 
-:::image type="content" source="../media\connected-agents\connected-agents-foundry.png" alt-text="A screenshot of the agents page in the Azure AI Foundry." lightbox="../media\connected-agents\connected-agents-foundry.png":::
+<Frame>
+    ![](/images/ai-foundry/agents/media/connected-agents/connected-agents-foundry.png)
+</Frame>
 
 4. In the dialog that appears, choose an agent for the main agent to delegate tasks to, and describe:
    - Select an **existing agent** from the dropdown. This is the connected agent that the main agent will delegate tasks to.
@@ -100,16 +91,18 @@ Checks the contract against internal standards or uploaded guidelines to identif
 
     The `research_agent` should delegate this request to `stock_price_bot` based on the routing description you defined.
 
-:::image type="content" source="../media\connected-agents\connected-agents-foundry-2.png" alt-text="A screenshot of the connected agents screen" lightbox="../media\connected-agents\connected-agents-foundry-2.png":::
+<Frame>
+    ![](/images/ai-foundry/agents/media/connected-agents/connected-agents-foundry-2.png)
+</Frame>
+</Tab>
 
-::: zone-end
-
-:::zone pivot="csharp"
+<Tab title="C#">
 
 ## Use the .NET SDK 
 
-> [!NOTE]
-> This shows a synchronous usage. You can find an asynchronous example on [GitHub](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/ai/Azure.AI.Projects/samples/Sample24_Agent_Connected_Agent.md) 
+<Note>
+This shows a synchronous usage. You can find an asynchronous example on [GitHub](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/ai/Azure.AI.Projects/samples/Sample24_Agent_Connected_Agent) 
+</Note>
 
 To enable your Agent to use a connected agent, you use `ConnectedAgentToolDefinition` along with the agent ID, name, and a description.
 
@@ -216,9 +209,9 @@ To enable your Agent to use a connected agent, you use `ConnectedAgentToolDefini
     agentClient.DeleteAgent(agentId: connectedAgent.Id);
     ```
 
-::: zone-end
+</Tab>
 
-:::zone pivot="python"
+<Tab title="Python">
 
 
 ## Creating a multi-agent setup
@@ -322,4 +315,4 @@ To create a multi-agent setup, follow these steps:
             print(f"URL Citation: [{annotation.url_citation.title}]({annotation.url_citation.url})")
     ```
 
-::: zone-end
+</Tab>

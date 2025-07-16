@@ -1,13 +1,6 @@
 ---
-title: Azure OpenAI Responses API
-titleSuffix: Azure OpenAI
+title: "Azure OpenAI Responses API"
 description: Learn how to use Azure OpenAI's new stateful Responses API.
-author: mrbullwinkle
-ms.author: mbullwin
-manager: nitinme
-ms.date: 07/08/2025
-ms.service: azure-ai-openai
-ms.topic: include
 ms.custom:
   - references_regions
   - build-2025
@@ -15,7 +8,7 @@ ms.custom:
 
 # Azure OpenAI Responses API (Preview)
 
-The Responses API is a new stateful API from Azure OpenAI. It brings together the best capabilities from the chat completions and assistants API in one unified experience. The Responses API also adds support for the new `computer-use-preview` model which powers the [Computer use](../how-to/computer-use.md) capability.
+The Responses API is a new stateful API from Azure OpenAI. It brings together the best capabilities from the chat completions and assistants API in one unified experience. The Responses API also adds support for the new `computer-use-preview` model which powers the [Computer use](../how-to/computer-use) capability.
 
 ## Responses API
 
@@ -56,17 +49,18 @@ The responses API is currently available in the following regions:
 - `o3` (Version: `2025-04-16`)
 - `o4-mini` (Version: `2025-04-16`)
 
-Not every model is available in the regions supported by the responses API. Check the [models page](../concepts/models.md) for model region availability.
+Not every model is available in the regions supported by the responses API. Check the [models page](../concepts/models) for model region availability.
 
-> [!NOTE]
-> Not currently supported:
-> - The web search tool
-> - Image generation using multi-turn editing and streaming - coming soon
-> - Images can't be uploaded as a file and then referenced as input. Coming soon.
->
-> There's a known issue with the following:
-> - PDF as an input file [is now supported](), but setting file upload purpose to `user_data` is not currently supported.
-> - Performance when background mode is used with streaming. The issue is expected to be resolved soon.
+<Note>
+Not currently supported:
+- The web search tool
+- Image generation using multi-turn editing and streaming - coming soon
+- Images can't be uploaded as a file and then referenced as input. Coming soon.
+
+There's a known issue with the following:
+- PDF as an input file [is now supported](), but setting file upload purpose to `user_data` is not currently supported.
+- Performance when background mode is used with streaming. The issue is expected to be resolved soon.
+</Note>
 
 ### Reference documentation
 
@@ -108,7 +102,7 @@ print(response.model_dump_json(indent=2))
 
 # [Python (API Key)](#tab/python-key)
 
-[!INCLUDE [Azure key vault](~/reusable-content/ce-skilling/azure/includes/ai-services/security/azure-key-vault.md)]
+[!INCLUDE [Azure key vault](~/reusable-content/ce-skilling/azure/includes/ai-services/security/azure-key-vault)]
 
 ```python
 import os
@@ -237,7 +231,7 @@ print(response.model_dump_json(indent=2))
 
 # [Python (API Key)](#tab/python-key)
 
-[!INCLUDE [Azure key vault](~/reusable-content/ce-skilling/azure/includes/ai-services/security/azure-key-vault.md)]
+[!INCLUDE [Azure key vault](~/reusable-content/ce-skilling/azure/includes/ai-services/security/azure-key-vault)]
 
 ```python
 import os
@@ -698,14 +692,15 @@ print(response)
 
 Models with vision capabilities support PDF input. PDF files can be provided either as Base64-encoded data or as file IDs. To help models interpret PDF content, both the extracted text and an image of each page are included in the model’s context. This is useful when key information is conveyed through diagrams or non-textual content.
 
-> [!NOTE]
-> - All extracted text and images are put into the model's context. Make sure you understand the pricing and token usage implications of using PDFs as input.
->
-> - You can upload up to 100 pages and 32MB of total content in a single request to the API, across multiple file inputs.
->
-> - Only models that support both text and image inputs, such as `gpt-4o`, `gpt-4o-mini`, or `o1`, can accept PDF files as input.
->
-> - A `purpose` of `user_data` is currently not supported. As a temporary workaround you will need to set purpose to `assistants`.
+<Note>
+- All extracted text and images are put into the model's context. Make sure you understand the pricing and token usage implications of using PDFs as input.
+
+- You can upload up to 100 pages and 32MB of total content in a single request to the API, across multiple file inputs.
+
+- Only models that support both text and image inputs, such as `gpt-4o`, `gpt-4o-mini`, or `o1`, can accept PDF files as input.
+
+- A `purpose` of `user_data` is currently not supported. As a temporary workaround you will need to set purpose to `assistants`.
+</Note>
 
 ### Convert PDF to Base64 and analyze
 
@@ -1210,8 +1205,9 @@ for event in stream:
     cursor = event["sequence_number"]
 ```
 
-> [!NOTE] 
-> Background responses currently have a higher time-to-first-token latency than synchronous responses. Improvements are underway to reduce this gap.
+<Note>
+Background responses currently have a higher time-to-first-token latency than synchronous responses. Improvements are underway to reduce this gap.
+</Note>
 
 ### Limitations
 
@@ -1255,8 +1251,9 @@ Compared to the standalone Image API, the Responses API offers several advantage
 * **Streaming**: Display partial image outputs during generation to improve perceived latency.
 * **Flexible inputs**: Accept image File IDs as inputs, in addition to raw image bytes.
 
-> [!NOTE]
-> The image generation tool in the Responses API is only supported by the `gpt-image-1` model. You can however call this model from this list of supported models - `gpt-4o`, `gpt-4o-mini`, `gpt-4.1`, `gpt-4.1-mini`, `gpt-4.1-nano`, `o3`.
+<Note>
+The image generation tool in the Responses API is only supported by the `gpt-image-1` model. You can however call this model from this list of supported models - `gpt-4o`, `gpt-4o-mini`, `gpt-4.1`, `gpt-4.1-mini`, `gpt-4.1-nano`, `o3`.
+</Note>
 
 Use the Responses API if you want to:
 

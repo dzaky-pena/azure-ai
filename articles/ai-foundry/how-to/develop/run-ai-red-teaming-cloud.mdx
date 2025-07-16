@@ -1,27 +1,19 @@
 ---
-title: Run AI Red Teaming Agent in the cloud (Azure AI Foundry SDK)
-titleSuffix: Azure AI Foundry
+title: "Run AI Red Teaming Agent in the cloud (Azure AI Foundry SDK)"
 description: This article provides instructions on how to use the AI Red Teaming Agent to run an automated scan in the cloud of a Generative AI application with the Azure AI Foundry SDK.
-manager: scottpolly
-ms.service: azure-ai-foundry
 ms.custom:
   - references_regions
-ms.topic: how-to
-ms.date: 06/03/2025
-ms.reviewer: minthigpen
-ms.author: lagayhar
-author: lgayhardt
 ---
 
 # Run AI Red Teaming Agent in the cloud (preview)
 
-[!INCLUDE [feature-preview](../../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../../includes/feature-preview)]
 
-Though the AI Red Teaming Agent (preview) can be run [locally](run-scans-ai-red-teaming-agent.md) during prototyping and development to help identify safety risks, running them in the cloud allows for pre-deployment AI red teaming runs on larger combinations of attack strategies and risk categories for a fuller analysis.
+Though the AI Red Teaming Agent (preview) can be run [locally](run-scans-ai-red-teaming-agent) during prototyping and development to help identify safety risks, running them in the cloud allows for pre-deployment AI red teaming runs on larger combinations of attack strategies and risk categories for a fuller analysis.
 
 ## Prerequisites
 
-[!INCLUDE [uses-fdp-only](../../includes/uses-fdp-only.md)]
+[!INCLUDE [uses-fdp-only](../../includes/uses-fdp-only)]
 
 If this is your first time running evaluations or AI red teaming runs on your Azure AI Foundry project, you might need to do a few additional setup steps.
 
@@ -37,8 +29,9 @@ First, install Azure AI Foundry SDK's project client which runs the AI Red Teami
 uv install azure-ai-projects azure-identity
 ```
 
-> [!NOTE]
-> For more detailed information, see the [REST API Reference Documentation](/rest/api/aifoundry/aiprojects/red-teams).
+<Note>
+For more detailed information, see the [REST API Reference Documentation](/rest/api/aifoundry/aiprojects/red-teams).
+</Note>
 
 Then, set your environment variables for your Azure AI Foundry resources
 
@@ -96,7 +89,7 @@ curl --request POST \  --url https://{{account}}.services.ai.azure.com/api/proje
 ```
 
 - Replace `{{account}}`, `{{project}}` with Foundry Project account name and project name.
-- Replace `{{ai_token}}` with Bearer token with audience "<https://ai.azure.com>"
+- Replace `{{ai_token}}` with Bearer token with audience "\<https://ai.azure.com\>"
 - Replace `"{{connectionName}}"` with the Azure OpenAI model connection name connected to the Foundry project account.
 - Replace `"{{deploymentName}}"` with the Azure OpenAI deployment name of the AOAI connection account.
 
@@ -139,7 +132,7 @@ curl --request GET \  --header 'authorization: Bearer {{ai_token}}'  --url https
 
 ---
 
-Once your AI red teaming run is finished running, you can [view your results](../view-ai-red-teaming-results.md) in your Azure AI Foundry project.
+Once your AI red teaming run is finished running, you can [view your results](../view-ai-red-teaming-results) in your Azure AI Foundry project.
 
 ## Related content
 

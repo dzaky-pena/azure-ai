@@ -1,14 +1,6 @@
 ---
-title: 'Troubleshooting for Azure OpenAI fine-tuning'
-titleSuffix: Azure OpenAI
+title: "Troubleshooting for Azure OpenAI fine-tuning"
 description: Learn how to troubleshoot Azure OpenAI in Azure AI Foundry Models fine-tuning.
-manager: nitinme
-ms.service: azure-ai-openai
-ms.custom: build-2023, build-2023-dataai, devx-track-python, references_regions
-ms.topic: how-to
-ms.date: 05/25/2025
-author: mrbullwinkle
-ms.author: mbullwin
 ---
 
 # Troubleshooting for Azure OpenAI fine-tuning
@@ -21,7 +13,9 @@ In order to successfully access fine-tuning, you need **Cognitive Services OpenA
 
 If your file upload fails in Azure AI Foundry portal, you can view the error message under **Data files** in Azure AI Foundry portal. Hover your mouse over where it says **error** (under the status column) and an explanation of the failure will be displayed.
 
-:::image type="content" source="../media/fine-tuning/error.png" alt-text="Screenshot of fine-tuning error message." lightbox="../media/fine-tuning/error.png":::
+<Frame>
+    ![](/images/ai-foundry/openai/media/fine-tuning/error.png)
+</Frame>
 
 ## My fine-tuned model doesn't seem to have improved
 
@@ -47,7 +41,7 @@ Remove the image. For now, we can't fine-tune models with images containing thes
 
 |Issue| Reason/Solution|
 |:----|:-----|
-|**Images skipped**| Images can get skipped for the following reasons: contains CAPTCHAs, people, or faces.<br><br> Remove the image. For now, we can't fine-tune models with images containing these entities.|
+|**Images skipped**| Images can get skipped for the following reasons: contains CAPTCHAs, people, or faces.<br/><br/> Remove the image. For now, we can't fine-tune models with images containing these entities.|
 |**Inaccessible URL**| Check that the image URL is publicly accessible.|
 |**Image too large**| Check that your images fall within our dataset size limits.|
 |**Invalid image format**| Check that your images fall within our dataset format.|

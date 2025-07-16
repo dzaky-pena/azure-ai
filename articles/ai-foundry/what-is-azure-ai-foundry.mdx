@@ -1,24 +1,6 @@
 ---
-title: What is Azure AI Foundry?
-titleSuffix: Azure AI Foundry
+title: "What is Azure AI Foundry?"
 description: Azure AI Foundry is a trusted platform that empowers developers to drive innovation and shape the future with AI in a safe, secure, and responsible way.
-author: sdgilley
-ms.author: sgilley
-manager: scottpolly
-ms.reviewer: sgilley
-ms.date: 06/12/2025
-ms.service: azure-ai-foundry
-ms.topic: overview
-ms.custom:
-  - ignite-2023
-  - build-2024
-  - ignite-2024
-  - build-aifnd
-  - build-2025
-keywords:
-  - Azure AI services
-  - cognitive
-# customer intent: As a developer, I want to understand what Azure AI Foundry is so that I can use it to build AI applications.
 ---
 
 # What is Azure AI Foundry?
@@ -37,25 +19,25 @@ With Azure AI Foundry, you can explore a wide variety of models, services and ca
 
 An Azure AI Foundry project is where you do most of your development work. You can work with your project in the Azure AI Foundry portal, or use the SDK in your preferred development environment.
 
-## <a name="project-types"></a> Types of projects
+## Types of projects
 
-Azure AI Foundry supports two types of projects: a **[!INCLUDE [hub](includes/hub-project-name.md)]** and a **[!INCLUDE [fdp](includes/fdp-project-name.md)]**. In most cases, you'll want to use a [!INCLUDE [fdp-project-name](includes/fdp-project-name.md)].
+Azure AI Foundry supports two types of projects: a **[!INCLUDE [hub](includes/hub-project-name)]** and a **[!INCLUDE [fdp](includes/fdp-project-name)]**. In most cases, you'll want to use a [!INCLUDE [fdp-project-name](includes/fdp-project-name)].
 
-* [!INCLUDE [fdp-description](includes/fdp-description.md)]
+* [!INCLUDE [fdp-description](includes/fdp-description)]
 
-* [!INCLUDE [hub-description](includes/hub-description.md)]
+* [!INCLUDE [hub-description](includes/hub-description)]
 
 
 ### Which type of project do I need?
 
-* In general, you should use a [!INCLUDE [fdp-project-name](includes/fdp-project-name.md)] if you are looking to build agents or work with models. 
-* Use a [!INCLUDE [hub-project-name](includes/hub-project-name.md)] when you need features that are not available in a [!INCLUDE [fdp-project-name](includes/fdp-project-name.md)]. See the following table for more on feature availability.
+* In general, you should use a [!INCLUDE [fdp-project-name](includes/fdp-project-name)] if you are looking to build agents or work with models. 
+* Use a [!INCLUDE [hub-project-name](includes/hub-project-name)] when you need features that are not available in a [!INCLUDE [fdp-project-name](includes/fdp-project-name)]. See the following table for more on feature availability.
 
 
 This table summarizes features available in the two project types:  
 
 
-| Capability | [!INCLUDE [fdp](includes/fdp-project-name.md)] | [!INCLUDE[hub](includes/hub-project-name.md)] |
+| Capability | [!INCLUDE [fdp](includes/fdp-project-name)] | [!INCLUDE[hub](includes/hub-project-name)] |
 | --- | --- | --- |
 | Agents | ✅ (GA) | ✅ (Preview only) |
 | AI Foundry API to work with agents and across models| ✅ (Native support) | Available via connections |
@@ -76,28 +58,21 @@ Here are some of the ways to identify your project type:
 
 * From the **breadcrumb navigation** section
 
-    * A [!INCLUDE [fdp-project-name](includes/fdp-project-name.md)] displays **(AI Foundry)** on the second line
-    * A [!INCLUDE [hub-project-name](includes/hub-project-name.md)] displays **(Hub)** on the second line
+    * A [!INCLUDE [fdp-project-name](includes/fdp-project-name)] displays **(AI Foundry)** on the second line
+    * A [!INCLUDE [hub-project-name](includes/hub-project-name)] displays **(Hub)** on the second line
 
-    :::image type="content" source="media/how-to/projects/breadcrumb.png" alt-text="Screenshot shows both a Foundry and hub based project in the breadcrumb navigation.":::
+    <Frame>
+      ![](/images/ai-foundry/media/how-to/projects/breadcrumb.png)
+    </Frame>
 
 * From the **All resources** page
 
-    * A [!INCLUDE [fdp-project-name](includes/fdp-project-name.md)] displays **(AI Foundry)** as the parent resource
-    * A [!INCLUDE [hub-project-name](includes/hub-project-name.md)] displays **(Hub)** as the parent resource
+    * A [!INCLUDE [fdp-project-name](includes/fdp-project-name)] displays **(AI Foundry)** as the parent resource
+    * A [!INCLUDE [hub-project-name](includes/hub-project-name)] displays **(Hub)** as the parent resource
 
-    :::image type="content" source="media/how-to/projects/all-resources.png" alt-text="Screenshot shows both a Foundry and hub based project in the All Resources page.":::
-
-<!-- * From the **Overview** section of the project
-
-    * If it's a [!INCLUDE [fdp-project-name](includes/fdp-project-name.md)], you see an **Azure AI Foundry endpoint**
-
-        :::image type="content" source="media/how-to/projects/fdp-project-overview.png" alt-text="Screenshot shows a Foundry project overview page." lightbox="media/how-to/projects/fdp-project-overview.png":::
-
-    * If it's a [!INCLUDE [hub-project-name](includes/hub-project-name.md)], you see a **Project connection string**
-
-        :::image type="content" source="media/how-to/projects/hub-project-overview.png" alt-text="Screenshot shows a hub based project overview page." lightbox="media/how-to/projects/hub-project-overview.png"::: -->
-
+    <Frame>
+      ![](/images/ai-foundry/media/how-to/projects/all-resources.png)
+    </Frame>
 ## Navigate in the Azure AI Foundry portal
 
 In the Azure AI Foundry portal, you can navigate among all your resources using the breadcrumbs at the top of the page. The breadcrumbs show recent resources, along with a link to all resources. 
@@ -111,7 +86,7 @@ The left pane is organized around your goals. Generally, as you develop with Azu
 
 If you're an admin, or leading a development team, and need to manage the team's resources, project access, quota, and more, you can do that in the Management Center.
  
-## <a name="left-pane"></a> Customize the left pane
+## Customize the left pane
 
 The left pane of the Azure AI Foundry portal is your main navigation tool. Customize this area to show the parts of the portal you want to use.
 
@@ -129,7 +104,7 @@ The management center is a part of the Azure AI Foundry portal that streamlines 
 - Quotas and usage metrics
 - Govern access and permissions
 
-For more information, see [Management center overview](./concepts/management-center.md).
+For more information, see [Management center overview](./concepts/management-center).
 
 ## Pricing and billing
 
@@ -137,20 +112,20 @@ Azure AI Foundry is monetized through individual products customer access and co
 
 The platform is free to use and explore. Pricing occurs at deployment level. 
 
-Using Azure AI Foundry also incurs cost associated with the underlying services. To learn more, read [Plan and manage costs for Azure AI services](./how-to/costs-plan-manage.md).
+Using Azure AI Foundry also incurs cost associated with the underlying services. To learn more, read [Plan and manage costs for Azure AI services](./how-to/costs-plan-manage).
 
 ## Region availability
 
-Azure AI Foundry is available in most regions where Azure AI services are available. For more information, see [region support for Azure AI Foundry](reference/region-support.md).
+Azure AI Foundry is available in most regions where Azure AI services are available. For more information, see [region support for Azure AI Foundry](reference/region-support).
 
 ## How to get access
 
-You can [explore Azure AI Foundry portal (including the model catalog)](./how-to/model-catalog-overview.md) without signing in. 
+You can [explore Azure AI Foundry portal (including the model catalog)](./how-to/model-catalog-overview) without signing in. 
 
 But for full functionality, you need an [Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account). 
 
 ## Related content
 
-- [Quickstart: Get started with Azure AI Foundry](quickstarts/get-started-code.md)
-- [Create a project](./how-to/create-projects.md)
-- [Get started with an AI template](how-to/develop/ai-template-get-started.md)
+- [Quickstart: Get started with Azure AI Foundry](quickstarts/get-started-code)
+- [Create a project](./how-to/create-projects)
+- [Get started with an AI template](how-to/develop/ai-template-get-started)

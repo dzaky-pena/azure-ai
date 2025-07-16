@@ -1,52 +1,50 @@
 ---
-title: Quickstart - Create a new Azure AI Foundry Agent Service project
-titleSuffix: Azure AI Foundry
+title: "Quickstart - Create a new Azure AI Foundry Agent Service project"
 description: Use this guide to start using Azure AI Foundry Agent Service.
-author: aahill
-ms.author: aahi
-manager: nitinme
-ms.service: azure-ai-agent-service
-ms.topic: quickstart
-ms.date: 07/11/2025
-ms.custom:
-  - azure-ai-agents
-  - build-2025
-zone_pivot_groups: agents-quickstart
 ---
 
 # Quickstart: Create a new agent
 
 Azure AI Foundry Agent Service allows you to create AI agents tailored to your needs through custom instructions and augmented by advanced tools like code interpreter, and custom functions.
 
-::: zone pivot="ai-foundry-portal"
+<Tabs>
+<Tab title="Foundry portal">
 
-[!INCLUDE [quickstart-ai-foundry](includes/quickstart-foundry.md)]
+import Quickstartaifoundry from '/snippets/ai-foundry/agents/includes/quickstart-foundry.mdx';
 
-::: zone-end
+<Quickstartaifoundry />
 
-::: zone pivot="programming-language-csharp"
+</Tab>
 
-[!INCLUDE [quickstart-csharp](includes/quickstart-csharp.md)]
+<Tab title="C#">
 
-::: zone-end
+import QuickstartCsharp from '/snippets/ai-foundry/agents/includes/quickstart-csharp.mdx'
 
-::: zone pivot="programming-language-python-azure"
+<QuickstartCsharp />
 
-[!INCLUDE [quickstart-python-azure](includes/quickstart-python.md)]
+</Tab>
 
-::: zone-end
+<Tab title="Python">
 
-::: zone pivot="programming-language-typescript"
+import QuickstartPythonAzure from '/snippets/ai-foundry/agents/includes/quickstart-python.mdx'
 
-[!INCLUDE [quickstart-typescript](includes/quickstart-typescript.md)]
+<QuickstartPythonAzure />
 
-::: zone-end
+</Tab>
 
-::: zone pivot="rest-api"
+<Tab title="TypeScript">
 
-[!INCLUDE [quickstart-rest](includes/quickstart-rest.md)]
+import QuickstartTypescript from '/snippets/ai-foundry/agents/includes/quickstart-typescript.mdx'
 
-::: zone-end
+<QuickstartTypescript />
 
+</Tab>
 
+<Tab title="REST API">
 
+import QuickstartRest from '/snippets/ai-foundry/agents/includes/quickstart-rest.mdx'
+
+<QuickstartRest />
+
+</Tab>
+</Tabs>

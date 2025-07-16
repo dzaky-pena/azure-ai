@@ -1,21 +1,13 @@
 ---
-title: Customer enabled disaster recovery
-titleSuffix: Azure AI Foundry
+title: "Customer enabled disaster recovery"
 description: Learn how to plan for disaster recovery for Azure AI Foundry.
-manager: scottpolly
-ms.service: azure-ai-foundry
 ms.custom:
   - build-2024
-ms.topic: how-to
-ms.author: jburchel 
-author: jonburchel 
-ms.reviewer: andyaviles
-ms.date: 04/14/2025
 ---
 
 # Customer enabled disaster recovery
 
-[!INCLUDE [feature-preview](../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview)]
 
 To maximize your uptime, plan ahead to maintain business continuity and prepare for disaster recovery with [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs). Since Azure AI Foundry builds on [Azure Machine Learning architecture](/azure/machine-learning/concept-workspace), it's beneficial to reference the foundational architecture.
 
@@ -26,11 +18,13 @@ Microsoft strives to ensure that Azure services are always available. However, u
 * Design for high availability of your solution.
 * Initiate a failover to another region.
 
-> [!IMPORTANT]
-> Azure AI Foundry itself does not provide automatic failover or disaster recovery.
+<Info>
+Azure AI Foundry itself does not provide automatic failover or disaster recovery.
+</Info>
 
-> [!NOTE]
-> The information in this article only applies to a **[!INCLUDE [hub](../includes/hub-project-name.md)]**. A **[!INCLUDE [fdp](../includes/fdp-project-name.md)]** isn't supported. For more information, see [Types of projects](../what-is-azure-ai-foundry.md#project-types).
+<Note>
+The information in this article only applies to a **[!INCLUDE [hub](../includes/hub-project-name)]**. A **[!INCLUDE [fdp](../includes/fdp-project-name)]** isn't supported. For more information, see [Types of projects](../what-is-azure-ai-foundry.md#project-types).
+</Note>
 
 ## Understand Azure services for Azure AI Foundry
 
@@ -80,8 +74,9 @@ A multi-regional deployment relies on creation of Azure AI Foundry and other res
     * __Hot/warm__: Primary region active, secondary region has critical resources (for example, deployed models) ready to start. Noncritical resources would need to be manually deployed in the secondary region.
     * __Hot/cold__: Primary region active, secondary region has Azure AI Foundry and other resources deployed, along with needed data. Resources such as models, model deployments, or pipelines would need to be manually deployed.
 
-> [!TIP]
-> Depending on your business requirements, you may decide to treat different Azure AI Foundry Services differently.
+<Tip>
+Depending on your business requirements, you may decide to treat different Azure AI Foundry Services differently.
+</Tip>
 
 Azure AI Foundry builds on top of other services. Some services can be configured to replicate to other regions. Others you must manually create in multiple regions. The following table provides a list of services, who is responsible for replication, and an overview of the configuration:
 
@@ -133,8 +128,9 @@ When your primary hub becomes unavailable, you can switch over to the secondary 
 
 Azure AI Foundry can't sync or recover artifacts or metadata between hubs. Dependent on your application deployment strategy, you might have to move or recreate artifacts in the failover hub in order to continue. In case you configure your primary hub and secondary hub to share associated resources with geo-replication enabled, some objects might be directly available to the failover hub. For example, if both hubs share the same docker images, configured datastores, and Azure Key Vault resources.
 
-> [!NOTE]
-> Any jobs that are running when a service outage occurs will not automatically transition to the secondary hub. It is also unlikely that the jobs will resume and finish successfully in the primary hub once the outage is resolved. Instead, these jobs must be resubmitted, either in the secondary hub or in the primary (once the outage is resolved).
+<Note>
+Any jobs that are running when a service outage occurs will not automatically transition to the secondary hub. It is also unlikely that the jobs will resume and finish successfully in the primary hub once the outage is resolved. Instead, these jobs must be resubmitted, either in the secondary hub or in the primary (once the outage is resolved).
+</Note>
 
 ## Recovery options
 
@@ -152,5 +148,5 @@ If a hub and its existing resources are accidentally deleted, there are some res
 
 ## Next steps
 
-* To learn about secure infrastructure deployments with Azure AI Foundry, see [Create a secure hub](create-secure-ai-hub.md).
+* To learn about secure infrastructure deployments with Azure AI Foundry, see [Create a secure hub](create-secure-ai-hub).
 * For information about the SLA, see the [Azure service-level agreements](https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=1).

@@ -1,18 +1,11 @@
 ---
-title: Characteristics and limitations for using custom text classification
-titleSuffix: Azure AI services
+title: "Characteristics and limitations for using custom text classification"
 description: Learn about characteristics and limitations for using custom text classification.
-author: aahill
-ms.author: aahi
-manager: nitinme
-ms.service: azure-ai-language
-ms.topic: article
-ms.date: 04/26/2023
 ---
 
 # Characteristics and limitations for using custom text classification
 
-[!INCLUDE [non-english-translation](../includes/non-english-translation.md)]
+[!INCLUDE [non-english-translation](../includes/non-english-translation)]
 
 Performance of custom text classification models will vary based on the scenario and input data. The following sections are designed to help you understand key concepts about performance and evaluation of custom text classification models.
 
@@ -34,7 +27,7 @@ The first step in calculating the model's evaluation is categorizing the predict
 
 For single-label classification, it is not possible to have a false negative, because single-label classification models will always predict one class for each file. For a multi-label classification it is counted as both a false negative and false positive, false negative for the tagged class and false positive for the predicted class.
 
-The preceding categories are then used to calculate *precision*, *recall* and an *F1 score*. These metrics are provided as part of the service's model evaluation. Here are the metric definitions and how they're calculated:<br>
+The preceding categories are then used to calculate *precision*, *recall* and an *F1 score*. These metrics are provided as part of the service's model evaluation. Here are the metric definitions and how they're calculated:<br/>
 
 **Precision**: The measure of the model's ability to predict actual positive classes. It's the ratio between the predicted true positives and the actually tagged positives. Recall returns how many predicted classes are correct.
 
@@ -42,8 +35,9 @@ The preceding categories are then used to calculate *precision*, *recall* and an
 
 **F1 score**: A function of precision and recall. An F1 score is needed when you are seeking a balance between precision and recall.
 
-> [!NOTE] 
-> For single classification, because the count of false positives and false negatives is always equal, it follows that precision, recall, and the F1 score are always equal to each other.
+<Note>
+For single classification, because the count of false positives and false negatives is always equal, it follows that precision, recall, and the F1 score are always equal to each other.
+</Note>
 
 Model evaluation scores might not always be comprehensive, especially if a specific class is missing or underrepresented in the training data. This can occur if an insufficient number of tagged files were provided in the training phase. This situation would affect the quantity and quality of the testing split, which may affect the quality of the evaluation.
 
@@ -110,7 +104,7 @@ If you notice low scores in a certain language, consider adding more data in thi
 
 * [Introduction to custom text classification](/azure/ai-services/language-service/custom-text-classification/overview)
 
-* [Custom text classification Transparency Note](custom-text-classification-transparency-note.md)
-* [Data privacy and security](custom-text-classification-data-privacy-security.md)
-* [Guidance for integration and responsible use](custom-text-classification-guidance-integration-responsible-use.md)
+* [Custom text classification Transparency Note](custom-text-classification-transparency-note)
+* [Data privacy and security](custom-text-classification-data-privacy-security)
+* [Guidance for integration and responsible use](custom-text-classification-guidance-integration-responsible-use)
 * [Microsoft AI principles](https://www.microsoft.com/ai/responsible-ai?rtc=1&activetab=pivot1%3aprimaryr6)

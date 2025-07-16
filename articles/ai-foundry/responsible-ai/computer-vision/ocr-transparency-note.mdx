@@ -1,18 +1,11 @@
 ---
-title: Transparency Note for Optical Character Recognition (OCR) - Azure AI Vision
-titleSuffix: Azure AI services
+title: "Transparency Note for Optical Character Recognition (OCR) - Azure AI Vision"
 description: Transparency note for optical character recognition (OCR) of images and documents with printed and handwritten text using the Azure AI Vision API.
-author: sanjeev3
-ms.author: sajagtap
-manager: nitinme
-ms.service: azure-ai-vision
-ms.topic: article
-ms.date: 02/12/2021
 ---
 
 # Transparency note and use cases for optical character recognition
 
-[!INCLUDE [non-english-translation](../includes/non-english-translation.md)]
+[!INCLUDE [non-english-translation](../includes/non-english-translation)]
 
 This article provides information about use cases for optical character recognition (OCR).
 
@@ -56,4 +49,4 @@ Consider the following factors when you choose a use case.
 - **Avoid use for signature identification**: When you extract handwritten text, avoid using the OCR results on signatures to identify individuals. Signatures are hard to read for humans and machines alike. A better way to use OCR is to use it for detecting the presence of a signature for further analysis.
 - **Don’t use OCR for decisions that may have serious adverse impacts**: Examples of such use cases include processing medical prescriptions and dispensing medication. The machine learning models that extract text from prescriptions can result in undetected or incorrect text output. Decisions based on incorrect output could have serious adverse impacts. Additionally, it is advisable to include human review of decisions that have the potential for serious impacts on individuals.
 
-- [!INCLUDE [regulatory-considerations](../includes/regulatory-considerations.md)]
+- [!INCLUDE [regulatory-considerations](../includes/regulatory-considerations)]

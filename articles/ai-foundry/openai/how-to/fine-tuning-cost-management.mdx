@@ -1,13 +1,6 @@
 ---
-title: 'Fine-tuning cost management'
-titleSuffix: Azure OpenAI
+title: "Fine-tuning cost management"
 description: Learn about the training and hosting costs associated with fine-tuning
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: how-to
-ms.date: 07/08/2025
-author: mrbullwinkle
-ms.author: mbullwin
 show_latex: true
 ---
 
@@ -15,8 +8,9 @@ show_latex: true
 
 Fine-tuning can be intimidating: unlike base models, where you're just paying for input and output tokens for inferencing, fine-tuning requires training your custom models and dealing with hosting. This guide is intended to help you better understand the costs associated with fine-tuning and how to manage them.
 
-> [!IMPORTANT]
-> The numbers in this article are for example purposes only. You should always refer to the official [pricing page](https://azure.microsoft.com/pricing/details/cognitive-services/openai-service) for pricing details to use in the formulas provided in this article.
+<Info>
+The numbers in this article are for example purposes only. You should always refer to the official [pricing page](https://azure.microsoft.com/pricing/details/cognitive-services/openai-service) for pricing details to use in the formulas provided in this article.
+</Info>
 
 ## Upfront investment - training your model
 
@@ -36,8 +30,9 @@ In general, smaller models and more recent models have lower prices per token th
 
 We offer both regional and global training for SFT; if you don't need data residency, global training allows you to train at a discounted rate.
 
-> [!IMPORTANT]
-> We don't charge you for time spent in queue, failed jobs, jobs canceled prior to training beginning, or data safety checks.
+<Info>
+We don't charge you for time spent in queue, failed jobs, jobs canceled prior to training beginning, or data safety checks.
+</Info>
 
 #### Example: Supervised fine-tuning (SFT)
 

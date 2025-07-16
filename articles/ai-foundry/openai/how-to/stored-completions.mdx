@@ -1,20 +1,11 @@
 ---
-title: 'How to use Azure OpenAI in Azure AI Foundry Models stored completions & distillation'
-titleSuffix: Azure OpenAI
+title: "How to use Azure OpenAI in Azure AI Foundry Models stored completions & distillation"
 description: Learn how to use stored completions & distillation with Azure OpenAI
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: how-to
-ms.custom: references_regions
-ms.date: 05/25/2025
-author: mrbullwinkle
-ms.author: mbullwin
-recommendations: false
 ---
 
 # Azure OpenAI stored completions & distillation (preview)
 
-Stored completions allow you to capture the conversation history from chat completions sessions to use as datasets for [evaluations](./evaluations.md) and [fine-tuning](./fine-tuning.md).
+Stored completions allow you to capture the conversation history from chat completions sessions to use as datasets for [evaluations](./evaluations) and [fine-tuning](./fine-tuning).
 
 ## Stored completions support
 
@@ -72,7 +63,7 @@ print(completion.choices[0].message)
 
 # [Python (API Key)](#tab/python-key)
 
-[!INCLUDE [Azure key vault](~/reusable-content/ce-skilling/azure/includes/ai-services/security/azure-key-vault.md)]
+[!INCLUDE [Azure key vault](~/reusable-content/ce-skilling/azure/includes/ai-services/security/azure-key-vault)]
 
 ```python
 import os
@@ -247,7 +238,9 @@ curl $AZURE_OPENAI_ENDPOINT/openai/deployments/gpt-4o/chat/completions?api-versi
 
 Once stored completions are enabled for an Azure OpenAI deployment, they'll begin to show up in the [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs) in the **Stored Completions** pane.
 
-:::image type="content" source="../media/stored-completions/stored-completions.png" alt-text="Screenshot of the stored completions User Experience." lightbox="../media/stored-completions/stored-completions.png":::
+<Frame>
+    ![](/images/ai-foundry/openai/media/stored-completions/stored-completions.png)
+</Frame>
 
 ## Distillation
 
@@ -259,28 +252,37 @@ Distillation requires a minimum of 10 stored completions, though it's recommende
 
 2. To begin distillation, select **Distill**
 
-    :::image type="content" source="../media/stored-completions/distill.png" alt-text="Screenshot of the stored completions User Experience with distill highlighted." lightbox="../media/stored-completions/distill.png":::
+    <Frame>
+        ![](/images/ai-foundry/openai/media/stored-completions/distill.png)
+    </Frame>
 
 3. Pick which model you would like to fine-tune with your stored completion dataset.
 
-    :::image type="content" source="../media/stored-completions/fine-tune.png" alt-text="Screenshot of the stored completion distillation model selection." lightbox="../media/stored-completions/fine-tune.png":::
+    <Frame>
+        ![](/images/ai-foundry/openai/media/stored-completions/fine-tune.png)
+    </Frame>
 
 4. Confirm which version of the model you want to fine-tune:
 
-    :::image type="content" source="../media/stored-completions/version.png" alt-text="Screenshot of the stored completion distillation version." lightbox="../media/stored-completions/version.png":::
+    <Frame>
+        ![](/images/ai-foundry/openai/media/stored-completions/version.png)
+    </Frame>
 
 5. A `.jsonl` file with a randomly generated name will be created as a training dataset from your stored completions. Select the file > **Next**.
 
-    > [!Note]
-    > Stored completion distillation training files cannot be accessed directly and cannot be exported externally/downloaded.
+    <Note>
+    Stored completion distillation training files cannot be accessed directly and cannot be exported externally/downloaded.
+    </Note>
 
-    :::image type="content" source="../media/stored-completions/file-name.png" alt-text="Screenshot of the stored completion training dataset jsonl file." lightbox="../media/stored-completions/file-name.png":::
+    <Frame>
+        ![](/images/ai-foundry/openai/media/stored-completions/file-name.png)
+    </Frame>
 
-The rest of the steps correspond to the typical Azure OpenAI fine-tuning steps. To learn more, see our [fine-tuning getting started guide](./fine-tuning.md).
+The rest of the steps correspond to the typical Azure OpenAI fine-tuning steps. To learn more, see our [fine-tuning getting started guide](./fine-tuning).
 
 ## Evaluation
 
-The [evaluation](./evaluations.md) of large language models is a critical step in measuring their performance across various tasks and dimensions. This is especially important for fine-tuned models, where assessing the performance gains (or losses) from training is crucial. Thorough evaluations can help your understanding of how different versions of the model may impact your application or scenario.
+The [evaluation](./evaluations) of large language models is a critical step in measuring their performance across various tasks and dimensions. This is especially important for fine-tuned models, where assessing the performance gains (or losses) from training is crucial. Thorough evaluations can help your understanding of how different versions of the model may impact your application or scenario.
 
 Stored completions can be used as a dataset for running evaluations.
 
@@ -288,16 +290,21 @@ Stored completions can be used as a dataset for running evaluations.
 
 2. To configure the evaluation, select **Evaluate**
 
-    :::image type="content" source="../media/stored-completions/evaluate.png" alt-text="Screenshot of the stored completion pane with evaluate selected." lightbox="../media/stored-completions/evaluate.png":::
+    <Frame>
+        ![](/images/ai-foundry/openai/media/stored-completions/evaluate.png)
+    </Frame>
 
 3. This launches the **Evaluations** pane with a prepopulated `.jsonl` file with a randomly generated name that is created as an evaluation dataset from your stored completions.
 
-    > [!Note]
-    > Stored completion evaluation data files cannot be accessed directly and cannot be exported externally/downloaded.
+    <Note>
+    Stored completion evaluation data files cannot be accessed directly and cannot be exported externally/downloaded.
+    </Note>
 
-    :::image type="content" source="../media/stored-completions/evaluation-data.png" alt-text="Screenshot of the evaluations pane." lightbox="../media/stored-completions/evaluation-data.png":::
+    <Frame>
+        ![](/images/ai-foundry/openai/media/stored-completions/evaluation-data.png)
+    </Frame>
 
-To learn more about evaluation see, [getting started with evaluations](./evaluations.md)
+To learn more about evaluation see, [getting started with evaluations](./evaluations)
 
 ## Stored completions API
 
@@ -833,7 +840,9 @@ Stored completions access is controlled via two DataActions:
 
 By default `Cognitive Services OpenAI Contributor` has access to both these permissions:
 
-:::image type="content" source="../media/stored-completions/permissions.png" alt-text="Screenshot of stored completions permissions." lightbox="../media/stored-completions/permissions.png":::
+<Frame>
+    ![](/images/ai-foundry/openai/media/stored-completions/permissions.png)
+</Frame>
 
 ### How do I delete stored data?
 

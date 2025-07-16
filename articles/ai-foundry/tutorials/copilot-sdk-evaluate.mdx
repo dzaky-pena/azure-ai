@@ -1,39 +1,27 @@
 ---
 title: "Part 3: Evaluate a chat app with the Azure AI SDK"
-titleSuffix: Azure AI Foundry
 description: Evaluate and deploy a custom chat app with the prompt flow SDK. This tutorial is part 3 of a 3-part tutorial series.
-manager: scottpolly
-ms.service: azure-ai-foundry
-ms.custom:
-  - ignite-2024
-ms.topic: tutorial
-ms.date: 06/27/2025
-ms.reviewer: lebaro
-ms.author: sgilley
-author: sdgilley
-
-#customer intent: As a developer, I want to learn how to use the prompt flow SDK so that I can evaluate and deploy a chat app.
 ---
 
 # Tutorial: Part 3 - Evaluate a custom chat application with the Azure AI Foundry SDK
 
-In this tutorial, you use the [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs) SDK (and other libraries) to  evaluate the chat app you built in [Part 2 of the tutorial series](copilot-sdk-build-rag.md). In this part three, you learn how to:
+In this tutorial, you use the [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs) SDK (and other libraries) to  evaluate the chat app you built in [Part 2 of the tutorial series](copilot-sdk-build-rag). In this part three, you learn how to:
 
-> [!div class="checklist"]
-> - Create an evaluation dataset
-> - Evaluate the chat app with Azure AI evaluators
-> - Iterate and improve your app
-
+<Check>
+- Create an evaluation dataset
+- Evaluate the chat app with Azure AI evaluators
+- Iterate and improve your app
+</Check>
 
 This tutorial is part three of a three-part tutorial.
 
 ## Prerequisites
 
-[!INCLUDE [hub-only-tutorial](../includes/hub-only-tutorial.md)]
+[!INCLUDE [hub-only-tutorial](../includes/hub-only-tutorial)]
 
-- Complete [part 2 of the tutorial series](copilot-sdk-build-rag.md) to build the chat application.
+- Complete [part 2 of the tutorial series](copilot-sdk-build-rag) to build the chat application.
 
-- Use the same **[!INCLUDE [hub](../includes/hub-project-name.md)]** you created in part 1. 
+- Use the same **[!INCLUDE [hub](../includes/hub-project-name)]** you created in part 1. 
 
 - Make sure you've completed the steps to [add telemetry logging](copilot-sdk-build-rag.md#logging) from part 2.
 
@@ -121,8 +109,9 @@ In the console output, you see an answer for each question, followed by a table 
 
 If you weren't able to increase the tokens per minute limit for your model, you might see some time-out errors, which are expected. The evaluation script is designed to handle these errors and continue running.  
 
-> [!NOTE]
-> You may also see many `WARNING:opentelemetry.attributes:` - these can be safely ignored and do not affect the evaluation results.
+<Note>
+You may also see many `WARNING:opentelemetry.attributes:` - these can be safely ignored and do not affect the evaluation results.
+</Note>
 
 ```Text
 ====================================================
@@ -155,13 +144,17 @@ If you weren't able to increase the tokens per minute limit for your model, you 
 
 Once the evaluation run completes, follow the link to view the evaluation results on the **Evaluation** page in the Azure AI Foundry portal.
 
-:::image type="content" source="../media/tutorials/develop-rag-copilot-sdk/eval-studio-overview.png" alt-text="Screenshot shows evaluation overview in Azure AI Foundry portal.":::
+<Frame>
+    ![](/images/ai-foundry/media/tutorials/develop-rag-copilot-sdk/eval-studio-overview.png)
+</Frame>
 
 You can also look at the individual rows and see metric scores per row, and view the full context/documents that were retrieved. These metrics can be helpful in interpreting and debugging evaluation results.
 
-:::image type="content" source="../media/tutorials/develop-rag-copilot-sdk/eval-studio-rows.png" alt-text="Screenshot shows rows of evaluation results in Azure AI Foundry portal.":::
+<Frame>
+    ![](/images/ai-foundry/media/tutorials/develop-rag-copilot-sdk/eval-studio-rows.png)
+</Frame>
 
-For more information about evaluation results in Azure AI Foundry portal, see [How to view evaluation results in Azure AI Foundry portal](../how-to/evaluate-results.md).
+For more information about evaluation results in Azure AI Foundry portal, see [How to view evaluation results in Azure AI Foundry portal](../how-to/evaluate-results).
 
 ## Iterate and improve
 
@@ -179,4 +172,4 @@ To avoid incurring unnecessary Azure costs, you should delete the resources you 
 
 ## Related content
 
-- [Learn more about the Azure AI Foundry SDK](../how-to/develop/sdk-overview.md)
+- [Learn more about the Azure AI Foundry SDK](../how-to/develop/sdk-overview)

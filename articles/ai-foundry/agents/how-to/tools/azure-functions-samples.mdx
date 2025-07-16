@@ -1,16 +1,6 @@
 ---
-title: How to use Azure Functions with the Azure AI Foundry Agent Service
-titleSuffix: Azure AI Foundry
+title: "How to use Azure Functions with the Azure AI Foundry Agent Service"
 description: Learn how to use Azure functions with Azure AI Agents.
-services: azure-ai-agent-service
-manager: nitinme
-ms.service: azure-ai-agent-service
-ms.topic: how-to
-ms.date: 07/11/2025
-author: aahill
-ms.author: aahi
-ms.custom: azure-ai-agents
-zone_pivot_groups: selection-azure-functions-samples
 ---
 
 # How to use Azure Functions with Azure AI Agents 
@@ -20,15 +10,17 @@ Azure AI Agents supports function calling, which allows you to describe the stru
 
 ## Prerequisites
 
-* A prepared environment. See the [overview](azure-functions.md) article for details.
+* A prepared environment. See the [overview](azure-functions) article for details.
 
-> [!NOTE] 
-> You must have a [A deployed agent with the standard setup](../../environment-setup.md#choose-your-setup). The basic agent setup is not supported.
+<Note>
+You must have a [A deployed agent with the standard setup](../../environment-setup.md#choose-your-setup). The basic agent setup is not supported.
+</Note>
 
-::: zone pivot="python"
+<Tab title="Python">
 
-> [!TIP]
-> You can find a complete working sample on [GitHub](https://github.com/Azure-Samples/azure-functions-ai-services-agent-python)
+<Tip>
+You can find a complete working sample on [GitHub](https://github.com/Azure-Samples/azure-functions-ai-services-agent-python)
+</Tip>
 
 ## Define a function for your agent to call
 
@@ -167,9 +159,9 @@ print(f"Deleted agent")
 
 For any issues with the Python code, create an issue on the [sample code repository](https://github.com/azure-ai-foundry/foundry-samples)
 
-::: zone-end
+</Tab>
 
-::: zone pivot="rest"
+<Tab title="REST API">
 
 ## Create an agent
 
@@ -268,47 +260,13 @@ curl --request GET \
   -H "Authorization: Bearer $AGENT_TOKEN"
 ```
 
-::: zone-end
+</Tab>
 
-<!--
-::: zone pivot="typescript"
+<Tab title="C#">
 
-## Define a function for your agent to call
-
-Start by defining an Azure Function queue trigger function that will process AI function calls from the queue. 
-
-:::code language="TypeScript" source="~/azure-functions-ai-services-agent-javascript/app/src/functions/queueGetWeather.ts" :::
-
-## Create an AI project client and agent
-
-In the sample below we create a client and an agent that has the AI tools definition for the Azure Function. The term `function` is used in two contexts within the AI tool definition: 
-
-* Azure Function: the type of tool. This is the Azure Functions app.
-* Function: the Http trigger function `GetWeather` within the Azure Function to call when the tool is invoked in the AI Project. 
-
-:::code language="TypeScript" source="~/azure-functions-ai-services-agent-javascript/app/src/azureProjectInit.ts" id="CreateAgent" :::
-
-## Create a thread for the agent
-
-:::code language="TypeScript" source="~/azure-functions-ai-services-agent-javascript/app/src/azureProjectInit.ts" id="CreateThread" :::
-
-## Create a run and check the output
-
-:::code language="TypeScript" source="~/azure-functions-ai-services-agent-javascript/app/src/functions/httpPrompt.ts" id="CreateMessage" :::
-
-## Get the result of the run
-
-:::code language="TypeScript" source="~/azure-functions-ai-services-agent-javascript/app/src/functions/httpPrompt.ts" id="ListMessages" :::
-
-For any issues with the TypeScript code, create an issue on the [sample code repository](https://github.com/Azure-Samples/azure-functions-ai-services-agent-javascript/issues)
-
-
-::: zone-end
--->
-::: zone pivot="csharp"
-
-> [!TIP]
-> You can find a complete working sample on [GitHub](https://github.com/Azure-Samples/azure-functions-ai-services-agent-dotnet)
+<Tip>
+You can find a complete working sample on [GitHub](https://github.com/Azure-Samples/azure-functions-ai-services-agent-dotnet)
+</Tip>
 
 ## Prerequisites for .NET Azure Function Sample
 To make a function call, we need to create and deploy the Azure function. In the code snippet, we have an example of function on C# which can be used by the earlier code.
@@ -385,10 +343,11 @@ dotnet add package Azure.Identity
 dotnet add package Microsoft.Azure.Functions.Worker.Extensions.Storage.Queues --prerelease
 ```
 
-> [!NOTE]
-> There's an "Azure Queue Storage trigger," however the attempt to use it results in error for now.
+<Note>
+There's an "Azure Queue Storage trigger," however the attempt to use it results in error for now.
 We have created a project, containing HTTP-triggered Azure function with the logic in `Foo.cs` file. As far as we need to trigger Azure function by a new message in the queue, we replace the content of a Foo.cs by the C# sample code above.
 To deploy the function, run the command from dotnet project folder:
+</Note>
 
 ```shell
 func azure functionapp publish function_name
@@ -413,9 +372,10 @@ Next, we monitor the output queue or the message. You should receive the next me
 ```
 The input `CorrelationId` is the same as output.
 
-> [!TIP]
-> Place multiple messages to input queue and keep second internet browser window with the output queue open and hit the refresh button on the portal user interface, so that you won't miss the message. If the message instead went to `azure-function-foo-input-poison` queue, the function completed with error, check your setup.
+<Tip>
+Place multiple messages to input queue and keep second internet browser window with the output queue open and hit the refresh button on the portal user interface, so that you won't miss the message. If the message instead went to `azure-function-foo-input-poison` queue, the function completed with error, check your setup.
 After testing the function and making sure it works, make sure that the Azure AI Project has the following roles for the storage account: `Storage Account Contributor`, `Storage Blob Data Contributor`, `Storage File Data Privileged Contributor`, `Storage Queue Data Contributor` and `Storage Table Data Contributor`. Now the function is ready to be used by the agent.
+</Tip>
 
 In the example below we're calling function "foo," which responds "Bar."
 
@@ -554,4 +514,4 @@ client.Threads.DeleteThread(thread.Id);
 client.Administration.DeleteAgent(agent.Id);
 ```
     
-::: zone-end
+</Tab>

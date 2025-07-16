@@ -1,26 +1,18 @@
 ---
-title: Continuously Evaluate your AI agents
-titleSuffix: Azure AI Foundry
+title: "Continuously Evaluate your AI agents"
 description: This article provides instructions on how to continuously evaluate AI agents.
-manager: scottpolly
-ms.service: azure-ai-foundry
-ms.topic: how-to
-ms.date: 05/19/2025
-ms.reviewer: amibp
-ms.author: lagayhar  
-author: lgayhardt
 ---
 
 # Continuously evaluate your AI agents (preview)
 
-[!INCLUDE [feature-preview](../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview)]
 
-Continuous evaluation for Agents provides near real-time observability and monitoring for your AI application. Once enabled, this feature continuously evaluates agent interactions at a set sampling rate to provide insights into quality, safety, and performance with metrics surfaced in the Foundry Observability dashboard. By using continuous evaluation, you're able to identify and troubleshoot issues early, optimize agent performance, and maintain safety. Evaluations are also connected to [traces](./develop/trace-application.md) to enable detailed debugging and root cause analysis.
+Continuous evaluation for Agents provides near real-time observability and monitoring for your AI application. Once enabled, this feature continuously evaluates agent interactions at a set sampling rate to provide insights into quality, safety, and performance with metrics surfaced in the Foundry Observability dashboard. By using continuous evaluation, you're able to identify and troubleshoot issues early, optimize agent performance, and maintain safety. Evaluations are also connected to [traces](./develop/trace-application) to enable detailed debugging and root cause analysis.
 
 ## Getting Started
 
 ### Prerequisites
-[!INCLUDE [uses-fdp-only](../includes/uses-fdp-only.md)] 
+[!INCLUDE [uses-fdp-only](../includes/uses-fdp-only)] 
 
 - An agent created within the project
 - An [Azure Monitor Application Insights resource](/azure/azure-monitor/app/app-insights-overview)
@@ -100,8 +92,9 @@ project.evaluation.create_agent_evaluation(
 
 ```
 
-> [!NOTE]
-> Application Insights must be connected to your project otherwise the service won't run. To connect an Application Insights resource, see to [Steps to connect Application Insights](#steps-to-connect-application-insights).
+<Note>
+Application Insights must be connected to your project otherwise the service won't run. To connect an Application Insights resource, see to [Steps to connect Application Insights](#steps-to-connect-application-insights).
+</Note>
 
 ### Get the evaluation result using Application Insights
 
@@ -148,8 +141,9 @@ AI-assisted evaluators employ chain-of-thought reasoning to generate an explanat
 
 This helps you understand the reasoning behind the scores for each metric.
 
-> [!NOTE]
-> Reasoning explanations might mention sensitive information based on the content of the conversation.
+<Note>
+Reasoning explanations might mention sensitive information based on the content of the conversation.
+</Note>
 
 ```python
 
@@ -193,13 +187,14 @@ project.evaluation.create_agent_evaluation(
 )
 ```
 
-> [!NOTE]
-> If multiple AI applications send continuous evaluation data to the same Application Insights resource, it's recommended to use the service name to differentiate application data. See [Azure AI Tracing](./develop/trace-application.md) for details.
+<Note>
+If multiple AI applications send continuous evaluation data to the same Application Insights resource, it's recommended to use the service name to differentiate application data. See [Azure AI Tracing](./develop/trace-application) for details.
+</Note>
 
 ## Viewing continuous evaluation results
 
-After you deployed your application to production with continuous evaluation setup, you can [monitor the quality and safety of your agent with Azure AI Foundry and Azure Monitor](./monitor-applications.md).
+After you deployed your application to production with continuous evaluation setup, you can [monitor the quality and safety of your agent with Azure AI Foundry and Azure Monitor](./monitor-applications).
 
 ## Related content
 
-- [Evaluate your AI agents locally with Azure AI Evaluation SDK](./develop/agent-evaluate-sdk.md)
+- [Evaluate your AI agents locally with Azure AI Evaluation SDK](./develop/agent-evaluate-sdk)

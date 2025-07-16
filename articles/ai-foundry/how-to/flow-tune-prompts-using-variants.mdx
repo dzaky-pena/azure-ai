@@ -1,24 +1,16 @@
 ---
-title: Tune prompts using variants
-titleSuffix: Azure AI Foundry
+title: "Tune prompts using variants"
 description: Learn how to tune prompts using variants in Prompt flow with Azure AI Foundry.
-manager: scottpolly
-ms.service: azure-ai-foundry
 ms.custom:
   - ignite-2023
   - build-2024
-ms.topic: how-to
-ms.date: 3/31/2025
-ms.reviewer: none
-ms.author: lagayhar
-author: lgayhardt
 ms.collection: ce-skilling-ai-copilot, ce-skilling-fresh-tier1
 ms.update-cycle: 180-days
 ---
 
 # Tune prompts using variants in Azure AI Foundry portal
 
-[!INCLUDE [feature-preview](../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview)]
 
 In this article, you learn how to use variants to tune prompts and evaluate the performance of different variants.
 
@@ -28,7 +20,7 @@ Variants can help you test the model’s behavior under different conditions, su
 
 ## Variants in Prompt flow
 
-With prompt flow, you can use variants to tune your prompt. A variant refers to a specific version of a tool node that has distinct settings. Currently, variants are supported only in the [LLM tool](prompt-flow-tools/llm-tool.md). For example, in the LLM tool, a new variant can represent either a different prompt content or different connection settings.
+With prompt flow, you can use variants to tune your prompt. A variant refers to a specific version of a tool node that has distinct settings. Currently, variants are supported only in the [LLM tool](prompt-flow-tools/llm-tool). For example, in the LLM tool, a new variant can represent either a different prompt content or different connection settings.
 
 Suppose you want to generate a summary of a news article. You can set different variants of prompts and settings like this:
 
@@ -129,8 +121,9 @@ Now, the flow looks as following, 2 variants for **summarize_text_content** node
 
 To make sure all the variants can run successfully, and work as expected, you can run the flow with a single row of data to test. 
 
-> [!NOTE]
-> Each time you can only select one LLM node with variants to run while other LLM nodes will use the default variant. 
+<Note>
+Each time you can only select one LLM node with variants to run while other LLM nodes will use the default variant. 
+</Note>
 
 In this example, we configure variants for both **summarize_text_content** node and **classify_with_llm** node, so you have to run twice to test all the variants.
 
@@ -167,8 +160,9 @@ You can submit a batch run, which allows you test the variants with a large amou
 6. After reviewing all the settings, you can submit the batch run.
 7. After the run is submitted, select the link, go to the run detail page.
 
-> [!NOTE]
-> The run might take several minutes to complete.
+<Note>
+The run might take several minutes to complete.
+</Note>
 
 ### Visualize outputs
 
@@ -180,5 +174,5 @@ Now, you've finished the process of tuning prompts using variants. You can apply
 
 ## Next steps
 
-- [Develop a customized evaluation flow](flow-develop-evaluation.md)
-- [Deploy a flow](flow-deploy.md)
+- [Develop a customized evaluation flow](flow-develop-evaluation)
+- [Deploy a flow](flow-deploy)

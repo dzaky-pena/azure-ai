@@ -1,14 +1,6 @@
 ---
-title: How to migrate to OpenAI JavaScript v4.x
-titleSuffix: Azure OpenAI in Azure AI Foundry Models
+title: "How to migrate to OpenAI JavaScript v4.x in Azure AI Foundry Models"
 description: Learn about migrating to the latest release of the OpenAI JavaScript library with Azure OpenAI.
-author: mrbullwinkle 
-ms.author: mbullwin 
-ms.service: azure-ai-openai
-ms.custom: devx-track-python
-ms.topic: how-to
-ms.date: 04/30/2025
-manager: nitinme
 ---
 
 # Migrating to the OpenAI JavaScript API library 4.x
@@ -17,7 +9,7 @@ As of June 2024, we recommend migrating to the OpenAI JavaScript API library 4.x
 
 ## Authenticating the client
 
-There are several ways to authenticate API requests to Azure OpenAI. We highly recommend using Microsoft Entra ID tokens. See the [Azure Identity documentation](https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/identity/identity/README.md) for more information.
+There are several ways to authenticate API requests to Azure OpenAI. We highly recommend using Microsoft Entra ID tokens. See the [Azure Identity documentation](https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/identity/identity/README) for more information.
 
 ### Microsoft Entra ID
 
@@ -52,7 +44,7 @@ const apiKey = new AzureKeyCredential("your API key");
 
 On the other hand, `AzureOpenAI` can be authenticated with an API key by setting the `AZURE_OPENAI_API_KEY` environment variable or by setting the `apiKey` string property in the options object when creating the `AzureOpenAI` client.
 
-[!INCLUDE [Azure key vault](~/reusable-content/ce-skilling/azure/includes/ai-services/security/azure-key-vault.md)]
+[!INCLUDE [Azure key vault](~/reusable-content/ce-skilling/azure/includes/ai-services/security/azure-key-vault)]
 
 ## Constructing the client
 
@@ -68,7 +60,7 @@ const client = new AzureOpenAI(options);
 
 The endpoint of the Azure OpenAI resource can be specified by setting the `endpoint` option but it can also be loaded by the client from the environment variable `AZURE_OPENAI_ENDPOINT`. This is the recommended way to set the endpoint because it allows the client to be used in different environments without changing the code and also to protect the endpoint from being exposed in the code.
 
-The API version is required to be specified, this is necessary to ensure that existing code doesn't break between preview API versions. Refer to [API versioning documentation](../api-version-lifecycle.md) to learn more about Azure OpenAI API versions. Additionally, the `deployment` property isn't required but it's recommended to be set. Once `deployment` is set, it's used as the default deployment for all operations that require it. If the client isn't created with the `deployment` option, the `model` property in the options object should be set with the deployment name. However, audio operations such as `audio.transcriptions.create` require the client to be created with the `deployment` option set to the deployment name.
+The API version is required to be specified, this is necessary to ensure that existing code doesn't break between preview API versions. Refer to [API versioning documentation](../api-version-lifecycle) to learn more about Azure OpenAI API versions. Additionally, the `deployment` property isn't required but it's recommended to be set. Once `deployment` is set, it's used as the default deployment for all operations that require it. If the client isn't created with the `deployment` option, the `model` property in the options object should be set with the deployment name. However, audio operations such as `audio.transcriptions.create` require the client to be created with the `deployment` option set to the deployment name.
 
 # [Azure OpenAI JavaScript (previous)](#tab/javascript-old)
 
@@ -563,4 +555,4 @@ The following table explores several type names from `@azure/openai` and shows t
 
 ## Next steps
 
-- [Azure OpenAI Assistants](../concepts/assistants.md)
+- [Azure OpenAI Assistants](../concepts/assistants)

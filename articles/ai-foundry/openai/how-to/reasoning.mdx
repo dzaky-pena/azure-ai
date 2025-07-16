@@ -1,13 +1,6 @@
 ---
-title: Azure OpenAI reasoning models - o3-mini, o1, o1-mini
-titleSuffix: Azure OpenAI
+title: "Azure OpenAI reasoning models - o3-mini, o1, o1-mini"
 description: Learn how to use Azure OpenAI's advanced o3-mini, o1, & o1-mini reasoning models 
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: include
-ms.date: 07/08/2025
-author: mrbullwinkle    
-ms.author: mbullwin
 ---
 
 
@@ -30,12 +23,12 @@ Azure OpenAI `o-series` models are designed to tackle reasoning and problem-solv
 |---|---|---|
 | `o3-pro`  | East US2 & Sweden Central (Global Standard)    |  Request access: [o3 limited access model application](https://aka.ms/oai/o3access). If you already have `o3 access` no request is required for `o3-pro`.    |
 | `codex-mini`  | East US2 & Sweden Central (Global Standard)    | No access request needed.    |
-| `o4-mini`  | [Model availability](../concepts/models.md#global-standard-model-availability)   | No access request needed to use the core capabilities of this model.<br><br> Request access: [o4-mini reasoning summary feature](https://aka.ms/oai/o3access)     |
+| `o4-mini`  | [Model availability](../concepts/models.md#global-standard-model-availability)   | No access request needed to use the core capabilities of this model.<br/><br/> Request access: [o4-mini reasoning summary feature](https://aka.ms/oai/o3access)     |
 | `o3` |  [Model availability](../concepts/models.md#global-standard-model-availability)  | Request access: [o3 limited access model application](https://aka.ms/oai/o3access)     |
 | `o3-mini` | [Model availability](../concepts/models.md#global-standard-model-availability).  | Access is no longer restricted for this model.   |
 |`o1` | [Model availability](../concepts/models.md#global-standard-model-availability).  | Access is no longer restricted for this model.  |
 | `o1-preview` | [Model availability](../concepts/models.md#global-standard-model-availability). |This model is only available for customers who were granted access as part of the original limited access release. We're currently not expanding access to `o1-preview`. |
-| `o1-mini` | [Model availability](../concepts/models.md#global-standard-model-availability). | No access request needed for Global Standard deployments.<br><br>Standard (regional) deployments are currently only available to select customers who were previously granted access as part of the `o1-preview` release.|
+| `o1-mini` | [Model availability](../concepts/models.md#global-standard-model-availability). | No access request needed for Global Standard deployments.<br/><br/>Standard (regional) deployments are currently only available to select customers who were previously granted access as part of the `o1-preview` release.|
 
 ## API & feature support
 
@@ -43,10 +36,10 @@ Azure OpenAI `o-series` models are designed to tackle reasoning and problem-solv
 |:-------------------|:--------------------------:|:------:|:--------|:-----:|:-------:|:--------------------------:|:-------------------------------:|:---:|
 | **API Version** | `2025-04-01-preview` & [v1 preview](../api-version-lifecycle.md#api-evolution)   | `2025-04-01-preview`  & [v1 preview](../api-version-lifecycle.md#api-evolution)  | `2025-04-01-preview` & [v1 preview](../api-version-lifecycle.md#api-evolution)   |  `2025-04-01-preview` & [v1 preview](../api-version-lifecycle.md#api-evolution)   |  `2025-04-01-preview` & [v1 preview](../api-version-lifecycle.md#api-evolution)   | `2025-04-01-preview` & [v1 preview](../api-version-lifecycle.md#api-evolution) | `2025-04-01-preview` & [v1 preview](../api-version-lifecycle.md#api-evolution)    | `2025-04-01-preview` & [v1 preview](../api-version-lifecycle.md#api-evolution)  |
 | **[Developer Messages](#developer-messages)** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | - | - |
-| **[Structured Outputs](./structured-outputs.md)** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | - | - |
-| **[Context Window](../concepts/models.md#o-series-models)** |  Input: 200,000 <br> Output: 100,000 | Input: 200,000 <br> Output: 100,000 | Input: 200,000 <br> Output: 100,000 | Input: 200,000 <br> Output: 100,000 | Input: 200,000 <br> Output: 100,000 | Input: 200,000 <br> Output: 100,000 | Input: 128,000  <br> Output: 32,768 | Input: 128,000  <br> Output: 65,536 |
+| **[Structured Outputs](./structured-outputs)** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | - | - |
+| **[Context Window](../concepts/models.md#o-series-models)** |  Input: 200,000 <br/> Output: 100,000 | Input: 200,000 <br/> Output: 100,000 | Input: 200,000 <br/> Output: 100,000 | Input: 200,000 <br/> Output: 100,000 | Input: 200,000 <br/> Output: 100,000 | Input: 200,000 <br/> Output: 100,000 | Input: 128,000  <br/> Output: 32,768 | Input: 128,000  <br/> Output: 65,536 |
 | **[Reasoning effort](#reasoning-effort)** | ✅| ✅| ✅| ✅ |✅ | ✅ | - | - |
-| **[Image input](./gpt-with-vision.md)** | ✅ | ✅ | ✅ | ✅ | - | ✅ | - | - |
+| **[Image input](./gpt-with-vision)** | ✅ | ✅ | ✅ | ✅ | - | ✅ | - | - |
 | Chat Completions API | - | - | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Responses API | ✅  | ✅  | ✅ | ✅  | ✅ | ✅ | - | - |
 | Functions/Tools | ✅ | ✅ |✅ | ✅ | ✅  | ✅  |  - | - |
@@ -56,14 +49,15 @@ Azure OpenAI `o-series` models are designed to tackle reasoning and problem-solv
 | [Reasoning summary](#reasoning-summary) <sup>3</sup> |  ✅ | - | ✅ | ✅ | -  | -  |  - | - |
 | Streaming <sup>4</sup>  | ✅ | - | ✅ | ✅| ✅ | - | - | - |
 
-<sup>1</sup> Reasoning models will only work with the `max_completion_tokens` parameter. <br><br>
+<sup>1</sup> Reasoning models will only work with the `max_completion_tokens` parameter. <br/><br/>
 <sup>2</sup> The latest o<sup>&#42;</sup> series model support system messages to make migration easier. When you use a system message with `o4-mini`, `o3`, `o3-mini`, and `o1` it will be treated as a developer message. You should not use both a developer message and a system message in the same API request.
 <sup>3</sup> Access to the chain-of-thought reasoning summary is limited access only for `o3` & `o4-mini`.
 <sup>4</sup> Streaming for `o3` is limited access only.
 
-> [!NOTE]
-> - To avoid timeouts [background mode](./responses.md#background-tasks) is recommended for `o3-pro`.
-> - `o3-pro` does not currently support image generation.
+<Note>
+- To avoid timeouts [background mode](./responses.md#background-tasks) is recommended for `o3-pro`.
+- `o3-pro` does not currently support image generation.
+</Note>
 
 ### Not Supported
 
@@ -83,7 +77,7 @@ You'll need to upgrade your OpenAI client library for access to the latest param
 pip install openai --upgrade
 ```
 
-If you're new to using Microsoft Entra ID for authentication see [How to configure Azure OpenAI in Azure AI Foundry Models with Microsoft Entra ID authentication](../how-to/managed-identity.md).
+If you're new to using Microsoft Entra ID for authentication see [How to configure Azure OpenAI in Azure AI Foundry Models with Microsoft Entra ID authentication](../how-to/managed-identity).
 
 ```python
 from openai import AzureOpenAI
@@ -273,8 +267,9 @@ Console.WriteLine($"{completion.Role}: {completion.Content[0].Text}");
 
 ## Reasoning effort
 
-> [!NOTE]
-> Reasoning models have `reasoning_tokens` as part of `completion_tokens_details` in the model response. These are hidden tokens that aren't returned as part of the message response content but are used by the model to help generate a final answer to your request. `2024-12-01-preview` adds an additional new parameter `reasoning_effort` which can be set to `low`, `medium`, or `high` with the latest `o1` model. The higher the effort setting, the longer the model will spend processing the request, which will generally result in a larger number of `reasoning_tokens`.
+<Note>
+Reasoning models have `reasoning_tokens` as part of `completion_tokens_details` in the model response. These are hidden tokens that aren't returned as part of the message response content but are used by the model to help generate a final answer to your request. `2024-12-01-preview` adds an additional new parameter `reasoning_effort` which can be set to `low`, `medium`, or `high` with the latest `o1` model. The higher the effort setting, the longer the model will spend processing the request, which will generally result in a larger number of `reasoning_tokens`.
+</Note>
 
 ## Developer messages
 
@@ -290,7 +285,7 @@ You'll need to upgrade your OpenAI client library for access to the latest param
 pip install openai --upgrade
 ```
 
-If you're new to using Microsoft Entra ID for authentication see [How to configure Azure OpenAI with Microsoft Entra ID authentication](../how-to/managed-identity.md).
+If you're new to using Microsoft Entra ID for authentication see [How to configure Azure OpenAI with Microsoft Entra ID authentication](../how-to/managed-identity).
 
 ```python
 from openai import AzureOpenAI
@@ -388,10 +383,11 @@ Console.WriteLine($"{completion.Role}: {completion.Content[0].Text}");
 
 ## Reasoning summary
 
-When using the latest `o3` and `o4-mini` models with the [Responses API](./responses.md) you can use the reasoning summary parameter to receive summaries of the model's chain of thought reasoning. This parameter can be set to `auto`, `concise`, or `detailed`. Access to this feature requires you to [Request Access](https://aka.ms/oai/o3access).
+When using the latest `o3` and `o4-mini` models with the [Responses API](./responses) you can use the reasoning summary parameter to receive summaries of the model's chain of thought reasoning. This parameter can be set to `auto`, `concise`, or `detailed`. Access to this feature requires you to [Request Access](https://aka.ms/oai/o3access).
 
-> [!NOTE]
-> Even when enabled, reasoning summaries are not generated for every step/request. This is expected behavior.
+<Note>
+Even when enabled, reasoning summaries are not generated for every step/request. This is expected behavior.
+</Note>
 
 # [Python](#tab/py)
 

@@ -1,40 +1,23 @@
 ---
 title: "Quickstart: Get started with Azure AI Foundry"
-titleSuffix: Azure AI Foundry
 description: This article provides instructions on how to start using the Azure AI Foundry portal and the Azure AI Foundry SDK.
-author: sdgilley
-ms.author: sgilley
-manager: scottpolly
-ms.reviewer: dantaylo
-ms.date: 07/03/2025
-ms.service: azure-ai-foundry
-ms.topic: how-to
-ms.custom:
-  - build-2024
-  - devx-track-azurecli
-  - devx-track-python
-  - ignite-2024
-  - update-code5
-  - build-aifnd
-  - build-2025
-zone_pivot_groups: project-type
-# customer intent: As a developer, I want to start using the Azure AI Foundry portal and client libraries.
 ---
 
 
 # Quickstart: Get started with Azure AI Foundry
 
-::: zone pivot="hub-project"
+<Tab title="Hub based project">
 
 In this quickstart, we walk you through setting up your local development environment with the [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs) SDK. We write a prompt, run it as part of your app code, trace the LLM calls being made, and run a basic evaluation on the outputs of the LLM.
 
-> [!TIP]
-> The rest of this article shows how to use a **[!INCLUDE [hub](../includes/hub-project-name.md)]**.  Select **[!INCLUDE [fdp](../includes/fdp-project-name.md)]** at the top of this article if you want to use a [!INCLUDE [fdp](../includes/fdp-project-name.md)] instead.  [Which type of project do I need?](../what-is-azure-ai-foundry.md#which-type-of-project-do-i-need)
+<Tip>
+The rest of this article shows how to use a **[!INCLUDE [hub](../includes/hub-project-name)]**.  Select **[!INCLUDE [fdp](../includes/fdp-project-name)]** at the top of this article if you want to use a [!INCLUDE [fdp](../includes/fdp-project-name)] instead.  [Which type of project do I need?](../what-is-azure-ai-foundry.md#which-type-of-project-do-i-need)
+</Tip>
 
 ## Prerequisites
 
 - An [Azure subscription](https://azure.microsoft.com/free/). If you don't have an Azure subscription, create a free account before you begin.
-- A [!INCLUDE [hub-project-name](../includes/hub-project-name.md)]. If you're new to Azure AI Foundry and don't have a [!INCLUDE [hub-project-name](../includes/hub-project-name.md)], select **[!INCLUDE [fdp](../includes/fdp-project-name.md)]** at the top of this article to use a [!INCLUDE [fdp-project-name](../includes/fdp-project-name.md)] instead.
+- A [!INCLUDE [hub-project-name](../includes/hub-project-name)]. If you're new to Azure AI Foundry and don't have a [!INCLUDE [hub-project-name](../includes/hub-project-name)], select **[!INCLUDE [fdp](../includes/fdp-project-name)]** at the top of this article to use a [!INCLUDE [fdp-project-name](../includes/fdp-project-name)] instead.
 
 ## Set up your development environment
 
@@ -46,15 +29,16 @@ In this quickstart, we walk you through setting up your local development enviro
     pip install azure-ai-inference azure-identity azure-ai-projects==1.0.0b10
     ```
 
-    > [!NOTE]
-    > Different project types require different versions of the `azure-ai-projects` package. To avoid conflicts, create separate Python environments: use version `1.0.0b10` for [!INCLUDE [hub-project-name](../includes/hub-project-name.md)]s and the latest version for [!INCLUDE [fdp-project-name](../includes/fdp-project-name.md)]s.
+    <Note>
+    Different project types require different versions of the `azure-ai-projects` package. To avoid conflicts, create separate Python environments: use version `1.0.0b10` for [!INCLUDE [hub-project-name](../includes/hub-project-name)]s and the latest version for [!INCLUDE [fdp-project-name](../includes/fdp-project-name)]s.
+    </Note>
 
 ## Deploy a model
 
-[!INCLUDE [tip-left-pane](../includes/tip-left-pane.md)]
+[!INCLUDE [tip-left-pane](../includes/tip-left-pane)]
 
 1. Sign in to [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs).
-1. Select a [!INCLUDE [hub-project-name](../includes/hub-project-name.md)]. If you don't have a [!INCLUDE [hub-project-name](../includes/hub-project-name.md)], select **[!INCLUDE [fdp](../includes/fdp-project-name.md)]** at the top of this article to use a [!INCLUDE [fdp-project-name](../includes/fdp-project-name.md)] instead.
+1. Select a [!INCLUDE [hub-project-name](../includes/hub-project-name)]. If you don't have a [!INCLUDE [hub-project-name](../includes/hub-project-name)], select **[!INCLUDE [fdp](../includes/fdp-project-name)]** at the top of this article to use a [!INCLUDE [fdp-project-name](../includes/fdp-project-name)] instead.
 
 1. Select **Model catalog** from the left pane.
 
@@ -62,7 +46,9 @@ In this quickstart, we walk you through setting up your local development enviro
 
 1. On the model details page, select **Deploy**.
 
-    :::image type="content" source="../media/tutorials/chat/deploy-model.png" alt-text="Screenshot of the model details page with a button to deploy the model." lightbox="../media/tutorials/chat/deploy-model.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/tutorials/chat/deploy-model.png)
+    </Frame>
 
 
 1. Leave the default **Deployment name**. Select **Deploy**.
@@ -79,9 +65,11 @@ Create a file named **chat.py**.  Copy and paste the following code into it.
 
 Your project connection string is required to call the Azure OpenAI in Azure AI Foundry Models from your code. 
 
-Find your connection string in the Azure AI Foundry project you created in the [Azure AI Foundry playground quickstart](../quickstarts/get-started-playground.md).  Open the project, then find the connection string on the **Overview** page.  
+Find your connection string in the Azure AI Foundry project you created in the [Azure AI Foundry playground quickstart](../quickstarts/get-started-playground).  Open the project, then find the connection string on the **Overview** page.  
 
-:::image type="content" source="../media/quickstarts/azure-ai-sdk/connection-string.png" alt-text="Screenshot shows the overview page of a project and the location of the connection string.":::
+<Frame>
+    ![](/images/ai-foundry/media/quickstarts/azure-ai-sdk/connection-string.png)
+</Frame>
 
 Copy the connection string and replace `<your-connection-string-goes-here>` in the **chat.py** file.
 
@@ -105,8 +93,9 @@ Let's change the script to take input from a client application and generate a s
 
     :::code language="python" source="~/azureai-samples-main/scenarios/projects/basic/chat-template.py" id="chat_function":::
 
-    > [!NOTE]
-    > The prompt template uses mustache format.
+    <Note>
+    The prompt template uses mustache format.
+    </Note>
 
     The get_chat_response function could be easily added as a route to a FastAPI or Flask app to enable calling this function from a front-end web application.
 
@@ -122,17 +111,17 @@ python chat.py
 
 ## Clean up resources
 
-[!INCLUDE [clean-up-resources](../includes/clean-up-resources.md)]
+[!INCLUDE [clean-up-resources](../includes/clean-up-resources)]
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Add data and use retrieval augmented generation (RAG) to build a custom chat app](../tutorials/copilot-sdk-create-resources.md)
+> [Add data and use retrieval augmented generation (RAG) to build a custom chat app](../tutorials/copilot-sdk-create-resources)
 
-::: zone-end
+</Tab>
 
-::: zone pivot="fdp-project"
+<Tab title="Foundry project">
 
-[!INCLUDE [get-started-fdp](../includes/get-started-fdp.md)]
+[!INCLUDE [get-started-fdp](../includes/get-started-fdp)]
 
-::: zone-end
+</Tab>

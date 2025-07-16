@@ -1,24 +1,16 @@
 ---
-title: Develop an evaluation flow
-titleSuffix: Azure AI Foundry
+title: "Develop an evaluation flow"
 description: Learn how to customize or create your own evaluation flow tailored to your tasks and objectives, and then use in a batch run as an evaluation method in prompt flow with Azure AI Foundry.
-manager: scottpolly
-ms.service: azure-ai-foundry
 ms.custom:
   - ignite-2023
   - build-2024
-ms.topic: how-to
-ms.date: 3/31/2025
-ms.reviewer: mithigpe
-ms.author: lagayhar
-author: lgayhardt
 ms.collection: ce-skilling-ai-copilot, ce-skilling-fresh-tier1
 ms.update-cycle: 180-days
 ---
 
 # Develop an evaluation flow in Azure AI Foundry portal
 
-[!INCLUDE [feature-preview](../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview)]
 
 Evaluation flows are special types of flows that assess how well the outputs of a run align with specific criteria and goals.
 
@@ -65,8 +57,9 @@ Therefore, to run an evaluation, you need to indicate the sources of these requi
 - If the data source is from your run output, the source is indicated as `${run.output.[OutputName]}`
 - If the data source is from your test dataset, the source is indicated as `${data.[ColumnName]}`
 
-> [!NOTE]
-> If your evaluation doesn't require data from the dataset, you do not need to reference any dataset columns in the input mapping section, indicating the dataset selection is an optional configuration. Dataset selection won't affect evaluation result.
+<Note>
+If your evaluation doesn't require data from the dataset, you do not need to reference any dataset columns in the input mapping section, indicating the dataset selection is an optional configuration. Dataset selection won't affect evaluation result.
+</Note>
 
 ### Input description
 
@@ -133,5 +126,5 @@ As you called this function in the Python node, you don't need to assign it anyw
 
 ## Next steps
 
-- [Iterate and optimize your flow by tuning prompts using variants](./flow-tune-prompts-using-variants.md)
-- [Submit batch run and evaluate a flow](./flow-bulk-test-evaluation.md)
+- [Iterate and optimize your flow by tuning prompts using variants](./flow-tune-prompts-using-variants)
+- [Submit batch run and evaluate a flow](./flow-bulk-test-evaluation)

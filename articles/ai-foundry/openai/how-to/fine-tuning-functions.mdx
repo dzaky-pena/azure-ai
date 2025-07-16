@@ -1,26 +1,20 @@
 ---
-title: Fine-tuning function calls with Azure OpenAI in Azure AI Foundry Models
+title: "Fine-tuning function calls with Azure OpenAI in Azure AI Foundry Models"
 description: Learn how to improve tool calling performance with Azure OpenAI fine-tuning
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: how-to
-ms.date: 05/25/2025
-author: mrbullwinkle
-ms.author: mbullwin
 ---
 
 
 # Fine-tuning and tool calling
 
-Models that use the chat completions API support [tool calling](../how-to/function-calling.md). Unfortunately, functions defined in your chat completion calls don't always perform as expected. Fine-tuning your model with tool calling examples can improve model output by enabling you to:
+Models that use the chat completions API support [tool calling](../how-to/function-calling). Unfortunately, functions defined in your chat completion calls don't always perform as expected. Fine-tuning your model with tool calling examples can improve model output by enabling you to:
 
 * Get similarly formatted responses even when the full function definition isn't present. (Allowing you to potentially save money on prompt tokens.)
 * Get more accurate and consistent outputs.
 
-> [!NOTE]
-> `function_call` and `functions` have been deprecated in favor of `tools`. 
-> It is recommended to use the `tools` parameter instead.
-
+<Note>
+`function_call` and `functions` have been deprecated in favor of `tools`. 
+It is recommended to use the `tools` parameter instead.
+</Note>
 
 ## Tool calling (recommended)
 ### Constructing a training file
@@ -182,5 +176,5 @@ As with the example before, this example is artificially expanded for readabilit
 ## Next steps
 
 * [Function calling fine-tuning scenarios](https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/fine-tuning-with-function-calling-on-azure-openai-service/ba-p/4065968).
-* Explore the fine-tuning capabilities in the [Azure OpenAI fine-tuning tutorial](../tutorials/fine-tune.md).
+* Explore the fine-tuning capabilities in the [Azure OpenAI fine-tuning tutorial](../tutorials/fine-tune).
 * Review fine-tuning [model regional availability](../concepts/models.md#fine-tuning-models).

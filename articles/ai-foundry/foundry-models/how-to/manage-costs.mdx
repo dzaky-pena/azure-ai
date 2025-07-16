@@ -1,15 +1,6 @@
 ---
-title: Plan to manage costs for Azure AI Foundry Models
+title: "Plan to manage costs for Azure AI Foundry Models"
 description: Learn how to plan for and manage costs for Azure AI Foundry Models by using cost analysis in the Azure portal.
-author: ssalgadodev
-ms.author: ssalgado
-ms.custom: subject-cost-optimization
-ms.service: azure-ai-model-inference
-ms.topic: how-to
-ms.date: 05/19/2025
-manager: scottpolly
-ms.reviewer: fasantia
-reviewer: santiagxf
 ---
 
 # Plan to manage costs for Azure AI Foundry Models
@@ -42,18 +33,23 @@ To understand the breakdown of what makes up the cost, it can be helpful to use 
 
 3. Select the name of the project. Azure portal opens in a new window.
 
-    :::image type="content" source="../media/manage-cost/view-azure-portal-resource-group.png" alt-text="Screenshot of how to access the resource group details page in Azure portal from Azure AI Foundry portal." lightbox="../media/manage-cost/view-azure-portal-resource-group.png":::
+    <Frame>
+        ![](/images/ai-foundry/foundry-models/media/manage-cost/view-azure-portal-resource-group.png)
+    </Frame>
 
 4. Under **Cost Management** select **Cost analysis**
 
 5. By default, cost analysis is scoped to the selected resource group.
 
-    > [!IMPORTANT]
-    > It's important to scope *Cost Analysis* to the resource group where the Azure AI Foundry resource is deployed. Cost meters associated with [Models from Partners and Community](#models-from-partners-and-community) are displayed under the resource group instead of the Azure AI Foundry resource.
+    <Info>
+    It's important to scope *Cost Analysis* to the resource group where the Azure AI Foundry resource is deployed. Cost meters associated with [Models from Partners and Community](#models-from-partners-and-community) are displayed under the resource group instead of the Azure AI Foundry resource.
+    </Info>
 
 6. Modify **Group by** to **Meter**. You can now see that for this particular resource group, the source of the costs comes from different models series.  
 
-    :::image type="content" source="../media/manage-cost/cost-by-meter.png" alt-text="Screenshot of how to see the cost by each meter in the resource group." lightbox="../media/manage-cost/cost-by-meter.png":::
+    <Frame>
+        ![](/images/ai-foundry/foundry-models/media/manage-cost/cost-by-meter.png)
+    </Frame>
 
 The following sections explain the entries in details.
 
@@ -61,16 +57,21 @@ The following sections explain the entries in details.
 
 [Models Sold Directly by Azure](../concepts/models.md#models-sold-directly-by-azure) (including Azure OpenAI) are charged directly and they show up as billing meters under each Azure AI Foundry resource (formerly known Azure AI Services). This billing happens directly through Microsoft. When you inspect your bill, you notice billing meters accounting for inputs and outputs for each consumed model.
 
-:::image type="content" source="../media/manage-cost/cost-by-meter-1p.png" alt-text="Screenshot of cost analysis dashboard scoped to the resource group where the Azure AI Foundry resource is deployed, highlighting the meters for Azure OpenAI and Phi models. Cost is group by meter." lightbox="../media/manage-cost/cost-by-meter-1p.png":::
+<Frame>
+    ![](/images/ai-foundry/foundry-models/media/manage-cost/cost-by-meter-1p.png)
+</Frame>
 
 ### Models from Partners and Community
 
 Models provided by third-party providers, like Cohere, are billed using Azure Marketplace. As opposite to Microsoft billing meters, those entries are associated with the resource group where your Azure AI Foundry (formerly known as Azure AI Services) is deployed instead of to the Azure AI Foundry resource itself. Given model providers charge you directly, you see entries under the category **Marketplace** and **Service Name** *SaaS* accounting for inputs and outputs for each consumed model.
 
-:::image type="content" source="../media/manage-cost/cost-by-meter-saas.png" alt-text="Screenshot of cost analysis dashboard scoped to the resource group where the Azure AI Foundry resource is deployed, highlighting the meters for models billed throughout Azure Marketplace. Cost is group by meter." lightbox="../media/manage-cost/cost-by-meter-saas.png":::
+<Frame>
+    ![](/images/ai-foundry/foundry-models/media/manage-cost/cost-by-meter-saas.png)
+</Frame>
 
-> [!IMPORTANT]
-> This distinction between [Models Sold Directly by Azure ](../concepts/models.md#models-sold-directly-by-azure) (including Azure OpenAI) and [Models from Partners and Community](../concepts/models.md#models-from-partners-and-community) only affects how the model is made available to you and how you are charged. In all cases, models are hosted within Azure cloud and there is no interaction with external services or providers.
+<Info>
+This distinction between [Models Sold Directly by Azure ](../concepts/models.md#models-sold-directly-by-azure) (including Azure OpenAI) and [Models from Partners and Community](../concepts/models.md#models-from-partners-and-community) only affects how the model is made available to you and how you are charged. In all cases, models are hosted within Azure cloud and there is no interaction with external services or providers.
+</Info>
 
 ### Using Azure Prepayment
 
@@ -103,17 +104,23 @@ To understand the breakdown of what makes up that cost, it can be helpful to use
 
 6. Since we're seeing the cost of all the resource group, it's useful to see the cost by resource. In that case, select **View** > **Cost by resource**.
 
-    :::image type="content" source="../media/manage-cost/cost-by-resource.png" alt-text="Screenshot of how to see the cost by each resource in the resource group." lightbox="../media/manage-cost/cost-by-resource.png":::
+    <Frame>
+        ![](/images/ai-foundry/foundry-models/media/manage-cost/cost-by-resource.png)
+    </Frame>
 
 7. Now you can see the resources generating each of the billing meters.
 
 8. Azure OpenAI models and Microsoft models, as explained before, are displayed as meters under each Azure AI services resource:
 
-    :::image type="content" source="../media/manage-cost/cost-by-resource-1p.png" alt-text="Screenshot of cost analysis dashboard scoped to the resource group where the Azure AI Services resource is deployed, highlighting the meters for Azure OpenAI and Microsoft's models. Cost is group by resource." lightbox="../media/manage-cost/cost-by-resource-1p.png":::
+    <Frame>
+        ![](/images/ai-foundry/foundry-models/media/manage-cost/cost-by-resource-1p.png)
+    </Frame>
 
 9. Some providers' models are displayed as meters under Global resources. Notice that the word *Global* **isn't** related to the SKU of the model deployment (for instance, *Global standard*). If you have multiple Azure AI services resources, your bill contains one entry **for each model for each Azure AI services resource**. The resource meters have the format *[model-name]-[GUID]* where *[GUID]* is an identifier unique an associated with a given Azure AI Services resource. You notice billing meters accounting for inputs and outputs for each model you have consumed.
 
-    :::image type="content" source="../media/manage-cost/cost-by-resource-saas.png" alt-text="Screenshot of cost analysis dashboard scoped to the resource group where the Azure AI Services resource is deployed, highlighting the meters for models billed throughout Azure Marketplace. Cost is group by resource." lightbox="../media/manage-cost/cost-by-resource-saas.png":::
+    <Frame>
+        ![](/images/ai-foundry/foundry-models/media/manage-cost/cost-by-resource-saas.png)
+    </Frame>
 
 It's important to understand scope when you evaluate costs associated with Azure AI Services. If your resources are part of the same resource group, you can scope Cost Analysis at that level to understand the effect on costs. If your resources are spread across multiple resource groups, you can scope to the subscription level.
 

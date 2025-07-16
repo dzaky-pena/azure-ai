@@ -1,22 +1,12 @@
 ---
-title: Foundry Local CLI Reference
-titleSuffix: Foundry Local
+title: "Foundry Local CLI Reference"
 description: Complete reference guide for the Foundry Local command-line interface.
-manager: scottpolly
-ms.service: azure-ai-foundry
 ms.subservice: foundry-local
-ms.custom: build-2025
-ms.author: jburchel
-ms.reviewer: samkemp
-author: jburchel
-reviewer: samuel100
-ms.topic: concept-article
-ms.date: 07/03/2025
 ---
 
 # Foundry Local CLI Reference
 
-[!INCLUDE [foundry-local-preview](./../includes/foundry-local-preview.md)]
+[!INCLUDE [foundry-local-preview](./../includes/foundry-local-preview)]
 
 This article provides a comprehensive reference for the Foundry Local command-line interface (CLI). The CLI organizes commands into logical categories to help you manage models, control the service, and maintain your local cache.
 
@@ -38,13 +28,13 @@ The CLI organizes commands into three main categories:
 
 The following table summarizes the commands related to managing and running models:
 
-> [!NOTE]
-> You can specify the `model` argument by its **alias** or **model ID**. Using an alias will:
-> - Select the *best model* for your available hardware. For example, if you have a Nvidia CUDA GPU available, Foundry Local selects the CUDA model. If you have a supported NPU available, Foundry Local selects the NPU model.
-> - Allow you to use a shorter name without needing to remember the model ID.
->
-> If you want to run a specific model, you can use the model ID. For example, to run the `qwen2.5-0.5b` on CPU - irrespective of your available hardware - use: `foundry model run qwen2.5-0.5b-instruct-generic-cpu`.
+<Note>
+You can specify the `model` argument by its **alias** or **model ID**. Using an alias will:
+- Select the *best model* for your available hardware. For example, if you have a Nvidia CUDA GPU available, Foundry Local selects the CUDA model. If you have a supported NPU available, Foundry Local selects the NPU model.
+- Allow you to use a shorter name without needing to remember the model ID.
 
+If you want to run a specific model, you can use the model ID. For example, to run the `qwen2.5-0.5b` on CPU - irrespective of your available hardware - use: `foundry model run qwen2.5-0.5b-instruct-generic-cpu`.
+</Note>
 
 | **Command**                                     | **Description**                                                                  |
 | --------------------------------------          | -------------------------------------------------------------------------------- |

@@ -1,25 +1,17 @@
 ---
-title: 'How to use Azure OpenAI Assistants file search'
-titleSuffix: Azure OpenAI
+title: "How to use Azure OpenAI Assistants file search"
 description: Learn how to use Assistants file search.
-services: cognitive-services
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: how-to
-ms.date: 05/20/2025
-author: aahill
-ms.author: aahi
-recommendations: false
 ---
 
 # Azure OpenAI Assistants file search tool (Preview)
 
-[!INCLUDE [agent-service](../includes/agent-service.md)]
+[!INCLUDE [agent-service](../includes/agent-service)]
 
 File Search augments the Assistant with knowledge from outside its model, such as proprietary product information or documents provided by your users. OpenAI automatically parses and chunks your documents, creates and stores the embeddings, and use both vector and keyword search to retrieve relevant content to answer user queries.
 
-> [!IMPORTANT]
-> * File search has [additional charges](https://azure.microsoft.com/pricing/details/cognitive-services/openai-service/) beyond the token based fees for Azure OpenAI usage.
+<Info>
+* File search has [additional charges](https://azure.microsoft.com/pricing/details/cognitive-services/openai-service/) beyond the token based fees for Azure OpenAI usage.
+</Info>
 
 ## File search support
 
@@ -33,8 +25,9 @@ File search is available in [regions](../concepts/models.md#assistants-preview) 
 
 ### Supported file types
 
-> [!NOTE]
-> For text/ MIME types, the encoding must be either utf-8, utf-16, or ASCII.
+<Note>
+For text/ MIME types, the encoding must be either utf-8, utf-16, or ASCII.
+</Note>
 
 |File format|MIME Type|
 |---|---|
@@ -83,8 +76,9 @@ assistant = client.beta.assistants.create(
 
 # [REST](#tab/rest)
 
-> [!NOTE]
-> With Azure OpenAI the `model` parameter requires model deployment name. If your model deployment name is different than the underlying model name then you would adjust your code to ` "model": "{your-custom-model-deployment-name}"`.
+<Note>
+With Azure OpenAI the `model` parameter requires model deployment name. If your model deployment name is different than the underlying model name then you would adjust your code to ` "model": "{your-custom-model-deployment-name}"`.
+</Note>
 
 ```console
 curl https://YOUR_RESOURCE_NAME.openai.azure.com/openai/assistants?api-version=2024-05-01-preview \

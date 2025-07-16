@@ -1,23 +1,17 @@
 ---
-title: A/B experiments for AI applications
-titleSuffix: Azure AI Foundry
+title: "A/B experiments for AI applications"
 description: Learn about conducting A/B experiments for AI applications.
-author: lgayhardt
-ms.author: lagayhar
-ms.reviewer: skohlmeier
-ms.service: azure-ai-foundry
 ms.custom:
   - ignite-2024
-ms.topic: concept-article
-ms.date: 07/02/2025
 
 #CustomerIntent: As an AI application developer, I want to learn about A/B experiments so that I can evaluate and improve my applications.
 ---
 
 # A/B Experiments for AI applications
 
-> [!IMPORTANT]
->Items marked (preview) in this article are currently in public or private preview. This preview is provided without a service-level agreement, and we don't recommend it for production workloads. Certain features might not be supported or might have constrained capabilities. For more information, see [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+<Info>
+Items marked (preview) in this article are currently in public or private preview. This preview is provided without a service-level agreement, and we don't recommend it for production workloads. Certain features might not be supported or might have constrained capabilities. For more information, see [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+</Info>
 
 In the  field of AI application development, A/B experimentation has emerged as a critical practice. It allows for continuous evaluation of AI applications, balancing business impact, risk, and cost. While offline and online evaluations provide some insights, they need to be supplemented with A/B experimentation to ensure the use of right metrics for measuring success. A/B experimentation involves comparing two versions of a feature, prompt, or model using feature flags or dynamic configuration to determine which performs better. This method is essential for several reasons:
 
@@ -37,17 +31,20 @@ However, offline evaluation has its limitations. It can't fully capture the comp
 
 As shown in the diagram, while offline evaluation is essential for initial model validation and refinement, A/B experimentation provides the real-world testing needed to ensure the AI application performs effectively and fairly in practice. Together, they form a comprehensive approach to developing robust, safe, and user-friendly AI applications.
 
-:::image type="content" source="../media/concepts/experimentation-overview.png" alt-text="A diagram depicting a typical workflow for A/B experimentation":::
+<Frame>
+  ![](/images/ai-foundry/media/concepts/experimentation-overview.png)
+</Frame>
 
 ## Scale AI applications with Azure AI evaluations and online A/B experimentation using CI/CD workflows 
 
-We're significantly simplifying the evaluation and A/B experimentation process with GitHub Actions that can be integrated seamlessly into existing CI/CD workflows in GitHub. In your CI workflows, you can now use our Azure AI Evaluation GitHub Action to run manual or automated evaluations after changes are committed using the [Azure AI Evaluation SDK](../how-to/develop/evaluate-sdk.md) to compute metrics such as coherence and fluency. 
+We're significantly simplifying the evaluation and A/B experimentation process with GitHub Actions that can be integrated seamlessly into existing CI/CD workflows in GitHub. In your CI workflows, you can now use our Azure AI Evaluation GitHub Action to run manual or automated evaluations after changes are committed using the [Azure AI Evaluation SDK](../how-to/develop/evaluate-sdk) to compute metrics such as coherence and fluency. 
 
  Using the Online Experimentation GitHub Action (preview), you can integrate A/B experimentation into your continuous deployment (CD) workflows. You can use this feature to automatically create and analyze A/B experiments with built-in AI model metrics and custom metrics as part of your CD workflows after successful deployment. Additionally, you can use the GitHub Copilot for Azure plugin to assist with experimentation, create metrics, and support decision-making. 
 
 
-> [!IMPORTANT]
-> Online experimentation is available through a limited access preview. [Request access](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR7uGybsCdrhBm9mIL2qQ6XNUNE9OREpVOTBIWFpKQ0dGOTRZWTNaWUZXSS4u&route=shorturl) to learn more.
+<Info>
+Online experimentation is available through a limited access preview. [Request access](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR7uGybsCdrhBm9mIL2qQ6XNUNE9OREpVOTBIWFpKQ0dGOTRZWTNaWUZXSS4u&route=shorturl) to learn more.
+</Info>
 
 ## Azure AI Partners
 
@@ -68,4 +65,4 @@ You're also welcome to use your own A/B experimentation provider to run experime
 ## Related content
 
 
-- [Azure AI Evaluation SDK](../how-to/develop/evaluate-sdk.md)
+- [Azure AI Evaluation SDK](../how-to/develop/evaluate-sdk)

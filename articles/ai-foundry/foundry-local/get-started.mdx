@@ -1,16 +1,7 @@
 ---
-title: Get started with Foundry Local
-titleSuffix: Foundry Local
+title: "Get started with Foundry Local"
 description: Learn how to install, configure, and run your first AI model with Foundry Local
-manager: scottpolly
-ms.date: 07/03/2025
-ms.service: azure-ai-foundry
 ms.subservice: foundry-local
-ms.topic: quickstart
-ms.reviewer: samkemp
-ms.author: jburchel
-author: jburchel
-reviewer: samuel100
 ms.custom:
   - build-2025
   - build-aifnd
@@ -24,7 +15,7 @@ keywords:
 
 # Get started with Foundry Local
 
-[!INCLUDE [foundry-local-preview](./includes/foundry-local-preview.md)]
+[!INCLUDE [foundry-local-preview](./includes/foundry-local-preview)]
 
 This guide walks you through setting up Foundry Local to run AI models on your device. 
 
@@ -68,11 +59,14 @@ Get started with Foundry Local quickly:
     ```
 
     You should see a response from the model in the terminal:
-    :::image type="content" source="media/get-started-output.png" alt-text="Screenshot of output from foundry local run command." lightbox="media/get-started-output.png":::
+    <Frame>
+        ![](/images/ai-foundry/foundry-local/media/get-started-output.png)
+    </Frame>
+    
 
-
-> [!TIP]
-> You can replace `phi-3.5-mini` with any model name from the catalog (see `foundry model list` for available models). Foundry Local downloads the model variant that best matches your system's hardware and software configuration. For example, if you have an NVIDIA GPU, it downloads the CUDA version of the model. If you have a Qualcomm NPU, it downloads the NPU variant. If you have no GPU or NPU, it downloads the CPU version.
+<Tip>
+You can replace `phi-3.5-mini` with any model name from the catalog (see `foundry model list` for available models). Foundry Local downloads the model variant that best matches your system's hardware and software configuration. For example, if you have an NVIDIA GPU, it downloads the CUDA version of the model. If you have a Qualcomm NPU, it downloads the NPU variant. If you have no GPU or NPU, it downloads the CPU version.
+</Tip>
 
 ## Explore commands
 
@@ -105,8 +99,9 @@ To view available **cache** commands, run:
 foundry cache --help
 ```
 
-> [!TIP]
-> For a complete guide to all CLI commands and their usage, see the [Foundry Local CLI Reference](reference/reference-cli.md).
+<Tip>
+For a complete guide to all CLI commands and their usage, see the [Foundry Local CLI Reference](reference/reference-cli).
+</Tip>
 
 ## Upgrading Foundry Local
 
@@ -138,9 +133,9 @@ If you wish to uninstall Foundry Local, use the following commands based on your
 
 ## Next steps
 
-- [Integrate inferencing SDKs with Foundry Local](how-to/how-to-integrate-with-inference-sdks.md)
+- [Integrate inferencing SDKs with Foundry Local](how-to/how-to-integrate-with-inference-sdks)
 - [Explore the Foundry Local documentation](index.yml)
-- [Learn about best practices and troubleshooting](reference/reference-best-practice.md)
-- [Explore the Foundry Local API reference](reference/reference-catalog-api.md)
-- [Learn Compile Hugging Face models](how-to/how-to-compile-hugging-face-models.md)
+- [Learn about best practices and troubleshooting](reference/reference-best-practice)
+- [Explore the Foundry Local API reference](reference/reference-catalog-api)
+- [Learn Compile Hugging Face models](how-to/how-to-compile-hugging-face-models)
 

@@ -1,26 +1,19 @@
 ---
-title: Generate Synthetic and Simulated Data for Evaluation
-titleSuffix: Azure AI Foundry
+title: "Generate Synthetic and Simulated Data for Evaluation"
 description: This article provides instructions on how to generate synthetic data to run simulations to evaluate the performance and safety of your generative AI application.
-manager: scottpolly
-ms.service: azure-ai-foundry
 ms.custom:
   - ignite-2023
   - build-2024
   - references_regions
-ms.topic: how-to
-ms.date: 06/30/2025
-ms.reviewer: minthigpen
-ms.author: lagayhar
-author: lgayhardt
 ---
 
 # Generate synthetic and simulated data for evaluation (preview)
 
-[!INCLUDE [feature-preview](../../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../../includes/feature-preview)]
 
-> [!NOTE]
-> The Azure AI Evaluation SDK replaces the retired Evaluate with the prompt flow SDK.
+<Note>
+The Azure AI Evaluation SDK replaces the retired Evaluate with the prompt flow SDK.
+</Note>
 
 Large language models (LLMs) are known for their few-shot and zero-shot learning abilities, allowing them to function with minimal data. However, this limited data availability impedes thorough evaluation and optimization when you might not have test datasets to evaluate the quality and effectiveness of your generative AI application.
 
@@ -319,8 +312,9 @@ azure_ai_project = {
 }
 ```
 
-> [!NOTE]
-> Adversarial simulation uses the Azure AI safety evaluation service and is currently available only in the following regions: East US 2, France Central, UK South, Sweden Central.
+<Note>
+Adversarial simulation uses the Azure AI safety evaluation service and is currently available only in the following regions: East US 2, France Central, UK South, Sweden Central.
+</Note>
 
 ### Specify the target callback to simulate against for the adversarial simulator
 
@@ -500,7 +494,7 @@ Here's an example of an output from simulating multi-turn conversations:
 }
 ```
 
-For single-turn simulations, use the helper function `to_eval_qr_json_lines()` to convert the output to a query-and-response output format that all the Azure AI Evaluation SDK evaluators take in or pass in the list of conversations directly to evaluators, which support multi-turn conversation input. [Learn more about how to evaluate your generative AI application](evaluate-sdk.md).
+For single-turn simulations, use the helper function `to_eval_qr_json_lines()` to convert the output to a query-and-response output format that all the Azure AI Evaluation SDK evaluators take in or pass in the list of conversations directly to evaluators, which support multi-turn conversation input. [Learn more about how to evaluate your generative AI application](evaluate-sdk).
 
 ### Additional functionality
 
@@ -572,6 +566,6 @@ Users can also define their own `api_call_retry_sleep_sec` and `api_call_retry_m
 
 - [Azure Python reference documentation](https://aka.ms/azureaieval-python-ref)
 - [Azure AI Evaluation SDK troubleshooting guide](https://aka.ms/azureaieval-tsg)
-- [Get started building a chat app](../../quickstarts/get-started-code.md)
-- [Evaluate your generative AI application](evaluate-sdk.md)
+- [Get started building a chat app](../../quickstarts/get-started-code)
+- [Evaluate your generative AI application](evaluate-sdk)
 - [Get started with simulation samples](https://aka.ms/aistudio/eval-samples)

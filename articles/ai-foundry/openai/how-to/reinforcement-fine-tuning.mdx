@@ -1,14 +1,6 @@
 ---
 title: "Customize o4-mini model with Azure OpenAI and reinforcement fine-tuning (Preview)"
 description: Learn how to use reinforcement fine-tuning with Azure OpenAI
-author: mrbullwinkle
-ms.author: mbullwin
-manager: nitinme
-ms.date: 05/11/2025
-ms.service: azure-ai-openai
-ms.topic: how-to
-ms.custom:
-  - build-2025
 ---
 
 # Reinforcement fine-tuning (RFT) with Azure OpenAI o4-mini (Preview)
@@ -75,9 +67,13 @@ Training files may contain a maximum of 50,000 examples, while test datasets may
 
 You can create training jobs for o4-mini RFT in the Azure AI Foundry the same way you would fine tune any other model: Select **fine-tuning** in a supported region and select o4-mini as your base model.
 
-:::image type="content" source="../media/how-to/reinforcement-fine-tuning/model.png" alt-text="Screenshot of o4-mini model selection in the Azure AI Foundry portal." lightbox="../media/how-to/reinforcement-fine-tuning/model.png":::
+<Frame>
+    ![](/images/ai-foundry/openai/media/how-to/reinforcement-fine-tuning/model.png)
+</Frame>
 
-:::image type="content" source="../media/how-to/reinforcement-fine-tuning/reinforcement.png" alt-text="Screenshot of the reinforcement fine-tuning menu in the Azure AI Foundry portal." lightbox="../media/how-to/reinforcement-fine-tuning/reinforcement.png":::
+<Frame>
+    ![](/images/ai-foundry/openai/media/how-to/reinforcement-fine-tuning/reinforcement.png)
+</Frame>
 
 ### Hyperparameter selection
 
@@ -90,11 +86,13 @@ The hyperparameters section of the **reinforcement** method supports all of the 
 |`Compute-multiplier` |0.5 -3.0 | The multiplier on amount of compute use for exploring search space during training. Increasing will result in greater number of samples being rolled per instance. Too low likely to underfit, too high would be prone to overfit.|
 |`Reasoning_effort`|Low, Medium, High | The amount of effort the model should put into reasoning. Defaults to medium effort. If performance is poor, consider increasing the reasoning effort. |
 
-> [!NOTE]
-> If a method is provided, the top level hyperparameters field will be ignored. If you want to set both regular and reinforcement training params, set both in the reinforcement hyperparameters section.
+<Note>
+If a method is provided, the top level hyperparameters field will be ignored. If you want to set both regular and reinforcement training params, set both in the reinforcement hyperparameters section.
+</Note>
 
-> [!TIP]
-> All these values are optional, and we recommend users to start your first job with default values before adjusting the hyperparameters.
+<Tip>
+All these values are optional, and we recommend users to start your first job with default values before adjusting the hyperparameters.
+</Tip>
 
 ## Graders
 
@@ -222,10 +220,13 @@ A multigrader object combines the output of multiple graders to produce a single
 
 When using the UX you're able to write a prompt and generate a valid grader and response format in json as needed. Grader is mandatory field to be entered while submitting a fine-tuning job. Response format is optional.
 
-> [!IMPORTANT]
-> Generating correct grader schema requires careful prompt authoring. You may find that your first few attempts generate invalid schemas or don't create a schema that will properly handle your training data. Grader is a mandatory field that must be entered while submitting a fine-tuning job. Response format is optional.
+<Info>
+Generating correct grader schema requires careful prompt authoring. You may find that your first few attempts generate invalid schemas or don't create a schema that will properly handle your training data. Grader is a mandatory field that must be entered while submitting a fine-tuning job. Response format is optional.
+</Info>
 
-:::image type="content" source="../media/how-to/reinforcement-fine-tuning/grader-schema.png" alt-text="Screenshot of the reinforcement fine-tuning grader schema generation experience." lightbox="../media/how-to/reinforcement-fine-tuning/grader-schema.png":::
+<Frame>
+    ![](/images/ai-foundry/openai/media/how-to/reinforcement-fine-tuning/grader-schema.png)
+</Frame>
 
 Here's an example grader for each category:
 
@@ -294,8 +295,9 @@ Models which we're supporting as grader models are `gpt-4o-2024-08-06`and `o3-mi
 }
 ```
 
-> [!Note]
-> : Currently we don’t support `multi` with model grader as a sub grader. `Multi` grader is supported only with `text_Similarity` and `string_check`.
+<Note>
+: Currently we don’t support `multi` with model grader as a sub grader. `Multi` grader is supported only with `text_Similarity` and `string_check`.
+</Note>
 
 Example of response format which is an optional field:
 
@@ -337,7 +339,9 @@ You can also review the results files while training runs, to get a peak at the 
 
 During the training you can view the logs and RFT metrics and pause the job as needed (if metrics aren't converging or if you feel model isn't learning at the right pace, incorrect grader chosen, etc.). Once the training job is paused, a deployable checkpoint will be created and available for you to infer or resume the job further to completion. Pause operation is only applicable for jobs which have been trained for at least one step and are in *Running* state.
 
-:::image type="content" source="../media/how-to/reinforcement-fine-tuning/pause.png" alt-text="Screenshot of the reinforcement fine-tuning with a running job." lightbox="../media/how-to/reinforcement-fine-tuning/pause.png":::
+<Frame>
+    ![](/images/ai-foundry/openai/media/how-to/reinforcement-fine-tuning/pause.png)
+</Frame>
 
 ### Guardrails on training spending
 
@@ -355,15 +359,17 @@ These are two separate top-level reward metrics:
  
 - `valid_reward_mean`: The average reward across the samples taken from all datapoints in the validation set, which is a more stable metric.
 
-> [!TIP]
-> You should always test inferencing with your model. If you’ve selected an inappropriate grader, it’s possible that the mean reward doesn't reflect the model’s performance. Review sample outputs from the model to ensure they're formatted correctly and make sense. Check if the model's predictions align with the ground truth and if the descriptive analysis provides a reasonable explanation.
+<Tip>
+You should always test inferencing with your model. If you’ve selected an inappropriate grader, it’s possible that the mean reward doesn't reflect the model’s performance. Review sample outputs from the model to ensure they're formatted correctly and make sense. Check if the model's predictions align with the ground truth and if the descriptive analysis provides a reasonable explanation.
+</Tip>
 
 ### Reasoning tokens
 
 The `train_reasoning_tokens_mean` and `valid_reasoning_tokens_mean` metrics to see how the model is changing its behavior over time. These metrics are the average number of reasoning tokens used by the model to respond to a prompt in the training and validation datasets, respectively. You can also view the mean reasoning token count in the fine-tuning dashboard.
 
-> [!TIP]
-> Often, during training, the model will drastically change the average number of reasoning tokens it uses to respond to a prompt. This is a sign that the model is changing its behavior in response to the reward signal. The model may learn to use fewer reasoning tokens to achieve the same reward, or it may learn to use more reasoning tokens to achieve a higher reward.
+<Tip>
+Often, during training, the model will drastically change the average number of reasoning tokens it uses to respond to a prompt. This is a sign that the model is changing its behavior in response to the reward signal. The model may learn to use fewer reasoning tokens to achieve the same reward, or it may learn to use more reasoning tokens to achieve a higher reward.
+</Tip>
 
 ## Evaluate the results
 
@@ -375,7 +381,7 @@ Understanding the model's behavior can be done quickly by inspecting the evals a
 
 Your fine tuned model can be deployed via the UI or REST API, just like any other fine tuned model.
 
-You can deploy the fine tuning job which is completed or any intermittent checkpoints created automatically or manually by triggering pause operation. To know more about model deployment and test with Chat Playground refer, see [fine-tuning deployment](./fine-tuning-deploy.md).
+You can deploy the fine tuning job which is completed or any intermittent checkpoints created automatically or manually by triggering pause operation. To know more about model deployment and test with Chat Playground refer, see [fine-tuning deployment](./fine-tuning-deploy).
 
 When using your model, make sure to use the same instructions and structure as used during training. This keeps the model in distribution, and ensures that you see the same performance on your problems during inference as you achieved during training.
 
@@ -397,7 +403,7 @@ Some basic rules for grader selection:
 
 ### Test your graders
 
-All of the graders available in RFT are supported in [Azure OpenAI evaluation](./evaluations.md). Before initiating a training run, test a vanilla o4-mini model against your validation data with the same grader you intend to use for training. If the grader scores don't match your expectations – then you need to select a different grader.
+All of the graders available in RFT are supported in [Azure OpenAI evaluation](./evaluations). Before initiating a training run, test a vanilla o4-mini model against your validation data with the same grader you intend to use for training. If the grader scores don't match your expectations – then you need to select a different grader.
 
 We also provide a grader check API that you can use to check the validity of your configuration.
 

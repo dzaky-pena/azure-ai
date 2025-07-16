@@ -1,14 +1,6 @@
 ---
-title: How to trace AI applications using OpenAI SDK
-titleSuffix: Azure AI Foundry
+title: "How to trace AI applications using OpenAI SDK"
 description: Learn how to trace applications that use OpenAI SDK in Azure AI Foundry
-author: lgayhardt
-ms.author: lagayhar
-manager: scottpolly
-ms.reviewer: amibp
-ms.date: 05/19/2025
-ms.service: azure-ai-foundry
-ms.topic: how-to
 ---
 
 # Trace AI applications using OpenAI SDK
@@ -38,12 +30,15 @@ The following steps show how to configure your resource:
 
 3. If an Azure Application Insights resource isn't associated with your Azure AI Foundry resource, associate one.
 
-    :::image type="content" source="../../media/how-to/develop/trace-application/configure-app-insight.png" alt-text="A screenshot showing how to configure Azure Application Insights to the Azure AI Foundry resource." lightbox="../../media/how-to/develop/trace-application/configure-app-insight.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/how-to/develop/trace-application/configure-app-insight.png)
+    </Frame>
 
 4. To reuse an existing Azure Application Insights, use the drop-down **Application Insights resource name** to locate the resource and select **Connect**.
 
-    > [!TIP]
-    > To connect to an existing Azure Application Insights, you need at least contributor access to the Azure AI Foundry resource (or Hub). 
+    <Tip>
+    To connect to an existing Azure Application Insights, you need at least contributor access to the Azure AI Foundry resource (or Hub). 
+    </Tip>
 
 5. To connect to a new Azure Application Insights resource, select the option **Create new**.
 
@@ -51,8 +46,9 @@ The following steps show how to configure your resource:
 
     2. By default, the new resource is created in the same resource group where the Azure AI Foundry resource was created. Use the **Advance settings** option to configure a different resource group or subscription.
 
-        > [!TIP]
-        > To create a new Azure Application Insight resource, you also need contributor role to the resource group you selected (or the default one).
+        <Tip>
+        To create a new Azure Application Insight resource, you also need contributor role to the resource group you selected (or the default one).
+        </Tip>
 
     3. Select **Create** to create the resource and connect it to the Azure AI Foundry resource.
 
@@ -60,10 +56,13 @@ The following steps show how to configure your resource:
 
 5. Go to the landing page of your project and copy the project's endpoint URI. You need it later in the tutorial.
 
-    :::image type="content" source="../../media/how-to/projects/fdp-project-overview.png" alt-text="A screenshot showing how to copy the project endpoint URI." lightbox="../../media/how-to/projects/fdp-project-overview.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/how-to/projects/fdp-project-overview.png)
+    </Frame>
 
-    > [!IMPORTANT]
-    > Using a project's endpoint requires configuring Microsoft Entra ID in your application. If you don't have Entra ID configured, use the Azure Application Insights connection string as indicated in step 3 of the tutorial.
+    <Info>
+    Using a project's endpoint requires configuring Microsoft Entra ID in your application. If you don't have Entra ID configured, use the Azure Application Insights connection string as indicated in step 3 of the tutorial.
+    </Info>
 
 
 ## Instrument the OpenAI SDK
@@ -98,10 +97,14 @@ When developing with the OpenAI SDK, you can instrument your code so traces are 
     connection_string = project_client.telemetry.get_connection_string()
     ```
 
-    > [!TIP]
-    > Connection strings to Azure Application Insights looks like `InstrumentationKey=aaaa0a0a-bb1b-cc2c-dd3d-eeeee4e4e4e;...`. You can also access the connection string used in your project from the section **Tracing** in Azure AI Foundry portal. In the top navigation bar, select **Manage data source** and copy the **Connection string**. Configure your connection string in an environment variable.
-    >
-    > :::image type="content" source="../../media/how-to/develop/trace-application/tracing-copy-connection-string.png" alt-text="A screenshot showing how to copy the connection string to the underlying Azure Application Insights resource from a project." lightbox="../../media/how-to/develop/trace-application/tracing-copy-connection-string.png":::
+    <Tip>
+    Connection strings to Azure Application Insights looks like `InstrumentationKey=aaaa0a0a-bb1b-cc2c-dd3d-eeeee4e4e4e;...`. You can also access the connection string used in your project from the section **Tracing** in Azure AI Foundry portal. In the top navigation bar, select **Manage data source** and copy the **Connection string**. Configure your connection string in an environment variable.
+    
+    <Frame>
+        ![](/images/ai-foundry/media/how-to/develop/trace-application/tracing-copy-connection-string.png)
+    </Frame>
+
+    </Tip>
 
 1. Configure OpenTelemetry to send traces to the Azure Application Insights:
 
@@ -128,7 +131,9 @@ When developing with the OpenAI SDK, you can instrument your code so traces are 
 
 1. If you go back to Azure AI Foundry portal, you should see the trace displayed:
 
-    :::image type="content" source="../../media/how-to/develop/trace-application/tracing-display-simple.png" alt-text="A screenshot showing how a simple chat completion request is displayed in the trace." lightbox="../../media/how-to/develop/trace-application/tracing-display-simple.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/how-to/develop/trace-application/tracing-display-simple.png)
+    </Frame>
 
 1. It may be useful to capture sections of your code that mixes business logic with models when developing complex applications. OpenTelemetry uses the concept of spans to capture sections you're interested in. To start generating your own spans, get an instance of the current **tracer** object.
 
@@ -169,7 +174,9 @@ When developing with the OpenAI SDK, you can instrument your code so traces are 
 
 1. Traces look as follows:
 
-    :::image type="content" source="../../media/how-to/develop/trace-application/tracing-display-decorator.png" alt-text="A screenshot showing how a method using a decorator is displayed in the trace." lightbox="../../media/how-to/develop/trace-application/tracing-display-decorator.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/how-to/develop/trace-application/tracing-display-decorator.png)
+    </Frame>
 
 1. You may also want to add extra information to the current span. OpenTelemetry uses the concept of **attributes** for that. Use the `trace` object to access them and include extra information. See how the `assess_claims_with_context` method has been modified to include an attribute:
 
@@ -274,4 +281,4 @@ Configure tracing as follows:
 
 ## Next steps
 
-* [Trace agents using Azure AI Foundry SDK](trace-agents-sdk.md)
+* [Trace agents using Azure AI Foundry SDK](trace-agents-sdk)

@@ -1,32 +1,26 @@
 ---
-title: Data, privacy, and security for Azure OpenAI Service
-titleSuffix: Azure AI services
+title: "Data, privacy, and security for Azure OpenAI Service"
 description: This document details issues for data, privacy, and security for Azure OpenAI Service
-author: ChrisHMSFT
-ms.author: chrhoder
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: article
-ms.date: 02/23/2024
 ---
 
 # Data, privacy, and security for Azure OpenAI Service
 
-[!INCLUDE [non-english-translation](../includes/non-english-translation.md)]
+[!INCLUDE [non-english-translation](../includes/non-english-translation)]
 
 
 This article provides details regarding how data provided by you to the Azure OpenAI service is processed, used, and stored. Azure OpenAI stores and processes data to provide the service and to monitor for uses that violate the applicable product terms. Also see the [Microsoft Products and Services Data Protection Addendum](https://aka.ms/DPA), which governs data processing by the Azure OpenAI Service. Azure OpenAI is an Azure service; [learn more](/compliance/regulatory/offering-home) about applicable Azure compliance offerings.
 
-> [!IMPORTANT] 
-> Your prompts (inputs) and completions (outputs), your embeddings, and your training data:
-> - are NOT available to other customers.
-> - are NOT available to OpenAI.
-> - are NOT used to improve OpenAI models. 
-> - are NOT used to train, retrain, or improve Azure OpenAI Service foundation models.
-> - are NOT used to improve any Microsoft or third party products or services without your permission or instruction.
-> - Your fine-tuned Azure OpenAI models are available exclusively for your use.
->
-> The Azure OpenAI Service is operated by Microsoft as an Azure service; Microsoft hosts the OpenAI models in Microsoft's Azure environment and the Service does NOT interact with any services operated by OpenAI (e.g. ChatGPT, or the OpenAI API).
+<Info>
+Your prompts (inputs) and completions (outputs), your embeddings, and your training data:
+- are NOT available to other customers.
+- are NOT available to OpenAI.
+- are NOT used to improve OpenAI models. 
+- are NOT used to train, retrain, or improve Azure OpenAI Service foundation models.
+- are NOT used to improve any Microsoft or third party products or services without your permission or instruction.
+- Your fine-tuned Azure OpenAI models are available exclusively for your use.
+
+The Azure OpenAI Service is operated by Microsoft as an Azure service; Microsoft hosts the OpenAI models in Microsoft's Azure environment and the Service does NOT interact with any services operated by OpenAI (e.g. ChatGPT, or the OpenAI API).
+</Info>
 
 ## What data does the Azure OpenAI Service process?
 
@@ -48,7 +42,9 @@ The diagram below illustrates how your data is processed. This diagram covers se
 1. How the Azure OpenAI Service creates a fine-tuned (custom) model with your uploaded data. 
 1. How the Azure OpenAI Service and Microsoft personnel analyze prompts and completions (text and image) for harmful content and for patterns suggesting the use of the service in a manner that violates the Code of Conduct or other applicable product terms. 
 
-:::image type="content" source="media\flow.jpg" alt-text="Data flow diagram for the service." lightbox="media\flow.jpg":::
+<Frame>
+    ![](/images/ai-foundry/responsible-ai/openai/media/flow.jpg)
+</Frame>
 
 As depicted in the diagram above, managed customers may [apply to modify abuse monitoring](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOE9MUTFMUlpBNk5IQlZWWkcyUEpWWEhGOCQlQCN0PWcu). 
 
@@ -75,14 +71,15 @@ Some Azure OpenAI Service features store data in the service. This data is eithe
 - Is always encrypted at rest with Microsoft’s AES-256-encryption by default, with the option of using a customer managed key (certain preview features may not support customer managed keys).
 - Can be deleted by the customer at any time. 
 
-> [!NOTE]
-> Azure OpenAI features in preview might not support all of the above conditions.
+<Note>
+Azure OpenAI features in preview might not support all of the above conditions.
+</Note>
 
 Stored data may be used with the following service features/capabilities: 
 - **Creating a customized (fine-tuned) model**. Learn more about [how fine-tuning works](/azure/ai-services/openai/how-to/fine-tuning?tabs=turbo%2Cpython-new&pivots=programming-language-studio). Fine-tuned models are exclusively available to the customer whose data was used to create the fine-tuned model, are encrypted at rest (when not deployed for inferencing), and can be deleted by the customer at any time. Training data uploaded for fine-tuning is not used to train, retrain, or improve any Microsoft or third party base models. 
 - **Batch processing**. Learn more about [how batch processing works](https://aka.ms/aoai-batch-how-to). Batch processing is a Global deployment type; data stored at rest remains in the designated Azure geography until processing capacity becomes available; processing may occur in any geography where the relevant Azure OpenAI model is deployed (learn more about [region availability of models](/azure/ai-services/openai/concepts/models#model-summary-table-and-region-availability)).   
 - **Assistants API (preview)**. Learn more about [how the Assistants API works](/azure/ai-services/openai/concepts/assistants). Some features of Assistants, such as Threads, store message history and other content.
-- **Stored completions (preview)**. <!--Learn more about Stored completions. (link)--> Stored completions stores input-output pairs from the customer’s deployed Azure OpenAI models such as GPT-4o through the chat completions API and displays the pairs in the [Azure AI Foundry portal](https://ai.azure.com/). This allows customers to build datasets with their production data, which can then be used for evaluating or fine-tuning models (as permitted in applicable Product Terms).
+- **Stored completions (preview)**. Stored completions stores input-output pairs from the customer’s deployed Azure OpenAI models such as GPT-4o through the chat completions API and displays the pairs in the [Azure AI Foundry portal](https://ai.azure.com/). This allows customers to build datasets with their production data, which can then be used for evaluating or fine-tuning models (as permitted in applicable Product Terms).
 
 
 ### Preventing abuse and harmful content generation
@@ -99,8 +96,9 @@ For AI review, customer’s prompts and completions are not stored by the system
 
 If the customer has been approved for modified abuse monitoring (learn more at [Azure OpenAI Service abuse monitoring](/azure/ai-services/openai/concepts/abuse-monitoring)), Microsoft does not store the prompts and completions associated with the approved Azure subscription(s), and the human review process described above is not possible and is not performed. However, AI review may still be conducted, leveraging LLMs that review prompts and completions at the time provided or generated, as applicable. 
 
-> [!NOTE]
-> Azure Preview features, including Azure OpenAI models in preview, may employ different privacy practices, including with respect to abuse monitoring. Previews may be subject to supplemental terms at: [Supplemental Terms of use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+<Note>
+Azure Preview features, including Azure OpenAI models in preview, may employ different privacy practices, including with respect to abuse monitoring. Previews may be subject to supplemental terms at: [Supplemental Terms of use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+</Note>
 
 ## How can a customer verify if data storage for abuse monitoring is off?
 
@@ -109,8 +107,9 @@ There are two ways for customers, once approved to turn off abuse monitoring, to
 - Using the Azure portal, or
 - Azure CLI (or any management API).
 
-> [!NOTE] 
-> The value of "false" for the "ContentLogging" attribute appears only if data storage for abuse monitoring is turned off. Otherwise, this property will not appear in either Azure portal or Azure CLI's output.
+<Note>
+The value of "false" for the "ContentLogging" attribute appears only if data storage for abuse monitoring is turned off. Otherwise, this property will not appear in either Azure portal or Azure CLI's output.
+</Note>
 
 ### Prerequisites
 
@@ -160,9 +159,9 @@ To learn more about Microsoft's privacy and security commitments see the [Micros
 ## See also
 - [Code of conduct for Azure OpenAI Service integrations](/legal/ai-code-of-conduct?context=%2Fazure%2Fcognitive-services%2Fopenai%2Fcontext%2Fcontext)
 - [Overview of Responsible AI practices for Azure OpenAI models](/azure/ai-foundry/responsible-ai/openai/overview) 
-- [Transparency note and use cases for Azure OpenAI Service](./transparency-note.md)
+- [Transparency note and use cases for Azure OpenAI Service](./transparency-note)
 - [Data Residency in Azure](https://azure.microsoft.com/explore/global-infrastructure/data-residency/)
 - Compare [Azure OpenAI in Azure Government](/azure/ai-services/openai/azure-government) 
-- [Limited access to Azure OpenAI Service](./limited-access.md)
+- [Limited access to Azure OpenAI Service](./limited-access)
 - Report abuse of Azure OpenAI Service through the [Report Abuse Portal](https://msrc.microsoft.com/report/abuse)
 - Report problematic to [cscraireport@microsoft.com](mailto:cscraireport@microsoft.com)

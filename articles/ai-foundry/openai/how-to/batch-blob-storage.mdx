@@ -1,16 +1,6 @@
 ---
 title: "How to configure Azure Blob Storage with Azure OpenAI Batch"
-titleSuffix: Azure OpenAI
 description: Learn how to configure Azure Blob Storage with Azure OpenAI Batch
-author: mrbullwinkle
-ms.author: mbullwin
-manager: nitinme
-ms.date: 05/18/2025
-ms.service: azure-ai-openai
-ms.topic: how-to
-ms.custom:
-  - references_regions
-  - build-2025
 ---
 
 # Configuring Azure Blob Storage for Azure OpenAI
@@ -34,19 +24,22 @@ Azure OpenAI now supports using [Azure Blob Storage](/azure/storage/blobs/storag
 ### Prerequisites
 
 - An [Azure Blob Storage account](/azure/storage/blobs/storage-blobs-introduction).
-- An Azure OpenAI resource with a model of the deployment type `Global-Batch` or `DataZoneBatch` deployed. You can refer to the [resource creation and model deployment guide](./create-resource.md) for help with this process.
+- An Azure OpenAI resource with a model of the deployment type `Global-Batch` or `DataZoneBatch` deployed. You can refer to the [resource creation and model deployment guide](./create-resource) for help with this process.
 
 ### Managed identity
 
 In order for your Azure OpenAI resource to securely access your Azure Blob Storage account you need setup your resource with a **system assigned managed identity**.
 
-> [!NOTE]
-> Currently user assigned managed identities aren't supported.
+<Note>
+Currently user assigned managed identities aren't supported.
+</Note>
 
 1. Sign in to [https://portal.azure.com](https://portal.azure.com).
 2. Find your Azure OpenAI resource > Select **Resource Management** > **Identity** > **System assigned** > set status to **On**.
 
-    :::image type="content" source="../media/how-to/batch-blob-storage/identity.png" alt-text="Screenshot that shows system managed identity configuration." lightbox="../media/how-to/batch-blob-storage/identity.png":::
+    <Frame>
+        ![](/images/ai-foundry/openai/media/how-to/batch-blob-storage/identity.png)
+    </Frame>
 
 ### Role-based access control
 
@@ -55,12 +48,16 @@ Once your Azure OpenAI resource has been configured for system assigned managed 
 1. From [https://portal.azure.com](https://portal.azure.com) find and select your Azure Blob Storage resource.
 2. Select **Access Control (IAM)** > **Add** > **Add role assignment**.
 
-    :::image type="content" source="../media/how-to/batch-blob-storage/access-control.png" alt-text="Screenshot that shows access control interface for an Azure Blob Storage resource." lightbox="../media/how-to/batch-blob-storage/access-control.png":::
+    <Frame>
+        ![](/images/ai-foundry/openai/media/how-to/batch-blob-storage/access-control.png)
+    </Frame>
 
 3. Search for **Storage Blob Data Contributor** > **Next**.
 4. Select **Managed identity** > **+Select members** > Select your Azure OpenAI resources's managed identity.
 
-   :::image type="content" source="../media/how-to/batch-blob-storage/add-role.png" alt-text="Screenshot that shows Storage Blob Data Contributor role assignment." lightbox="../media/how-to/batch-blob-storage/add-role.png":::
+    <Frame>
+        ![](/images/ai-foundry/openai/media/how-to/batch-blob-storage/add-role.png)
+    </Frame>
 
 If you prefer using custom roles for more granular access, the following permissions are required:
 
@@ -79,7 +76,9 @@ For this example you'll create two containers named `batch-input`, and `batch-ou
 
 To create a container under **Data storage** > Select **+Container** > Name your containers.
 
-:::image type="content" source="../media/how-to/batch-blob-storage/container.png" alt-text="Screenshot that shows Storage Blob Data containers." lightbox="../media/how-to/batch-blob-storage/container.png":::
+<Frame>
+    ![](/images/ai-foundry/openai/media/how-to/batch-blob-storage/container.png)
+</Frame>
 
 Once your containers are created retrieve the URL for each container by selecting the container > **Settings** > **Properties** > Copy the URLs.
 
@@ -104,14 +103,17 @@ From your Azure Blob Storage account, open your **batch-input** container that y
 
 Select **Upload** and select your `test.jsonl` file.
 
-:::image type="content" source="../media/how-to/batch-blob-storage/upload.png" alt-text="Screenshot that shows Azure Storage Blob container upload UX." lightbox="../media/how-to/batch-blob-storage/upload.png":::
+<Frame>
+    ![](/images/ai-foundry/openai/media/how-to/batch-blob-storage/upload.png)
+</Frame>
 
 During the time that we're processing your `jsonl` file as part of the batch job, you can't make any changes to the file. If a file changes while the batch job is running the job will fail.
 
 ## Create batch job
 
-> [!NOTE]
-> `metadata` is currently not supported with this capability.
+<Note>
+`metadata` is currently not supported with this capability.
+</Note>
 
 # [Python](#tab/python)
 
@@ -203,7 +205,7 @@ curl -X POST https://YOUR_RESOURCE_NAME.openai.azure.com/openai/batches?api-vers
 }
 ```
 
-You can monitor the status the same way you would previously as outlined in our [comprehensive guide on using Azure OpenAI batch](./batch.md).
+You can monitor the status the same way you would previously as outlined in our [comprehensive guide on using Azure OpenAI batch](./batch).
 
 ```python
 import time
@@ -274,8 +276,9 @@ print(batch_response.model_dump_json(indent=2))
 
 Once your batch job is complete, you can download the `error_blob` and `output_blob` via the Azure Blob Storage interface in the Azure portal or you can download programmatically:
 
-> [!NOTE]
-> `error_blob`, and `output_blob` paths are always returned in the response even in cases where a corresponding file isn't created. In this case there were no errors so `errors.jsonl` wasn't created, only `results.jsonl` exists.
+<Note>
+`error_blob`, and `output_blob` paths are always returned in the response even in cases where a corresponding file isn't created. In this case there were no errors so `errors.jsonl` wasn't created, only `results.jsonl` exists.
+</Note>
 
 ```cmd
 pip install azure-identity azure-storage-blob
@@ -317,4 +320,4 @@ for blob_path in blob_paths:
 
 ## See also
 
-For more information on Azure OpenAI Batch, see the [comprehensive batch guide](./batch.md).
+For more information on Azure OpenAI Batch, see the [comprehensive batch guide](./batch).

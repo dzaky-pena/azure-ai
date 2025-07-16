@@ -1,20 +1,12 @@
 ---
-title: How to access on-premises resources
-titleSuffix: Azure AI Foundry
+title: "How to access on-premises resources"
 description: Learn how to configure an Azure AI Foundry managed network to securely allow access to your on-premises resources.
-manager: scottpolly
-ms.service: azure-ai-foundry
-ms.topic: how-to
-ms.date: 05/08/2025
-ms.reviewer: meerakurup 
-ms.author: jburchel 
-author: jonburchel 
 # Customer intent: As an admin, I want to allow my developers to securely access on-premises resources from Azure AI Foundry.
 ---
 
 # Access on-premises resources from your Azure AI Foundry's managed network
 
-[!INCLUDE [hub-only](../includes/uses-hub-only.md)]
+[!INCLUDE [hub-only](../includes/uses-hub-only)]
 
 To access your non-Azure resources located in a different virtual network or located entirely on-premises from your [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs)'s managed virtual network, an Application Gateway must be configured. Through this Application Gateway, full end to end access can be configured to your resources.
 
@@ -22,12 +14,14 @@ Azure Application Gateway is a load balancer that makes routing decisions based 
 
 To access on-premises or custom virtual network resources from the managed virtual network, you configure an Application Gateway on your Azure virtual network. The application gateway is used for inbound access to the Azure AI Foundry portal's hub. Once configured, you then create a private endpoint from the Azure AI Foundry hub's managed virtual network to the Application Gateway. With the private endpoint, the full end to end path is secured and not routed through the Internet.
 
-:::image type="content" source="../media/how-to/network/ai-studio-app-gateway.png" alt-text="Diagram of a managed network using Application Gateway to communicate with on-premises resources." lightbox="../media/how-to/network/ai-studio-app-gateway.png":::
+<Frame>
+    ![](/images/ai-foundry/media/how-to/network/ai-studio-app-gateway.png)
+</Frame>
 
 ## Prerequisites
 
 - Read the [How an application gateway works](/azure/application-gateway/how-application-gateway-works) article to understand how the Application Gateway can secure the connection to your non-Azure resources. 
-- Set up your Azure AI Foundry hub's managed virtual network and select your isolation mode, either Allow Internet Outbound or Allow Only Approved Outbound. For more information, see [Managed virtual network isolation](configure-managed-network.md).
+- Set up your Azure AI Foundry hub's managed virtual network and select your isolation mode, either Allow Internet Outbound or Allow Only Approved Outbound. For more information, see [Managed virtual network isolation](configure-managed-network).
 - Get the private HTTP(S) endpoint of the resource to access.
 
 ## Supported resources
@@ -81,11 +75,12 @@ Follow the [Quickstart: Direct web traffic using the portal](/azure/application-
     - Sub resource: `appGwPrivateFrontendIpIPv4` 
     - FQDNs: These FQDNs are the aliases that you want to use inside the Azure AI Foundry portal. They're resolved to the managed private endpoint's private IP address targeting Application Gateway. You might include multiple FQDNs depending on how many resources you would like to connect to with the Application Gateway.
 
-    > [!NOTE]
-    > - If you're using HTTPS listener with certificate uploaded, make sure the FQDN alias matches with the certificate's CN (Common Name) or SAN (Subject Alternative Name) otherwise HTTPS call fails with SNI (Server Name Indication).
-    > - The provided FQDNs must have at least three labels in the name to properly create the private DNS zone of the private endpoint for Application Gateway.
-    > - The FQDNs field is editable after the private endpoint creation through SDK or CLI. The field isn't editable in the Azure portal.
-    > - Dynamic sub-resource naming isn't supported for the private Frontend IP configuration. The Frontend IP name must be `appGwPrivateFrontendIpIPv4`.
+    <Note>
+    - If you're using HTTPS listener with certificate uploaded, make sure the FQDN alias matches with the certificate's CN (Common Name) or SAN (Subject Alternative Name) otherwise HTTPS call fails with SNI (Server Name Indication).
+    - The provided FQDNs must have at least three labels in the name to properly create the private DNS zone of the private endpoint for Application Gateway.
+    - The FQDNs field is editable after the private endpoint creation through SDK or CLI. The field isn't editable in the Azure portal.
+    - Dynamic sub-resource naming isn't supported for the private Frontend IP configuration. The Frontend IP name must be `appGwPrivateFrontendIpIPv4`.
+    </Note>
 
 ### Configure using Python SDK and Azure CLI
 
@@ -112,4 +107,4 @@ For errors related to the Application Gateway connection to your backend resourc
 
 ## Related content
 
-- [Managed virtual network isolation](configure-managed-network.md)
+- [Managed virtual network isolation](configure-managed-network)

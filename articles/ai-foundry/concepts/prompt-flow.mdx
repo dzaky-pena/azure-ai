@@ -1,25 +1,17 @@
 ---
-title: Prompt flow in Azure AI Foundry portal
-titleSuffix: Azure AI Foundry
+title: "Prompt flow in Azure AI Foundry portal"
 description: This article introduces prompt flow in Azure AI Foundry portal.
-manager: scottpolly
-ms.service: azure-ai-foundry
 ms.custom:
   - ignite-2023
   - build-2024
   - ignite-2024
-ms.topic: concept-article
-ms.date: 06/30/2025
-ms.reviewer: none
-ms.author: lagayhar
-author: lgayhardt
 ms.collection: ce-skilling-ai-copilot, ce-skilling-fresh-tier1
 ms.update-cycle: 180-days
 ---
 
 # Prompt flow in Azure AI Foundry portal
 
-[!INCLUDE [feature-preview](../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview)]
 
 Prompt flow is a development tool designed to streamline the entire development cycle of AI applications powered by Large Language Models (LLMs). Prompt flow provides a comprehensive solution that simplifies the process of prototyping, experimenting, iterating, and deploying your AI applications.
 
@@ -73,8 +65,10 @@ By following this structured and methodical approach, prompt flow empowers you t
 
 In Azure AI Foundry portal, you can start a new flow by selecting a flow type or a template from the gallery. 
 
-:::image type="content" source="../media/prompt-flow/type-or-gallery.png" alt-text="Screenshot of example flow types and templates from the gallery." lightbox="../media/prompt-flow/type-or-gallery.png":::
-
+<Frame>
+  ![](/images/ai-foundry/media/prompt-flow/type-or-gallery.png)
+</Frame>
+    
 Here are some examples of flow types:
 
 - **Standard flow**: Designed for general application development, the standard flow allows you to create a flow using a wide range of built-in tools for developing LLM-based applications. It provides flexibility and versatility for developing applications across different domains.
@@ -89,18 +83,22 @@ Within a flow, nodes take center stage, representing specific tools with unique 
 
 To facilitate node configuration and fine-tuning, a visual representation of the workflow structure is provided through a DAG (Directed Acyclic Graph) graph. This graph showcases the connectivity and dependencies between nodes, providing a clear overview of the entire workflow.
 
-:::image type="content" source="../media/prompt-flow/dag-graph-example.png" alt-text="Screenshot of an example directed acyclic graph in prompt flow editor." lightbox="../media/prompt-flow/dag-graph-example.png":::
-
+<Frame>
+  ![](/images/ai-foundry/media/prompt-flow/dag-graph-example.png)
+</Frame>
+    
 With the flow feature in Prompt flow, you have the power to design, customize, and optimize the logic of your AI application. The cohesive arrangement of nodes ensures efficient data processing and effective flow management, empowering you to create robust and advanced applications.
 
 ## Prompt flow tools
 
 Tools are the fundamental building blocks of a flow.
 
-In Azure AI Foundry portal, tool options include the [LLM tool](../how-to/prompt-flow-tools/llm-tool.md), [Prompt tool](../how-to/prompt-flow-tools/prompt-tool.md), [Python tool](../how-to/prompt-flow-tools/python-tool.md), and more.
+In Azure AI Foundry portal, tool options include the [LLM tool](../how-to/prompt-flow-tools/llm-tool), [Prompt tool](../how-to/prompt-flow-tools/prompt-tool), [Python tool](../how-to/prompt-flow-tools/python-tool), and more.
 
-:::image type="content" source="../media/prompt-flow/tool-options.png" alt-text="Screenshot of tool options in prompt flow editor." lightbox="../media/prompt-flow/tool-options.png":::
-
+<Frame>
+  ![](/images/ai-foundry/media/prompt-flow/tool-options.png)
+</Frame>
+    
 Each tool is a simple, executable unit with a specific function. By combining different tools, you can create a flow that accomplishes a wide range of goals. For example, you can use the LLM tool to generate text or summarize an article and the Python tool to process the text to inform the next flow component or result.
 
 One of the key benefit of Prompt flow tools is their seamless integration with third-party APIs and python open source packages. This not only improves the functionality of large language models but also makes the development process more efficient for developers.
@@ -109,5 +107,5 @@ If the prompt flow tools in Azure AI Foundry portal don't meet your requirements
 
 ## Next steps
 
-- [Build with prompt flow in Azure AI Foundry portal](../how-to/flow-develop.md)
+- [Build with prompt flow in Azure AI Foundry portal](../how-to/flow-develop)
 - [Get started with prompt flow in VS Code](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html)

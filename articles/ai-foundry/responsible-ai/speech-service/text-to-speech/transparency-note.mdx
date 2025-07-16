@@ -1,18 +1,11 @@
 ---
-title: Text to speech transparency note
-titleSuffix: Azure AI services
+title: "Text to speech transparency note"
 description: This Transparency Note discusses Text to speech and the key considerations for making use of this technology responsibly.
-author: PatrickFarley
-manager: nitinme
-ms.author: pafarley
-ms.service: azure-ai-speech
-ms.topic: article
-ms.date: 11/14/2023
 ---
 
 # Transparency note: text to speech 
 
-[!INCLUDE [non-english-translation](../../includes/non-english-translation.md)]
+[!INCLUDE [non-english-translation](../../includes/non-english-translation)]
 
 ## What is a Transparency Note? 
 
@@ -249,7 +242,7 @@ We encourage customers to use text to speech features in their innovative soluti
 - **Review the code of conduct**: Microsoft has established a code of conduct that prohibits certain uses of all text to speech features. Ensure compliance with the code of conduct when selecting a use case for text to speech services. 
 - **Exercise editorial control**: Carefully consider using synthetic voices with content that lacks proper editorial control, as synthetic voices can sound human-like and amplify the effect of incorrect or misleading content. 
 - **Disclosure**: Disclose the synthetic nature of voices, images, and/or videos to users such that users are not likely to be deceived or duped—or able to prank others—into believing they are interacting with a real person. 
-- [!INCLUDE [regulatory-considerations](../../includes/regulatory-considerations.md)]
+- [!INCLUDE [regulatory-considerations](../../includes/regulatory-considerations)]
 
 By adhering to these considerations, users can leverage both prebuilt and custom neural voice responsibly.  
 
@@ -274,8 +267,9 @@ It is important to note that certain populations may be more negatively impacted
 - Custom neural voice models are trained using transfer learning technology based on our multi-lingual, multi-speaker base model, with the recording samples of human voices that you provide. The richer the base model, the more powerful the transfer learning, requiring less training data from your voice talent. While our base model is built using a wide range of speech data that includes different speaking accents, age groups, and genders, across about 100 languages (see list of supported languages [here](/azure/ai-services/speech-service/language-support#neural-voices)), it’s possible that certain demographic groups are not well represented in some languages. For example, we cover less speech data from children than from adults. To accommodate this limitation, we require at least 300 lines of recordings (or, around 30 minutes of speech) to be prepared as training data for custom neural voice, and we recommend 2,000 lines of recordings (2-3 hours of speech) to create a voice for production use. Each line of recording (a.k.a. “utterance”) consists of a normal sentence or a short phrase that is read by your chosen voice talent. With 2,000 utterances, our system can learn the target voice characteristics well even if the base model doesn’t include a similar speaker.
 - Privacy and data protection: When utilizing custom neural voice, customers should adhere to privacy regulations and ensure that sensitive or personal information is handled securely. It is important to be cautious when processing and storing data, and to follow best practices for data protection and consent management. 
 
-    > [!NOTE]
-    > Personal voice requires at least 10 seconds of training data as minimum to create a voice. The feature can then create a voice model based on the training data in as little as 5 seconds. This feature is designed to provide a cost-effective way for Limited Access customers to provide personalized voice experiences to their users. While the resulting voice output will sound like the user, the speaking style may not closely resemble the user’s speaking style including tones and prosodies, especially when the voice model is used to speak another language. It’s also possible the voice output will not sound equally natural across all supported languages.
+    <Note>
+    Personal voice requires at least 10 seconds of training data as minimum to create a voice. The feature can then create a voice model based on the training data in as little as 5 seconds. This feature is designed to provide a cost-effective way for Limited Access customers to provide personalized voice experiences to their users. While the resulting voice output will sound like the user, the speaking style may not closely resemble the user’s speaking style including tones and prosodies, especially when the voice model is used to speak another language. It’s also possible the voice output will not sound equally natural across all supported languages.
+    </Note>
 
 #### [Prebuilt text to speech avatar](#tab/avatar)
 
@@ -368,10 +362,11 @@ Your recording script defines the training dataset for your voice model and is t
 
 Follow the [guidance here](/azure/ai-services/speech-service/record-custom-voice-samples#create-a-script) to prepare your script. 
 
-> [!NOTE]
-> When preparing your recording script, make sure you include a statement sentence to acquire voice talent’s acknowledgment that you are using their voice data to create a text to speech voice model and generate synthetic speech. You can find the required statement in multiple languages [here](https://github.com/Azure-Samples/Cognitive-Speech-TTS/blob/master/CustomVoice/script/verbal-statement-all-locales.txt). The language of the verbal statement must be the same as the training data language. 
->
-> As a technical safeguard intended to prevent misuse of custom neural voice, Microsoft will use this verbal statement to verify that the voice talent’s voice in the verbal statement matches the voice provided in the training data through [Speaker Verification](/azure/ai-services/speech-service/speaker-recognition-overview#speaker-verification). Read more about this process in the [Data and Privacy section here](https://aka.ms/CNV-data-privacy). 
+<Note>
+When preparing your recording script, make sure you include a statement sentence to acquire voice talent’s acknowledgment that you are using their voice data to create a text to speech voice model and generate synthetic speech. You can find the required statement in multiple languages [here](https://github.com/Azure-Samples/Cognitive-Speech-TTS/blob/master/CustomVoice/script/verbal-statement-all-locales.txt). The language of the verbal statement must be the same as the training data language. 
+
+As a technical safeguard intended to prevent misuse of custom neural voice, Microsoft will use this verbal statement to verify that the voice talent’s voice in the verbal statement matches the voice provided in the training data through [Speaker Verification](/azure/ai-services/speech-service/speaker-recognition-overview#speaker-verification). Read more about this process in the [Data and Privacy section here](https://aka.ms/CNV-data-privacy). 
+</Note>
 
 #### Preparing training data 
 

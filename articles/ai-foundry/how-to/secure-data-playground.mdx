@@ -1,26 +1,18 @@
 ---
-title: Securely use playground chat
-titleSuffix: Azure AI Foundry
+title: "Securely use playground chat"
 description: Learn how to securely use the Azure AI Foundry portal playground chat on your own data. 
-manager: scottpolly
-ms.service: azure-ai-foundry
-ms.topic: how-to
-ms.date: 04/29/2025
-ms.reviewer: meerakurup 
-ms.author: jburchel 
-author: jonburchel 
-zone_pivot_groups: azure-ai-studio-sdk-cli
 # Customer intent: As an administrator, I want to make sure that my data is handled securely when used in the playground chat.
 ---
 
 # Use your data securely with the Azure AI Foundry portal playground
 
-[!INCLUDE [hub-only-alt](../includes/uses-hub-only-alt.md)]
+[!INCLUDE [hub-only-alt](../includes/uses-hub-only-alt)]
 
 Use this article to learn how to securely use [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs)'s playground chat on your data. The following sections provide our recommended configuration to protect your data and resources by using Microsoft Entra ID role-based access control, a managed network, and private endpoints. We recommend disabling public network access for Azure OpenAI resources, Azure AI Search resources, and storage accounts. Using selected networks with IP rules isn't supported because the services' IP addresses are dynamic.
 
-> [!NOTE]
-> Azure AI Foundry's managed virtual network settings apply only to Azure AI Foundry's managed compute resources, not platform as a service (PaaS) services like Azure OpenAI or Azure AI Search. When using PaaS services, there's no data exfiltration risk because the services are managed by Microsoft.
+<Note>
+Azure AI Foundry's managed virtual network settings apply only to Azure AI Foundry's managed compute resources, not platform as a service (PaaS) services like Azure OpenAI or Azure AI Search. When using PaaS services, there's no data exfiltration risk because the services are managed by Microsoft.
+</Note>
 
 The following table summarizes the changes made in this article:
 
@@ -43,19 +35,23 @@ Ensure that the Azure AI Foundry hub is deployed with the __Identity-based acces
 
 If you're __creating a new Azure AI Foundry hub__, use one of the following documents to create a hub with network isolation:
 
-- [Create a secure Azure AI Foundry hub in Azure portal](create-secure-ai-hub.md)
-- [Create a secure Azure AI Foundry hub using the Python SDK or Azure CLI](develop/create-hub-project-sdk.md)
+- [Create a secure Azure AI Foundry hub in Azure portal](create-secure-ai-hub)
+- [Create a secure Azure AI Foundry hub using the Python SDK or Azure CLI](develop/create-hub-project-sdk)
 
 If you have an __existing Azure AI Foundry hub__ that isn't configured to use a managed network, use the following steps to configure it to use one:
 
 1. From the Azure portal, select the hub, then select __Settings__, __Networking__, __Public access__.
 1. To disable public network access for the hub, set __Public network access__ to __Disabled__. Select __Save__ to apply the changes.
 
-    :::image type="content" source="../media/how-to/secure-playground-on-your-data/hub-public-access-disable.png" alt-text="Screenshot of Azure AI Foundry hub settings with public access disabled.":::
+    <Frame>
+        ![](/images/ai-foundry/media/how-to/secure-playground-on-your-data/hub-public-access-disable.png)
+    </Frame>
 
 1. Select __Workspace managed outbound access__ and then select either the __Allow Internet Outbound__ or __Allow Only Approved Outbound__ network isolation mode. Select __Save__ to apply the changes.
 
-    :::image type="content" source="../media/how-to/secure-playground-on-your-data/select-network-isolation-configuration.png" alt-text="Screenshot of the Azure AI Foundry hub settings with allow internet outbound selected.":::
+    <Frame>
+        ![](/images/ai-foundry/media/how-to/secure-playground-on-your-data/select-network-isolation-configuration.png)
+    </Frame>
 
 ## Configure Azure AI services Resource
 
@@ -65,15 +61,21 @@ Depending on your configuration, you might use an Azure AI services resource tha
 1. From the Azure portal, select the AI services resource, then select __Resource Management, __Identity__, and __System assigned__. 
 1. To create a managed identity for the AI services resource, set the __Status__ to __On__. Select __Save__ to apply the changes.
 
-    :::image type="content" source="../media/how-to/secure-playground-on-your-data/ai-services-managed-identity.png" alt-text="Screenshot of setting the status of managed identity to on.":::
+    <Frame>
+        ![](/images/ai-foundry/media/how-to/secure-playground-on-your-data/ai-services-managed-identity.png)
+    </Frame>
 
 1. To disable public network access, select __Networking__, __Firewalls and virtual networks__, and then set __Allow access from__ to __Disabled__. Under __Exceptions__, make sure that __Allow Azure services on the trusted services list__ is enabled. Select __Save__ to apply the changes.
 
-    :::image type="content" source="../media/how-to/secure-playground-on-your-data/ai-services-public-access-disable.png" alt-text="Screenshot of AI services with public network access disabled.":::
+    <Frame>
+        ![](/images/ai-foundry/media/how-to/secure-playground-on-your-data/ai-services-public-access-disable.png)
+    </Frame>
 
 1. To create a private endpoint for the AI services resource, select __Networking__, __Private endpoint connections__, and then select __+ Private endpoint__. This private endpoint is used to allow clients in your Azure Virtual Network to securely communicate with the AI services resource. For more information on using private endpoints with Azure AI services, visit the [Use private endpoints](/azure/ai-services/cognitive-services-virtual-networks#use-private-endpoints) article.
 
-    :::image type="content" source="../media/how-to/secure-playground-on-your-data/ai-services-private-endpoint.png" alt-text="Screenshot of the private endpoint section for AI services.":::
+    <Frame>
+        ![](/images/ai-foundry/media/how-to/secure-playground-on-your-data/ai-search-private-endpoint.png)
+    </Frame>
 
     1. From the __Basics__ tab, enter a unique name for the private endpoint, network interface, and select the region to create the private endpoint in.
     1. From the __Resource__ tab, accept the target subresource of __account__.
@@ -97,26 +99,33 @@ You might want to consider using an Azure AI Search index when you either want t
 
 To use an existing index, it must have at least one searchable field. Ensure at least one valid vector column is mapped when using vector search. 
 
-> [!IMPORTANT]
-> The information in this section is only applicable for securing the Azure AI Search resource for use with Azure AI Foundry. If you're using Azure AI Search for other purposes, you might need to configure other settings. For related information on configuring Azure AI Search, visit the following articles:
->
-> - [Configure network access and firewall rules](../../search/service-configure-firewall.md)
-> - [Enable or disable role-based access control](/azure/search/search-security-enable-roles)
-> - [Configure a search service to connect using a managed identity](/azure/search/search-howto-managed-identities-data-sources)
+<Info>
+The information in this section is only applicable for securing the Azure AI Search resource for use with Azure AI Foundry. If you're using Azure AI Search for other purposes, you might need to configure other settings. For related information on configuring Azure AI Search, visit the following articles:
+
+- [Configure network access and firewall rules](../../search/service-configure-firewall)
+- [Enable or disable role-based access control](/azure/search/search-security-enable-roles)
+- [Configure a search service to connect using a managed identity](/azure/search/search-howto-managed-identities-data-sources)
+</Info>
 
 1. If you don't have an existing Azure AI Search resource for your Azure AI Foundry hub, [create one](/azure/search/search-create-service-portal).
 1. From the Azure portal, select the AI Search resource, then select __Settings__, __Identity__, and __System assigned__.
 1. To create a managed identity for the AI Search resource, set the __Status__ to __On__. Select __Save__ to apply the changes.
 
-    :::image type="content" source="../media/how-to/secure-playground-on-your-data/ai-search-managed-identity.png" alt-text="Screenshot of AI Search with a system-managed identity configuration.":::
+    <Frame>
+        ![](/images/ai-foundry/media/how-to/secure-playground-on-your-data/ai-search-managed-identity.png)
+    </Frame>
 
 1. To disable public network access, select __Settings__, __Networking__, and __Firewalls and virtual networks__. Set __Public network access__ to __Disabled__. Under __Exceptions__, make sure that __Allow Azure services on the trusted services list__ is enabled. Select __Save__ to apply the changes.
 
-    :::image type="content" source="../media/how-to/secure-playground-on-your-data/ai-search-public-access-disable.png" alt-text="Screenshot of AI Search with public network access disabled.":::
+    <Frame>
+        ![](/images/ai-foundry/media/how-to/secure-playground-on-your-data/ai-search-public-access-disable.png)
+    </Frame>
 
 1. To create a private endpoint for the AI Search resource, select __Networking__, __Private endpoint connections__, and then select __+ Create a private endpoint__.
 
-    :::image type="content" source="../media/how-to/secure-playground-on-your-data/ai-search-private-endpoint.png" alt-text="Screenshot of the private endpoint section of AI Search.":::
+    <Frame>
+        ![](/images/ai-foundry/media/how-to/secure-playground-on-your-data/ai-search-private-endpoint.png)
+    </Frame>
 
     1. From the __Basics__ tab, enter a unique name for the private endpoint, network interface, and select the region to create the private endpoint in.
     1. From the __Resource__ tab, select the __Subscription__ that contains the resource, set the __Resource type__ to __Microsoft.Search/searchServices__, and select the Azure AI Search resource. The only available subresource is __searchService__.
@@ -126,10 +135,13 @@ To use an existing index, it must have at least one searchable field. Ensure at 
 
 1. To enable API access based on role-based access controls, select __Settings__, __Keys__, and then set __API Access control__ to __Role-based access control__ or __Both__. Select __Yes_ to apply the changes.
 
-    > [!NOTE]
-    > Select __Both__ if you have other services that use a key to access the Azure AI Search. Select __Role-based access control__ to disable key-based access.
+    <Note>
+    Select __Both__ if you have other services that use a key to access the Azure AI Search. Select __Role-based access control__ to disable key-based access.
+    </Note>
 
-    :::image type="content" source="../media/how-to/secure-playground-on-your-data/search-api-access-control.png" alt-text="Screenshot of AI Search with API access set to both.":::
+    <Frame>
+        ![](/images/ai-foundry/media/how-to/secure-playground-on-your-data/search-api-access-control.png)
+    </Frame>
 
 ## Configure Azure Storage (ingestion-only)
 
@@ -139,12 +151,16 @@ If you're using Azure Storage for the ingestion scenario with the Azure AI Found
 1. From the Azure portal, select the Storage Account resource, then select __Security + networking__, __Networking__, and __Firewalls and virtual networks__.
 1. To disable public network access and allow access from trusted services, set __Public network access__ to __Enabled from selected virtual networks and IP addresses__. Under __Exceptions__, make sure that __Allow Azure services on the trusted services list__ is enabled.
 
-    :::image type="content" source="../media/how-to/secure-playground-on-your-data/storage-account-public-access-disable.png" alt-text="Screenshot of storage account network configuration.":::
+    <Frame>
+        ![](/images/ai-foundry/media/how-to/secure-playground-on-your-data/storage-account-public-access-disable.png)
+    </Frame>
 
 1. Set __Public network access__ to __Disabled__ and then select __Save__ to apply the changes. The configuration to allow access from trusted services is still enabled.
 1. To create a private endpoint for Azure Storage, select __Networking__, __Private endpoint connections__, and then select __+ Private endpoint__.
 
-    :::image type="content" source="../media/how-to/secure-playground-on-your-data/storage-private-endpoint.png" alt-text="Screenshot of the private endpoint section for the storage account.":::
+    <Frame>
+        ![](/images/ai-foundry/media/how-to/secure-playground-on-your-data/storage-private-endpoint.png)
+    </Frame>
 
     1. From the __Basics__ tab, enter a unique name for the private endpoint, network interface, and select the region to create the private endpoint in.
     1. From the __Resource__ tab, set the __Target sub-resource__ to __blob__.
@@ -159,8 +175,9 @@ If you're using Azure Storage for the ingestion scenario with the Azure AI Found
 
 Azure AI Foundry uses Azure Key Vault to securely store and manage secrets. To allow access to the key vault from trusted services, use the following steps.
 
-> [!NOTE]
-> These steps assume that the key vault has already been configured for network isolation when you created your Azure AI Foundry Hub.
+<Note>
+These steps assume that the key vault has already been configured for network isolation when you created your Azure AI Foundry Hub.
+</Note>
 
 1. From the Azure portal, select the Key Vault resource, then select __Settings__, __Networking__, and __Firewalls and virtual networks__.
 1. From the __Exception__ section of the page, make sure that __Allow trusted Microsoft services to bypass firewall__ is __enabled__.
@@ -169,8 +186,9 @@ Azure AI Foundry uses Azure Key Vault to securely store and manage secrets. To a
 
 Connections from Azure AI Foundry to Azure AI services and Azure AI Search should use Microsoft Entra ID for secure access. Connections are created from [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs) instead of the Azure portal.
 
-> [!IMPORTANT]
-> Using Microsoft Entra ID with Azure AI Search is currently a preview feature. For more information on connections, visit the [Add connections](connections-add.md#create-a-new-connection) article.
+<Info>
+Using Microsoft Entra ID with Azure AI Search is currently a preview feature. For more information on connections, visit the [Add connections](connections-add.md#create-a-new-connection) article.
+</Info>
 
 1. from Azure AI Foundry, select __Connections__. If you have existing connections to the resources, you can select the connection and then select the __pencil icon__ in the __Access details__ section to update the connection. Set the __Authentication__ field to __Microsoft Entra ID__, then select __Update__.
 1. To create a new connection, select __+ New connection__, then select the resource type. Browse for the resource or enter the required information, then set __Authentication__ to __Microsoft Entra ID__. Select __Add connection__ to create the connection.
@@ -195,8 +213,9 @@ For more information on assigning roles, see [Tutorial: Grant a user access to r
 | Azure Blob Storage private endpoint | Reader | Azure AI Foundry project | For your Azure AI Foundry project with managed network enabled to access Blob storage in a network restricted environment |
 | Azure OpenAI Resource for chat model | Cognitive Services OpenAI User | Azure OpenAI resource for embedding model | [Optional] Required only if using two Azure OpenAI resources to communicate. |
 
-> [!NOTE]
-> The Cognitive Services OpenAI User role is only required if you're using two Azure OpenAI resources: one for your chat model and one for your embedding model. If this applies, enable Trusted Services AND ensure the Connection for your embedding model Azure OpenAI resource has EntraID enabled.  
+<Note>
+The Cognitive Services OpenAI User role is only required if you're using two Azure OpenAI resources: one for your chat model and one for your embedding model. If this applies, enable Trusted Services AND ensure the Connection for your embedding model Azure OpenAI resource has EntraID enabled.  
+</Note>
 
 ### Assign roles to developers
 
@@ -218,7 +237,7 @@ For more information on assigning roles, see [Tutorial: Grant a user access to r
 
 ## Use your data in Azure AI Foundry portal  
 
-Now, the data you add to Azure AI Foundry is secured to the isolated network provided by your Azure AI Foundry hub and project. For an example of using data, visit the [build a question and answer copilot](../tutorials/copilot-sdk-build-rag.md) tutorial.
+Now, the data you add to Azure AI Foundry is secured to the isolated network provided by your Azure AI Foundry hub and project. For an example of using data, visit the [build a question and answer copilot](../tutorials/copilot-sdk-build-rag) tutorial.
 
 ## Deploy web apps
 
@@ -230,5 +249,5 @@ When using the Chat playground in Azure AI Foundry portal, don't navigate to ano
 
 ## Related content
 
-- [Tutorial: Deploy an enterprise chat web app](../tutorials/deploy-chat-web-app.md)
-- [How to configure a managed network](configure-managed-network.md)
+- [Tutorial: Deploy an enterprise chat web app](../tutorials/deploy-chat-web-app)
+- [How to configure a managed network](configure-managed-network)

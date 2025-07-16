@@ -1,25 +1,17 @@
 ---
-title: How to build with prompt flow
-titleSuffix: Azure AI Foundry
+title: "How to build with prompt flow"
 description: This article provides instructions on how to build with prompt flow.
-manager: scottpolly
-ms.service: azure-ai-foundry
 ms.custom:
   - ignite-2023
   - build-2024
   - ignite-2024
-ms.topic: how-to
-ms.date: 01/10/2025
-ms.reviewer: none
-ms.author: lagayhar
-author: lgayhardt
 ms.collection: ce-skilling-ai-copilot, ce-skilling-fresh-tier1
 ms.update-cycle: 180-days
 ---
 
 # Develop a prompt flow
 
-[!INCLUDE [feature-preview](../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview)]
 
 Prompt flow is a development tool designed to streamline the entire development cycle of AI applications powered by Large Language Models (LLMs). Prompt flow provides a comprehensive solution that simplifies the process of prototyping, experimenting, iterating, and deploying your AI applications.
 
@@ -33,8 +25,8 @@ In this article, you learn how to create and develop your first prompt flow in A
 
 ## Prerequisites
 
-[!INCLUDE [hub-only-prereq](../includes/hub-only-prereq.md)]
-- Prompt flow requires a compute session. If you don't have a runtime, you can [create one in Azure AI Foundry portal](./create-manage-compute-session.md).
+[!INCLUDE [hub-only-prereq](../includes/hub-only-prereq)]
+- Prompt flow requires a compute session. If you don't have a runtime, you can [create one in Azure AI Foundry portal](./create-manage-compute-session).
 - You need a deployed model.
 - In your project, configure access control for the blob storage account. Assign the **Storage Blob Data Contributor** role to your user account.
     - In the bottom left of the Azure AI Foundry portal, select **Management center**.
@@ -53,7 +45,7 @@ You can create a flow by either cloning the samples available in the gallery or 
 
 To create a prompt flow from the gallery in Azure AI Foundry portal:
 
-[!INCLUDE [tip-left-pane](../includes/tip-left-pane.md)]
+[!INCLUDE [tip-left-pane](../includes/tip-left-pane)]
 
 1. Sign in to [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs) and select your project. 
 1. If you're in the Management center, select **Go to project** to return to your project.
@@ -62,40 +54,57 @@ To create a prompt flow from the gallery in Azure AI Foundry portal:
 1. In the **Standard flow** tile, select **Create**.
 1. On the **Create a new flow** page, enter a folder name and then select **Create**.
 
-    :::image type="content" source="../media/prompt-flow/create-standard-flow.png" alt-text="Screenshot of selecting and creating a standard flow." lightbox="../media/prompt-flow/create-standard-flow.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/prompt-flow/create-standard-flow.png)
+    </Frame>
 
 1. The prompt flow authoring page opens. Select **Start compute session** to have a compute session running for the flow.
 1. You can start authoring your flow now. By default you see a sample flow. This example flow has nodes for the LLM and Python tools. 
 
-    :::image type="content" source="../media/prompt-flow/create-flow-in-out.png" alt-text="Screenshot of flow input and output on the edit prompt flow page." lightbox="../media/prompt-flow/create-flow-in-out.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/prompt-flow/create-flow-in-out.png)
+    </Frame>
 
-    > [!NOTE]
-    > The graph view for visualization only. It shows the flow structure you're developing. You cannot edit the graph view directly, but you can zoom in, zoom out, and scroll. You can select a node in the graph view to highlight and navigate to the node in the tool edit view.
+    <Note>
+    The graph view for visualization only. It shows the flow structure you're developing. You cannot edit the graph view directly, but you can zoom in, zoom out, and scroll. You can select a node in the graph view to highlight and navigate to the node in the tool edit view.
+    </Note>
 
 1. Optionally, you can add more tools to the flow. The visible tool options are **LLM**, **Prompt**, and **Python**. To view more tools, select **+ More tools**. 
 
-    :::image type="content" source="../media/prompt-flow/create-flow-more-tools.png" alt-text="Screenshot of where you can find more tools on the edit prompt flow page." lightbox="../media/prompt-flow/create-flow-more-tools.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/prompt-flow/create-flow-more-tools.png)
+    </Frame>
 
 1. Select a connection and deployment in the LLM tool editor.
 
-    :::image type="content" source="../media/prompt-flow/create-flow-connection.png" alt-text="Screenshot of the selected connection and deployment in the LLM tool on the edit prompt flow page." lightbox="../media/prompt-flow/create-flow-connection.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/prompt-flow/create-flow-connection.png)
+    </Frame>
 
 1. In the **Inputs** section, add a value for the topic.  For example, "atoms."
 1. Select **Run** to run the flow. 
 
-    :::image type="content" source="../media/prompt-flow/create-flow-run.png" alt-text="Screenshot of where to select run on the edit prompt flow page." lightbox="../media/prompt-flow/create-flow-run.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/prompt-flow/create-flow-run.png)
+    </Frame>
 
 1. The flow run status is shown as **Running**. 
 
-    :::image type="content" source="../media/prompt-flow/create-flow-running.png" alt-text="Screenshot of the flow in the running state on the edit prompt flow page." lightbox="../media/prompt-flow/create-flow-running.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/prompt-flow/create-flow-running.png)
+    </Frame>
 
 1. Once the flow run is completed, select **View outputs** to view the flow results.
 
-    :::image type="content" source="../media/prompt-flow/create-flow-outputs-view.png" alt-text="Screenshot of where you can select to view flow results from the edit prompt flow page." lightbox="../media/prompt-flow/create-flow-outputs-view.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/prompt-flow/create-flow-outputs-view.png)
+    </Frame>
 
 1. You can view the flow run status and output in the **Outputs** section.
 
-    :::image type="content" source="../media/prompt-flow/create-flow-outputs-view-joke.png" alt-text="Screenshot of the output details." lightbox="../media/prompt-flow/create-flow-outputs-view-joke.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/prompt-flow/create-flow-outputs-view-joke.png)
+    </Frame>
 
 ### Authoring the flow
 
@@ -131,7 +140,9 @@ You can test the flow in two ways:
 - Run **single node**.
     - To run a single node, select the **Run icon** on a node in the default view. Once running is completed, you can quickly check result in **node output section**.
 
-    :::image type="content" source="../media/prompt-flow/node-card-run.png" alt-text="Screenshot shows the run button in the node card.":::
+    <Frame>
+        ![](/images/ai-foundry/media/prompt-flow/node-card-run.png)
+    </Frame>
 
 - Run **the whole flow**.
     - To run the whole flow, select the **Run button** at the right top.
@@ -144,16 +155,21 @@ For the whole flow run, after you execute the flow, you can see the run status i
 
 Select the **Trace** tab on the Outputs screen to see a graph that provides information about the duration and associated token cost of the flow. Select flow under node name to see detailed flow overview information in the right pane.
 
-:::image type="content" source="../media/prompt-flow/authoring-trace.png" alt-text=" Screenshot of trace detail." lightbox="../media/prompt-flow/authoring-trace.png":::
+<Frame>
+    ![](/images/ai-foundry/media/prompt-flow/authoring-trace.png)
+</Frame>
 
-> [!NOTE]
-> In prompt flow SDK, we defined several span types, including **LLM**, **Function**, **Embedding**, **Retrieval**, and **Flow**. And the system automatically creates spans with execution information in designated attributes and events.
->
-> To learn more about span types, see  [Trace span](https://microsoft.github.io/promptflow/reference/trace-span-spec-reference.html).
+<Note>
+In prompt flow SDK, we defined several span types, including **LLM**, **Function**, **Embedding**, **Retrieval**, and **Flow**. And the system automatically creates spans with execution information in designated attributes and events.
+
+To learn more about span types, see  [Trace span](https://microsoft.github.io/promptflow/reference/trace-span-spec-reference.html).
+</Note>
 
 After the flow run is completed, for checking the results, you can select the **View test results** button to check all historical run records in a list. By default, the run records created in the last 7 days are displayed. You can select the **Filter** to change the condition.
 
-:::image type="content" source="../media/prompt-flow/authoring-test-result.png" alt-text="Screenshot of flow test result."lightbox="../media/prompt-flow/authoring-test-result.png":::
+<Frame>
+    ![](/images/ai-foundry/media/prompt-flow/authoring-test-result.png)
+</Frame>
 
 You can also select on the **Name** of the run record to view the detailed information in trace view.
 
@@ -205,8 +221,9 @@ A chat flow can have multiple inputs, chat history and chat input are **required
     ]
     ```
 
-> [!NOTE]
-> The capability to automatically save or manage chat history is a feature on the authoring page when conducting tests in the chat box. For batch runs, it's necessary for users to include the chat history within the batch run dataset. If there's no chat history available for testing, simply set the chat_history to an empty list `[]` within the batch run dataset.
+<Note>
+The capability to automatically save or manage chat history is a feature on the authoring page when conducting tests in the chat box. For batch runs, it's necessary for users to include the chat history within the batch run dataset. If there's no chat history available for testing, simply set the chat_history to an empty list `[]` within the batch run dataset.
+</Note>
 
 ### Author prompt with chat history
 
@@ -234,6 +251,6 @@ The chat box provides an interactive way to test your chat flow by simulating a 
 
 ## Next steps
 
-- [Batch run using more data and evaluate the flow performance](./flow-bulk-test-evaluation.md)
-- [Tune prompts using variants](./flow-tune-prompts-using-variants.md)
-- [Deploy a flow](./flow-deploy.md)
+- [Batch run using more data and evaluate the flow performance](./flow-bulk-test-evaluation)
+- [Tune prompts using variants](./flow-tune-prompts-using-variants)
+- [Deploy a flow](./flow-deploy)

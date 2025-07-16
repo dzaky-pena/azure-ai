@@ -1,15 +1,6 @@
 ---
-title: Azure OpenAI in Azure AI Foundry Models fine-tuning gpt-4o-mini
-titleSuffix: Azure OpenAI
+title: "Azure OpenAI in Azure AI Foundry Models fine-tuning gpt-4o-mini"
 description: Learn how to use Azure OpenAI's latest fine-tuning capabilities with gpt-4o-mini-2024-07-18
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: tutorial
-ms.date: 07/02/2025
-author: mrbullwinkle
-ms.author: mbullwin
-recommendations: false
-ms.custom: "devx-track-python,ai-learning-hub"
 ---
 
 # Azure OpenAI GPT-4o-mini fine-tuning tutorial
@@ -18,13 +9,14 @@ This tutorial walks you through fine-tuning a `gpt-4o-mini-2024-07-18` model.
 
 In this tutorial you learn how to:
 
-> [!div class="checklist"]
-> * Create sample fine-tuning datasets.
-> * Create environment variables for your resource endpoint and API key.
-> * Prepare your sample training and validation datasets for fine-tuning.
-> * Upload your training file and validation file for fine-tuning.
-> * Create a fine-tuning job for `gpt-4o-mini-2024-07-18`.
-> * Deploy a custom fine-tuned model.
+<Check>
+* Create sample fine-tuning datasets.
+* Create environment variables for your resource endpoint and API key.
+* Prepare your sample training and validation datasets for fine-tuning.
+* Upload your training file and validation file for fine-tuning.
+* Create a fine-tuning job for `gpt-4o-mini-2024-07-18`.
+* Deploy a custom fine-tuned model.
+</Check>
 
 ## Prerequisites
 
@@ -32,12 +24,13 @@ In this tutorial you learn how to:
 - Python 3.8 or later version
 - The following Python libraries: `json`, `requests`, `os`, `tiktoken`, `time`, `openai`, `numpy`.
 - [Jupyter Notebooks](https://jupyter.org/)
-- An Azure OpenAI resource in a [region where `gpt-4o-mini-2024-07-18` fine-tuning is available](../concepts/models.md). If you don't have a resource the process of creating one is documented in our resource [deployment guide](../how-to/create-resource.md).
+- An Azure OpenAI resource in a [region where `gpt-4o-mini-2024-07-18` fine-tuning is available](../concepts/models). If you don't have a resource the process of creating one is documented in our resource [deployment guide](../how-to/create-resource).
 - Fine-tuning access requires **Cognitive Services OpenAI Contributor**.
-- If you don't already have access to view quota and deploy models in [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs), then you need [more permissions](../how-to/role-based-access-control.md).
+- If you don't already have access to view quota and deploy models in [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs), then you need [more permissions](../how-to/role-based-access-control).
 
-> [!IMPORTANT]
-> We recommend reviewing the [pricing information](https://azure.microsoft.com/pricing/details/cognitive-services/openai-service/#pricing) for fine-tuning to familiarize yourself with the associated costs. Testing of this tutorial resulted in 48,000 tokens being billed (4,800 training tokens * 10 epochs of training). Training costs are in addition to the costs that are associated with fine-tuning inference, and the hourly hosting costs of having a fine-tuned model deployed. Once you have completed the tutorial, you should delete your fine-tuned model deployment otherwise you continue to incur the hourly hosting cost.
+<Info>
+We recommend reviewing the [pricing information](https://azure.microsoft.com/pricing/details/cognitive-services/openai-service/#pricing) for fine-tuning to familiarize yourself with the associated costs. Testing of this tutorial resulted in 48,000 tokens being billed (4,800 training tokens * 10 epochs of training). Training costs are in addition to the costs that are associated with fine-tuning inference, and the hourly hosting costs of having a fine-tuned model deployed. Once you have completed the tutorial, you should delete your fine-tuned model deployment otherwise you continue to incur the hourly hosting cost.
+</Info>
 
 ## Set up
 
@@ -49,13 +42,13 @@ This tutorial provides examples of some of the latest OpenAI features include se
 pip install openai requests tiktoken numpy
 ```
 
-[!INCLUDE [get-key-endpoint](../includes/get-key-endpoint.md)]
+[!INCLUDE [get-key-endpoint](../includes/get-key-endpoint)]
 
 ### Environment variables
 
 Create and assign persistent environment variables for your key and endpoint.
 
-[!INCLUDE [Azure key vault](~/reusable-content/ce-skilling/azure/includes/ai-services/security/azure-key-vault.md)]
+[!INCLUDE [Azure key vault](~/reusable-content/ce-skilling/azure/includes/ai-services/security/azure-key-vault)]
 
 # [Command Line](#tab/command-line)
 
@@ -192,8 +185,9 @@ In this case we only have 10 training and 10 validation examples so while this d
 
 Now you can use the tiktoken library to validate the token counts. Token counting using this method isn't going to give you the exact token counts that are used for fine-tuning, but should provide a good estimate.
 
-> [!NOTE]
-> Individual examples need to remain under the `gpt-4o-mini-2024-07-18` model's current training example context length of: 64,536 tokens. The model's input token limit remains 128,000 tokens.
+<Note>
+Individual examples need to remain under the `gpt-4o-mini-2024-07-18` model's current training example context length of: 64,536 tokens. The model's input token limit remains 128,000 tokens.
+</Note>
 
 ```python
 # Validate token counts
@@ -705,7 +699,7 @@ Alternatively, you can deploy your fine-tuned model using any of the other commo
 | model_deployment_name | The custom name for your new fine-tuned model deployment. This is the name that is referenced in your code when making chat completion calls. |
 | fine_tuned_model | Retrieve this value from your fine-tuning job results in the previous step. It looks like `gpt-4o-mini-2024-07-18.ft-0e208cf33a6a466994aff31a08aba678`. You need to add that value to the deploy_data json. |
 
-[!INCLUDE [Fine-tuning deletion](../includes/fine-tune.md)]
+[!INCLUDE [Fine-tuning deletion](../includes/fine-tune)]
 
 ```python
 # Deploy fine-tuned model
@@ -794,5 +788,5 @@ In order to successfully access fine-tuning you need **Cognitive Services OpenAI
 
 ## Next steps
 
-- Learn more about [fine-tuning in Azure OpenAI](../how-to/fine-tuning.md)
+- Learn more about [fine-tuning in Azure OpenAI](../how-to/fine-tuning)
 - Learn more about the [underlying models that power Azure OpenAI](../concepts/models.md#fine-tuning-models).

@@ -1,15 +1,6 @@
 ---
-title: Serverless API inference examples for Foundry Models
-titleSuffix: Azure AI Foundry
+title: "Serverless API inference examples for Foundry Models"
 description: Inference examples for Foundry Models that support deployment to serverless APIs in Azure AI Foundry.
-author: msakande
-ms.author: mopeakande
-manager: scottpolly
-reviewer: santiagxf
-ms.reviewer: fasantia
-ms.date: 07/11/2025
-ms.service: azure-ai-foundry
-ms.topic: concept-article
 ms.custom:
   - references_regions
   - build-aifnd
@@ -20,9 +11,9 @@ ms.custom:
 
 The Azure AI model catalog offers a large selection of Azure AI Foundry Models from a wide range of providers. You have various options for deploying models from the model catalog. This article lists inference examples for serverless API deployments.
 
-[!INCLUDE [models-preview](../includes/models-preview.md)]
+[!INCLUDE [models-preview](../includes/models-preview)]
 
-To perform inferencing with the models, some models such as [Nixtla's TimeGEN-1](#nixtla) and [Cohere rerank](#cohere-rerank) require you to use custom APIs from the model providers. Others support inferencing using the [Model Inference API](../model-inference/overview.md). You can find more details about individual models by reviewing their model cards in the [model catalog for Azure AI Foundry portal](https://ai.azure.com/explore/models).
+To perform inferencing with the models, some models such as [Nixtla's TimeGEN-1](#nixtla) and [Cohere rerank](#cohere-rerank) require you to use custom APIs from the model providers. Others support inferencing using the [Model Inference API](../model-inference/overview). You can find more details about individual models by reviewing their model cards in the [model catalog for Azure AI Foundry portal](https://ai.azure.com/explore/models).
 
 
 ## Cohere
@@ -35,13 +26,13 @@ The following table provides links to examples of how to use Cohere models.
 
 | Description                               | Language          | Sample                                                          |
 |-------------------------------------------|-------------------|-----------------------------------------------------------------|
-| Web requests                              | Bash              | [Command-R](https://aka.ms/samples/cohere-command-r/webrequests)  [Command-R+](https://aka.ms/samples/cohere-command-r-plus/webrequests) <br> [cohere-embed.ipynb](https://aka.ms/samples/embed-v3/webrequests) |
+| Web requests                              | Bash              | [Command-R](https://aka.ms/samples/cohere-command-r/webrequests)  [Command-R+](https://aka.ms/samples/cohere-command-r-plus/webrequests) <br/> [cohere-embed.ipynb](https://aka.ms/samples/embed-v3/webrequests) |
 | Azure AI Inference package for C#         | C#                | [Link](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/ai/Azure.AI.Inference/samples)   |  
 | Azure AI Inference package for JavaScript | JavaScript        | [Link](https://github.com/Azure/azure-sdk-for-js/tree/main/sdk/ai/ai-inference-rest/samples)  |
 | Azure AI Inference package for Python     | Python            | [Link](https://aka.ms/azsdk/azure-ai-inference/python/samples)      |
 | OpenAI SDK (experimental)                 | Python            | [Link](https://aka.ms/samples/cohere-command/openaisdk)             |
 | LangChain                                 | Python            | [Link](https://aka.ms/samples/cohere/langchain)                     |
-| Cohere SDK                                | Python            | [Command](https://aka.ms/samples/cohere-python-sdk)  <br> [Embed](https://aka.ms/samples/cohere-embed/cohere-python-sdk)                  |
+| Cohere SDK                                | Python            | [Command](https://aka.ms/samples/cohere-python-sdk)  <br/> [Embed](https://aka.ms/samples/cohere-embed/cohere-python-sdk)                  |
 | LiteLLM SDK                               | Python            | [Link](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/cohere/litellm.ipynb) |
 
 #### Retrieval Augmented Generation (RAG) and tool use samples: Cohere command and embed
@@ -110,7 +101,7 @@ The following table provides links to examples of how to use Meta Llama models.
 |-------------------------------------------|-------------------|------------------------------------------------------------------- |    
 | CURL request                              | Bash              | [Link](https://aka.ms/meta-llama-3.1-405B-instruct-webrequests)    |    
 | Azure AI Inference package for C#         | C#                | [Link](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/ai/Azure.AI.Inference/samples)   |      
-| Azure AI Inference package for JavaScript | JavaScript        | [Link](https://github.com/Azure/azureml-examples/blob/main/sdk/typescript/README.md) |    
+| Azure AI Inference package for JavaScript | JavaScript        | [Link](https://github.com/Azure/azureml-examples/blob/main/sdk/typescript/README) |    
 | Azure AI Inference package for Python     | Python            | [Link](https://aka.ms/azsdk/azure-ai-inference/python/samples)     |    
 | Python web requests                       | Python            | [Link](https://aka.ms/meta-llama-3.1-405B-instruct-webrequests)    |    
 | OpenAI SDK (experimental)                 | Python            | [Link](https://aka.ms/meta-llama-3.1-405B-instruct-openai)         |    
@@ -141,7 +132,7 @@ See [the Microsoft model collection in Azure AI Foundry portal](https://ai.azure
 Mistral AI offers two categories of models, namely: 
 
 - _Premium models_: These include Mistral Large, Mistral Small, Mistral-OCR-2503, Mistral Medium 3 (25.05), and Ministral 3B models, and are available as serverless APIs with pay-as-you-go token-based billing.  
-- _Open models_: These include Mistral-small-2503, Codestral, and Mistral Nemo (that are available as serverless APIs with pay-as-you-go token-based billing), and [Mixtral-8x7B-Instruct-v01, Mixtral-8x7B-v01, Mistral-7B-Instruct-v01, and Mistral-7B-v01](../how-to/deploy-models-mistral-open.md)(that are available to download and run on self-hosted managed endpoints).
+- _Open models_: These include Mistral-small-2503, Codestral, and Mistral Nemo (that are available as serverless APIs with pay-as-you-go token-based billing), and [Mixtral-8x7B-Instruct-v01, Mixtral-8x7B-v01, Mistral-7B-Instruct-v01, and Mistral-7B-v01](../how-to/deploy-models-mistral-open)(that are available to download and run on self-hosted managed endpoints).
 
 
 The following table provides links to examples of how to use Mistral models.
@@ -214,9 +205,9 @@ For examples of how to use Stability AI models, see the following examples:
 
 ## Related content
 
-- [Deploy models as serverless API deployments](../how-to/deploy-models-serverless.md)
-- [Explore Azure AI Foundry Models](foundry-models-overview.md)
-- [Foundry Models and their capabilities](../foundry-models/concepts/models.md)
-- [Region availability for models in serverless API deployments](../how-to/deploy-models-serverless-availability.md)
-- [Content safety for  Models Sold Directly by Azure ](model-catalog-content-safety.md)
+- [Deploy models as serverless API deployments](../how-to/deploy-models-serverless)
+- [Explore Azure AI Foundry Models](foundry-models-overview)
+- [Foundry Models and their capabilities](../foundry-models/concepts/models)
+- [Region availability for models in serverless API deployments](../how-to/deploy-models-serverless-availability)
+- [Content safety for  Models Sold Directly by Azure ](model-catalog-content-safety)
 

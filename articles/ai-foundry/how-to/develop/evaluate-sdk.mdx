@@ -1,14 +1,6 @@
 ---
-title: Local Evaluation with the Azure AI Evaluation SDK
-titleSuffix: Azure AI Foundry
+title: "Local Evaluation with the Azure AI Evaluation SDK"
 description: This article provides instructions on how to evaluate a generative AI application with the Azure AI Evaluation SDK.
-author: lgayhardt
-ms.author: lagayhar
-manager: scottpolly
-ms.reviewer: minthigpen
-ms.date: 05/19/2025
-ms.service: azure-ai-foundry
-ms.topic: how-to
 ms.custom:
   - build-2024
   - references_regions
@@ -18,7 +10,7 @@ ms.custom:
 ---
 # Evaluate your generative AI application locally with the Azure AI Evaluation SDK
 
-[!INCLUDE [feature-preview](../../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../../includes/feature-preview)]
 
 If you want to thoroughly assess the performance of your generative AI application when you apply it to a substantial dataset, you can evaluate it in your development environment with the Azure AI Evaluation SDK. When you provide either a test dataset or a target, your generative AI application outputs are quantitatively measured with both mathematical-based metrics and AI-assisted quality and safety evaluators. Built-in or custom evaluators can provide you with comprehensive insights into the application's capabilities and limitations.
 
@@ -32,19 +24,20 @@ First install the evaluators package from the Azure AI Evaluation SDK:
 pip install azure-ai-evaluation
 ```
 
-> [!NOTE]
-> For more detailed information, see the [API reference documentation for the Azure AI Evaluation SDK](https://aka.ms/azureaieval-python-ref).
+<Note>
+For more detailed information, see the [API reference documentation for the Azure AI Evaluation SDK](https://aka.ms/azureaieval-python-ref).
+</Note>
 
 ## Built-in evaluators
 
 | Category | Evaluators |
 |--------------------------|-----------------------------|
-| [General purpose](../../concepts/evaluation-evaluators/general-purpose-evaluators.md) | `CoherenceEvaluator`, `FluencyEvaluator`, `QAEvaluator` |
-| [Textual similarity](../../concepts/evaluation-evaluators/textual-similarity-evaluators.md) | `SimilarityEvaluator`, `F1ScoreEvaluator`, `BleuScoreEvaluator`, `GleuScoreEvaluator`, `RougeScoreEvaluator`, `MeteorScoreEvaluator` |
-| [Retrieval-augmented generation (RAG)](../../concepts/evaluation-evaluators/rag-evaluators.md) | `RetrievalEvaluator`, `DocumentRetrievalEvaluator`, `GroundednessEvaluator`, `GroundednessProEvaluator`, `RelevanceEvaluator`, `ResponseCompletenessEvaluator` |
-| [Risk and safety](../../concepts/evaluation-evaluators/risk-safety-evaluators.md) | `ViolenceEvaluator`, `SexualEvaluator`, `SelfHarmEvaluator`, `HateUnfairnessEvaluator`, `IndirectAttackEvaluator`, `ProtectedMaterialEvaluator`, `UngroundedAttributesEvaluator`, `CodeVulnerabilityEvaluator`, `ContentSafetyEvaluator` |
-| [Agentic](../../concepts/evaluation-evaluators/agent-evaluators.md) | `IntentResolutionEvaluator`, `ToolCallAccuracyEvaluator`, `TaskAdherenceEvaluator` |
-| [Azure OpenAI](../../concepts/evaluation-evaluators/azure-openai-graders.md) | `AzureOpenAILabelGrader`, `AzureOpenAIStringCheckGrader`, `AzureOpenAITextSimilarityGrader`, `AzureOpenAIGrader` |
+| [General purpose](../../concepts/evaluation-evaluators/general-purpose-evaluators) | `CoherenceEvaluator`, `FluencyEvaluator`, `QAEvaluator` |
+| [Textual similarity](../../concepts/evaluation-evaluators/textual-similarity-evaluators) | `SimilarityEvaluator`, `F1ScoreEvaluator`, `BleuScoreEvaluator`, `GleuScoreEvaluator`, `RougeScoreEvaluator`, `MeteorScoreEvaluator` |
+| [Retrieval-augmented generation (RAG)](../../concepts/evaluation-evaluators/rag-evaluators) | `RetrievalEvaluator`, `DocumentRetrievalEvaluator`, `GroundednessEvaluator`, `GroundednessProEvaluator`, `RelevanceEvaluator`, `ResponseCompletenessEvaluator` |
+| [Risk and safety](../../concepts/evaluation-evaluators/risk-safety-evaluators) | `ViolenceEvaluator`, `SexualEvaluator`, `SelfHarmEvaluator`, `HateUnfairnessEvaluator`, `IndirectAttackEvaluator`, `ProtectedMaterialEvaluator`, `UngroundedAttributesEvaluator`, `CodeVulnerabilityEvaluator`, `ContentSafetyEvaluator` |
+| [Agentic](../../concepts/evaluation-evaluators/agent-evaluators) | `IntentResolutionEvaluator`, `ToolCallAccuracyEvaluator`, `TaskAdherenceEvaluator` |
+| [Azure OpenAI](../../concepts/evaluation-evaluators/azure-openai-graders) | `AzureOpenAILabelGrader`, `AzureOpenAIStringCheckGrader`, `AzureOpenAITextSimilarityGrader`, `AzureOpenAIGrader` |
 
 Built-in quality and safety metrics take in query and response pairs, along with additional information for specific evaluators.
 
@@ -60,7 +53,7 @@ AI-assisted quality evaluators come with a reason field (except for `SimilarityE
 
 Azure OpenAI graders require a template that describes how their input columns are turned into the *real* input that the grader uses. Example: If you have two inputs called *query* and *response*, and a template that was formatted as `{{item.query}}`, then only the query would be used. Similarly, you could have something like `{{item.conversation}}` to accept a conversation input, but the ability of the system to handle that depends on how you configure the rest of the grader to expect that input.
 
-For more information on data requirements for agentic evaluators, go to [Run agent evaluations locally with the Azure AI Evaluation SDK](agent-evaluate-sdk.md).
+For more information on data requirements for agentic evaluators, go to [Run agent evaluations locally with the Azure AI Evaluation SDK](agent-evaluate-sdk).
 
 #### Single-turn support for text
 
@@ -156,8 +149,9 @@ To run batch evaluations by using [local evaluation](#local-evaluation-on-test-d
 
 Our evaluators understand that the first turn of the conversation provides valid `query` from `user`, `context` from `assistant`,  and `response` from `assistant` in the query-response format. Conversations are then evaluated per turn and results are aggregated over all turns for a conversation score.
 
-> [!NOTE]
-> In the second turn, even if `context` is `null` or a missing key, it's interpreted as an empty string instead of erroring out, which might lead to misleading results. We strongly recommend that you validate your evaluation data to comply with the data requirements.
+<Note>
+In the second turn, even if `context` is `null` or a missing key, it's interpreted as an empty string instead of erroring out, which might lead to misleading results. We strongly recommend that you validate your evaluation data to comply with the data requirements.
+</Note>
 
 For conversation mode, here's an example for `GroundednessEvaluator`:
 
@@ -223,8 +217,9 @@ For conversation outputs, per-turn results are stored in a list and the overall 
 }
 ```
 
-> [!NOTE]
-> We recommend that users migrate their code to use the key without prefixes (for example, `groundedness.groundedness`) to allow your code to support more evaluator models.
+<Note>
+We recommend that users migrate their code to use the key without prefixes (for example, `groundedness.groundedness`) to allow your code to support more evaluator models.
+</Note>
 
 #### Conversation support for images and multi-modal text and image
 
@@ -310,16 +305,17 @@ Currently the image and multi-modal evaluators support:
 
 For AI-assisted quality evaluators (except for `GroundednessProEvaluator` preview), you must specify a GPT model (`gpt-35-turbo`, `gpt-4`, `gpt-4-turbo`, `gpt-4o`, or `gpt-4o-mini`) in your `model_config`. The GPT model acts as a judge to score the evaluation data. We support both Azure OpenAI or OpenAI model configuration schemas. For the best performance and parseable responses with our evaluators, we recommend using GPT models that aren't in preview.
 
-> [!NOTE]
-> We strongly recommend that you replace `gpt-3.5-turbo` with `gpt-4o-mini` for your evaluator model, because the latter is cheaper, more capable, and just as fast, according to [OpenAI](https://platform.openai.com/docs/models/gpt-4#gpt-3-5-turbo).
->
-> Make sure that you have at least the `Cognitive Services OpenAI User` role for the Azure OpenAI resource to make inference calls with the API key. To learn more about permissions, see [Permissions for an Azure OpenAI resource](../../../ai-services/openai/how-to/role-based-access-control.md#summary).  
+<Note>
+We strongly recommend that you replace `gpt-3.5-turbo` with `gpt-4o-mini` for your evaluator model, because the latter is cheaper, more capable, and just as fast, according to [OpenAI](https://platform.openai.com/docs/models/gpt-4#gpt-3-5-turbo).
+
+Make sure that you have at least the `Cognitive Services OpenAI User` role for the Azure OpenAI resource to make inference calls with the API key. To learn more about permissions, see [Permissions for an Azure OpenAI resource](../../../ai-services/openai/how-to/role-based-access-control.md#summary).  
+</Note>
 
 For all risk and safety evaluators and `GroundednessProEvaluator` (preview), instead of a GPT deployment in `model_config`, you must provide your `azure_ai_project` information. This accesses the back end evaluation service via your Azure AI project.
 
 #### Prompts for AI-assisted built-in evaluators
 
-We open source the prompts of our quality evaluators in our Evaluator Library and the Azure AI Evaluation Python SDK repository for transparency, except for the Safety Evaluators and `GroundednessProEvaluator` (powered by Azure AI Content Safety). These prompts serve as instructions for a language model to perform their evaluation task, which requires a human-friendly definition of the metric and its associated scoring rubrics. We highly recommend that users customize the definitions and grading rubrics to their scenario specifics. See details in [Custom evaluators](../../concepts/evaluation-evaluators/custom-evaluators.md).
+We open source the prompts of our quality evaluators in our Evaluator Library and the Azure AI Evaluation Python SDK repository for transparency, except for the Safety Evaluators and `GroundednessProEvaluator` (powered by Azure AI Content Safety). These prompts serve as instructions for a language model to perform their evaluation task, which requires a human-friendly definition of the metric and its associated scoring rubrics. We highly recommend that users customize the definitions and grading rubrics to their scenario specifics. See details in [Custom evaluators](../../concepts/evaluation-evaluators/custom-evaluators).
 
 ### Composite evaluators
 
@@ -372,8 +368,9 @@ result = evaluate(
 )
 ```
 
-> [!TIP]
-> Get the contents of the `result.studio_url` property for a link to view your logged evaluation results in your Azure AI project.
+<Tip>
+Get the contents of the `result.studio_url` property for a link to view your logged evaluation results in your Azure AI project.
+</Tip>
 
 The evaluator outputs results in a dictionary, which contains aggregate `metrics` and row-level data and metrics. See the following example of an output:
 
@@ -514,9 +511,9 @@ result = evaluate(
 
 - [Azure AI Evaluation Python SDK client reference documentation](https://aka.ms/azureaieval-python-ref)
 - [Azure AI Evaluation SDK client troubleshooting guide](https://aka.ms/azureaieval-tsg)
-- [Learn more about the evaluation metrics](../../concepts/evaluation-metrics-built-in.md)
-- [Evaluate your generative AI applications remotely on the cloud](./cloud-evaluation.md)
-- [Learn more about simulating test datasets for evaluation](./simulator-interaction-data.md)
-- [View your evaluation results in an Azure AI project](../../how-to/evaluate-results.md)
-- [Get started building a chat app by using the Azure AI Foundry SDK](../../quickstarts/get-started-code.md)
+- [Learn more about the evaluation metrics](../../concepts/evaluation-metrics-built-in)
+- [Evaluate your generative AI applications remotely on the cloud](./cloud-evaluation)
+- [Learn more about simulating test datasets for evaluation](./simulator-interaction-data)
+- [View your evaluation results in an Azure AI project](../../how-to/evaluate-results)
+- [Get started building a chat app by using the Azure AI Foundry SDK](../../quickstarts/get-started-code)
 - [Get started with evaluation samples](https://aka.ms/aistudio/eval-samples)

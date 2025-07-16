@@ -1,16 +1,6 @@
 ---
-title: 'How to upload files using the file search tool'
-titleSuffix: Azure AI Foundry
+title: "How to upload files using the file search tool"
 description: Find code samples and instructions for uploading files to Azure AI Foundry Agent Service.
-services: cognitive-services
-manager: nitinme
-ms.service: azure-ai-agent-service
-ms.topic: how-to
-ms.date: 07/11/2025
-author: aahill
-ms.author: aahi
-zone_pivot_groups: selection-bing-grounding-code
-ms.custom: azure-ai-agents-code
 ---
 
 # How to upload files using the file search tool
@@ -18,30 +8,36 @@ ms.custom: azure-ai-agents-code
 Use this article to find step-by-step instructions and code samples for uploading files using the file search tool.
 
 ## Prerequisites 
-1. Complete the [agent setup](../../quickstart.md).
+1. Complete the [agent setup](../../quickstart).
 
 2. Ensure that you have the role **Storage Blob Data Contributor** on your project's storage account.
 
 3. Ensure that you have the role **Azure AI Developer** on your project.
 
 
-::: zone pivot="portal"
+<Tab title="Foundry portal">
 
 ## Add file search to an agent using the Azure AI Foundry portal
 
 1. Go to the [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs). In the **Agents** screen for your agent, scroll down the **Setup** pane on the right to **knowledge**. Then select **Add**.
 
-    :::image type="content" source="../../media\tools\knowledge-tools.png" alt-text="A screenshot showing the available tool categories in the Azure AI Foundry portal." lightbox="../../media\tools\knowledge-tools.png":::
-
+    <Frame>
+      ![](/images/ai-foundry/agents/media/tools/knowledge-tools.png)
+    </Frame>
+    
 1. Select **Files** and follow the prompts to add the tool. 
 
-    :::image type="content" source="../../media\tools\knowledge-tools-list.png" alt-text="A screenshot showing the available knowledge tools in the Azure AI Foundry portal." lightbox="../../media\tools\knowledge-tools-list.png":::
+    <Frame>
+      ![](/images/ai-foundry/agents/media/tools/knowledge-tools-list.png)
+    </Frame>
 
-    :::image type="content" source="../../media\tools\file-upload.png" alt-text="A screenshot showing the file upload page." lightbox="../../media\tools\file-upload.png":::
+    <Frame>
+      ![](/images/ai-foundry/agents/media/tools/file-upload.png)
+    </Frame>
 
-::: zone-end
+</Tab>
 
-:::zone pivot="python"
+<Tab title="Python">
 
 ## Create a project client
 
@@ -155,9 +151,9 @@ for msg in messages:
             last_text = last_text.replace(annotation.text, f" [{citation}]")
         print(f"{msg.role}: {last_text}")
 ```
-:::zone-end
+</Tab>
 
-:::zone pivot="csharp"
+<Tab title="C#">
 
 ## Create a project client
 
@@ -347,9 +343,9 @@ agentClient.Administration.DeleteAgent(agent.Id);
 
 ```
 
-:::zone-end
+</Tab>
 
-:::zone pivot="javascript"
+<Tab title="JavaScript">
 
 ## Create a project client
 
@@ -461,9 +457,9 @@ await client.deleteAgent(agent.id);
 console.log(`Deleted agent, agent ID: ${agent.id}`);
 ```
 
-:::zone-end
+</Tab>
 
-:::zone pivot="rest"
+<Tab title="REST API">
 
 ## Upload files and add them to a vector store
 
@@ -579,4 +575,4 @@ curl --request GET \
   -H "Authorization: Bearer $AGENT_TOKEN"
 ```
 
-:::zone-end
+</Tab>

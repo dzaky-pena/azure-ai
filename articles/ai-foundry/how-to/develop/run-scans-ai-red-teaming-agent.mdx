@@ -1,21 +1,13 @@
 ---
-title: Run AI Red Teaming Agent locally (Azure AI Evaluation SDK)
-titleSuffix: Azure AI Foundry
+title: "Run AI Red Teaming Agent locally (Azure AI Evaluation SDK)"
 description: This article provides instructions on how to use the AI Red Teaming Agent to run a local automated scan of a Generative AI application with the Azure AI Evaluation SDK.
-manager: scottpolly
-ms.service: azure-ai-foundry
 ms.custom:
   - references_regions
-ms.topic: how-to
-ms.date: 06/03/2025
-ms.reviewer: minthigpen
-ms.author: lagayhar
-author: lgayhardt
 ---
 
 # Run AI Red Teaming Agent locally (preview)
 
-[!INCLUDE [feature-preview](../../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../../includes/feature-preview)]
 
 The AI Red Teaming Agent (preview) is a powerful tool designed to help organizations proactively find safety risks associated with generative AI systems during design and development. By integrating Microsoft's open-source framework for Python Risk Identification Tool's ([PyRIT](https://github.com/Azure/PyRIT)) AI red teaming capabilities directly into Azure AI Foundry, teams can automatically scan their model and application endpoints for risks, simulate adversarial probing, and generate detailed reports.
 
@@ -26,7 +18,7 @@ This article guides you through the process of
 
 ## Prerequisites
 
-- An Azure AI Foundry project or hubs based project. To learn more, see [Create a project](../create-projects.md).
+- An Azure AI Foundry project or hubs based project. To learn more, see [Create a project](../create-projects).
 
 If this is your first time running evaluations or AI red teaming runs on your Azure AI Foundry project, you might need to do a few additional setup steps.
 
@@ -42,8 +34,9 @@ First install the `redteam` package as an extra from Azure AI Evaluation SDK, th
 uv install azure-ai-evaluation[redteam]
 ```
 
-> [!NOTE]
-> PyRIT only works with Python 3.10, 3.11, 3.12 but doesn't support Python 3.9. If you're using Python 3.9, you must upgrade your Python version to use this feature.
+<Note>
+PyRIT only works with Python 3.10, 3.11, 3.12 but doesn't support Python 3.9. If you're using Python 3.9, you must upgrade your Python version to use this feature.
+</Note>
 
 ## Create and run an AI Red Teaming Agent
 
@@ -96,8 +89,9 @@ red_team_agent = RedTeam(
 )
 ```
 
-> [!NOTE]
-> AI Red Teaming Agent only supports single-turn interactions in text-only scenarios.
+<Note>
+AI Red Teaming Agent only supports single-turn interactions in text-only scenarios.
+</Note>
 
 ## Region support
 
@@ -509,7 +503,7 @@ The red teaming scorecard also provides row-level data on each attack-response p
 }
 ```
 
-Once your AI red teaming scan is finished running, you can [view your results](../view-ai-red-teaming-results.md) in your Azure AI Foundry project.
+Once your AI red teaming scan is finished running, you can [view your results](../view-ai-red-teaming-results) in your Azure AI Foundry project.
 
 ## Related content
 

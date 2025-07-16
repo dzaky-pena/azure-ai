@@ -1,27 +1,19 @@
 ---
 title: "Test a fine-tuned model"
-titleSuffix: Azure OpenAI
 description: Learn how to test your fine-tuned model with Azure OpenAI in Azure AI Foundry Models by using Python, the REST APIs, or Azure AI Foundry portal.
-author: voutilad
-ms.author: davevoutila
-manager: nitinme
-ms.date: 05/20/2025
-ms.service: azure-ai-openai
-ms.topic: how-to
-ms.custom:
-  - build-2025
 ---
 
 # Deploy a fine-tuned model for testing (Preview)
 
-After you've fine-tuned a model, you may want to test its quality via the Chat Completions API or the [Evaluations](./evaluations.md) service.
+After you've fine-tuned a model, you may want to test its quality via the Chat Completions API or the [Evaluations](./evaluations) service.
 
 A Developer Tier deployment allows you to deploy your new model without the hourly hosting fee incurred by Standard or Global deployments. The only charges incurred are per-token. Consult the [pricing page](https://aka.ms/aoaipricing) for the most up-to-date pricing.
 
-> [!IMPORTANT]
-> Developer Tier offers no availability SLA and no [data residency](https://aka.ms/data-residency) guarantees. If you require an SLA or data residency, choose an alternative [deployment type](./deployment-types.md) for testing your model.
->
-> Developer Tier deployments have a fixed lifetime of **24 hours**. Learn more [below](#clean-up-your-deployment) about the deployment lifecycle.
+<Info>
+Developer Tier offers no availability SLA and no [data residency](https://aka.ms/data-residency) guarantees. If you require an SLA or data residency, choose an alternative [deployment type](./deployment-types) for testing your model.
+
+Developer Tier deployments have a fixed lifetime of **24 hours**. Learn more [below](#clean-up-your-deployment) about the deployment lifecycle.
+</Info>
 
 ## Deploy your fine-tuned model
 
@@ -31,7 +23,9 @@ To deploy your model candidate, select the fine-tuned model to deploy, and then 
 
 The **Deploy model** dialog box opens. In the dialog box, enter your **Deployment name** and then select **Developer** from the deployment type drop-down. Select **Create** to start the deployment of your custom model.
 
-:::image type="content" source="../media/fine-tuning/developer.png" alt-text="Screenshot showing selecting Developer deployment in AI Foundry.":::
+<Frame>
+    ![](/images/ai-foundry/openai/media/fine-tuning/developer.png)
+</Frame>
 
 You can monitor the progress of your new deployment on the **Deployments** pane in Azure AI Foundry portal.
 
@@ -148,9 +142,11 @@ az cognitiveservices account deployment create
 
 After your custom model deploys, you can use it like any other deployed model. You can use the **Playgrounds** in the [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs) to experiment with your new deployment. You can continue to use the same parameters with your custom model, such as `temperature` and `max_tokens`, as you can with other deployed models.
 
-:::image type="content" source="../media/fine-tuning/chat-playground.png" alt-text="Screenshot of the Playground pane in Azure AI Foundry portal, with sections highlighted." lightbox="../media/fine-tuning/chat-playground.png":::
+<Frame>
+    ![](/images/ai-foundry/openai/media/fine-tuning/chat-playground.png)
+</Frame>
 
-You can also use the [Evaluations](./evaluations.md) service to create and run model evaluations against your deployed model candidate as well as other model versions.
+You can also use the [Evaluations](./evaluations) service to create and run model evaluations against your deployed model candidate as well as other model versions.
 
 ## [Python](#tab/python)
 
@@ -210,6 +206,6 @@ curl -X DELETE "https://management.azure.com/subscriptions/<SUBSCRIPTION>/resour
 
 ## Next steps
 
-- [Deploy for production](./fine-tuning-deploy.md)
-- Understand [Azure OpenAI Quotas & limits](./quota.md)
-- Read more about other [Azure OpenAI deployment types](./deployment-types.md)
+- [Deploy for production](./fine-tuning-deploy)
+- Understand [Azure OpenAI Quotas & limits](./quota)
+- Read more about other [Azure OpenAI deployment types](./deployment-types)

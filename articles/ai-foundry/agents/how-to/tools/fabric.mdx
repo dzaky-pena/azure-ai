@@ -1,16 +1,6 @@
 ---
 title: "How to use the data agents in Microsoft Fabric with Azure AI Foundry Agent Service"
-titleSuffix: Azure AI Foundry
 description: Learn how to perform data analytics in Azure AI Foundry Agents using Microsoft Fabric data agent.
-author: aahill
-ms.author: aahi
-manager: nitinme
-ms.date: 07/09/2025
-ms.service: azure-ai-agent-service
-ms.topic: how-to
-ms.custom:
-  - build-2025
-zone_pivot_groups: selection-fabric-data-agent
 ---
 
 # Use the Microsoft Fabric data agent (preview)
@@ -37,45 +27,52 @@ You need to first build and publish a Fabric data agent and then connect your Fa
 
 * Your Azure AI Foundry Project endpoint.
 
-    [!INCLUDE [endpoint-string-portal](../../includes/endpoint-string-portal.md)]
+    [!INCLUDE [endpoint-string-portal](../../includes/endpoint-string-portal)]
 
     Save this endpoint to an environment variable named `PROJECT_ENDPOINT`. 
 
 
 * The name of your Microsoft Fabric connection name. You can find it in the Azure AI Foundry portal by selecting **Management center** from the left navigation menu. Then selecting **Connected resources**.
     
-    :::image type="content" source="../../media/tools/fabric-connection.png" alt-text="A screenshot showing the SharePoint connection name. " lightbox="../../media/tools/fabric-connection.png":::
+    <Frame>
+      ![](/images/ai-foundry/agents/media/tools/fabric-connection.png)
+    </Frame>
 
     Save this endpoint to an environment variable named `FABRIC_CONNECTION_ID`
 
 
 * The names of your model's deployment name. You can find it in **Models + Endpoints** in the left navigation menu. 
 
-    :::image type="content" source="../../media/tools/model-deployment-portal.png" alt-text="A screenshot showing the model deployment screen the AI Foundry portal." lightbox="../../media/tools/model-deployment-portal.png":::
-    
+    <Frame>
+      ![](/images/ai-foundry/agents/media/tools/model-deployment-portal.png)
+    </Frame>
+
     Save the name of your model deployment name as an environment variable named `MODEL_DEPLOYMENT_NAME`. 
 
 ## Setup  
 
-> [!NOTE]
-> * The model you selected in Azure AI Foundry Agent setup is only used for agent orchestration and response generation. It doesn't impact which model Fabric data agent uses for NL2SQL operation.
-> * To help your model invoke your Microsoft Fabric tool in the expected way, make sure you update agent instructions with descriptions of your Fabric data agent and what data it can access. An example is "for customer and product sales related data, please use the Fabric tool". We recommend using a smaller AI model such as `gpt-4o-mini`. You can also use `tool_choice` parameter in SDK or API to force Fabric tool to be invoked at each run. 
+<Note>
+* The model you selected in Azure AI Foundry Agent setup is only used for agent orchestration and response generation. It doesn't impact which model Fabric data agent uses for NL2SQL operation.
+* To help your model invoke your Microsoft Fabric tool in the expected way, make sure you update agent instructions with descriptions of your Fabric data agent and what data it can access. An example is "for customer and product sales related data, please use the Fabric tool". We recommend using a smaller AI model such as `gpt-4o-mini`. You can also use `tool_choice` parameter in SDK or API to force Fabric tool to be invoked at each run. 
+</Note>
 
-1. Create an Azure AI Foundry Agent by following the steps in the [quickstart](../../quickstart.md).
+1. Create an Azure AI Foundry Agent by following the steps in the [quickstart](../../quickstart).
 
 1. Create and publish a [Fabric data agent](https://go.microsoft.com/fwlink/?linkid=2312910)
 
-    > [!NOTE]
-    > * Make sure you have **published** the data agent in Fabric.
+    <Note>
+    * Make sure you have **published** the data agent in Fabric.
+    </Note>
 
-:::zone pivot="portal"
+<Tab title="Azure AI Foundry portal">
 
 You can add the Microsoft Fabric tool to an agent programmatically using the code examples listed at the top of this article, or the Azure AI Foundry portal. If you want to use the portal: 
 
 1. Navigate to the **Agents** screen for your agent in [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs), scroll down the Setup pane on the right to **knowledge**. Then select **Add**.
    
-    :::image type="content" source="../../media\tools\knowledge-tools.png" alt-text="A screenshot showing the available tool categories in the Azure AI Foundry portal." lightbox="../../media\tools\knowledge-tools.png":::
-
+    <Frame>
+      ![](/images/ai-foundry/agents/media/tools/knowledge-tools.png)
+    </Frame>
 1. Select **Microsoft Fabric** and follow the prompts to add the tool. You can add only one per agent.
 
 1. Click to add new connections. Once you have added a connection, you can directly select from existing list.
@@ -84,11 +81,12 @@ You can add the Microsoft Fabric tool to an agent programmatically using the cod
 
    1. Then, you can add both to your connection. Make sure you have checked `is secret` for both of them
    
-        :::image type="content" source="../../media\tools\fabric-foundry.png" alt-text="A screenshot showing the fabric connection in the Azure AI Foundry portal." lightbox="../../media\tools\fabric-foundry.png":::
+        <Frame>
+          ![](/images/ai-foundry/agents/media/tools/fabric-foundry.png)
+        </Frame>
+</Tab>
 
-:::zone-end
-
-:::zone pivot="python"
+<Tab title="Python">
 
 ## Create a project client
 
@@ -175,231 +173,15 @@ for msg in messages:
         print(f"{msg.role}: {last_text.text.value}")
 ```
 
-:::zone-end
+</Tab>
 
-
-<!--
-:::zone pivot="csharp"
-
-## Create a project client
-
-Create a client object, which will contain the project endpoint connecting to your AI project and other resources.
-
-```csharp
-using Azure.AI.Agents.Persistent;
-using Azure.Identity;
-using System;
-using Microsoft.Extensions.Configuration;
-using System.Threading;
-using Azure;
-
-// Get Connection information from App Configuration
-IConfigurationRoot configuration = new ConfigurationBuilder()
-    .SetBasePath(AppContext.BaseDirectory)
-    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-    .Build();
-
-var projectEndpoint = configuration["ProjectEndpoint"];
-var modelDeploymentName = configuration["ModelDeploymentName"];
-var fabricConnectionId = configuration["FabricConnectionId"];
-
-// Create the Agent Client
-PersistentAgentsClient agentClient = new(projectEndpoint, new DefaultAzureCredential());
-```
-
-## Create an agent with the Microsoft Fabric tool enabled
-
-To make the Microsoft Fabric tool available to your agent, use a connection to initialize the tool and attach it to the agent. You can find your connection in the **connected resources** section of your project in the Azure AI Foundry portal.
-
-```csharp
-// Create the MicrosoftFabricToolDefinition object needed when creating the agent
-ToolConnectionList connectionList = new()
-{
-    ConnectionList = { new ToolConnection(fabricConnectionId) }
-};
-MicrosoftFabricToolDefinition fabricTool = new(connectionList);
-
-// Create the Agent
-PersistentAgent agent = agentClient.Administration.CreateAgent(
-    model: modelDeploymentName,
-    name: "my-assistant",
-    instructions: "You are a helpful assistant.",
-    tools: [fabricTool]);
-```
-
-## Create a thread and run
-
-```csharp
-PersistentAgentThread thread = agentClient.Threads.CreateThread();
-
-// Create message and run the agent
-ThreadMessage message = agentClient.Messages.CreateMessage(
-    thread.Id,
-    MessageRole.User,
-    "What are the top 3 weather events with highest property damage?");
-ThreadRun run = agentClient.Runs.CreateRun(thread, agent);
-```
-
-## Wait for the agent to complete and print the output
-
-Wait for the agent to complete the run and print output to console. Observe that the model uses the Fabric data agent tool to provide a response to the user's question.
-
-```csharp
-// Wait for the agent to finish running
-do
-{
-    Thread.Sleep(TimeSpan.FromMilliseconds(500));
-    run = agentClient.Runs.GetRun(thread.Id, run.Id);
-}
-while (run.Status == RunStatus.Queued
-    || run.Status == RunStatus.InProgress);
-
-// Confirm that the run completed successfully
-if (run.Status != RunStatus.Completed)
-{
-    throw new Exception("Run did not complete successfully, error: " + run.LastError?.Message);
-}
-
-// Retrieve all messages from the agent client
-Pageable<ThreadMessage> messages = agentClient.Messages.GetMessages(
-    threadId: thread.Id,
-    order: ListSortOrder.Ascending
-);
-
-// Process messages in order
-foreach (ThreadMessage threadMessage in messages)
-{
-    Console.Write($"{threadMessage.CreatedAt:yyyy-MM-dd HH:mm:ss} - {threadMessage.Role,10}: ");
-    foreach (MessageContent contentItem in threadMessage.ContentItems)
-    {
-        if (contentItem is MessageTextContent textItem)
-        {
-            string response = textItem.Text;
-
-            // If we have Text URL citation annotations, reformat the response to show title & URL for citations
-            if (textItem.Annotations != null)
-            {
-                foreach (MessageTextAnnotation annotation in textItem.Annotations)
-                {
-                    if (annotation is MessageTextUrlCitationAnnotation urlAnnotation)
-                    {
-                        response = response.Replace(urlAnnotation.Text, $" [{urlAnnotation.UrlCitation.Title}]({urlAnnotation.UrlCitation.Url})");
-                    }
-                }
-            }
-            Console.Write($"Agent response: {response}");
-        }
-        else if (contentItem is MessageImageFileContent imageFileItem)
-        {
-            Console.Write($"<image from ID: {imageFileItem.FileId}");
-        }
-        Console.WriteLine();
-    }
-}
-```
-
-## Clean up resources
-
-Clean up the resources from this sample.
-
-```csharp
-
-// Delete thread and agent
-agentClient.Threads.DeleteThread(threadId: thread.Id);
-agentClient.Administration.DeleteAgent(agentId: agent.Id);
-
-```
-:::zone-end
-
-:::zone pivot="javascript"
-
-## Create a project client
-
-```javascript
-const { AgentsClient, ToolUtility, isOutputOfType } = require("@azure/ai-agents");
-const { delay } = require("@azure/core-util");
-const { DefaultAzureCredential } = require("@azure/identity");
-require("dotenv/config");
-
-const projectEndpoint = process.env["PROJECT_ENDPOINT"] || "<project connection string>";
-
-// Create an Azure AI Client
-  const client = new AgentsClient(projectEndpoint, new DefaultAzureCredential());
-```
-
-## Create an agent with the Microsoft Fabric tool enabled
-
-```javascript
-const connectionId = process.env["FABRIC_CONNECTION_ID"] || "<connection-name>";
-// Initialize agent Microsoft Fabric tool with the connection id
-const fabricTool = ToolUtility.createFabricTool(connectionId);
-
-// Create agent with the Microsoft Fabric tool and process assistant run
-const agent = await client.createAgent(modelDeploymentName, {
-  name: "my-agent",
-  instructions: "You are a helpful agent",
-  tools: [fabricTool.definition],
-});
-console.log(`Created agent, agent ID : ${agent.id}`);
-```
-
-## Create a thread
-
-```javascript
-// Create thread for communication
-const thread = await client.threads.create();
-console.log(`Created thread, thread ID: ${thread.id}`);
-
-// Create message to thread
-const message = await client.messages.create(
-  thread.id,
-  "user",
-  "What are the top 3 weather events with the highest property damage?",
-);
-console.log(`Created message, message ID: ${message.id}`);
-```
-
-## Create a run and check the output
-
-```javascript
-// Create and process agent run in thread with tools
-let run = await client.runs.create(thread.id, agent.id);
-while (run.status === "queued" || run.status === "in_progress") {
-  await delay(1000);
-  run = await client.runs.get(thread.id, run.id);
-}
-if (run.status === "failed") {
-  console.log(`Run failed: ${run.lastError}`);
-}
-console.log(`Run finished with status: ${run.status}`);
-console.log(`Failure: ${run.lastError?.message}`);
-
-// Delete the agent when done
-await client.deleteAgent(agent.id);
-console.log(`Deleted agent, agent ID: ${agent.id}`);
-
-// Fetch and log all messages
-const messagesIterator = client.messages.list(thread.id);
-console.log(`Messages:`);
-
-// Get the first message
-for await (const m of messagesIterator) {
-  const agentMessage = message.content[0];
-  if (isOutputOfType(agentMessage, "text")) {
-    const textContent = agentMessage;
-    console.log(`Text Message Content - ${textContent.text.value}`);
-  }
-  break; // Only process the first message
-}
-```
-:::zone-end
--->
-:::zone pivot="rest"
+<Tab title="REST API">
 
 Follow the [REST API Quickstart](../../quickstart.md?pivots=rest-api#api-call-information) to set the right values for the environment variables `AGENT_TOKEN`, `AZURE_AI_FOUNDRY_PROJECT_ENDPOINT` and `API_VERSION`. For `API_VERSION`, make sure you are using `2025-05-15-preview`.
-> [!IMPORTANT]
-> The following samples are applicable if you are using **Azure AI Foundry Project** resource with Microsoft Fabric tool through REST API call
-> Your connection ID should be in this format: `/subscriptions/<sub-id>/resourceGroups/<your-rg-name>/providers/Microsoft.CognitiveServices/accounts/<your-ai-services-name>/projects/<your-project-name>/connections/<your-fabric-connection-name>`
+<Info>
+The following samples are applicable if you are using **Azure AI Foundry Project** resource with Microsoft Fabric tool through REST API call
+Your connection ID should be in this format: `/subscriptions/<sub-id>/resourceGroups/<your-rg-name>/providers/Microsoft.CognitiveServices/accounts/<your-ai-services-name>/projects/<your-project-name>/connections/<your-fabric-connection-name>`
+</Info>
 
 ### Create an agent with the Microsoft Fabric tool enabled
 
@@ -481,7 +263,7 @@ curl --request GET \
   --url $AZURE_AI_FOUNDRY_PROJECT_ENDPOINT/threads/thread_abc123/messages?api-version=$API_VERSION \
   -H "Authorization: Bearer $AGENT_TOKEN"
 ```
-:::zone-end
+</Tab>
 
 ## Next steps
 

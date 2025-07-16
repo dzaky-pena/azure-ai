@@ -1,14 +1,6 @@
 ---
-title: 'Use the Azure Developer CLI to deploy resources for Azure OpenAI On Your Data'
-titleSuffix: Azure OpenAI in Azure AI Foundry Models
+title: "'Use the Azure Developer CLI to deploy resources for Azure OpenAI On Your Data' in Azure AI Foundry Models"
 description: Use this article to learn how to automate resource deployment for Azure OpenAI On Your Data.
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: quickstart
-author: aahill
-ms.author: aahi
-ms.date: 05/20/2025
-recommendations: false
 ---
 
 # Use the Azure Developer CLI to deploy resources for Azure OpenAI On Your Data 
@@ -54,9 +46,10 @@ Use this article to learn how to automate resource deployment for Azure OpenAI O
     - `Subscription`: The Azure subscription that your resources are deployed to.
     - `Location`: The Azure region where your resources are deployed.
 
-    > [!NOTE]
-    > * The sample `azd` template deploys a `gpt-4o-mini` model. A recommended region for this template is East US, because different Azure regions support different OpenAI models. For more details about model support by region, go to the [Azure OpenAI Models](/azure/ai-services/openai/concepts/models) support page.
-    > * If you want to deploy a different model, you can edit the variables in the `infra/main.bicep` file.
+    <Note>
+    * The sample `azd` template deploys a `gpt-4o-mini` model. A recommended region for this template is East US, because different Azure regions support different OpenAI models. For more details about model support by region, go to the [Azure OpenAI Models](/azure/ai-services/openai/concepts/models) support page.
+    * If you want to deploy a different model, you can edit the variables in the `infra/main.bicep` file.
+    </Note>
 
     The provisioning process might take several minutes. Wait for the task to finish before you proceed to the next steps.
 
@@ -76,9 +69,10 @@ The `azd` template provisioned all of the required resources for you to chat wit
 1. Select the **Upload** button at the top of the pane.
 1. In the flyout menu that opens, upload your data.
 
-> [!NOTE]
-> The search indexer is set to run every five minutes to index the data in the storage account. You can wait a few minutes for the uploaded data to be indexed, or you can manually run the indexer from the search service page.
+<Note>
+The search indexer is set to run every five minutes to index the data in the storage account. You can wait a few minutes for the uploaded data to be indexed, or you can manually run the indexer from the search service page.
+</Note>
 
 ## Connect or create an application
 
-After you run the `azd` template and upload your data, you're ready to start using Azure OpenAI On Your Data. For code samples that you can use to build your applications, see the [quickstart article](../use-your-data-quickstart.md).
+After you run the `azd` template and upload your data, you're ready to start using Azure OpenAI On Your Data. For code samples that you can use to build your applications, see the [quickstart article](../use-your-data-quickstart).

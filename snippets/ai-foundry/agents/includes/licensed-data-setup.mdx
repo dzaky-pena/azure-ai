@@ -1,0 +1,60 @@
+---
+---
+
+## Setup
+
+1. Go to [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs) and select your AI Project. Select **Management Center**.
+   
+   <Frame>
+      ![](/images/ai-foundry/agents/media/tools/licensed-data/project-assets.png)
+   </Frame>
+
+1. Select **+new connection** in the settings page.
+
+   <Frame>
+      ![](/images/ai-foundry/agents/media/tools/licensed-data/connected-resources.png)
+   </Frame>
+  
+1. Select **custom keys** in **other resource types**.
+
+   <Frame>
+      ![](/images/ai-foundry/agents/media/tools/licensed-data/custom-keys.png)
+   </Frame>
+
+1. Enter the following information to create a connection to store your Tripadvisor or Morningstar key:
+   1. Set **Custom keys** to "key", with the value being your API key.
+   1. Make sure **is secret** is checked.
+   1. Set the connection name to your connection name. You use this connection name in your sample code or Foundry Portal later.
+   1. For the **Access** setting, you can choose either *this project only* or *shared to all projects*. Just make sure in your code, the connection string of the project you entered has access to this connection.
+
+   <Frame>
+      ![](/images/ai-foundry/agents/media/tools/licensed-data/connect-custom-resource.png)
+   </Frame>
+
+## Use the tool through the Azure AI Foundry portal
+
+1. To use the tool in the Azure AI Foundry, in the **Agents** screen for your agent, scroll down the **Setup** pane to **action**. Then select **Add**.
+
+   <Frame>
+      ![](/images/ai-foundry/agents/media/tools/knowledge-tools.png)
+   </Frame>
+
+1. Select the appropriate tool and follow the prompts to add the tool. 
+
+   <Frame>
+      ![](/images/ai-foundry/agents/media/tools/knowledge-tools-list.png)
+   </Frame>
+
+1. Give a name for your tool and provide an optional description.
+ 
+   <Frame>
+      ![](/images/ai-foundry/agents/media/tools/licensed-data/add-data-source.png)
+   </Frame>
+
+1. Select the custom key connection you just created. 
+
+   <Frame>
+      ![](/images/ai-foundry/agents/media/tools/licensed-data/add-connection.png)
+   </Frame>
+
+1. Finish and start chatting.

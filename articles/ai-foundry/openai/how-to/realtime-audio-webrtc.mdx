@@ -1,20 +1,11 @@
 ---
-title: 'How to use the GPT-4o Realtime API via WebRTC (Preview)'
-titleSuffix: Azure OpenAI in Azure AI Foundry Models
+title: "'How to use the GPT-4o Realtime API via WebRTC (Preview)' in Azure AI Foundry Models"
 description: Learn how to use the GPT-4o Realtime API for speech and audio via WebRTC.
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: how-to
-ms.date: 6/7/2025
-author: eric-urban
-ms.author: eur
-ms.custom: references_regions
-recommendations: false
 ---
 
 # How to use the GPT-4o Realtime API via WebRTC (Preview)
 
-[!INCLUDE [Feature preview](../includes/preview-feature.md)]
+[!INCLUDE [Feature preview](../includes/preview-feature)]
 
 Azure OpenAI GPT-4o Realtime API for speech and audio is part of the GPT-4o model family that supports low-latency, "speech in, speech out" conversational interactions. 
 
@@ -26,7 +17,7 @@ In most cases, we recommend using the WebRTC API for real-time audio streaming. 
 - **Error Correction**: WebRTC includes mechanisms for handling packet loss and jitter, which are essential for maintaining the quality of audio streams over unpredictable networks.
 - **Peer-to-Peer Communication**: WebRTC allows direct communication between clients, reducing the need for a central server to relay audio data, which can further reduce latency.
 
-Use the [Realtime API via WebSockets](./realtime-audio-websockets.md) if you need to stream audio data from a server to a client, or if you need to send and receive data in real time between a client and server. WebSockets aren't recommended for real-time audio streaming because they have higher latency than WebRTC.
+Use the [Realtime API via WebSockets](./realtime-audio-websockets) if you need to stream audio data from a server to a client, or if you need to send and receive data in real time between a client and server. WebSockets aren't recommended for real-time audio streaming because they have higher latency than WebRTC.
 
 ## Supported models
 
@@ -43,8 +34,8 @@ For more information about supported models, see the [models and versions docume
 Before you can use GPT-4o real-time audio, you need:
 
 - An Azure subscription - <a href="https://azure.microsoft.com/free/cognitive-services" target="_blank">Create one for free</a>.
-- An Azure OpenAI resource created in a [supported region](#supported-models). For more information, see [Create a resource and deploy a model with Azure OpenAI](create-resource.md).
-- You need a deployment of the `gpt-4o-realtime-preview` or `gpt-4o-mini-realtime-preview` model in a supported region as described in the [supported models](#supported-models) section in this article. You can deploy the model from the [Azure AI Foundry model catalog](../../../ai-foundry/how-to/model-catalog-overview.md) or from your project in Azure AI Foundry portal. 
+- An Azure OpenAI resource created in a [supported region](#supported-models). For more information, see [Create a resource and deploy a model with Azure OpenAI](create-resource).
+- You need a deployment of the `gpt-4o-realtime-preview` or `gpt-4o-mini-realtime-preview` model in a supported region as described in the [supported models](#supported-models) section in this article. You can deploy the model from the [Azure AI Foundry model catalog](../../../ai-foundry/how-to/model-catalog-overview) or from your project in Azure AI Foundry portal. 
 
 ## Connection and authentication
 
@@ -86,8 +77,9 @@ Here's how the ephemeral API key is used in the Realtime API:
 1. Your client requests an ephemeral API key from your server.
 1. Your server mints the ephemeral API key using the standard API key. 
     
-    > [!WARNING]
-    > Never use the standard API key in a client application. The standard API key should only be used in a secure backend service.
+    <Warning>
+    Never use the standard API key in a client application. The standard API key should only be used in a secure backend service.
+    </Warning>
 
 1. Your server returns the ephemeral API key to your client.
 1. Your client uses the ephemeral API key to authenticate a session with the Realtime API via WebRTC.
@@ -95,21 +87,9 @@ Here's how the ephemeral API key is used in the Realtime API:
 
 The following sequence diagram illustrates the process of minting an ephemeral API key and using it to authenticate a WebRTC session with the Realtime API. 
 
-:::image type="content" source="../media/how-to/real-time/ephemeral-key-webrtc.png" alt-text="Diagram of the ephemeral API key to WebRTC peer connection sequence." lightbox="../media/how-to/real-time/ephemeral-key-webrtc.png":::
-
-<!--
-sequenceDiagram
-  participant Your client
-  participant Your server
-  participant /realtime/sessions
-  participant /realtime via WebRTC
-
-  Your client->>Your server: Request to mint an ephemeral API key
-  Your server->>/realtime/sessions: Request ephemeral key using standard API key
-  /realtime/sessions->>Your server: Return ephemeral key (expires in 1 minute)
-  Your server->>Your client: Return ephemeral key
-  Your client->>/realtime via WebRTC: Authenticate session using ephemeral key (WebRTC peer connection) 
--->
+<Frame>
+    ![](/images/ai-foundry/openai/media/how-to/real-time/ephemeral-key-webrtc.png)
+</Frame>
 
 ## WebRTC example via HTML and JavaScript
 
@@ -117,8 +97,9 @@ The following code sample demonstrates how to use the GPT-4o Realtime API via We
 
 The sample code is an HTML page that allows you to start a session with the GPT-4o Realtime API and send audio input to the model. The model's responses are played back in real-time.
 
-> [!WARNING]
-> The sample code includes the API key hardcoded in the JavaScript. This code isn't recommended for production use. In a production environment, you should use a secure backend service to generate an ephemeral key and return it to the client.
+<Warning>
+The sample code includes the API key hardcoded in the JavaScript. This code isn't recommended for production use. In a production environment, you should use a secure backend service to generate an ephemeral key and return it to the client.
+</Warning>
 
 1. Copy the following code into an HTML file and open it in a web browser:
 
@@ -321,6 +302,6 @@ The sample code is an HTML page that allows you to start a session with the GPT-
 
 ## Related content
 
-* Try the [real-time audio quickstart](../realtime-audio-quickstart.md)
-* See the [Realtime API reference](../realtime-audio-reference.md)
-* Learn more about Azure OpenAI [quotas and limits](../quotas-limits.md)
+* Try the [real-time audio quickstart](../realtime-audio-quickstart)
+* See the [Realtime API reference](../realtime-audio-reference)
+* Learn more about Azure OpenAI [quotas and limits](../quotas-limits)

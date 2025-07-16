@@ -1,27 +1,19 @@
 ﻿---
-title: How to create a hub using the Azure Machine Learning SDK/CLI
-titleSuffix: Azure AI Foundry
+title: "How to create a hub using the Azure Machine Learning SDK/CLI"
 description: This article provides instructions on how to create an Azure AI Foundry hub using the Azure Machine Learning SDK and Azure CLI extension.
-manager: scottpolly
-ms.service: azure-ai-foundry
-ms.custom: build-2024, devx-track-azurecli
-ms.topic: how-to
-ms.date: 06/24/2025
-ms.reviewer: dantaylo
-ms.author: sgilley
-author: sdgilley
 ---
 
 # Create a hub using the Azure Machine Learning SDK and CLI
 
-[!INCLUDE [feature-preview](../../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../../includes/feature-preview)]
 
 In this article, you learn how to create the following [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs) resources using the Azure Machine Learning SDK and Azure CLI (with machine learning extension):
 - An Azure AI Foundry hub
 - An Azure AI Services connection
 
-> [!NOTE]
-> A hub is used only for a **[!INCLUDE [hub](../../includes/hub-project-name.md)]**. A **[!INCLUDE [fdp](../../includes/fdp-project-name.md)]** does not use a hub. For more information, see [Types of projects](../../what-is-azure-ai-foundry.md#project-types).
+<Note>
+A hub is used only for a **[!INCLUDE [hub](../../includes/hub-project-name)]**. A **[!INCLUDE [fdp](../../includes/fdp-project-name)]** does not use a hub. For more information, see [Types of projects](../../what-is-azure-ai-foundry.md#project-types).
+</Note>
 
 ## Prerequisites
 
@@ -33,7 +25,7 @@ Use the following tabs to select whether you're using the Python SDK or Azure CL
 
 # [Python SDK](#tab/python)
 
-[!INCLUDE [SDK setup](../../includes/development-environment-config.md)]
+[!INCLUDE [SDK setup](../../includes/development-environment-config)]
 
 # [Azure CLI](#tab/azurecli)
 
@@ -81,7 +73,7 @@ az ml workspace create --kind hub --resource-group {my_resource_group} --name {m
 
 ## Create an AI Foundry connection
 
-After creating your own [AI Foundry resource](../../../ai-services/multi-service-resource.md?context=%2Fazure%2Fai-foundry%2Fcontext%2Fcontext) or [Azure OpenAI resource](../../openai/how-to/create-resource.md) in the same resource group, you can connect it to your hub. You can also connect [Azure AI Search](../../../search/search-create-service-portal.md) from any resource group in your same subscription.
+After creating your own [AI Foundry resource](../../../ai-services/multi-service-resource.md?context=%2Fazure%2Fai-foundry%2Fcontext%2Fcontext) or [Azure OpenAI resource](../../openai/how-to/create-resource) in the same resource group, you can connect it to your hub. You can also connect [Azure AI Search](../../../search/search-create-service-portal) from any resource group in your same subscription.
 
 # [Python SDK](#tab/python)
 
@@ -143,7 +135,7 @@ You can use either an API key or credential-less YAML configuration file. For mo
     ai_services_resource_id: <fully_qualified_resource_id>
     ```
 
-The <fully_qualified_resource_id> is the resource ID of your AI Services resource. It is in the format `/subscriptions/{subscription_id}/resourceGroups/{resource_group}/providers/Microsoft.CognitiveServices/accounts/{aiservices_resource_name}`.
+The \<fully_qualified_resource_id\> is the resource ID of your AI Services resource. It is in the format `/subscriptions/{subscription_id}/resourceGroups/{resource_group}/providers/Microsoft.CognitiveServices/accounts/{aiservices_resource_name}`.
 
 ---
 
@@ -151,8 +143,9 @@ The <fully_qualified_resource_id> is the resource ID of your AI Services resourc
 
 You can also create a hub using existing resources such as Azure Storage and Azure Key Vault. In the following examples, replace the example string values with your own values:
 
-> [!TIP]
-> You can retrieve the resource ID of the storage account and key vault from the Azure portal by going to the resource's overview and selecting __JSON view__. The resource ID is located in the __id__ field. You can also use the Azure CLI to retrieve the resource ID. For example, `az storage account show --name {my_storage_account_name} --query "id"` and `az keyvault show --name {my_key_vault_name} --query "id"`.
+<Tip>
+You can retrieve the resource ID of the storage account and key vault from the Azure portal by going to the resource's overview and selecting __JSON view__. The resource ID is located in the __id__ field. You can also use the Azure CLI to retrieve the resource ID. For example, `az storage account show --name {my_storage_account_name} --query "id"` and `az keyvault show --name {my_key_vault_name} --query "id"`.
+</Tip>
 
 # [Python SDK](#tab/python)
 
@@ -186,6 +179,6 @@ az ml workspace create --kind hub --resource-group {my_resource_group} --name {m
 
 ## Related content
 
-- [Get started building a chat app using the prompt flow SDK](../../quickstarts/get-started-code.md)
-- [Work with projects in Visual Studio Code](vscode.md)
+- [Get started building a chat app using the prompt flow SDK](../../quickstarts/get-started-code)
+- [Work with projects in Visual Studio Code](vscode)
 - [Configure a managed network](../configure-managed-network.md?tabs=python)

@@ -1,16 +1,6 @@
 ---
-title: 'Grounding with Bing Search code samples'
-titleSuffix: Azure AI Foundry
+title: "Grounding with Bing Search code samples"
 description: Find code samples to ground Azure AI Agents using Bing Search results.
-services: cognitive-services
-manager: nitinme
-ms.service: azure-ai-agent-service
-ms.topic: how-to
-ms.date: 07/11/2025
-author: aahill
-ms.author: aahi
-zone_pivot_groups: selection-bing-grounding-code
-ms.custom: azure-ai-agents-code
 ---
 
 # How to use Grounding with Bing Search
@@ -22,30 +12,39 @@ Use this article to find step-by-step instructions and code samples for Groundin
 * A [connected Grounding with Bing Search resource](./bing-grounding.md#setup).
 * Your connection ID needs to be in this format: `/subscriptions/<subscription_id>/resourceGroups/<resource_group_name>/providers/Microsoft.CognitiveServices/accounts/<ai_service_name>/projects/<project_name>/connections/<connection_name>`
 
-> [!IMPORTANT]
-> There are requirements for displaying Grounding with Bing Search results. See the [overview article](./bing-grounding.md#how-to-display-grounding-with-bing-search-results) for details. 
-
-::: zone pivot="portal"
+<Info>
+There are requirements for displaying Grounding with Bing Search results. See the [overview article](./bing-grounding.md#how-to-display-grounding-with-bing-search-results) for details. 
+</Info>
+<Tabs>
+<Tab title="Foundry portal">
 
 1. In the [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs) navigate to the **Agents** screen for your agent, scroll down the **Setup** pane on the right to **knowledge**. Then select **Add**.
 
-    :::image type="content" source="../../media\tools\knowledge-tools.png" alt-text="A screenshot showing the available tool categories in the Azure AI Foundry portal." lightbox="../../media\tools\knowledge-tools.png":::
+    <Frame>
+        ![](/images/ai-foundry/agents/media/tools/knowledge-tools.png)
+    </Frame>
 
 1. Select **Grounding with Bing Search** and follow the prompts to add the tool. Note you can add only one per agent.
 
-    :::image type="content" source="../../media\tools\knowledge-tools-list.png" alt-text="A screenshot showing the available knowledge tools in the Azure AI Foundry portal." lightbox="../../media\tools\knowledge-tools-list.png":::
+    <Frame>
+        ![](/images/ai-foundry/agents/media/tools/knowledge-tools-list.png)
+    </Frame>
 
 1. Click to add new connections. Once you have added a connection, you can directly select from existing list.
    
-   :::image type="content" source="../../media\tools\bing\choose-bing-connection.png" alt-text="A screenshot showing the button for creating a new connection." lightbox="../../media\tools\bing\choose-bing-connection.png":::
+    <Frame>
+        ![](/images/ai-foundry/agents/media/tools/bing/choose-bing-connection.png)
+    </Frame>
 
 1. Select the Grounding with Bing Search resource you want to use and click to add connection. 
 
-   :::image type="content" source="../../media\tools\bing\create-bing-connection.png" alt-text="A screenshot showing available Grounding with Bing Search connections." lightbox="../../media\tools\bing\create-bing-connection.png":::
+    <Frame>
+        ![](/images/ai-foundry/agents/media/tools/bing/create-bing-connection.png)
+    </Frame>
 
-::: zone-end
+</Tab>
 
-::: zone pivot="python"
+<Tab title="Python">
 
 ## Create a project client
 
@@ -158,10 +157,9 @@ project_client.agents.delete_agent(agent.id)
 print("Deleted agent")
 ```
 
-
-::: zone-end
+</Tab>
  
-::: zone pivot="csharp"
+<Tab title="C#">
 ## Create a project client
 
 Create a client object, which will contain the project endpoint for connecting to your AI project and other resources.
@@ -336,9 +334,9 @@ agentClient.Threads.DeleteThread(threadId: thread.Id);
 agentClient.Administration.DeleteAgent(agentId: agent.Id);
 ```
 
-::: zone-end
+</Tab>
 
-::: zone pivot="javascript"
+<Tab title="JavaScript">
 
 ## Create a project client
 
@@ -431,10 +429,10 @@ if (!firstMessage.done && firstMessage.value) {
 
 ```
 
-::: zone-end
+</Tab>
 
 
-::: zone pivot="rest"
+<Tab title="REST API">
 
 >[!IMPORTANT]
 > 1. This REST API allows developers to invoke the Grounding with Bing Search tool through the Azure AI Foundry Agent Service. It does not send calls to the Grounding with Bing Search API directly. 
@@ -527,7 +525,8 @@ curl --request GET \
   -H "Authorization: Bearer $AGENT_TOKEN"
 ```
 
-::: zone-end
+</Tab>
+</Tabs>
 
 ## Next steps
 

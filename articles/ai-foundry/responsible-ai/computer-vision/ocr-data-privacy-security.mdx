@@ -1,18 +1,11 @@
 ---
-title: Data, privacy, and security for optical character recognition (OCR) - Azure AI Vision
-titleSuffix: Azure AI services
+title: "Data, privacy, and security for optical character recognition (OCR) - Azure AI Vision"
 description: This document details issues for data, privacy, and security for optical character recognition (OCR) of images and documents with printed and handwritten text using the Azure AI Vision API.
-author: sanjeev3
-ms.author: sajagtap
-manager: nitinme
-ms.service: azure-ai-vision
-ms.topic: article
-ms.date: 02/23/2021
 ---
 
 # Data, privacy, and security for OCR
 
-[!INCLUDE [non-english-translation](../includes/non-english-translation.md)]
+[!INCLUDE [non-english-translation](../includes/non-english-translation)]
 
 This article presents some high-level information about how the optical character recognition (OCR) service processes the data provided by customers. As an important reminder, you're responsible for the implementation of this technology and ensuring you have all necessary licenses or permissions to send data to this service. It's your responsibility to comply with all applicable laws and regulations in your jurisdiction.
 
@@ -28,7 +21,9 @@ The [OCR service](/azure/ai-services/computer-vision/overview-ocr) processes the
 
 The following diagram illustrates how your data is processed.
 
-:::image border type="content" source="./media/ocr/ocr-read-api-working.png" alt-text="Diagram that shows how the Azure AI Vision Read OCR API works.":::
+<Frame>
+    ![](/images/ai-foundry/responsible-ai/computer-vision/media/ocr/ocr-read-api-working.png)
+</Frame>
 
 **Authenticate (with subscription or API keys)**: The most common way to authenticate access to the Azure AI Vision API and its Read OCR is by using the customer's Azure AI Vision API key. Each request to the service URL must include an authentication header. This header passes along an API key (or token if applicable) that's used to validate your subscription for a service or group of services. [Learn more](/azure/ai-services/authentication?tabs=powershell).
 

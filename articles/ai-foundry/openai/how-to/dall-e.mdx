@@ -1,13 +1,6 @@
 ---
-title: How to use image generation models
-titleSuffix: Azure OpenAI in Azure AI Foundry Models
+title: "How to use image generation models in Azure AI Foundry Models"
 description: Learn how to generate and edit images with image models, and learn about the configuration options that are available.
-author: PatrickFarley
-ms.author: pafarley
-manager: nitinme
-ms.date: 04/23/2025
-ms.service: azure-ai-openai
-ms.topic: how-to
 ms.custom:
   - build-2025
 # Customer intent: as an engineer or hobbyist, I want to know how to use DALL-E image generation models to their full capability.
@@ -100,9 +93,9 @@ The following is a sample request body. You specify a number of options, defined
 
 ---
 
-> [!TIP]
-> For image generation token costs, see [Image tokens](../overview.md#image-generation-tokens).
-
+<Tip>
+For image generation token costs, see [Image tokens](../overview.md#image-generation-tokens).
+</Tip>
 
 ### Output
 
@@ -154,11 +147,11 @@ It's also possible that the generated image itself is filtered. In this case, th
 
 Your prompts should describe the content you want to see in the image, and the visual style of image.
 
-When you write prompts, consider that the Image APIs come with a content moderation filter. If the service recognizes your prompt as harmful content, it doesn't generate an image. For more information, see [Content filtering](../concepts/content-filter.md).
+When you write prompts, consider that the Image APIs come with a content moderation filter. If the service recognizes your prompt as harmful content, it doesn't generate an image. For more information, see [Content filtering](../concepts/content-filter).
 
-> [!TIP]
-> For a thorough look at how you can tweak your text prompts to generate different kinds of images, see the [Image prompt engineering guide](/azure/ai-services/openai/concepts/gpt-4-v-prompt-engineering).
-
+<Tip>
+For a thorough look at how you can tweak your text prompts to generate different kinds of images, see the [Image prompt engineering guide](/azure/ai-services/openai/concepts/gpt-4-v-prompt-engineering).
+</Tip>
 
 ### Specify API options
 
@@ -191,8 +184,9 @@ Use the *user* parameter to specify a unique identifier for the user making the 
 
 Use the *output_format* parameter to specify the format of the generated image. Supported formats are `PNG` and `JPEG`. The default is `PNG`.
 
-> [!NOTE]
-> WEBP images are not supported in the Azure OpenAI in Azure AI Foundry Models.
+<Note>
+WEBP images are not supported in the Azure OpenAI in Azure AI Foundry Models.
+</Note>
 
 #### Compression
 
@@ -200,16 +194,6 @@ Use the *output_compression* parameter to specify the compression level for the 
 
 
 #### [DALL-E 3](#tab/dalle-3)
-
-<!--
-| Parameter Name   | Description       | Values         |
-|------------------|-------------|--------------------------|
-| Size             | Specifies the size of generated images. Square images generate faster.    | `1024x1024` (default), `1792x1024`, `1024x1792`           |
-| Style            | DALL-E 3 offers two style options. The natural style is more similar to the default style of older models, while the vivid style generates more hyper-real and cinematic images. </br></br>The natural style is useful in cases where DALL-E 3 over-exaggerates or confuses a subject that's meant to be more simple, subdued, or realistic.     | `natural`, `vivid` (default)           |
-| Quality          | Controls image quality. `hd` has finer details and better consistency; `standard` is faster.    | `hd`, `standard` (default) |
-| Number (`n`)     | Must be set to 1 for DALL-E 3. To get multiple images, make parallel requests.        | `1`              |
-| Response format  | Format for the returned images. Default is `url`.   | `url`, `b64_json`|
--->
 
 #### Size
 
@@ -243,8 +227,9 @@ The format in which DALL-E 3 generated images are returned. Must be one of `url`
 
 The Image Edit API allows you to modify existing images based on text prompts you provide. The API call is similar to the image generation API call, but you also need to provide an input image.
 
-> [!IMPORTANT]
-> The input image must be less than 20 MB in size and must be a PNG or JPG file.
+<Info>
+The input image must be less than 20 MB in size and must be a PNG or JPG file.
+</Info>
 
 #### [GPT-image-1](#tab/gpt-image-1)
 
@@ -270,8 +255,9 @@ Replace the following values:
 
 The following is a sample request body. You specify a number of options, defined in later sections.
 
-> [!IMPORTANT]
-> The Image Edit API takes multipart/form data, not JSON data. The example below shows sample form data that would be attached to a cURL request.
+<Info>
+The Image Edit API takes multipart/form data, not JSON data. The example below shows sample form data that would be attached to a cURL request.
+</Info>
 
 ```
 -F "image[]=@beach.png" \
@@ -320,12 +306,7 @@ DALL-E models don't support the Image Edit API.
 
 ## Related content
 
-* [What is Azure OpenAI?](../overview.md)
-* [Quickstart: Generate images with Azure OpenAI](../dall-e-quickstart.md)
+* [What is Azure OpenAI?](../overview)
+* [Quickstart: Generate images with Azure OpenAI](../dall-e-quickstart)
 * [Image API reference](/azure/ai-services/openai/reference#image-generation)
 * [Image API (preview) reference](/azure/ai-services/openai/reference-preview)
-
-
-<!-- OAI HT guide https://platform.openai.com/docs/guides/images/usage
-dall-e 3 features here: https://cookbook.openai.com/articles/what_is_new_with_dalle_3 -->
-

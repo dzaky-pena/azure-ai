@@ -1,21 +1,12 @@
 ---
-title: 'How to use Azure OpenAI Assistants function calling'
-titleSuffix: Azure OpenAI
+title: "How to use Azure OpenAI Assistants function calling"
 description: Learn how to use Assistants function calling
-services: cognitive-services
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: how-to
-ms.date: 05/20/2025
-author: aahill
-ms.author: aahi
-recommendations: false
 
 ---
 
 # Azure OpenAI Assistants function calling
 
-[!INCLUDE [agent-service](../includes/agent-service.md)]
+[!INCLUDE [agent-service](../includes/agent-service)]
 
 The Assistants API supports function calling, which allows you to describe the structure of functions to an Assistant and then return the functions that need to be called along with their arguments.
 
@@ -33,10 +24,11 @@ API versions starting with `2024-02-15-preview`.
 
 ## Example function definition
 
-> [!NOTE]
-> * We've added support for the `tool_choice` parameter which can be used to force the use of a specific tool (like `file_search`, `code_interpreter`, or a `function`) in a particular run. 
-> * Runs expire ten minutes after creation. Be sure to submit your tool outputs before this expiration.
-> * You can also perform function calling [with Azure Logic apps](./assistants-logic-apps.md)
+<Note>
+* We've added support for the `tool_choice` parameter which can be used to force the use of a specific tool (like `file_search`, `code_interpreter`, or a `function`) in a particular run. 
+* Runs expire ten minutes after creation. Be sure to submit your tool outputs before this expiration.
+* You can also perform function calling [with Azure Logic apps](./assistants-logic-apps)
+</Note>
 
 # [Python 1.x](#tab/python)
 
@@ -72,8 +64,9 @@ assistant = client.beta.assistants.create(
 
 # [REST](#tab/rest)
 
-> [!NOTE]
-> With Azure OpenAI the `model` parameter requires model deployment name. If your model deployment name is different than the underlying model name then you would adjust your code to ` "model": "{your-custom-model-deployment-name}"`.
+<Note>
+With Azure OpenAI the `model` parameter requires model deployment name. If your model deployment name is different than the underlying model name then you would adjust your code to ` "model": "{your-custom-model-deployment-name}"`.
+</Note>
 
 ```console
 curl https://YOUR_RESOURCE_NAME.openai.azure.com/openai/assistants?api-version=2024-07-01-preview \
@@ -203,5 +196,5 @@ After you submit tool outputs, the **Run** will enter the `queued` state before 
 ## See also
 
 * [Assistants API Reference](../reference-preview.md#list---assistants)
-* Learn more about how to use Assistants with our [How-to guide on Assistants](../how-to/assistant.md).
+* Learn more about how to use Assistants with our [How-to guide on Assistants](../how-to/assistant).
 * [Azure OpenAI Assistants API samples](https://github.com/Azure-Samples/azureai-samples/tree/main/scenarios/Assistants)

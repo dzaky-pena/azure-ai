@@ -1,26 +1,18 @@
 ---
-title: 'How to use Azure OpenAI Assistants Code Interpreter'
-titleSuffix: Azure OpenAI
+title: "How to use Azure OpenAI Assistants Code Interpreter"
 description: Learn how to use Assistants Code Interpreter
-services: cognitive-services
-manager: nitinme
-ms.service: azure-ai-openai
-ms.topic: how-to
-ms.date: 05/20/2025
-author: aahill
-ms.author: aahi
-recommendations: false
 
 ---
 
 # Azure OpenAI Assistants Code Interpreter (Preview)
 
-[!INCLUDE [agent-service](../includes/agent-service.md)]
+[!INCLUDE [agent-service](../includes/agent-service)]
 
 Code Interpreter allows the Assistants API to write and run Python code in a sandboxed execution environment. With Code Interpreter enabled, your Assistant can run code iteratively to solve more challenging code, math, and data analysis problems. When your Assistant writes code that fails to run, it can iterate on this code by modifying and running different code until the code execution succeeds.
 
-> [!IMPORTANT]
-> Code Interpreter has [additional charges](https://azure.microsoft.com/pricing/details/cognitive-services/openai-service/) beyond the token based fees for Azure OpenAI usage. If your Assistant calls Code Interpreter simultaneously in two different threads, two code interpreter sessions are created. Each session is active by default for 1 hour with an idle timeout of 30 minutes.
+<Info>
+Code Interpreter has [additional charges](https://azure.microsoft.com/pricing/details/cognitive-services/openai-service/) beyond the token based fees for Azure OpenAI usage. If your Assistant calls Code Interpreter simultaneously in two different threads, two code interpreter sessions are created. Each session is active by default for 1 hour with an idle timeout of 30 minutes.
+</Info>
 
 ## Code interpreter support
 
@@ -92,8 +84,9 @@ assistant = client.beta.assistants.create(
 
 # [REST](#tab/rest)
 
-> [!NOTE]
-> With Azure OpenAI the `model` parameter requires model deployment name. If your model deployment name is different than the underlying model name, then you would adjust your code to ` "model": "{your-custom-model-deployment-name}"`.
+<Note>
+With Azure OpenAI the `model` parameter requires model deployment name. If your model deployment name is different than the underlying model name, then you would adjust your code to ` "model": "{your-custom-model-deployment-name}"`.
+</Note>
 
 ```console
 curl https://YOUR_RESOURCE_NAME.openai.azure.com/openai/assistants?api-version=2024-05-01-preview \
@@ -270,5 +263,5 @@ curl https://YOUR_RESOURCE_NAME.openai.azure.com/openai/files/<YOUR-FILE-ID>/con
 
 * [File Upload API reference](/rest/api/azureopenai/files/upload?view=rest-azureopenai-2024-02-15-preview&tabs=HTTP&preserve-view=true)
 * [Assistants API Reference](../reference-preview.md#list---assistants)
-* Learn more about how to use Assistants with our [How-to guide on Assistants](../how-to/assistant.md).
+* Learn more about how to use Assistants with our [How-to guide on Assistants](../how-to/assistant).
 * [Azure OpenAI Assistants API samples](https://github.com/Azure-Samples/azureai-samples/tree/main/scenarios/Assistants)

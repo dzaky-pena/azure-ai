@@ -1,11 +1,6 @@
 ---
-title: Trigger an Azure AI Foundry agent using Logic Apps
+title: "Trigger an Azure AI Foundry agent using Logic Apps"
 description: Use this article to learn how to trigger an AI agent when an event occurs. 
-ms.date: 06/30/2025
-ms.topic: how-to
-author: aahill
-ms.author: aahi
-ms.service: azure-ai-agent-service
 ---
 
 # Trigger an agent using Logic Apps (Preview)
@@ -25,7 +20,7 @@ To check if a specific connector has a trigger capability, view its documentatio
 
 ## Prerequisites
 
-* [An existing agent](../quickstart.md)
+* [An existing agent](../quickstart)
 
 ## Set up 
 
@@ -56,7 +51,9 @@ Start by adding the Azure AI Foundry Agent service connectors to your workflow.
 
 1. Click **add an action** and then search for **Azure AI Foundry Agent Service**. This will let you add connectors to your workflow.
 
-    :::image type="content" source="../media\triggers\connectors.png" alt-text="A screenshot of the actions added to a workflow." lightbox="../media\triggers\connectors.png":::
+    <Frame>
+      ![](/images/ai-foundry/agents/media/triggers/connectors.png)
+    </Frame>
 
 1. Depending on your use-case, choose the actions you need. 
 
@@ -73,9 +70,10 @@ Start by adding the Azure AI Foundry Agent service connectors to your workflow.
     1. List messages 
 
 
-> [!TIP] 
-> * Since the AI Foundry Agent Service takes time to respond, we recommend adding a **delay** connector between **create run** and **get run**. 
-> * You can click **parameters** on the top to create reusable parameters for Subscription ID and other values to avoid repetitive work.
+<Tip>
+* Since the AI Foundry Agent Service takes time to respond, we recommend adding a **delay** connector between **create run** and **get run**. 
+* You can click **parameters** on the top to create reusable parameters for Subscription ID and other values to avoid repetitive work.
+</Tip> 
 
 ## Create a connection
 
@@ -126,14 +124,17 @@ To configure the **create run** connector, click on it and provide the following
 
 **Thread ID (required)**: the thread ID of the thread you just created. Click the function icon to select the **ID** parameter from your previous **create thread** connector output.
 
-:::image type="content" source="../media\triggers\create-run.png" alt-text="A screenshot of the create run connector" lightbox="../media\triggers\create-run.png":::
+<Frame>
+  ![](/images/ai-foundry/agents/media/triggers/create-run.png)
+</Frame>
 
 **Assistant id (required)**: the ID of the agent you have created. 
 
 **Messages (optional)**: you can add the message you want the AI agent to respond to. Add the role as **user** for the message you want the agent to respond to. It can be the event payload from the trigger, for example a form response field. It can also be a constant message, for example always triggering with the phrase "*what is the latest AI news this week?*"  
 
-> [!TIP]
-> Make sure you have added the message either in the run or thread connector. Otherwise, you will run into issues. 
+<Tip>
+Make sure you have added the message either in the run or thread connector. Otherwise, you will run into issues. 
+</Tip>
 
 ## Configure the "get run" connector
 
@@ -159,6 +160,7 @@ To get a response, you need a custom function to retrieve the exact response bod
 
     `body('List_Messages')['data'][0]['content'][0]['text']['value']` 
 
-    :::image type="content" source="../media\triggers\get-response.png" alt-text="A screenshot showing the compose connector." lightbox="../media\triggers\get-response.png":::
-
+    <Frame>
+      ![](/images/ai-foundry/agents/media/triggers/get-response.png)
+    </Frame>
 1. Add other connectors if needed. You can click **run** and click **run history** to check the status of your runs. 

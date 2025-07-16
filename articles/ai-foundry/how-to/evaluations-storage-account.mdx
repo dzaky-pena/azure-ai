@@ -1,26 +1,19 @@
 ---
-title: Create and Configure your Storage Account for Evaluations
-titleSuffix: Azure AI Foundry
+title: "Create and Configure your Storage Account for Evaluations"
 description:  Learn how to create and configure your storage account for Azure AI Foundry evaluations.
-manager: scottpolly
-ms.service: azure-ai-foundry
-ms.topic: how-to
-ms.date: 06/30/2025
-ms.reviewer: gregharen
-ms.author: lagayhar
-author: lgayhardt
 ---
 
 # How to create and configure your storage account for use in Azure AI Foundry Projects
 
-> [!IMPORTANT]
-> This guidance only applies to the new Foundry resource based projects, not hub based projects. These steps aren't required for hub based projects.
+<Info>
+This guidance only applies to the new Foundry resource based projects, not hub based projects. These steps aren't required for hub based projects.
+</Info>
 
 When running evaluations with user provided datasets, users must connect a Storage Account to their Azure AI Foundry Resource. This is the storage account that is used to store these datasets. However, providing this connection isn't enough, the project must also be given contributor access to the blob storage to allow read and write access to the storage account. These instructions walk you through how to create the storage account, connect it to your project, and give resource permission.
 
 ## Prerequisites
 
-[!INCLUDE [uses-fdp-only](../includes/uses-fdp-only.md)]
+[!INCLUDE [uses-fdp-only](../includes/uses-fdp-only)]
 
 ## Create your blob storage account
 
@@ -32,7 +25,9 @@ Azure AI Foundry evaluations use the user's blob storage account to store datase
 1. Select **Create** on the Resource Group page.
 1. Search "Storage Account" and select the Storage Account option that is published by Microsoft.
 
-      :::image type="content" source="../media/evaluations/storage/storage-account.png" alt-text="A screenshot showing the Microsoft storage account option." lightbox="../media/evaluations/storage/storage-account.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/evaluations/storage/storage-account.png)
+    </Frame>
 
 1. Create your storage account.
     1. *Storage account name*: Give your storage account a meaningful name.
@@ -53,7 +48,10 @@ Now that the storage account has been created, it's time to connect the blob sto
 1. Select **Connected Resources** under "Resource (your resource name here)", NOT Project.
 1. Select **New connection**.
 1. Select **Storage account**.
-     :::image type="content" source="../media/evaluations/storage/add-storage-account.png" alt-text="A screenshot showing the adding a storage account as a new connection to your resource." lightbox="../media/evaluations/storage/add-storage-account.png":::
+     <Frame>
+        ![](/images/ai-foundry/media/evaluations/storage/add-storage-account.png)
+     </Frame>
+
 1. Search for your storage account name that you created.
 1. Authentication method: Recommended: Microsoft Entra ID.
 1. Select **Add Connection**.
@@ -69,10 +67,14 @@ The final step to setting up this storage account to store your datasets for eva
 1. Select the storage account you created under the *Resources* table.
 1. On the right hand side, select **Access Control (IAM)**.
 1. Select +Add -> Add role assignment.
-    > [!NOTE]
-    > If this is disabled, go to **Role assignments** and under *All*, ask an owner to take the next steps.
+    <Note>
+    If this is disabled, go to **Role assignments** and under *All*, ask an owner to take the next steps.
+    </Note>
 
-    :::image type="content" source="../media/evaluations/storage/access-control.png" alt-text="A screenshot of access control in the storage account settings highlighting add role assignment. " lightbox="../media/evaluations/storage/access-control.png":::
+    <Frame>
+        ![](/images/ai-foundry/media/evaluations/storage/access-control.png)
+    </Frame>
+
 1. In the *Job function roles* table, search for "Storage Blob Data Contributor" and select that option. Then select **Next** at the bottom of the screen.
 1. In the "Assign access to" option, select **Managed identity**.
 1. Select **+ Select members**.
@@ -86,4 +88,4 @@ You have now provided your project with write access to your blob storage accoun
 
 ## Related content
 
-- [Run evaluations in the cloud](./develop/cloud-evaluation.md)
+- [Run evaluations in the cloud](./develop/cloud-evaluation)

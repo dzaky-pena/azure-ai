@@ -1,14 +1,6 @@
 ---
-title: How to use function calling with Azure OpenAI in Azure AI Foundry Models
-titleSuffix: Azure OpenAI
+title: "How to use function calling with Azure OpenAI in Azure AI Foundry Models"
 description: Learn how to use function calling with the GPT-35-Turbo and GPT-4 models 
-author: mrbullwinkle #dereklegenzoff
-ms.author: mbullwin #delegenz
-ms.service: azure-ai-openai
-ms.custom: devx-track-python
-ms.topic: how-to
-ms.date: 06/17/2025
-manager: nitinme
 ---
 
 # How to use function calling with Azure OpenAI in Azure AI Foundry Models
@@ -22,8 +14,9 @@ At a high level you can break down working with functions into three steps:
 2. Use the model’s response to call your API or function 
 3. Call the chat completions API again, including the response from your function to get a final response
 
-> [!IMPORTANT]
-> The `functions` and `function_call` parameters have been deprecated with the release of the [`2023-12-01-preview`](https://github.com/Azure/azure-rest-api-specs/blob/main/specification/cognitiveservices/data-plane/AzureOpenAI/inference/preview/2023-12-01-preview/inference.json) version of the API. The replacement for `functions` is the [`tools`](../reference.md#chat-completions) parameter. The replacement for `function_call` is the [`tool_choice`](../reference.md#chat-completions) parameter.
+<Info>
+The `functions` and `function_call` parameters have been deprecated with the release of the [`2023-12-01-preview`](https://github.com/Azure/azure-rest-api-specs/blob/main/specification/cognitiveservices/data-plane/AzureOpenAI/inference/preview/2023-12-01-preview/inference.json) version of the API. The replacement for `functions` is the [`tools`](../reference.md#chat-completions) parameter. The replacement for `function_call` is the [`tool_choice`](../reference.md#chat-completions) parameter.
+</Info>
 
 ## Function calling support
 
@@ -60,11 +53,13 @@ Support for parallel function was first added in API version [`2023-12-01-previe
 * `gpt-35-turbo-16k` (`0613`)
 * `gpt-35-turbo` (`0613`)
 
-> [!NOTE]
-> The `tool_choice` parameter is now supported with `o3-mini` and `o1`. For more information on what parameters are supported with the o-series models see, the [reasoning models guide](./reasoning.md).
+<Note>
+The `tool_choice` parameter is now supported with `o3-mini` and `o1`. For more information on what parameters are supported with the o-series models see, the [reasoning models guide](./reasoning).
+</Note>
 
-> [!IMPORTANT]
-> Tool/function descriptions are currently limited to 1024 characters with Azure OpenAI. We will update this article if this limit is changed.
+<Info>
+Tool/function descriptions are currently limited to 1024 characters with Azure OpenAI. We will update this article if this limit is changed.
+</Info>
 
 ## Single tool/function calling example
 
@@ -242,8 +237,9 @@ For example in our simple time app we retrieved multiple times at the same time.
 
 To force the model to call a specific function set the `tool_choice` parameter with a specific function name. You can also force the model to generate a user-facing message by setting `tool_choice: "none"`.
 
-> [!NOTE]
-> The default behavior (`tool_choice: "auto"`) is for the model to decide on its own if it should call a function and if so which function to call.
+<Note>
+The default behavior (`tool_choice: "auto"`) is for the model to decide on its own if it should call a function and if so which function to call.
+</Note>
 
 ## Parallel function calling with multiple functions
 
@@ -461,8 +457,9 @@ Here's the current information for the three cities:
 Is there anything else you need?
 ```
 
-> [!IMPORTANT]
-> The JSON response might not always be valid so you need to add additional logic to your code to be able to handle errors. For some use cases you may find you need to use fine-tuning to improve [function calling performance](./fine-tuning-functions.md).
+<Info>
+The JSON response might not always be valid so you need to add additional logic to your code to be able to handle errors. For some use cases you may find you need to use fine-tuning to improve [function calling performance](./fine-tuning-functions).
+</Info>
 
 ## Prompt engineering with functions
 
@@ -516,6 +513,6 @@ To learn more about our recommendations on how to use Azure OpenAI models respon
 
 ## Next steps
 
-* [Learn more about Azure OpenAI](../overview.md).
+* [Learn more about Azure OpenAI](../overview).
 * For more examples on working with functions, check out the [Azure OpenAI Samples GitHub repository](https://aka.ms/oai/functions-samples)
-* Get started with the GPT-35-Turbo model with [the GPT-35-Turbo quickstart](../chatgpt-quickstart.md).
+* Get started with the GPT-35-Turbo model with [the GPT-35-Turbo quickstart](../chatgpt-quickstart).
