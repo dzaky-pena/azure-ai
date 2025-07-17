@@ -19,10 +19,10 @@ The accuracy of a facial recognition system is based on a combination of two thi
 
 | Condition         | Definition      |
 |----|---------|
-| True positive or correct match![True positive or correct match accept](media/Accuracy/1.png) | The person in the [probe image](transparency-note) is [enrolled](transparency-note) and they are correctly matched.    |
-| True negative or correct reject  ![True negative or correct reject](media/Accuracy/2.png)       | The person in the probe image is not enrolled and the system finds no match.    |
-| False positive or incorrect match  ![False positive or incorrect match](media/Accuracy/3.png)   | Either the person in the probe image is not *enrolled* but is matched to an *enrolled* person OR the person in the probe image is enrolled but is matched with the wrong person. |
-| False negative or incorrect reject  ![False negative or incorrect reject](media/Accuracy/4.png) | The person in the probe image is enrolled, but the system finds no match.|
+| True positive or correct match ![True positive or correct match accept](/images/ai-foundry/responsible-ai/face/media/Accuracy/1.png) | The person in the [probe image](transparency-note) is [enrolled](transparency-note) and they are correctly matched.    |
+| True negative or correct reject  ![True negative or correct reject](/images/ai-foundry/responsible-ai/face/media/Accuracy/2.png)       | The person in the probe image is not enrolled and the system finds no match.    |
+| False positive or incorrect match  ![False positive or incorrect match](/images/ai-foundry/responsible-ai/face/media/Accuracy/3.png)   | Either the person in the probe image is not *enrolled* but is matched to an *enrolled* person OR the person in the probe image is enrolled but is matched with the wrong person. |
+| False negative or incorrect reject  ![False negative or incorrect reject](/images/ai-foundry/responsible-ai/face/media/Accuracy/4.png) | The person in the probe image is enrolled, but the system finds no match.|
 
 The consequences of a false positive or a false negative vary depending on the purpose of the facial recognition system. The examples below illustrate this variation and how choices you make in designing the system affect the experience of those people who are subject to it. 
 
@@ -125,14 +125,14 @@ Making sure the face in an enrollment or probe image is sufficiently large is cr
 
 Faces are detectable when their size is as small as 36x36 pixels, but for best performance Microsoft recommends a minimum size of 200x200 pixels with at least 100 pixels between the eyes. Note that higher image resolution increases latency, but [there are ways to optimize latency](/azure/ai-services/computer-vision/how-to/mitigate-latency). The maximum size allowed is 4096 x 4096.
 
-![A small photo of people walking.](media/face-size.png)
+![A small photo of people walking.](/images/ai-foundry/responsible-ai/face/media/face-size.png)
 
 ### Face orientation  
 
 Faces looking away from the camera may not be detected. Faces should be oriented looking towards the camera within 35 degrees for both the pitch (head tilt towards the front or back) and the yaw (head rotation to the left or to the right); the roll (head tilt to the left or to the right) doesn't matter. 
 
-![Photo of a person's face, with face rectangle shown.](media/face-orientation.png) 
-![Diagram of the head pose axes.](media/head-pose.jpg)
+![Photo of a person's face, with face rectangle shown.](/images/ai-foundry/responsible-ai/face/media/face-orientation.png) 
+![Diagram of the head pose axes.](/images/ai-foundry/responsible-ai/face/media/head-pose.jpg)
 
 ### Control image capture environment
 
@@ -143,7 +143,7 @@ Pay attention to how well the details of people’s faces can be seen in images.
 - Capture images in appropriate lighting conditions. Is the lighting too bright, too dark? Are faces backlit? Is there too much light from one side and not enough from the other? When possible, place sensors away from areas with extreme lighting. 
 - Is the lighting adequate to accurately capture the details of people’s faces with different skin tones? 
 
-![Photo of a person outside at night.](media/Lighting.png)
+![Photo of a person outside at night.](/images/ai-foundry/responsible-ai/face/media/Lighting.png)
 
 #### Face liveness detection
 
@@ -177,7 +177,7 @@ Enrolling occluded faces can result in errors. While it's possible for facial re
 - Pay attention to challenges that people face during evaluation and deployment to identify remediations that work best for your environment.
 - Use the [Recogniton_04 model](/azure/ai-services/computer-vision/how-to/specify-recognition-model) in the Verify, Identify, Group, and FindSimilar APIs which can recognize people wearing face coverings (surgical masks, N95 masks, cloth masks).
 
-![Photo of a man surrounded by confetti.](media/Occlusion.png)
+![Photo of a man surrounded by confetti.](/images/ai-foundry/responsible-ai/face/media/Occlusion.png)
 
 #### Significant changes in appearance
 
@@ -185,7 +185,7 @@ Dramatic changes in appearance, like the removal of a full beard or many years p
 - In addition to supporting a fallback method, designing the user experience to support immediate reenrollment following a recognition failure can improve user satisfaction. 
 - Facial recognition systems are generally less accurate for children. Microsoft recommends using Face for recognition of people over 18. Facial recognition can be especially challenging with people 13 and younger.
 
-![Photo of a person's drivers license next to a different photo of the same person.](media/appearance-changes.png)
+![Photo of a person's drivers license next to a different photo of the same person.](/images/ai-foundry/responsible-ai/face/media/appearance-changes.png)
 
 #### Motion, blur, and extreme expressions
 
@@ -195,13 +195,13 @@ Blurry faces caused by fast movement, or even extreme expression (like yawning w
 - Create an environment where people naturally face the camera and slow down. Otherwise movement could result in blurry images that would be difficult to recognize. 
 - Provide clear instructions for how people should behave during recognition (eyes open, mouth closed, stand still, etc.).
 
-![Photo of people walking, with motion blur.](media/Motion.png)
+![Photo of people walking, with motion blur.](/images/ai-foundry/responsible-ai/face/media/Motion.png)
 
 #### Biological twins
 
 Twins, family members, and other people who look very similar to each other will be difficult for facial recognition systems to distinguish from one another. This is another reason to support a fallback method.
 
-![Two photos of identical twins using computers.](media/biometric-twins.png)
+![Two photos of identical twins using computers.](/images/ai-foundry/responsible-ai/face/media/biometric-twins.png)
 
 ### Design the system to support human judgment
 

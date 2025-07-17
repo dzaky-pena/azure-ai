@@ -10,14 +10,11 @@ Most businesses don’t want just chatbots - they want automation that's faster 
 
 Large language models (LLMs) opened the door to a new type of automation with systems that can understand unstructured data, make decisions, and generate content. In practice, it can be difficult for businesses to move beyond demos and into production. LLMs can drift, be incorrect, and lack accountability. Without visibility, policy enforcement, and orchestration, these models are difficult to trust in real business workflows.
 
-:::row:::
-    :::column span="1":::
 **Azure AI Foundry** is designed to change that. It's a platform that combines models, tools, frameworks, and governance into a unified system for building intelligent agents. At the center of this system is **Azure AI Foundry Agent Service**, enabling the operation of agents across development, deployment, and production.
-    :::column-end:::
-    :::column span="3":::
-![Graphic that shows Foundry Agent Service is the Azure AI Foundry glue.](media\agent-service-the-glue.png)
-    :::column-end:::
-:::row-end:::
+
+<Frame>
+    ![](/images/ai-foundry/agents/media/agent-service-the-glue.png)
+</Frame>
 
 AI Foundry Agent Service connects the core pieces of Azure AI Foundry such as models, tools, and frameworks into a single runtime. It manages threads, orchestrates tool calls, enforces content safety, and integrates with identity, networking, and observability systems to ensure agents are secure, scalable, and production-ready.
 
@@ -34,7 +31,9 @@ Each agent has three core components:
 - **Instructions**: Define the agent’s goals, behavior, and constraints
 - **Tools**: Let the agent retrieve knowledge or take action
 
-![Graphic that shows What is an AI Agent?.](/images/ai-foundry/agents/media/what-is-an-agent.png)
+<Frame>
+    ![](/images/ai-foundry/agents/media/what-is-an-agent.png)
+</Frame>
 
 Agents receive unstructured inputs such as user prompts, alerts, or messages from other agents. They produce outputs in the form of tool results or messages. Along the way, they may call tools to perform retrieval, or trigger actions.
 
@@ -43,45 +42,33 @@ Agents receive unstructured inputs such as user prompts, alerts, or messages fro
 
 Think of Azure AI Foundry as an assembly line for intelligent agents. Like any modern factory, it brings together different specialized stations, each responsible for shaping part of the final product. Instead of machines and conveyor belts, the Agent Factory uses models, tools, policies, and orchestration to build agents that are secure, testable, and production-ready. Here’s how the factory works step by step:
 
-![Graphic that shows Azure AI Foundry: Agent Factory.](media\agent-factory.png)
+<Frame>
+    ![](/images/ai-foundry/agents/media/agent-factory.png)
+</Frame>
 
-
-:::row:::
-    :::column span="1":::
 ### 1. Models
 
 The assembly line starts by selecting a model that gives your agent its intelligence. Choose from a growing catalog of large language models including GPT-4o, GPT-4, GPT-3.5 (Azure OpenAI), and others like Llama. This is the reasoning core of the agent that powers its decisions.
-    :::column-end:::
-    :::column span="1":::
+
 ### 2. Customization
 
 Next, shape that model to fit your use case. Customize your agent with fine-tuning, distillation, or domain-specific prompts. This step allows you to encode agent behavior, role-specific knowledge, and patterns from prior performance using data captured from real thread content and tool results.
-    :::column-end:::
-    :::column span="1":::
+
 ### 3. AI Tools
 
 Then, equip your agent with tools. These let it access enterprise knowledge (such as Bing, SharePoint, Azure AI Search) and take real-world actions (via Logic Apps, Azure Functions, OpenAPI, and more). This enhances the agent's ability to expand its capabilities.
-    :::column-end:::
-:::row-end:::
 
-:::row:::
-    :::column span="1":::
 ### 4. Orchestration
 
 Next, the agent needs coordination. [Connected agents](how-to\connected-agents) orchestrates the full lifecycle such as handling tool calls, updating thread state, managing retries, and logging outputs.
 
-    :::column-end:::
-    :::column span="1":::
 ### 5. Observability
 
 Finally, agents are tested and monitored. AI Foundry can capture logs, traces, and evaluations at every step. With full thread-level visibility and Application Insights integration, teams can inspect every decision and continuously improve agents over time.
-    :::column-end:::
-    :::column span="1":::
+
 ### 6. Trust
 
 It's important to ensure agents are suitable and reliable for the workload they're assigned to. AI Foundry applies enterprise-grade trust features including identity via Microsoft Entra, RBAC, content filters, encryption, and network isolation. You choose how and where your agents run - using platform-managed or bring-your-own infrastructure.
-    :::column-end:::
-:::row-end:::
 
 The result? An agent that's ready for production: reliable, extensible, and safe to deploy across your workflows.
 

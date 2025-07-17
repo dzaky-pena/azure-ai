@@ -299,8 +299,9 @@ In-place migrations that target updating an existing provisioned deployment to a
 
 Selecting a deployment name opens the **Properties** for the model deployment. From this view, select the **edit** button, which will show the **Update deployment** dialogue box. Select the model version dropdown to set a new model version for the provisioned deployment. As noted, the provisioning state will change to "updating" during the migration and will revert to "succeeded" once the migration is complete. 
 
-![Screenshot of update deployment dialogue box with the model version field selector opened to show model version options available for selection.](media/working-with-models/provisioned-deployment-model-version-update.png)
-
+<Frame>
+    ![](/images/ai-foundry/openai/how-to/media/working-with-models/provisioned-deployment-model-version-update.png)
+</Frame>
 #### In-place migration: model family change
 In-place migrations that target updating an existing provisioned deployment to a new model family are supported through REST API and Azure CLI. To perform an in-place migration targeting a model family change, use the example request below as a guide. In the request, you'll need to update the model name and model version for the target model you're migrating to. 
 
