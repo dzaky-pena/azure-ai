@@ -3,17 +3,29 @@
   "theme": "mint",
   "name": "Azure AI",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#006dc1",
+    "light": "#006dc1",
+    "dark": "#006dc1"
+  },
+  "favicon": "favicon.png",
+  "background": {
+    "decoration": "gradient"
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
   },
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "AI Foundry",
         "groups": [
           {
-            "group": "Get Started",
+            "group": " ",
             "pages": [
               "articles/ai-foundry/responsible-use-of-ai-overview",
               "articles/ai-foundry/what-is-azure-ai-foundry",
@@ -462,18 +474,8 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
           "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
+          "href": "https://azure.microsoft.com/en-us/blog/",
           "icon": "newspaper"
         }
       ]
@@ -482,21 +484,22 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Contact Sales",
+        "href": "https://azure.microsoft.com/en-us/contact"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Get started with Azure",
+      "href": "https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/azure",
+      "instagram": "https://www.instagram.com/microsoftazure/",
+      "linkedin": "https://www.linkedin.com/showcase/microsoft-azure/",
+      "youtube": "https://www.youtube.com/channel/UC0m-80FnNY2Qb7obvTL_2fA"
     }
   }
 }
