@@ -21,7 +21,10 @@ Most [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs) pages are composed 
 - Navigation - There are three different states:
     - Outside a project - there's no left navigation until you are in a project. The page is divided into sections. Once you have projects, the top section is a list of recent projects.
     - In a project - the left navigation is the same for all parts of a project, until you move to the **Management center**.
-    - The left navigation in the Management center has two sections. In a [!INCLUDE [fdp-project-name](../includes/fdp-project-name)]. the sections are for the **resource** the project is in, then a section for the **project** itself. In a [!INCLUDE [hub-project-name](../includes/hub-project-name)], the sections are for the **hub** that the project is in, then a section for the **project** itself.
+import FdpProjectName from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+import HubProjectName from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+
+    - The left navigation in the Management center has two sections. In a <FdpProjectName />. the sections are for the **resource** the project is in, then a section for the **project** itself. In a <HubProjectName />, the sections are for the **hub** that the project is in, then a section for the **project** itself.
 
 For efficient navigation, it might be helpful to navigate by landmarks to move between these sections on the page.
 
@@ -83,13 +86,19 @@ The chat session pane is where you can chat to the model and test out your assis
 
 Azure AI Foundry has two different project types - see [What is Azure AI Foundry?](../what-is-azure-ai-foundry.md#project-types). The type appears in the  **Type** column in the **All resources** view. In the recent resources picker, the type is in a second line under the project name.
 
-- Listen for either **(AI Foundry)** or **Foundry project** for a [!INCLUDE [fdp-project-name](../includes/fdp-project-name)]. 
-- Listen for **(Hub)** for a [!INCLUDE [hub-project-name](../includes/hub-project-name)].
+import FdpProjectName from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+
+- Listen for either **(AI Foundry)** or **Foundry project** for a <FdpProjectName />. 
+import HubProjectName from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+
+- Listen for **(Hub)** for a <HubProjectName />.
 
 
 ## Using prompt flow 
 
-Prompt flow is available only in a [!INCLUDE [hub-project-name](../includes/hub-project-name)]. 
+import HubProjectName from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+
+Prompt flow is available only in a <HubProjectName />. 
 
 Prompt flow is a tool to create executable flows, linking LLMs, prompts, and Python tools through a visualized graph. You can use this to prototype, experiment, and iterate on your AI applications before deploying. 
 

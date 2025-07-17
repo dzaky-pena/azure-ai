@@ -9,7 +9,9 @@ ms.custom:
 
 # How to troubleshoot your deployments and monitors in Azure AI Foundry portal
 
-[!INCLUDE [feature-preview](../includes/feature-preview)]
+import FeaturePreview from '/snippets/ai-foundry/includes/feature-preview.mdx'
+
+<FeaturePreview />
 
 This article provides instructions on how to troubleshoot your deployments and monitors in Azure AI Foundry portal. 
 
@@ -38,7 +40,9 @@ After you deployed a prompt flow, you got the error message: "Tool load failed i
 
 To fix this error, take the following steps to manually assign the ML Data scientist role to your endpoint. It might take several minutes for the new role to take effect.
 
-[!INCLUDE [uses-hub-only](../includes/uses-hub-only)]
+import UsesHubOnly from '/snippets/ai-foundry/includes/uses-hub-only.mdx'
+
+<UsesHubOnly />
 
 1. Go to your project in [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs) and select **Management center** from the left pane to open the settings page.
 1. Under the **Project** heading, select **Overview**.
@@ -68,7 +72,7 @@ This error message refers to a situation where the deployment build failed. You 
 
 __Option 1: Find the build log for the Azure default blob storage.__
 
-[!INCLUDE [uses-hub-only](../includes/uses-hub-only)]
+<UsesHubOnly />
 
 1. Go to your project in [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs) and select **Management center** from the left pane to open the settings page.
 1. Under the **Hub** heading, select **Overview**.

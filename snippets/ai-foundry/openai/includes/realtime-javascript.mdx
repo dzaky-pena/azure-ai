@@ -16,7 +16,9 @@ For the recommended keyless authentication with Microsoft Entra ID, you need to:
 
 ## Deploy a model for real-time audio
 
-[!INCLUDE [Deploy model](realtime-deploy-model)]
+import DeployModel from '/snippets/ai-foundry/openai/includes/realtime-deploy-model.mdx'
+
+<DeployModel />
 
 ## Set up
 
@@ -47,7 +49,9 @@ For the recommended keyless authentication with Microsoft Entra ID, you need to:
 
 ## Retrieve resource information
 
-[!INCLUDE [resource authentication](resource-authentication)]
+import ResourceAuthentication from '/snippets/ai-foundry/openai/includes/resource-authentication.mdx'
+
+<ResourceAuthentication />
 
 <Danger>
 To use the recommended keyless authentication with the SDK, make sure that the `AZURE_OPENAI_API_KEY` environment variable isn't set. 

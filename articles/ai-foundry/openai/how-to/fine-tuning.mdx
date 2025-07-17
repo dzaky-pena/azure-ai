@@ -15,25 +15,31 @@ Azure OpenAI in Azure AI Foundry Models lets you tailor our models to your perso
 In contrast to few-shot learning, fine tuning improves the model by training on many more examples than can fit in a prompt, letting you achieve better results on a wide number of tasks. Because fine tuning adjusts the base model’s weights to improve performance on the specific task, you won’t have to include as many examples or instructions in your prompt. This means less text sent and fewer tokens processed on every API call, potentially saving cost, and improving request latency.
 
 We use LoRA, or low rank adaptation, to fine-tune models in a way that reduces their complexity without significantly affecting their performance. This method works by approximating the original high-rank matrix with a lower rank one, thus only fine-tuning a smaller subset of *important* parameters during the supervised training phase, making the model more manageable and efficient. For users, this makes training faster and more affordable than other techniques.
-
+<Tabs>
 <Tab title="Portal">
 
-[!INCLUDE [Azure AI Foundry portal fine-tuning](../includes/fine-tuning-unified)]
+import AzureAiFoundryPortalFineTuning from '/snippets/ai-foundry/openai/includes/fine-tuning-unified.mdx'
+
+<AzureAiFoundryPortalFineTuning />
 
 </Tab>
 
 <Tab title="Python">
 
-[!INCLUDE [Python SDK fine-tuning](../includes/fine-tuning-python)]
+import PythonSdkFineTuning from '/snippets/ai-foundry/openai/includes/fine-tuning-python.mdx'
+
+<PythonSdkFineTuning />
 
 </Tab>
 
 <Tab title="REST API">
 
-[!INCLUDE [REST API fine-tuning](../includes/fine-tuning-rest)]
+import RestApiFineTuning from '/snippets/ai-foundry/openai/includes/fine-tuning-rest.mdx'
+
+<RestApiFineTuning />
 
 </Tab>
-
+</Tabs>
 ## Next steps
 
 - Explore the fine-tuning capabilities in the [Azure OpenAI fine-tuning tutorial](../tutorials/fine-tune).

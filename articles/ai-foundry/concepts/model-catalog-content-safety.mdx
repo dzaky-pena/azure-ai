@@ -5,7 +5,9 @@ description: Learn about content safety for models deployed using serverless API
 
 # Guardrails & controls for Models Sold Directly by Azure 
 
-[!INCLUDE [feature-preview](../includes/feature-preview)]
+import FeaturePreview from '/snippets/ai-foundry/includes/feature-preview.mdx'
+
+<FeaturePreview />
 
 In this article, learn about content safety capabilities for models from the model catalog deployed using serverless API deployments.
 
@@ -27,7 +29,9 @@ Content filtering occurs synchronously as the service processes prompts to gener
 
 Suppose you decide to use an API other than the [Model Inference API](/azure/ai-studio/reference/reference-model-inference-api) to work with a model that is deployed via a serverless API deployment. In such a situation, content filtering (preview) isn't enabled unless you implement it separately by using Azure AI Content Safety. To get started with Azure AI Content Safety, see [Quickstart: Analyze text content](/azure/ai-services/content-safety/quickstart-text). You run a higher risk of exposing users to harmful content if you don't use content filtering (preview) when working with models that are deployed via serverless API deployments.
 
-[!INCLUDE [content-safety-harm-categories](../includes/content-safety-harm-categories)]
+import ContentSafetyHarmCategories from '/snippets/ai-foundry/includes/content-safety-harm-categories.mdx'
+
+<ContentSafetyHarmCategories />
 
 ## How charges are calculated
 

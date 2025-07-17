@@ -5,23 +5,29 @@ description: This article provides instructions on how to start using the Azure 
 
 
 # Quickstart: Get started with Azure AI Foundry
-
+<Tabs>
 <Tab title="Hub based project">
 
 In this quickstart, we walk you through setting up your local development environment with the [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs) SDK. We write a prompt, run it as part of your app code, trace the LLM calls being made, and run a basic evaluation on the outputs of the LLM.
 
 <Tip>
-The rest of this article shows how to use a **[!INCLUDE [hub](../includes/hub-project-name)]**.  Select **[!INCLUDE [fdp](../includes/fdp-project-name)]** at the top of this article if you want to use a [!INCLUDE [fdp](../includes/fdp-project-name)] instead.  [Which type of project do I need?](../what-is-azure-ai-foundry.md#which-type-of-project-do-i-need)
+import Hub from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+import Fdp from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+
+The rest of this article shows how to use a **<Hub />**.  Select **<Fdp />** at the top of this article if you want to use a <Fdp /> instead.  [Which type of project do I need?](../what-is-azure-ai-foundry.md#which-type-of-project-do-i-need)
 </Tip>
 
 ## Prerequisites
 
 - An [Azure subscription](https://azure.microsoft.com/free/). If you don't have an Azure subscription, create a free account before you begin.
-- A [!INCLUDE [hub-project-name](../includes/hub-project-name)]. If you're new to Azure AI Foundry and don't have a [!INCLUDE [hub-project-name](../includes/hub-project-name)], select **[!INCLUDE [fdp](../includes/fdp-project-name)]** at the top of this article to use a [!INCLUDE [fdp-project-name](../includes/fdp-project-name)] instead.
+import HubProjectName from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+import FdpProjectName from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+
+- A <HubProjectName />. If you're new to Azure AI Foundry and don't have a <HubProjectName />, select **<Fdp />** at the top of this article to use a <FdpProjectName /> instead.
 
 ## Set up your development environment
 
-1. [Set up your development environment](../how-to/develop/install-cli-sdk.md?pivots=programming-language-python)
+1. [Set up your development environment](../how-to/develop/install-cli-sdk)
 
 1. Install these packages.
 
@@ -30,15 +36,22 @@ The rest of this article shows how to use a **[!INCLUDE [hub](../includes/hub-pr
     ```
 
     <Note>
-    Different project types require different versions of the `azure-ai-projects` package. To avoid conflicts, create separate Python environments: use version `1.0.0b10` for [!INCLUDE [hub-project-name](../includes/hub-project-name)]s and the latest version for [!INCLUDE [fdp-project-name](../includes/fdp-project-name)]s.
+    Different project types require different versions of the `azure-ai-projects` package. To avoid conflicts, create separate Python environments: use version `1.0.0b10` for <HubProjectName />s and the latest version for <FdpProjectName />s.
     </Note>
 
 ## Deploy a model
 
-[!INCLUDE [tip-left-pane](../includes/tip-left-pane)]
+import TipLeftPane from '/snippets/ai-foundry/includes/tip-left-pane.mdx'
+
+<TipLeftPane />
 
 1. Sign in to [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs).
-1. Select a [!INCLUDE [hub-project-name](../includes/hub-project-name)]. If you don't have a [!INCLUDE [hub-project-name](../includes/hub-project-name)], select **[!INCLUDE [fdp](../includes/fdp-project-name)]** at the top of this article to use a [!INCLUDE [fdp-project-name](../includes/fdp-project-name)] instead.
+import HubProjectName from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+import HubProjectName from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+import Fdp from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+import FdpProjectName from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+
+1. Select a <HubProjectName />. If you don't have a <HubProjectName />, select **<Fdp />** at the top of this article to use a <FdpProjectName /> instead.
 
 1. Select **Model catalog** from the left pane.
 
@@ -111,7 +124,9 @@ python chat.py
 
 ## Clean up resources
 
-[!INCLUDE [clean-up-resources](../includes/clean-up-resources)]
+import CleanUpResources from '/snippets/ai-foundry/includes/clean-up-resources.mdx'
+
+<CleanUpResources />
 
 ## Next step
 
@@ -122,6 +137,9 @@ python chat.py
 
 <Tab title="Foundry project">
 
-[!INCLUDE [get-started-fdp](../includes/get-started-fdp)]
+import GetStartedFdp from '/snippets/ai-foundry/includes/get-started-fdp.mdx'
+
+<GetStartedFdp />
 
 </Tab>
+</Tabs>

@@ -1,19 +1,27 @@
 ---
 ---
 
-[!INCLUDE [Feature preview](~/reusable-content/ce-skilling/azure/includes/ai-studio/includes/feature-preview)]
+import FeaturePreview from '/snippets/ai-foundry/foundry-models/includes/use-chat-reasoning/~/reusable-content/ce-skilling/azure/includes/ai-studio/includes/feature-preview.mdx'
+
+<FeaturePreview />
 
 This article explains how to use the reasoning capabilities of chat completions models deployed in Azure AI Foundry Models.
 
-[!INCLUDE [about-reasoning](about-reasoning)]
+import AboutReasoning from '/snippets/ai-foundry/foundry-models/includes/use-chat-reasoning/about-reasoning.mdx'
+
+<AboutReasoning />
 
 ## Prerequisites
 
 To complete this tutorial, you need:
 
-[!INCLUDE [how-to-prerequisites](../how-to-prerequisites)]
+import HowToPrerequisites from '/snippets/ai-foundry/foundry-models/includes/how-to-prerequisites.mdx'
 
-[!INCLUDE [how-to-prerequisites-csharp](../how-to-prerequisites-csharp)]
+<HowToPrerequisites />
+
+import HowToPrerequisitesCsharp from '/snippets/ai-foundry/foundry-models/includes/how-to-prerequisites-csharp.mdx'
+
+<HowToPrerequisitesCsharp />
 
 * A model with reasoning capabilities model deployment. If you don't have one read [Add and configure Foundry Models](../../how-to/create-model-deployments) to add a reasoning model. 
 
@@ -48,7 +56,9 @@ client = new ChatCompletionsClient(
 );
 ```
 
-[!INCLUDE [best-practices](best-practices)]
+import BestPractices from '/snippets/ai-foundry/foundry-models/includes/use-chat-reasoning/best-practices.mdx'
+
+<BestPractices />
 
 ### Create a chat completion request
 

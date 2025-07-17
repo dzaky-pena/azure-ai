@@ -6,7 +6,9 @@ description: Learn how to configure an Azure AI Foundry managed network to secur
 
 # Access on-premises resources from your Azure AI Foundry's managed network
 
-[!INCLUDE [hub-only](../includes/uses-hub-only)]
+import HubOnly from '/snippets/ai-foundry/includes/uses-hub-only.mdx'
+
+<HubOnly />
 
 To access your non-Azure resources located in a different virtual network or located entirely on-premises from your [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs)'s managed virtual network, an Application Gateway must be configured. Through this Application Gateway, full end to end access can be configured to your resources.
 

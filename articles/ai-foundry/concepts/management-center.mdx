@@ -10,12 +10,17 @@ ms.custom:
 
 The management center is a part of the Azure AI Foundry portal that streamlines governance and management activities. From the management center, you can manage:
 
-- Azure AI Foundry hubs and [!INCLUDE [hub](../includes/hub-project-name)]s
-- Azure AI [!INCLUDE [FDP](../includes/fdp-project-name)]s
+import Hub from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+
+- Azure AI Foundry hubs and <Hub />s
+import Fdp from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+
+- Azure AI <Fdp />s
 - Quotas for models and virtual machines (VMs)
 
     <Note>
-    VM quotas are only available for [!INCLUDE [hub](../includes/hub-project-name)]s.
+
+    VM quotas are only available for <Hub />s.
     </Note>
 - User management and role assignment
 
@@ -27,20 +32,24 @@ To access the management center, sign in to [Azure AI Foundry](https://ai.azure.
     
 ## Manage Foundry projects
 
-Use the management center to create and configure [!INCLUDE [FDP](../includes/fdp-project-name)]s. Use __All resources__ to view all [!INCLUDE [FDP](../includes/fdp-project-name)]s that you have access to, or to create new projects. Use the __Project__ section of the left menu to manage individual [!INCLUDE [FDP](../includes/fdp-project-name)].
+Use the management center to create and configure <Fdp />s. Use __All resources__ to view all <Fdp />s that you have access to, or to create new projects. Use the __Project__ section of the left menu to manage individual <Fdp />.
 
 <Frame>
   ![](/images/ai-foundry/media/management-center/project-management.png)
 </Frame>
     
-For more information, see [Create a [!INCLUDE [fdp-project-name](../includes/fdp-project-name)]](../how-to/create-projects.md?pivots=fdp-project)
+import FdpProjectName from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+
+For more information, see [Create a <FdpProjectName />](../how-to/create-projects)
 
 
 ### Manage Azure AI Foundry hubs and hub based projects
 
-You can also manage [!INCLUDE [hub](../includes/hub-project-name)]s from the management center. They're listed in the __All resources__ section, and when selected are displayed in the left menu.
+You can also manage <Hub />s from the management center. They're listed in the __All resources__ section, and when selected are displayed in the left menu.
 
-For more information, see [Create a [!INCLUDE [hub-project-name](../includes/hub-project-name)]](../how-to/create-projects.md?pivots=hub-project).
+import HubProjectName from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+
+For more information, see [Create a <HubProjectName />](../how-to/create-projects).
 
 ## Manage resource utilization
 

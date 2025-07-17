@@ -13,7 +13,10 @@ ms.custom:
 # Hub resources overview
 
 <Note>
-You must use a **[!INCLUDE [hub](../includes/hub-project-name)]** for the features mentioned in this article. A **[!INCLUDE [fdp](../includes/fdp-project-name)]** is not supported. For more information, see [Project types](../what-is-azure-ai-foundry.md#which-type-of-project-do-i-need).
+import Hub from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+import Fdp from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+
+You must use a **<Hub />** for the features mentioned in this article. A **<Fdp />** is not supported. For more information, see [Project types](../what-is-azure-ai-foundry.md#which-type-of-project-do-i-need).
 </Note>
 
 Azure AI Hub is a resource type that is used in combination with Azure AI Foundry resource type, and is only required for selected use cases. Hub resources provides access to open-source model hosting and finetuning capabilities, as well as Azure Machine Learning capabilities, next to capabilities supported by its associated AI Foundry resource.
@@ -30,7 +33,9 @@ Hubs group one or more projects together with common settings including data acc
 
 ## Create a hub-based project
 
-To start developing, [create a [!INCLUDE [hub-project-name](../includes/hub-project-name)]](../how-to/create-projects.md?pivots=hub-project). Hub-projects can be accessed in [AI Foundry Portal](https://ai.azure.com/?cid=learnDocs) to build with generative AI tools, and [ML Studio](https://ml.azure.com) to build with tools designed for custom machine learning model training.
+import HubProjectName from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+
+To start developing, [create a <HubProjectName />](../how-to/create-projects). Hub-projects can be accessed in [AI Foundry Portal](https://ai.azure.com/?cid=learnDocs) to build with generative AI tools, and [ML Studio](https://ml.azure.com) to build with tools designed for custom machine learning model training.
 
 ## Project concepts
 
@@ -75,15 +80,19 @@ After a connection is created, model deployments are accessible via playground e
 
 Azure AI Hub is an implementation of Azure Machine Learning and requires multiple Azure services as a dependency.
 
-[!INCLUDE [Resource provider kinds](../includes/resource-provider-kinds)]
+import ResourceProviderKinds from '/snippets/ai-foundry/includes/resource-provider-kinds.mdx'
+
+<ResourceProviderKinds />
 
 If not provided by you, the following dependent resources are automatically created.
 
-[!INCLUDE [Dependent Azure resources](../includes/dependent-resources)]
+import DependentAzureResources from '/snippets/ai-foundry/includes/dependent-resources.mdx'
+
+<DependentAzureResources />
 
 ## Next steps
 
-- [Create a [!INCLUDE [hub-project-name](../includes/hub-project-name)]](../how-to/create-projects.md?pivots=hub-project)
+- [Create a <HubProjectName />](../how-to/create-projects)
 - [Quickstart: Analyze images and video in the chat playground](/azure/ai-services/openai/gpt-v-quickstart)
 - [Learn more about Azure AI Foundry](../what-is-azure-ai-foundry)
-- [Learn more about projects](../how-to/create-projects.md?pivots=hub-project)
+- [Learn more about projects](../how-to/create-projects)

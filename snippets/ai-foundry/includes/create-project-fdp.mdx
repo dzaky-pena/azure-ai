@@ -1,8 +1,14 @@
+
+import Fdp from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+import Hub from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+
 <Tip>
-The rest of this article shows how to create a **[!INCLUDE [fdp](../includes/fdp-project-name)]**.  Select **[!INCLUDE [hub](../includes/hub-project-name)]** at the top of this article if you want to create a [!INCLUDE [hub](../includes/hub-project-name)] instead.
+The rest of this article shows how to create a **<Fdp />**.  Select **<Hub />** at the top of this article if you want to create a <Hub /> instead.
 </Tip>
 
-* [!INCLUDE [fdp-description](../includes/fdp-description)]
+import FdpDescription from '/snippets/ai-foundry/includes/fdp-description.mdx'
+
+* <FdpDescription />
 
 * This project type gives you the best support for:
 
@@ -18,7 +24,7 @@ The rest of this article shows how to create a **[!INCLUDE [fdp](../includes/fdp
 
 ## Prerequisites
 
-Use the following tabs to select the method you plan to use to create a [!INCLUDE [fdp](../includes/fdp-project-name)]:
+Use the following tabs to select the method you plan to use to create a <Fdp />:
 
 # [Azure AI Foundry portal](#tab/ai-foundry)
 
@@ -64,7 +70,9 @@ Use the following tabs to select the method you plan to use to create a [!INCLUD
 
 ---
 
-## Create a [!INCLUDE [fdp-project-name](fdp-project-name)]
+import FdpProjectName from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+
+## Create a <FdpProjectName />
 
 # [Azure AI Foundry portal](#tab/ai-foundry)
 
@@ -76,18 +84,20 @@ If your organization requires customized Azure configurations like alternative n
 * [Create an Azure AI Foundry resource using a Bicep file](../how-to/create-resource-template)
 </Tip>
 
-To create a [!INCLUDE [fdp-project-name](fdp-project-name)] in [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs), follow these steps:
+To create a <FdpProjectName /> in [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs), follow these steps:
 
 1. Sign in to [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs).
 
-1. [!INCLUDE [create-project-access](create-project-access)]
+import CreateProjectAccess from '/snippets/ai-foundry/includes/create-project-access.mdx'
+
+1. <CreateProjectAccess />
 
 1. Select **Azure AI Foundry resource**, then select **Next**.
 1. Provide a name for your project and select **Create**.  Or see next section for advanced options.
 
 ### Advanced options
 
-A [!INCLUDE [fdp-project-name](fdp-project-name)] is created on an `AI Foundry` resource. This resource is created for you automatically when you create the project. 
+A <FdpProjectName /> is created on an `AI Foundry` resource. This resource is created for you automatically when you create the project. 
 
 To customize the settings for your project, follow these steps:
 
@@ -105,23 +115,23 @@ To customize the settings for your project, follow these steps:
 
 # [Python SDK](#tab/python)
 
-To create a [!INCLUDE [fdp](../includes/fdp-project-name)]:
+To create a <Fdp />:
 
-
-1. Add this code to create a [!INCLUDE [fdp-project-name](../includes/fdp-project-name)], using the variables and `client` connection from the [Prerequisites](#prerequisites).
+1. Add this code to create a <FdpProjectName />, using the variables and `client` connection from the [Prerequisites](#prerequisites).
 
     :::code language="python" source="~/foundry-samples-main/samples/microsoft/python/mslearn-resources/quickstart/create_project.py" id="create_resource_project":::
 
-
 # [Azure CLI](#tab/azurecli)
 
-CLI commands not currently available for creating a [!INCLUDE [fdp-project-name](fdp-project-name)].
+CLI commands not currently available for creating a <FdpProjectName />.
 
 ---
 
 ## <a name="create-multiple"></a> Create multiple projects on the same resource
 
-[!INCLUDE [create-second-fdp-project](create-second-fdp-project)]
+import CreateSecondFdpProject from '/snippets/ai-foundry/includes/create-second-fdp-project.mdx'
+
+<CreateSecondFdpProject />
 
 ## View project settings
 
@@ -150,5 +160,5 @@ az cognitiveservices account connection show --name {my_project_name} --resource
 
 ## Related content
 
-- [Quickstart: Get started with Azure AI Foundry](../quickstarts/get-started-code.md?pivots=fdp-project)
+- [Quickstart: Get started with Azure AI Foundry](../quickstarts/get-started-code)
 - [Learn more about Azure AI Foundry](../what-is-azure-ai-foundry)

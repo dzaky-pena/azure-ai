@@ -8,7 +8,9 @@ ms.custom:
 
 # Azure AI Foundry architecture 
 
-[!INCLUDE [hub-only-alt](../includes/uses-hub-only-alt)]
+import HubOnlyAlt from '/snippets/ai-foundry/includes/uses-hub-only-alt.mdx'
+
+<HubOnlyAlt />
     
 Azure AI Foundry provides a unified experience for AI developers and data scientists to build, evaluate, and deploy AI models through a web portal, SDK, or CLI. Azure AI Foundry is built on capabilities and services provided by other Azure services.
 
@@ -56,7 +58,9 @@ At the top level, Azure AI Foundry provides access to the following resources:
 
 Azure AI Foundry is built on the Azure Machine Learning resource provider, and takes a dependency on several other Azure services. The resource providers for these services must be registered in your Azure subscription. The following table lists the resource types, provider, and kind:
 
-[!INCLUDE [Resource provider kinds](../includes/resource-provider-kinds)]
+import ResourceProviderKinds from '/snippets/ai-foundry/includes/resource-provider-kinds.mdx'
+
+<ResourceProviderKinds />
 
 When you create a new hub, a set of dependent Azure resources are required to store data, get access to models, and provide compute resources for AI customization. The following table lists the dependent Azure resources and their resource providers:
 
@@ -64,7 +68,9 @@ When you create a new hub, a set of dependent Azure resources are required to st
 If you don't provide a dependent resource when creating a hub, and it's a required dependency, Azure AI Foundry creates the resource for you.
 </Tip>
 
-[!INCLUDE [Dependent Azure resources](../includes/dependent-resources)]
+import DependentAzureResources from '/snippets/ai-foundry/includes/dependent-resources.mdx'
+
+<DependentAzureResources />
 
 For information on registering resource providers, see [Register an Azure resource provider](/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider).
 

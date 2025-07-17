@@ -5,7 +5,9 @@ description: Learn how to fine-tune models deployed via serverless API deploymen
 
 # Fine-tune models using serverless API deployments in Azure AI Foundry
 
-[!INCLUDE [Feature preview](~/reusable-content/ce-skilling/azure/includes/ai-studio/includes/feature-preview)]
+import FeaturePreview from '/snippets/ai-foundry/includes/~/reusable-content/ce-skilling/azure/includes/ai-studio/includes/feature-preview.mdx'
+
+<FeaturePreview />
 
 Azure AI Foundry enables you to customize large language models to your specific datasets through a process called fine-tuning. This process offers significant benefits by allowing for customization and optimization tailored to specific tasks and applications. The advantages include improved performance, cost efficiency, reduced latency, and tailored outputs.
 
@@ -36,6 +38,7 @@ Verify the subscription is registered to the Microsoft.Network resource provider
 1.	Select **Settings** > **Resource providers** from the left menu.
 1.	Add Microsoft.Network to the list of resource providers if it is not in the list.
 
+<Tabs>
 <Tab title="Azure AI Foundry portal">
 
 ## Find models with fine-tuning support
@@ -707,6 +710,7 @@ workspace_ml_client.serverless_endpoints.begin_delete(endpoint_name).result()
 ```
 
 </Tab>
+</Tabs>
 
 ## Cost and quota considerations for models deployed as a serverless API deployment
 

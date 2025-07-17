@@ -3,9 +3,15 @@ title: "Use your own data with Azure OpenAI in Azure AI Foundry Models"
 description: Use this article to import and use your data in Azure OpenAI.
 ---
 
+import ConnectYourDataToOpenai from '/snippets/ai-foundry/openai/includes/connect-your-data-studio.mdx'
+import PythonQuickstart from '/snippets/ai-foundry/openai/includes/use-your-data-python.mdx'
+import StudioQuickstart from '/snippets/ai-foundry/openai/includes/use-your-data-studio.mdx'
+
 # Quickstart: Chat with Azure OpenAI models using your own data
 
 In this quickstart, you can use your own data with Azure OpenAI models. Using Azure OpenAI's models on your data can provide you with a powerful conversational AI platform that enables faster and more accurate communication.
+
+<Tabs>
 
 <Tab title="Foundry portal">
 
@@ -15,10 +21,9 @@ The following resources:
 - 
 - Download the example data from [GitHub](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/openai/contoso_benefits_document_example.pdf) if you don't have your own data.
 
+<ConnectYourDataToOpenai />
 
-[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio)]
-
-[!INCLUDE [Studio quickstart](includes/use-your-data-studio)]
+<StudioQuickstart />
 
 </Tab>
 
@@ -31,9 +36,11 @@ The following resources:
 - Download the example data from [GitHub](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/openai/contoso_benefits_document_example.pdf) if you don't have your own data.
 - The [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 
-[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio)]
+<ConnectYourDataToOpenai />
 
-[!INCLUDE [Csharp quickstart](includes/use-your-data-dotnet)]
+import CsharpQuickstart from '/snippets/ai-foundry/openai/includes/use-your-data-dotnet.mdx'
+
+<CsharpQuickstart />
 
 </Tab>
 
@@ -51,9 +58,11 @@ The following resources:
     - Be sure that you're assigned at least the [Cognitive Services Contributor](./how-to/role-based-access-control.md#cognitive-services-contributor) role for the Azure OpenAI resource.
 - Download the example data from [GitHub](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/openai/contoso_benefits_document_example.pdf) if you don't have your own data.
     
-[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio)]
+<ConnectYourDataToOpenai />
 
-[!INCLUDE [Spring quickstart](includes/use-your-data-spring)]
+import SpringQuickstart from '/snippets/ai-foundry/openai/includes/use-your-data-spring.mdx'
+
+<SpringQuickstart />
 
 </Tab>
 
@@ -78,9 +87,11 @@ For the recommended keyless authentication with Microsoft Entra ID, you need to:
 - Install the [Azure CLI](/cli/azure/install-azure-cli) used for keyless authentication with Microsoft Entra ID.
 - Assign the `Cognitive Services User` role to your user account. You can assign roles in the Azure portal under **Access control (IAM)** > **Add role assignment**.
 
-[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio)]
+<ConnectYourDataToOpenai />
 
-[!INCLUDE [JavaScript quickstart](includes/use-your-data-javascript)]
+import JavascriptQuickstart from '/snippets/ai-foundry/openai/includes/use-your-data-javascript.mdx'
+
+<JavascriptQuickstart />
 
 </Tab>
 
@@ -107,9 +118,11 @@ For the recommended keyless authentication with Microsoft Entra ID, you need to:
 - Install the [Azure CLI](/cli/azure/install-azure-cli) used for keyless authentication with Microsoft Entra ID.
 - Assign the `Cognitive Services User` role to your user account. You can assign roles in the Azure portal under **Access control (IAM)** > **Add role assignment**.
 
-[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio)]
+<ConnectYourDataToOpenai />
 
-[!INCLUDE [TypeScript quickstart](includes/use-your-data-typescript)]
+import TypescriptQuickstart from '/snippets/ai-foundry/openai/includes/use-your-data-typescript.mdx'
+
+<TypescriptQuickstart />
 
 </Tab>
 
@@ -129,9 +142,9 @@ The following resources:
 
 These links reference the OpenAI API for Python. There's no Azure-specific OpenAI Python SDK. [Learn how to switch between the OpenAI services and Azure OpenA](/azure/ai-services/openai/how-to/switching-endpoints).
 
-[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio)]
+<ConnectYourDataToOpenai />
 
-[!INCLUDE [Python quickstart](includes/use-your-data-python)]
+<PythonQuickstart />
 
 </Tab>
 
@@ -148,9 +161,11 @@ The following resources:
     - Be sure that you're assigned at least the [Cognitive Services Contributor](./how-to/role-based-access-control.md#cognitive-services-contributor) role for the Azure OpenAI resource.
 - Download the example data from [GitHub](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/openai/contoso_benefits_document_example.pdf) if you don't have your own data.
 
-[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio)]
+<ConnectYourDataToOpenai />
 
-[!INCLUDE [PowerShell quickstart](includes/use-your-data-powershell)]
+import PowershellQuickstart from '/snippets/ai-foundry/openai/includes/use-your-data-powershell.mdx'
+
+<PowershellQuickstart />
 
 </Tab>
 
@@ -169,9 +184,11 @@ The following resources:
 
 [Reference](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go) | [Source code](https://github.com/Azure/azure-sdk-for-go) | [Package (Go)](https://pkg.go.dev/github.com/azure/azure-dev) | [Samples](https://github.com/azure-samples/azure-sdk-for-go-samples)
 
-[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio)]
+<ConnectYourDataToOpenai />
 
-[!INCLUDE [Go quickstart](includes/use-your-data-go)]
+import GoQuickstart from '/snippets/ai-foundry/openai/includes/use-your-data-go.mdx'
+
+<GoQuickstart />
 
 </Tab>
 
@@ -188,11 +205,15 @@ The following resources:
     - Be sure that you're assigned at least the [Cognitive Services Contributor](./how-to/role-based-access-control.md#cognitive-services-contributor) role for the Azure OpenAI resource.
 - Download the example data from [GitHub](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/openai/contoso_benefits_document_example.pdf) if you don't have your own data.
 
-[!INCLUDE [Connect your data to OpenAI](includes/connect-your-data-studio)]
+<ConnectYourDataToOpenai />
 
-[!INCLUDE [REST API quickstart](includes/use-your-data-rest)]
+import RestApiQuickstart from '/snippets/ai-foundry/openai/includes/use-your-data-rest.mdx'
+
+<RestApiQuickstart />
 
 </Tab>
+
+</Tabs>
 
 ## Clean up resources
 

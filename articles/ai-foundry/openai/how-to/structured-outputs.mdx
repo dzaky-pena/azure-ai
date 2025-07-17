@@ -34,27 +34,33 @@ Currently structured outputs are not supported with:
 
 Support for structured outputs was first added in API version `2024-08-01-preview`. It is available in the latest preview APIs as well as the latest GA API: `2024-10-21`.
 
-
+<Tabs>
 <Tab title="Python">
 
-[!INCLUDE [structured-outputs-python](../includes/structured-outputs-python)]
+import StructuredOutputsPython from '/snippets/ai-foundry/openai/includes/structured-outputs-python.mdx'
+
+<StructuredOutputsPython />
 
 </Tab>
 
 
 <Tab title="C#">
 
-[!INCLUDE [structured-outputs-dotnet](../includes/structured-outputs-dotnet)]
+import StructuredOutputsDotnet from '/snippets/ai-foundry/openai/includes/structured-outputs-dotnet.mdx'
+
+<StructuredOutputsDotnet />
 
 </Tab>
 
 
 <Tab title="REST API">
 
-[!INCLUDE [structured-outputs-rest](../includes/structured-outputs-rest)]
+import StructuredOutputsRest from '/snippets/ai-foundry/openai/includes/structured-outputs-rest.mdx'
+
+<StructuredOutputsRest />
 
 </Tab>
-
+</Tabs>
 ## Supported schemas and limitations
 
 Azure OpenAI structured outputs support the same subset of the [JSON Schema](https://json-schema.org/docs) as OpenAI.

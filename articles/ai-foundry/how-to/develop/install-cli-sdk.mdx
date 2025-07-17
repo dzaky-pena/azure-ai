@@ -17,18 +17,22 @@ Set up your development environment to use the [Azure AI Foundry](https://ai.azu
 
 
 ## Install your programming language 
-
+<Tabs>
 <Tab title="Python">
 
 In the IDE of your choice, create a new folder for your project. Open a terminal window in that folder.
 
-[!INCLUDE [Install Python](../../includes/install-python)]
+import InstallPython from '/snippets/ai-foundry/includes/install-python.mdx'
+
+<InstallPython />
 
 </Tab>
 
 <Tab title="Java">
 
-[!INCLUDE [Install Jave](../../includes/install-java)]
+import InstallJave from '/snippets/ai-foundry/includes/install-java.mdx'
+
+<InstallJave />
 
 </Tab>
 
@@ -40,15 +44,19 @@ Install [Node.js](https://nodejs.org/)
 
 <Tab title="C#">
 
-[!INCLUDE [install-csharp](../../includes/install-csharp)]
+import InstallCsharp from '/snippets/ai-foundry/includes/install-csharp.mdx'
+
+<InstallCsharp />
 
 </Tab>
-
+</Tabs>
 <a name="installs"></a>
 
 ##  Install the Azure CLI and sign in 
 
-[!INCLUDE [Install the Azure CLI](../../includes/install-cli)]
+import InstallTheAzureCli from '/snippets/ai-foundry/includes/install-cli.mdx'
+
+<InstallTheAzureCli />
 
 Keep this terminal window open to run your scripts from here as well, now that you've signed in.
 

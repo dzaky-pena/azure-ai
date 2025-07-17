@@ -27,7 +27,9 @@ You need to first build and publish a Fabric data agent and then connect your Fa
 
 * Your Azure AI Foundry Project endpoint.
 
-    [!INCLUDE [endpoint-string-portal](../../includes/endpoint-string-portal)]
+import EndpointStringPortal from '/snippets/ai-foundry/agents/includes/endpoint-string-portal.mdx'
+
+    <EndpointStringPortal />
 
     Save this endpoint to an environment variable named `PROJECT_ENDPOINT`. 
 
@@ -64,6 +66,7 @@ You need to first build and publish a Fabric data agent and then connect your Fa
     * Make sure you have **published** the data agent in Fabric.
     </Note>
 
+<Tabs>
 <Tab title="Azure AI Foundry portal">
 
 You can add the Microsoft Fabric tool to an agent programmatically using the code examples listed at the top of this article, or the Azure AI Foundry portal. If you want to use the portal: 
@@ -177,7 +180,7 @@ for msg in messages:
 
 <Tab title="REST API">
 
-Follow the [REST API Quickstart](../../quickstart.md?pivots=rest-api#api-call-information) to set the right values for the environment variables `AGENT_TOKEN`, `AZURE_AI_FOUNDRY_PROJECT_ENDPOINT` and `API_VERSION`. For `API_VERSION`, make sure you are using `2025-05-15-preview`.
+Follow the [REST API Quickstart](../../quickstart) to set the right values for the environment variables `AGENT_TOKEN`, `AZURE_AI_FOUNDRY_PROJECT_ENDPOINT` and `API_VERSION`. For `API_VERSION`, make sure you are using `2025-05-15-preview`.
 <Info>
 The following samples are applicable if you are using **Azure AI Foundry Project** resource with Microsoft Fabric tool through REST API call
 Your connection ID should be in this format: `/subscriptions/<sub-id>/resourceGroups/<your-rg-name>/providers/Microsoft.CognitiveServices/accounts/<your-ai-services-name>/projects/<your-project-name>/connections/<your-fabric-connection-name>`
@@ -264,6 +267,7 @@ curl --request GET \
   -H "Authorization: Bearer $AGENT_TOKEN"
 ```
 </Tab>
+</Tabs>
 
 ## Next steps
 

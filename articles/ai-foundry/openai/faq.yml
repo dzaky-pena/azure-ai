@@ -188,7 +188,7 @@ sections:
       - question: |
           What is the difference between a base model and a fine-tuned model?
         answer:
-          A base model is a model that hasn't been customized or fine-tuned for a specific use case. Fine-tuned models are customized versions of base models where a model's weights are trained on a unique set of prompts. Fine-tuned models let you achieve better results on a wider number of tasks without needing to provide detailed examples for in-context learning as part of your completion prompt. To learn more, review our [fine-tuning guide](./how-to/fine-tuning.md?pivots=programming-language-studio).
+          A base model is a model that hasn't been customized or fine-tuned for a specific use case. Fine-tuned models are customized versions of base models where a model's weights are trained on a unique set of prompts. Fine-tuned models let you achieve better results on a wider number of tasks without needing to provide detailed examples for in-context learning as part of your completion prompt. To learn more, review our [fine-tuning guide](./how-to/fine-tuning).
       - question: |
           What is the maximum number of fine-tuned models I can create?
         answer: |

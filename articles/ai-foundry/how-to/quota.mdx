@@ -9,34 +9,35 @@ ms.custom:
 ---
 
 # Manage and increase quotas for resources with Azure AI Foundry
-
+<Tabs>
 <Tab title="Hub based project">
 
-Quota provides the flexibility to actively manage the allocation of rate limits across the deployments within your subscription. This article walks through the process of managing quota for your Azure AI Foundry virtual machines and Azure OpenAI in Foundry models.
+    Quota provides the flexibility to actively manage the allocation of rate limits across the deployments within your subscription. This article walks through the process of managing quota for your Azure AI Foundry virtual machines and Azure OpenAI in Foundry models.
 
-Azure uses limits and quotas to prevent budget overruns due to fraud, and to honor Azure capacity constraints. It's also a good way to control costs for admins. Consider these limits as you scale for production workloads. 
+    Azure uses limits and quotas to prevent budget overruns due to fraud, and to honor Azure capacity constraints. It's also a good way to control costs for admins. Consider these limits as you scale for production workloads. 
 
-In this article, you learn about: 
+    In this article, you learn about: 
 
-- Default limits on Azure resources  
-- Creating Azure AI Foundry hub-level quotas. 
-- Viewing your quotas and limits 
-- Requesting quota and limit increases 
+    - Default limits on Azure resources  
+    - Creating Azure AI Foundry hub-level quotas. 
+    - Viewing your quotas and limits 
+    - Requesting quota and limit increases 
 
 </Tab>
 
 <Tab title="Foundry project">
 
-Quota provides the flexibility to actively manage the allocation of rate limits across the deployments within your subscription. This article walks through the process of managing quota for your Azure OpenAI in Foundry models.
+    Quota provides the flexibility to actively manage the allocation of rate limits across the deployments within your subscription. This article walks through the process of managing quota for your Azure OpenAI in Foundry models.
 
-Azure uses limits and quotas to prevent budget overruns due to fraud, and to honor Azure capacity constraints. It's also a good way to control costs for admins. Consider these limits as you scale for production workloads. 
+    Azure uses limits and quotas to prevent budget overruns due to fraud, and to honor Azure capacity constraints. It's also a good way to control costs for admins. Consider these limits as you scale for production workloads. 
 
-In this article, you learn about: 
+    In this article, you learn about: 
 
-- Viewing your quotas and limits 
-- Requesting quota and limit increases 
+    - Viewing your quotas and limits 
+    - Requesting quota and limit increases 
 
 </Tab>
+</Tabs>
 
 <Tab title="Hub based project">
 
@@ -111,19 +112,25 @@ Azure Storage has a limit of 250 storage accounts per region, per subscription. 
 
 ## View and request quotas in Azure AI Foundry portal
 
+<Tabs>
 <Tab title="Hub based project">
 
-Use quotas to manage compute target allocation and model quota between multiple [!INCLUDE [hub](../includes/hub-project-name)]s in the same subscription. 
+import Hub from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+
+Use quotas to manage compute target allocation and model quota between multiple <Hub />s in the same subscription. 
 
 By default, all hubs share the same quota as the subscription-level quota for VM families. However, you can set a maximum quota for individual VM families for more granular cost control and governance on hubs in a subscription. Quotas for individual VM families let you share capacity and avoid resource contention issues.
 
 </Tab>
 <Tab title="Foundry project">
 
-Use quotas to manage model quota allocation between multiple [!INCLUDE [fdp](../includes/fdp-project-name)]s in the same subscription
+import Fdp from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+
+Use quotas to manage model quota allocation between multiple <Fdp />s in the same subscription
 
 </Tab>
-
+</Tabs>
+<Tabs>
 <Tab title="Hub based project">
 
 1. In Azure AI Foundry portal, select **Management center** from the bottom of the left menu.
@@ -153,7 +160,7 @@ Use quotas to manage model quota allocation between multiple [!INCLUDE [fdp](../
 1. When you select the **VM quota** link, you can view the quota and usage for the virtual machine families in the selected Azure region. To request quota, select the VM family and then select **Request quota**.
 
     <Tip>
-    If you don't see the **VM quota** link, you were viewing a [!INCLUDE [fdp](../includes/fdp-project-name)] project when you selected **Management center**. Use the **All resources** link and then select a project where the **Type** contains **Parent resource : name (Hub)**, and then select **Quota** from the left menu.
+    If you don't see the **VM quota** link, you were viewing a <Fdp /> project when you selected **Management center**. Use the **All resources** link and then select a project where the **Type** contains **Parent resource : name (Hub)**, and then select **Quota** from the left menu.
     </Tip>
 
     <Frame>
@@ -189,9 +196,9 @@ Use quotas to manage model quota allocation between multiple [!INCLUDE [fdp](../
     - Use the **Azure OpenAI Provisioned** link to view information about provisioned models, including a **Capacity calculator**.
 
 </Tab>
-
+</Tabs>
 ## Related content
-
+<Tabs>
 <Tab title="Hub based project">
 
 - [Plan to manage costs](./costs-plan-manage)
@@ -204,3 +211,4 @@ Use quotas to manage model quota allocation between multiple [!INCLUDE [fdp](../
 - [Create a project](../how-to/create-projects)
 
 </Tab>
+</Tabs>

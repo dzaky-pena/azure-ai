@@ -1,7 +1,9 @@
 ---
 ---
 
-[!INCLUDE [Header](intro)]  
+import Header from '/snippets/ai-foundry/foundry-models/includes/configure-entra-id/intro.mdx'
+
+<Header />  
 
 * Install the [Azure CLI](/cli/azure/).
 
@@ -80,10 +82,16 @@ Follow these steps to configure Microsoft Entra ID for inference:
 
 Once Microsoft Entra ID is configured in your resource, you need to update your code to use it when consuming the inference endpoint. The following example shows how to use a chat completions model:
 
-[!INCLUDE [code](../code-create-chat-client-entra)]
+import Code from '/snippets/ai-foundry/foundry-models/includes/code-create-chat-client-entra.mdx'
 
-[!INCLUDE [about-credentials](about-credentials)]
+<Code />
+
+import AboutCredentials from '/snippets/ai-foundry/foundry-models/includes/configure-entra-id/about-credentials.mdx'
+
+<AboutCredentials />
 
 ## Troubleshooting
 
-[!INCLUDE [troubleshooting](troubleshooting)]
+import Troubleshooting from '/snippets/ai-foundry/foundry-models/includes/configure-entra-id/troubleshooting.mdx'
+
+<Troubleshooting />

@@ -5,7 +5,9 @@ description: Start here to learn how to use Azure Monitor tools like Log Analyti
 
 # Monitor Azure OpenAI
 
-[!INCLUDE [horz-monitor-intro](~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-intro)]
+import HorzMonitorIntro from '/snippets/ai-foundry/openai/includes/~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-intro.mdx'
+
+<HorzMonitorIntro />
 
 ## Dashboards
 
@@ -34,23 +36,35 @@ Keep in mind that using diagnostic settings and sending data to Azure Monitor Lo
 
 The metrics and logs that you can collect are described in the following sections.
 
-[!INCLUDE [horz-monitor-resource-types](~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-resource-types)]
+import HorzMonitorResourceTypes from '/snippets/ai-foundry/openai/includes/~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-resource-types.mdx'
+
+<HorzMonitorResourceTypes />
 
 For more information about the resource types for Azure OpenAI, see [Azure OpenAI monitoring data reference](../monitor-openai-reference).
 
-[!INCLUDE [horz-monitor-data-storage](~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-data-storage)]
+import HorzMonitorDataStorage from '/snippets/ai-foundry/openai/includes/~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-data-storage.mdx'
 
-[!INCLUDE [horz-monitor-platform-metrics](~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-platform-metrics)]
+<HorzMonitorDataStorage />
+
+import HorzMonitorPlatformMetrics from '/snippets/ai-foundry/openai/includes/~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-platform-metrics.mdx'
+
+<HorzMonitorPlatformMetrics />
 
 Azure OpenAI has commonality with a subset of Azure AI services. For a list of available metrics for Azure OpenAI, see [Azure OpenAI monitoring data reference](../monitor-openai-reference.md#metrics).
 
-[!INCLUDE [horz-monitor-resource-logs](~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-resource-logs)]
+import HorzMonitorResourceLogs from '/snippets/ai-foundry/openai/includes/~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-resource-logs.mdx'
+
+<HorzMonitorResourceLogs />
 
 For the available resource log categories, their associated Log Analytics tables, and the log schemas for Azure OpenAI, see [Azure OpenAI monitoring data reference](../monitor-openai-reference.md#resource-logs).
 
-[!INCLUDE [horz-monitor-activity-log](~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-activity-log)]
+import HorzMonitorActivityLog from '/snippets/ai-foundry/openai/includes/~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-activity-log.mdx'
 
-[!INCLUDE [horz-monitor-analyze-data](~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-analyze-data)]
+<HorzMonitorActivityLog />
+
+import HorzMonitorAnalyzeData from '/snippets/ai-foundry/openai/includes/~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-analyze-data.mdx'
+
+<HorzMonitorAnalyzeData />
 
 ### Configure diagnostic settings
 
@@ -62,9 +76,13 @@ All of the metrics are exportable with [diagnostic settings in Azure Monitor](/a
 
 After you configure the diagnostic settings, you can work with metrics and log data for your Azure OpenAI resource in your Log Analytics workspace.
 
-[!INCLUDE [horz-monitor-external-tools](~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-external-tools)]
+import HorzMonitorExternalTools from '/snippets/ai-foundry/openai/includes/~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-external-tools.mdx'
 
-[!INCLUDE [horz-monitor-kusto-queries](~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-kusto-queries)]
+<HorzMonitorExternalTools />
+
+import HorzMonitorKustoQueries from '/snippets/ai-foundry/openai/includes/~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-kusto-queries.mdx'
+
+<HorzMonitorKustoQueries />
 
 After you deploy an Azure OpenAI model, you can send some completions calls by using the **playground** environment in [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs).
 
@@ -122,7 +140,9 @@ The query returns a sample of 100 entries and displays a subset of the available
 When you select **Monitoring** > **Logs** in the Azure OpenAI menu for your resource, Log Analytics opens with the query scope set to the current resource. The visible log queries include data from that specific resource only. To run a query that includes data from other resources or data from other Azure services, select **Logs** from the **Azure Monitor** menu in the Azure portal. For more information, see [Log query scope and time range in Azure Monitor Log Analytics](/azure/azure-monitor/logs/scope) for details.
 </Note>
 
-[!INCLUDE [horz-monitor-alerts](~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-alerts)]
+import HorzMonitorAlerts from '/snippets/ai-foundry/openai/includes/~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-alerts.mdx'
+
+<HorzMonitorAlerts />
 
 ### Set up alerts
 
@@ -136,7 +156,9 @@ Depending on what type of application you're developing with your use of Azure O
 
 You can set alerts for any metric, log entry, or activity log entry listed in the [Azure OpenAI monitoring data reference](../monitor-openai-reference).
 
-[!INCLUDE [horz-monitor-advisor-recommendations](~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-advisor-recommendations)]
+import HorzMonitorAdvisorRecommendations from '/snippets/ai-foundry/openai/includes/~/reusable-content/ce-skilling/azure/includes/azure-monitor/horizontals/horz-monitor-advisor-recommendations.mdx'
+
+<HorzMonitorAdvisorRecommendations />
 
 ## Related content
 

@@ -22,7 +22,9 @@ pip install openai num2words matplotlib plotly scipy scikit-learn pandas tiktoke
 
 # [OpenAI Python 0.28.1](#tab/python)
 
-[!INCLUDE [Deprecation](../includes/deprecation)]
+import Deprecation from '/snippets/ai-foundry/openai/includes/deprecation.mdx'
+
+<Deprecation />
 
 ```cmd
 pip install "openai==0.28.1" num2words matplotlib plotly scipy scikit-learn pandas tiktoken
@@ -42,13 +44,17 @@ You can also download the sample data by running the following command on your l
 curl "https://raw.githubusercontent.com/Azure-Samples/Azure-OpenAI-Docs-Samples/main/Samples/Tutorials/Embeddings/data/bill_sum_data.csv" --output bill_sum_data.csv
 ```
 
-[!INCLUDE [get-key-endpoint](../includes/get-key-endpoint)]
+import GetKeyEndpoint from '/snippets/ai-foundry/openai/includes/get-key-endpoint.mdx'
+
+<GetKeyEndpoint />
 
 ### Environment variables
 
 Create and assign persistent environment variables for your key and endpoint.
 
-[!INCLUDE [Azure key vault](~/reusable-content/ce-skilling/azure/includes/ai-services/security/azure-key-vault)]
+import AzureKeyVault from '/snippets/ai-foundry/openai/includes/~/reusable-content/ce-skilling/azure/includes/ai-services/security/azure-key-vault.mdx'
+
+<AzureKeyVault />
 
 # [Command Line](#tab/command-line)
 

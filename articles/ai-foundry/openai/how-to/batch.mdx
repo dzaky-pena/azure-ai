@@ -41,7 +41,9 @@ Data stored at rest remains in the designated Azure geography, while data may be
 
 ### Global batch model availability
 
-[!INCLUDE [Global batch](../includes/model-matrix/global-batch)]
+import GlobalBatch from '/snippets/ai-foundry/openai/includes/model-matrix/global-batch.mdx'
+
+<GlobalBatch />
 
 Registration is required for access to `o3-mini`. For more information see, our [reasoning models guide](./reasoning).
 
@@ -49,7 +51,9 @@ Registration is required for access to `o3-mini`. For more information see, our 
 
 ### Data zone batch model availability
 
-[!INCLUDE [Data zone batch](../includes/model-matrix/global-batch-datazone)]
+import DataZoneBatch from '/snippets/ai-foundry/openai/includes/model-matrix/global-batch-datazone.mdx'
+
+<DataZoneBatch />
 
 ---
 
@@ -93,26 +97,34 @@ In the [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs) the batch 
 <Tip>
 We recommend enabling **dynamic quota** for all global batch model deployments to help avoid job failures due to insufficient enqueued token quota. Using dynamic quota allows your deployment to opportunistically take advantage of more quota when extra capacity is available. When dynamic quota is set to off, your deployment will only be able to process requests up to the enqueued token limit that was defined when you created the deployment.
 </Tip>
-
+<Tabs>
 <Tab title="Foundry portal">
 
-[!INCLUDE [Azure AI Foundry portal](../includes/batch/batch-studio)]
+import AzureAiFoundryPortal from '/snippets/ai-foundry/openai/includes/batch/batch-studio.mdx'
+
+<AzureAiFoundryPortal />
 
 </Tab>
 
 <Tab title="Python">
 
-[!INCLUDE [Python](../includes/batch/batch-python)]
+import Python from '/snippets/ai-foundry/openai/includes/batch/batch-python.mdx'
+
+<Python />
 
 </Tab>
 
 <Tab title="REST API">
 
-[!INCLUDE [REST](../includes/batch/batch-rest)]
+import Rest from '/snippets/ai-foundry/openai/includes/batch/batch-rest.mdx'
+
+<Rest />
 
 </Tab>
+</Tabs>
+import Quota from '/snippets/ai-foundry/openai/includes/global-batch-limits.mdx'
 
-[!INCLUDE [Quota](../includes/global-batch-limits)]
+<Quota />
 
 ## Batch object
 

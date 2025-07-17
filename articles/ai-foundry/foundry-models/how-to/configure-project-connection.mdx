@@ -5,18 +5,25 @@ description: Learn how to configure a connection to use Azure AI Foundry Models 
 
 # Configure a connection to use Azure AI Foundry Models in your AI project
 
+<Tabs>
 <Tab title="Foundry portal">
-[!INCLUDE [portal](../../foundry-models/includes/configure-project-connection/portal)]
+import Portal from '/snippets/ai-foundry/foundry-models/includes/configure-project-connection/portal.mdx'
+
+<Portal />
 </Tab>
 
 <Tab title="Azure CLI">
-[!INCLUDE [cli](../../foundry-models/includes/configure-project-connection/cli)]
+import Cli from '/snippets/ai-foundry/foundry-models/includes/configure-project-connection/cli.mdx'
+
+<Cli />
 </Tab>
 
 <Tab title="Bicep">
-[!INCLUDE [bicep](../../foundry-models/includes/configure-project-connection/bicep)]
-</Tab>
+import Bicep from '/snippets/ai-foundry/foundry-models/includes/configure-project-connection/bicep.mdx'
 
+<Bicep />
+</Tab>
+</Tabs>
 ## Next steps
 
 * [Develop applications using Azure AI Foundry Models](../../model-inference/supported-languages)

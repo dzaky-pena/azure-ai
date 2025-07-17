@@ -16,9 +16,12 @@ Customer-managed keys (CMKs) in [Azure AI Foundry portal](https://ai.azure.com/?
 
 Azure AI Foundry is a service in the Microsoft Azure cloud. By default,  services use Microsoft-managed encryption keys to encrypt data in transit and at rest.
 
+<Tabs>
 <Tab title="Hub based project">
 
-Hub and [!INCLUDE [hub](../includes/hub-project-name)] resources are implementations of the Azure Machine Learning workspace and encrypt data in transit and at rest. For details, see [Data encryption with Azure Machine Learning](../../machine-learning/concept-data-encryption).
+import Hub from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+
+Hub and <Hub /> resources are implementations of the Azure Machine Learning workspace and encrypt data in transit and at rest. For details, see [Data encryption with Azure Machine Learning](../../machine-learning/concept-data-encryption).
 
 </Tab>
 
@@ -27,7 +30,7 @@ Hub and [!INCLUDE [hub](../includes/hub-project-name)] resources are implementat
 Data is encrypted and decrypted using [FIPS 140-2](https://en.wikipedia.org/wiki/FIPS_140-2) compliant [256-bit AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) encryption. Encryption and decryption are transparent, meaning encryption and access are managed for you. Your data is secure by default and you don't need to modify your code or applications to take advantage of encryption.
 
 </Tab>
-
+</Tabs>
 ## Storage of encrypted data when using customer-managed keys
 
 Customer-managed key encryption can be enabled during resource creation through the Azure portal or template options. The encrypted data is stored service-side on Microsoft-managed resources using your encryption key. 
@@ -40,6 +43,7 @@ Due to the dedicated hosting model for certain services when using customer-mana
 When you use server-side encryption, Azure charges will continue to accrue during the soft delete retention period.
 </Note>
 
+<Tabs>
 <Tab title="Hub based project">
 
 ## Service-side storage of encrypted data when using customer-managed keys with AI hub
@@ -66,16 +70,19 @@ Two architecture options are available when using customer-managed keys:
 
 
 </Tab>
-
+</Tabs>
 ## Use customer-managed keys with Azure Key Vault
 
+<Tabs>
 <Tab title="Foundry project">
 
 You must use Azure Key Vault to store your customer-managed keys. You can either create your own keys and store them in a key vault, or you can use the Azure Key Vault APIs to generate keys. The Azure AI Foundry resource and the key vault must be in the same region and in the same Microsoft Entra tenant, but they can be in different subscriptions. For more information about Azure Key Vault, see [What is Azure Key Vault?](/azure/key-vault/general/overview).
 
 - You must enable both the **Soft Delete** and **Do Not Purge** properties on the key vault.
 - If you use the [Key Vault firewall](/azure/key-vault/general/access-behind-firewall), you must allow trusted Microsoft services to access the key vault.
-- You must grant your [!INCLUDE [fdp](../includes/fdp-project-name)] system-assigned managed identity the following permissions on your key vault: *get key*, *wrap key*, *unwrap key*.
+import Fdp from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+
+- You must grant your <Fdp /> system-assigned managed identity the following permissions on your key vault: *get key*, *wrap key*, *unwrap key*.
 
 </Tab>
 
@@ -104,9 +111,10 @@ Managed identity must be enabled as a prerequisite for using customer-managed ke
 1. Save your changes, and confirm that you want to enable the system-assigned managed identity.
 
 </Tab>
-
+</Tabs>
 ## Enable customer-managed keys
 
+<Tabs>
 <Tab title="Foundry project">
 
 Customer-managed key encryption is configured via Azure portal in a similar way for each Azure resource:
@@ -127,7 +135,8 @@ The Azure Key Vault used for encryption **must be in the same resource group** a
 ## Limitations
 
 * The customer-managed key for encryption can only be updated to keys in the same Azure Key Vault instance.
-* After deployment, your [!INCLUDE [fdp](../includes/fdp-project-name)] can't switch from Microsoft-managed keys to customer-managed keys or vice versa.
+
+* After deployment, your <Fdp /> can't switch from Microsoft-managed keys to customer-managed keys or vice versa.
 * Azure charges for the AI Foundry resource will continue to accrue during the soft delete retention period. Charges for projects don't continue to accrue during the soft delete retention period.
 
 </Tab>
@@ -158,7 +167,7 @@ Alternatively, use infrastructure-as-code options for automation. Example Bicep 
 * If your AI Foundry resource is in a soft-deleted state(#preview-service-side-storage-of-encrypted-data-when-using-customer-managed-keys), any additional Azure charges will continue to accrue during the soft delete retention period.
 
 </Tab>
-
+</Tabs>
 ## Related content
 
 * [What is Azure Key Vault](/azure/key-vault/general/overview)?

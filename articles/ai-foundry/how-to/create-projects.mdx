@@ -14,15 +14,21 @@ ms.custom:
 
 This article describes how to create a project in [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs). Projects let you organize your work for exploring new ideas and as you prototype on a particular use case.
 
-Azure AI Foundry supports two types of projects: a **[!INCLUDE [fdp](../includes/fdp-project-name)]** and a **[!INCLUDE [hub](../includes/hub-project-name)]**. For more information about the differences between these two project types, see [Types of projects](../what-is-azure-ai-foundry.md#project-types).
+import Fdp from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+import Hub from '/snippets/ai-foundry/includes/hub-project-name.mdx'
 
+Azure AI Foundry supports two types of projects: a **<Fdp />** and a **<Hub />**. For more information about the differences between these two project types, see [Types of projects](../what-is-azure-ai-foundry.md#project-types).
+<Tabs>
 <Tab title="Hub based project">
 
 <Tip>
-The rest of this article shows how to create a **[!INCLUDE [hub](../includes/hub-project-name)]**. Select **[!INCLUDE [fdp](../includes/fdp-project-name)]** at the top of this article if you want to create a [!INCLUDE [fdp](../includes/fdp-project-name)] instead.
+
+The rest of this article shows how to create a **<Hub />**. Select **<Fdp />** at the top of this article if you want to create a <Fdp /> instead.
 </Tip>
 
-* [!INCLUDE [hub-description](../includes/hub-description)]
+import HubDescription from '/snippets/ai-foundry/includes/hub-description.mdx'
+
+* <HubDescription />
 
 * Use this project type for:
 
@@ -39,7 +45,8 @@ The rest of this article shows how to create a **[!INCLUDE [hub](../includes/hub
 
 ## Prerequisites
 
-Use the following tabs to select the method you plan to use to create a [!INCLUDE [hub](../includes/hub-project-name)]:
+
+Use the following tabs to select the method you plan to use to create a <Hub />:
 
 # [Azure AI Foundry portal](#tab/ai-foundry)
 
@@ -62,17 +69,23 @@ Use the following tabs to select the method you plan to use to create a [!INCLUD
 
 ---
 
-## Create a [!INCLUDE [hub-project-name](../includes/hub-project-name)]
+import HubProjectName from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+
+## Create a <HubProjectName />
 
 # [Azure AI Foundry portal](#tab/ai-foundry)
 
-[!INCLUDE [Create Azure AI Foundry project](../includes/create-hub-project)]
+import CreateAzureAiFoundryProject from '/snippets/ai-foundry/includes/create-hub-project.mdx'
+
+<CreateAzureAiFoundryProject />
 
 # [Python SDK](#tab/python)
 
 The code in this section assumes you have an existing hub. If you don't have a hub, see [How to create and manage an Azure AI Foundry hub](create-azure-ai-resource) to create one.
 
-[!INCLUDE [SDK setup](../includes/development-environment-config)]
+import SdkSetup from '/snippets/ai-foundry/includes/development-environment-config.mdx'
+
+<SdkSetup />
 
 6. Use the following code to create a project from a hub you or your administrator created previously. Replace example string values with your own values:
 
@@ -179,6 +192,9 @@ Storage connections aren't created directly with the project when your storage a
 
 <Tab title="Foundry project">
 
-[!INCLUDE [create-project-fdp](../includes/create-project-fdp)]
+import CreateProjectFdp from '/snippets/ai-foundry/includes/create-project-fdp.mdx'
+
+<CreateProjectFdp />
 
 </Tab>
+</Tabs>

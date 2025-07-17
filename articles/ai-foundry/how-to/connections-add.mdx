@@ -12,7 +12,9 @@ ms.custom:
 
 # How to add a new connection in Azure AI Foundry portal
 
-[!INCLUDE [feature-preview](../includes/feature-preview)]
+import FeaturePreview from '/snippets/ai-foundry/includes/feature-preview.mdx'
+
+<FeaturePreview />
 
 In this article, you learn how to add a new connection in [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs).
 
@@ -21,7 +23,7 @@ Connections are a way to authenticate and consume both Microsoft and other resou
 ## Connection types
 
 Here's a table of some of the available connection types in Azure AI Foundry portal. The __Preview__ column indicates connection types that are currently in preview.
-
+<Tabs>
 <Tab title="Hub based project">
 
 | Service connection type | Preview | Description |
@@ -64,10 +66,12 @@ To help AI Agents make well-informed decisions with confidence, knowledge serves
 To learn more about Agent Knowledge tools, see [Knowledge tool overview](https://aka.ms/AgentToolOverviewDoc).
 
 </Tab>
-
+</Tabs>
 ## Create a new connection
 
-[!INCLUDE [tip-left-pane](../includes/tip-left-pane)]
+import TipLeftPane from '/snippets/ai-foundry/includes/tip-left-pane.mdx'
+
+<TipLeftPane />
 
 Follow these steps to create a new connection that's only available for the current project.
 
@@ -99,7 +103,7 @@ Follow these steps to create a new connection that's only available for the curr
 1. After the service is connected, select __Close__.
 
 ## Network isolation
-
+<Tabs>
 <Tab title="Hub based project">
 
 If your hub is configured for [network isolation](configure-managed-network), you might need to create an outbound private endpoint rule to connect to __Azure Blob Storage__, __Azure Data Lake Storage Gen2__, or __Microsoft OneLake__. A private endpoint rule is needed if one or both of the following are true:
@@ -142,7 +146,7 @@ For more on how to set private endpoints to your connected resources, see the fo
 
 
 </Tab>
-
+</Tabs>
 ## Related content
 
 - [How to create vector indexes](../how-to/index-add)

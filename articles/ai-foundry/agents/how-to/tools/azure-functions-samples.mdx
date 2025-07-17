@@ -16,6 +16,7 @@ Azure AI Agents supports function calling, which allows you to describe the stru
 You must have a [A deployed agent with the standard setup](../../environment-setup.md#choose-your-setup). The basic agent setup is not supported.
 </Note>
 
+<Tabs>
 <Tab title="Python">
 
 <Tip>
@@ -167,7 +168,7 @@ For any issues with the Python code, create an issue on the [sample code reposit
 
 In the sample below we create a client and an agent that has the tools definition for the Azure Function
 
-Follow the [REST API Quickstart](../../quickstart.md?pivots=rest-api#api-call-information) to set the right values for the environment variables `AGENT_TOKEN`, `AZURE_AI_FOUNDRY_PROJECT_ENDPOINT` and `API_VERSION`. 
+Follow the [REST API Quickstart](../../quickstart) to set the right values for the environment variables `AGENT_TOKEN`, `AZURE_AI_FOUNDRY_PROJECT_ENDPOINT` and `API_VERSION`. 
 
 ```bash
 curl --request POST \
@@ -515,3 +516,4 @@ client.Administration.DeleteAgent(agent.Id);
 ```
     
 </Tab>
+</Tabs>

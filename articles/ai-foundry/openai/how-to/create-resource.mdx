@@ -14,25 +14,31 @@ This article describes how to get started with Azure OpenAI and provides step-by
 - Azure Resource Manager (ARM) templates
 
 In this article, you review examples for creating and deploying resources in the Azure portal and with the Azure CLI.
-
+<Tabs>
 <Tab title="Portal">
 
-[!INCLUDE [Azure portal resource](../includes/create-resource-portal)]
+import AzurePortalResource from '/snippets/ai-foundry/openai/includes/create-resource-portal.mdx'
+
+<AzurePortalResource />
 
 </Tab>
 
 <Tab title="CLI">
 
-[!INCLUDE [Azure CLI resource](../includes/create-resource-cli)]
+import AzureCliResource from '/snippets/ai-foundry/openai/includes/create-resource-cli.mdx'
+
+<AzureCliResource />
 
 </Tab>
 
 <Tab title="PowerShell">
 
-[!INCLUDE [Azure PowerShell resource](../includes/create-resource-powershell)]
+import AzurePowershellResource from '/snippets/ai-foundry/openai/includes/create-resource-powershell.mdx'
+
+<AzurePowershellResource />
 
 </Tab>
-
+</Tabs>
 ## Next steps
 
 - [Get started with the Azure OpenAI security building block](/azure/developer/ai/get-started-securing-your-ai-app?tabs=github-codespaces&pivots=python)

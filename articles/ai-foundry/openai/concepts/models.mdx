@@ -329,7 +329,9 @@ All deployments can perform the exact same inference operations, however the bil
 
 ### Global standard model availability
 
-[!INCLUDE [Standard Global](../includes/model-matrix/standard-global)]
+import StandardGlobal from '/snippets/ai-foundry/openai/includes/model-matrix/standard-global.mdx'
+
+<StandardGlobal />
 
 <Note>
 `o1-mini` is currently available to all customers for global standard deployment.
@@ -341,19 +343,25 @@ Select customers were granted standard (regional) deployment access to `o1-mini`
 
 ### Global provisioned managed model availability
 
-[!INCLUDE [Provisioned Managed Global](../includes/model-matrix/provisioned-global)]
+import ProvisionedManagedGlobal from '/snippets/ai-foundry/openai/includes/model-matrix/provisioned-global.mdx'
+
+<ProvisionedManagedGlobal />
 
 # [Global Batch](#tab/global-batch)
 
 ### Global batch model availability
 
-[!INCLUDE [Global batch](../includes/model-matrix/global-batch)]
+import GlobalBatch from '/snippets/ai-foundry/openai/includes/model-matrix/global-batch.mdx'
+
+<GlobalBatch />
 
 # [Data Zone Standard](#tab/datazone-standard)
 
 ### Data zone standard model availability
 
-[!INCLUDE [Data zone standard](../includes/model-matrix/datazone-standard)]
+import DataZoneStandard from '/snippets/ai-foundry/openai/includes/model-matrix/datazone-standard.mdx'
+
+<DataZoneStandard />
 
 <Note>
 `o1-mini` is currently available to all customers for global standard deployment.
@@ -365,19 +373,25 @@ Select customers were granted standard (regional) deployment access to `o1-mini`
 
 ### Data zone provisioned managed model availability
 
-[!INCLUDE [Global data zone provisioned managed](../includes/model-matrix/datazone-provisioned-managed)]
+import GlobalDataZoneProvisionedManaged from '/snippets/ai-foundry/openai/includes/model-matrix/datazone-provisioned-managed.mdx'
+
+<GlobalDataZoneProvisionedManaged />
 
 # [Data Zone Batch](#tab/datazone-batch)
 
 ### Data zone batch model availability
 
-[!INCLUDE [Data zone batch](../includes/model-matrix/global-batch-datazone)]
+import DataZoneBatch from '/snippets/ai-foundry/openai/includes/model-matrix/global-batch-datazone.mdx'
+
+<DataZoneBatch />
 
 # [Standard](#tab/standard)
 
 ### Standard deployment model availability
 
-[!INCLUDE [Standard Models](../includes/model-matrix/standard-models)]
+import StandardModels from '/snippets/ai-foundry/openai/includes/model-matrix/standard-models.mdx'
+
+<StandardModels />
 
 <Note>
 `o1-mini` is currently available to all customers for global standard deployment.
@@ -389,7 +403,9 @@ Select customers were granted standard (regional) deployment access to `o1-mini`
 
 ### Provisioned deployment model availability
 
-[!INCLUDE [Provisioned](../includes/model-matrix/provisioned-models)]
+import Provisioned from '/snippets/ai-foundry/openai/includes/model-matrix/provisioned-models.mdx'
+
+<Provisioned />
 
 <Note>
 The provisioned version of `gpt-4` **Version:** `turbo-2024-04-09` is currently limited to text only.
@@ -407,7 +423,9 @@ This table doesn't include fine-tuning regional availability information.  Consu
 
 ### Chat completions
 
-[!INCLUDE [Chat Completions](../includes/model-matrix/standard-chat-completions)]
+import ChatCompletions from '/snippets/ai-foundry/openai/includes/model-matrix/standard-chat-completions.mdx'
+
+<ChatCompletions />
 
 <Note>
 `o1-mini` is currently available to all customers for global standard deployment.
@@ -434,7 +452,9 @@ See [model versions](../concepts/model-versions) to learn about how Azure OpenAI
 
 ### Embeddings models
 
-[!INCLUDE [Embeddings](../includes/model-matrix/standard-embeddings)]
+import Embeddings from '/snippets/ai-foundry/openai/includes/model-matrix/standard-embeddings.mdx'
+
+<Embeddings />
 
 These models can only be used with Embedding API requests.
 
@@ -457,7 +477,9 @@ When sending an array of inputs for embedding, the max number of input items in 
 
 ### Image generation models
 
-[!INCLUDE [Image Generation](../includes/model-matrix/standard-image-generation)]
+import ImageGeneration from '/snippets/ai-foundry/openai/includes/model-matrix/standard-image-generation.mdx'
+
+<ImageGeneration />
 
 |  Model ID  | Max Request (characters) |
 |  --- | :---: |
@@ -482,19 +504,25 @@ When sending an array of inputs for embedding, the max number of input items in 
 
 ### Audio models
 
-[!INCLUDE [Audio](../includes/model-matrix/standard-audio)]
+import Audio from '/snippets/ai-foundry/openai/includes/model-matrix/standard-audio.mdx'
+
+<Audio />
 
 # [Completions (Legacy)](#tab/standard-completions)
 
 ### Completions models
 
-[!INCLUDE [Completions](../includes/model-matrix/standard-completions)]
+import Completions from '/snippets/ai-foundry/openai/includes/model-matrix/standard-completions.mdx'
+
+<Completions />
 
 ---
 
 ## Fine-tuning models
 
-[!INCLUDE [Fine-tune models](../includes/fine-tune-models)]
+import FineTuneModels from '/snippets/ai-foundry/openai/includes/fine-tune-models.mdx'
+
+<FineTuneModels />
 
 ## Assistants (Preview)
 

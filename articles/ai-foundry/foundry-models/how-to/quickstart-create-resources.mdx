@@ -5,14 +5,22 @@ description: Learn how to get your environment ready with the Azure AI Foundry M
 
 # Create and configure all the resources for Azure AI Foundry Models
 
+<Tabs>
 <Tab title="Foundry portal">
-[!INCLUDE [portal](../../foundry-models/includes/create-resources/portal)]
+import Portal from '/snippets/ai-foundry/foundry-models/includes/create-resources/portal.mdx'
+
+<Portal />
 </Tab>
 
 <Tab title="Azure CLI">
-[!INCLUDE [cli](../../foundry-models/includes/create-model-deployments/cli)]
+import Cli from '/snippets/ai-foundry/foundry-models/includes/create-model-deployments/cli.mdx'
+
+<Cli />
 </Tab>
 
 <Tab title="Bicep">
-[!INCLUDE [bicep](../../foundry-models/includes/create-resources/bicep)]
+import Bicep from '/snippets/ai-foundry/foundry-models/includes/create-resources/bicep.mdx'
+
+<Bicep />
 </Tab>
+</Tabs>

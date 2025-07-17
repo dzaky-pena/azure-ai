@@ -24,14 +24,20 @@ This tutorial is part one of a three-part tutorial.
 
 ## Prerequisites
 
-[!INCLUDE [hub-only-tutorial](../includes/hub-only-tutorial)]
+import HubOnlyTutorial from '/snippets/ai-foundry/includes/hub-only-tutorial.mdx'
+
+<HubOnlyTutorial />
 
 * An Azure account with an active subscription. If you don't have one, [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 
-## Create a [!INCLUDE [hub-project-name](../includes/hub-project-name)]
+import HubProjectName from '/snippets/ai-foundry/includes/hub-project-name.mdx'
 
-[!INCLUDE [create-hub-project-simple](../includes/create-hub-project-simple)]
+## Create a <HubProjectName />
+
+import CreateHubProjectSimple from '/snippets/ai-foundry/includes/create-hub-project-simple.mdx'
+
+<CreateHubProjectSimple />
 
 ## Deploy models
 
@@ -39,7 +45,9 @@ You need two models to build a RAG-based chat app: an Azure OpenAI chat model (`
 
 These steps deploy a model to a real-time endpoint from the Azure AI Foundry portal [model catalog](../how-to/model-catalog-overview):
 
-[!INCLUDE [tip-left-pane](../includes/tip-left-pane)]
+import TipLeftPane from '/snippets/ai-foundry/includes/tip-left-pane.mdx'
+
+<TipLeftPane />
 
 1. On the left pane, select **Model catalog**.
 1. Select the **gpt-4o-mini** model from the list of models. You can use the search bar to find it. 
@@ -106,7 +114,9 @@ In the Azure AI Foundry portal, check for an Azure AI Search connected resource.
 
 In the IDE of your choice, create a new folder for your project.  Open a terminal window in that folder.
 
-[!INCLUDE [Install Python](../includes/install-python)]
+import InstallPython from '/snippets/ai-foundry/includes/install-python.mdx'
+
+<InstallPython />
 
 ## Install packages
 
@@ -134,11 +144,15 @@ This script also uses a package you haven't installed yet, `azure.monitor.opente
 
 ## Configure environment variables
 
-[!INCLUDE [create-env-file](../includes/create-env-file-tutorial)]
+import CreateEnvFile from '/snippets/ai-foundry/includes/create-env-file-tutorial.mdx'
+
+<CreateEnvFile />
 
 ## <a name="installs"></a> Install the Azure CLI and sign in 
 
-[!INCLUDE [Install the Azure CLI](../includes/install-cli)]
+import InstallTheAzureCli from '/snippets/ai-foundry/includes/install-cli.mdx'
+
+<InstallTheAzureCli />
 
 Keep this terminal window open to run your python scripts from here as well, now that you've signed in.
 

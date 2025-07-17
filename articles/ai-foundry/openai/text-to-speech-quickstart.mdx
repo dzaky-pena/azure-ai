@@ -8,37 +8,45 @@ description: Use the Azure OpenAI for text to speech with OpenAI voices.
 In this quickstart, you use the Azure OpenAI for text to speech with OpenAI voices.  
 
 The available voices are: `alloy`, `echo`, `fable`, `onyx`, `nova`, and `shimmer`. For more information, see [Azure OpenAI reference documentation for text to speech](./reference.md#text-to-speech-preview).
-
+<Tabs>
 <Tab title="REST API">
 
-[!INCLUDE [REST API quickstart](includes/text-to-speech-rest)]
+import RestApiQuickstart from '/snippets/ai-foundry/openai/includes/text-to-speech-rest.mdx'
+
+<RestApiQuickstart />
 
 </Tab>
 
 <Tab title="JavaScript">
 
-[!INCLUDE [JavaScript quickstart](includes/text-to-speech-javascript)]
+import JavascriptQuickstart from '/snippets/ai-foundry/openai/includes/text-to-speech-javascript.mdx'
+
+<JavascriptQuickstart />
 
 </Tab>
 
 <Tab title="TypeScript">
 
-[!INCLUDE [TypeScript quickstart](includes/text-to-speech-typescript)]
+import TypescriptQuickstart from '/snippets/ai-foundry/openai/includes/text-to-speech-typescript.mdx'
+
+<TypescriptQuickstart />
 
 </Tab>
 
 <Tab title="C#">
 
-[!INCLUDE [.NET quickstart](includes/text-to-speech-dotnet)]
+import DotNetQuickstart from '/snippets/ai-foundry/openai/includes/text-to-speech-dotnet.mdx'
+
+<DotNetQuickstart />
 
 </Tab>
-
+</Tabs>
 ## Clean up resources
 
 If you want to clean up and remove an Azure OpenAI resource, you can delete the resource. Before deleting the resource, you must first delete any deployed models.
 
-- [Azure portal](../../ai-services/multi-service-resource.md?pivots=azportal#clean-up-resources)
-- [Azure CLI](../../ai-services/multi-service-resource.md?pivots=azcli#clean-up-resources)
+- [Azure portal](../../ai-services/multi-service-resource)
+- [Azure CLI](../../ai-services/multi-service-resource)
 
 ## Next steps
 

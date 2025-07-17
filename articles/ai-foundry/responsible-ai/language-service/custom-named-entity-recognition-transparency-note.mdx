@@ -5,7 +5,9 @@ description: Transparency note for custom named entity recognition
 
 # Use cases for custom named entity recognition
 
-[!INCLUDE [non-english-translation](../includes/non-english-translation)]
+import NonEnglishTranslation from '/snippets/ai-foundry/responsible-ai/includes/non-english-translation.mdx'
+
+<NonEnglishTranslation />
 
 ## What is a Transparency Note?
 
@@ -55,7 +57,9 @@ Be aware of the following guidance when you use custom NER:
 
 * **Avoid creating custom entities that extract unnecessary or sensitive information.** Avoid extracting sensitive user information if it's not required for your use case. For example, if your scenario requires extracting your user's city and country, create entities that extract only the city and country from a user's address instead of extracting the entire address
 
-* [!INCLUDE [regulatory-considerations](../includes/regulatory-considerations)]
+import RegulatoryConsiderations from '/snippets/ai-foundry/responsible-ai/includes/regulatory-considerations.mdx'
+
+* <RegulatoryConsiderations />
 
 ## Next steps
 

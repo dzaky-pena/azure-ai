@@ -6,7 +6,9 @@ description: Learn how to securely use the Azure AI Foundry portal playground ch
 
 # Use your data securely with the Azure AI Foundry portal playground
 
-[!INCLUDE [hub-only-alt](../includes/uses-hub-only-alt)]
+import HubOnlyAlt from '/snippets/ai-foundry/includes/uses-hub-only-alt.mdx'
+
+<HubOnlyAlt />
 
 Use this article to learn how to securely use [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs)'s playground chat on your data. The following sections provide our recommended configuration to protect your data and resources by using Microsoft Entra ID role-based access control, a managed network, and private endpoints. We recommend disabling public network access for Azure OpenAI resources, Azure AI Search resources, and storage accounts. Using selected networks with IP rules isn't supported because the services' IP addresses are dynamic.
 

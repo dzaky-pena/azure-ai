@@ -5,7 +5,9 @@ description: Learn how to use GPT-4o Realtime API for speech and audio with Azur
 
 # GPT-4o Realtime API for speech and audio (Preview)
 
-[!INCLUDE [Feature preview](includes/preview-feature)]
+import FeaturePreview from '/snippets/ai-foundry/openai/includes/preview-feature.mdx'
+
+<FeaturePreview />
 
 Azure OpenAI GPT-4o Realtime API for speech and audio is part of the GPT-4o model family that supports low-latency, "speech in, speech out" conversational interactions. 
 
@@ -28,31 +30,39 @@ See the [models and versions documentation](./concepts/models.md#audio-models) f
 ## API support
 
 Support for the Realtime API was first added in API version `2024-10-01-preview` (retired). Use version `2025-04-01-preview` to access the latest Realtime API features. 
-
+<Tabs>
 <Tab title="Foundry portal">
 
-[!INCLUDE [Azure AI Foundry portal quickstart](includes/realtime-portal)]
+import AzureAiFoundryPortalQuickstart from '/snippets/ai-foundry/openai/includes/realtime-portal.mdx'
+
+<AzureAiFoundryPortalQuickstart />
 
 </Tab>
 
 <Tab title="JavaScript">
 
-[!INCLUDE [JavaScript quickstart](includes/realtime-javascript)]
+import JavascriptQuickstart from '/snippets/ai-foundry/openai/includes/realtime-javascript.mdx'
+
+<JavascriptQuickstart />
 
 </Tab>
 
 <Tab title="Python">
 
-[!INCLUDE [Python quickstart](includes/realtime-python)]
+import PythonQuickstart from '/snippets/ai-foundry/openai/includes/realtime-python.mdx'
+
+<PythonQuickstart />
 
 </Tab>
 
 <Tab title="TypeScript">
 
-[!INCLUDE [TypeScript quickstart](includes/realtime-typescript)]
+import TypescriptQuickstart from '/snippets/ai-foundry/openai/includes/realtime-typescript.mdx'
+
+<TypescriptQuickstart />
 
 </Tab>
-
+</Tabs>
 ## Related content
 
 * Learn more about [How to use the Realtime API](./how-to/realtime-audio)

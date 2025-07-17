@@ -12,49 +12,61 @@ For information about other audio models that you can use with Azure OpenAI, see
 </Note>
 
 The file size limit for the Whisper model is 25 MB. If you need to transcribe a file larger than 25 MB, you can use the Azure AI Speech [batch transcription](../../ai-services/speech-service/batch-transcription-create.md#use-a-whisper-model) API.
-
+<Tabs>
 <Tab title="REST API">
 
-[!INCLUDE [REST API quickstart](includes/whisper-rest)]
+import RestApiQuickstart from '/snippets/ai-foundry/openai/includes/whisper-rest.mdx'
+
+<RestApiQuickstart />
 
 </Tab>
 
 <Tab title="Python">
 
-[!INCLUDE [Python SDK quickstart](includes/whisper-python)]
+import PythonSdkQuickstart from '/snippets/ai-foundry/openai/includes/whisper-python.mdx'
+
+<PythonSdkQuickstart />
 
 </Tab>
 
 <Tab title="C#">
 
-[!INCLUDE [.NET SDK quickstart](includes/whisper-dotnet)]
+import DotNetSdkQuickstart from '/snippets/ai-foundry/openai/includes/whisper-dotnet.mdx'
+
+<DotNetSdkQuickstart />
 
 </Tab>
 
 <Tab title="JavaScript">
 
-[!INCLUDE [JavaScript quickstart](includes/whisper-javascript)]
+import JavascriptQuickstart from '/snippets/ai-foundry/openai/includes/whisper-javascript.mdx'
+
+<JavascriptQuickstart />
 
 </Tab>
 
 <Tab title="TypeScript">
 
-[!INCLUDE [JavaScript quickstart](includes/whisper-typescript)]
+import TypescriptQuickstart from '/snippets/ai-foundry/openai/includes/whisper-typescript.mdx'
+
+<TypescriptQuickstart />
 
 </Tab>
 
 <Tab title="PowerShell">
 
-[!INCLUDE [PowerShell quickstart](includes/whisper-powershell)]
+import PowershellQuickstart from '/snippets/ai-foundry/openai/includes/whisper-powershell.mdx'
+
+<PowershellQuickstart />
 
 </Tab>
-
+</Tabs>
 ## Clean up resources
 
 If you want to clean up and remove an Azure OpenAI resource, you can delete the resource. Before deleting the resource, you must first delete any deployed models.
 
-- [Azure portal](../../ai-services/multi-service-resource.md?pivots=azportal#clean-up-resources)
-- [Azure CLI](../../ai-services/multi-service-resource.md?pivots=azcli#clean-up-resources)
+- [Azure portal](../../ai-services/multi-service-resource)
+- [Azure CLI](../../ai-services/multi-service-resource)
 
 ## Next steps
 

@@ -11,13 +11,16 @@ This article describes the Microsoft SharePoint tool for Azure AI Foundry Agent 
 
 Use this article to find step-by-step instructions and code samples for using the SharePoint tool in Azure AI Foundry Agent Service.
 
+<Tabs>
 <Tab title="Python">
 
 ## Prerequisites
 
 * Your Azure AI Foundry Project endpoint.
 
-    [!INCLUDE [endpoint-string-portal](../../includes/endpoint-string-portal)]
+import EndpointStringPortal from '/snippets/ai-foundry/agents/includes/endpoint-string-portal.mdx'
+
+    <EndpointStringPortal />
 
     Save this endpoint to an environment variable named `PROJECT_ENDPOINT`. 
 
@@ -128,7 +131,7 @@ for msg in messages:
 
 ## Create an agent
 
-Follow the [REST API Quickstart](../../quickstart.md?pivots=rest-api#api-call-information) to set the right values for the environment variables `AGENT_TOKEN`, `AZURE_AI_FOUNDRY_PROJECT_ENDPOINT` and `API_VERSION`.
+Follow the [REST API Quickstart](../../quickstart) to set the right values for the environment variables `AGENT_TOKEN`, `AZURE_AI_FOUNDRY_PROJECT_ENDPOINT` and `API_VERSION`.
 
 ```bash
 curl --request POST \
@@ -206,3 +209,4 @@ curl --request GET \
 ```
 
 </Tab>
+</Tabs>

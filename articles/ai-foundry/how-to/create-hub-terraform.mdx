@@ -9,11 +9,15 @@ ai-usage: ai-assisted
 
 # Use Terraform to create an Azure AI Foundry hub
 
-[!INCLUDE [hub-only-alt](../includes/uses-hub-only-alt)]
+import HubOnlyAlt from '/snippets/ai-foundry/includes/uses-hub-only-alt.mdx'
+
+<HubOnlyAlt />
 
 In this article, you use Terraform to create an [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs) hub, a project, and AI services connection. A hub is a central place for data scientists and developers to collaborate on machine learning projects. It provides a shared, collaborative space to build, train, and deploy machine learning models. The hub is integrated with Azure Machine Learning and other Azure services, making it a comprehensive solution for machine learning tasks. The hub also allows you to manage and monitor your AI deployments, ensuring they're performing as expected.
 
-[!INCLUDE [About Terraform](~/azure-dev-docs-pr/articles/terraform/includes/abstract)]
+import AboutTerraform from '/snippets/ai-foundry/includes/~/azure-dev-docs-pr/articles/terraform/includes/abstract.mdx'
+
+<AboutTerraform />
 
 <Check>
 * Create a resource group
@@ -59,15 +63,21 @@ See more [articles and sample code showing how to use Terraform to manage Azure 
 
 ## Initialize Terraform
 
-[!INCLUDE [terraform-init.md](~/azure-dev-docs-pr/articles/terraform/includes/terraform-init)]
+import TerraformInitMd from '/snippets/ai-foundry/includes/~/azure-dev-docs-pr/articles/terraform/includes/terraform-init.mdx'
+
+<TerraformInitMd />
 
 ## Create a Terraform execution plan
 
-[!INCLUDE [terraform-plan.md](~/azure-dev-docs-pr/articles/terraform/includes/terraform-plan)]
+import TerraformPlanMd from '/snippets/ai-foundry/includes/~/azure-dev-docs-pr/articles/terraform/includes/terraform-plan.mdx'
+
+<TerraformPlanMd />
 
 ## Apply a Terraform execution plan
 
-[!INCLUDE [terraform-apply-plan.md](~/azure-dev-docs-pr/articles/terraform/includes/terraform-apply-plan)]
+import TerraformApplyPlanMd from '/snippets/ai-foundry/includes/~/azure-dev-docs-pr/articles/terraform/includes/terraform-apply-plan.mdx'
+
+<TerraformApplyPlanMd />
 
 ## Verify the results
 
@@ -117,7 +127,9 @@ See more [articles and sample code showing how to use Terraform to manage Azure 
 
 ## Clean up resources
 
-[!INCLUDE [terraform-plan-destroy.md](~/azure-dev-docs-pr/articles/terraform/includes/terraform-plan-destroy)]
+import TerraformPlanDestroyMd from '/snippets/ai-foundry/includes/~/azure-dev-docs-pr/articles/terraform/includes/terraform-plan-destroy.mdx'
+
+<TerraformPlanDestroyMd />
 
 ## Troubleshoot Terraform on Azure
 

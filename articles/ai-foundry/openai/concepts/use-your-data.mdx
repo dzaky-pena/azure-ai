@@ -152,9 +152,13 @@ Mapping these fields correctly helps ensure the model has better response and ci
 
 If you want to implement additional value-based criteria for query execution, you can set up a [search filter](/azure/search/search-filters) using the `filter` parameter in the [REST API](../references/azure-search).
 
-[!INCLUDE [ai-search-ingestion](../includes/ai-search-ingestion)]
+import AiSearchIngestion from '/snippets/ai-foundry/openai/includes/ai-search-ingestion.mdx'
 
-[!INCLUDE [authentication](../includes/on-your-data-authentication)]
+<AiSearchIngestion />
+
+import Authentication from '/snippets/ai-foundry/openai/includes/on-your-data-authentication.mdx'
+
+<Authentication />
 
 # [Vector Database in Azure Cosmos DB for MongoDB](#tab/mongo-db)
 
@@ -228,9 +232,10 @@ To modify the schedule, you can use the [Azure portal](https://portal.azure.com/
 
     1. Select **Save**.
 
-[!INCLUDE [ai-search-ingestion](../includes/ai-search-ingestion)]
+<AiSearchIngestion />
 
-[!INCLUDE [authentication](../includes/on-your-data-authentication)]
+
+<Authentication />
 
 # [Upload files (preview)](#tab/file-upload)
 
@@ -240,9 +245,9 @@ Using [Azure AI Foundry portal](https://ai.azure.com/?cid=learnDocs), you can up
     ![](/images/ai-foundry/openai/media/quickstarts/add-your-data-source.png)
 </Frame>
 
-[!INCLUDE [ai-search-ingestion](../includes/ai-search-ingestion)]
+<AiSearchIngestion />
 
-[!INCLUDE [authentication](../includes/on-your-data-authentication)]
+<Authentication />
 
 # [URL/Web address (preview)](#tab/web-pages)
 
@@ -256,9 +261,9 @@ You can paste URLs and the service will store the webpage content, using it when
 
 Once you have added the URL/web address for data ingestion, the web pages from your URL are fetched and saved to Azure Blob Storage with a container name: `webpage-<index name>`. Each URL will be saved into a different container within the account. Then the files are indexed into an Azure AI Search index, which is used for retrieval when you’re chatting with the model.
 
-[!INCLUDE [ai-search-ingestion](../includes/ai-search-ingestion)]
+<AiSearchIngestion />
 
-[!INCLUDE [authentication](../includes/on-your-data-authentication)]
+<Authentication />
 
 # [Elasticsearch (preview)](#tab/elasticsearch)
 
@@ -565,7 +570,7 @@ Use the following practices for best results when chatting with the model.
 
 * If you aren't satisfied with the model response for a specific question, try either making the question more specific or more generic to see how the model responds, and reframe your question accordingly. 
 
-* [Chain-of-thought prompting](prompt-engineering.md?pivots=programming-language-chat-completions#chain-of-thought-prompting) has been shown to be effective in getting the model to produce desired outputs for complex questions/tasks.
+* [Chain-of-thought prompting](prompt-engineering) has been shown to be effective in getting the model to produce desired outputs for complex questions/tasks.
 
 **Question length**
 

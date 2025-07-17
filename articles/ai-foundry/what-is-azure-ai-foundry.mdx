@@ -21,23 +21,34 @@ An Azure AI Foundry project is where you do most of your development work. You c
 
 ## Types of projects
 
-Azure AI Foundry supports two types of projects: a **[!INCLUDE [hub](includes/hub-project-name)]** and a **[!INCLUDE [fdp](includes/fdp-project-name)]**. In most cases, you'll want to use a [!INCLUDE [fdp-project-name](includes/fdp-project-name)].
+import Hub from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+import Fdp from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+import FdpProjectName from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
 
-* [!INCLUDE [fdp-description](includes/fdp-description)]
+Azure AI Foundry supports two types of projects: a **<Hub />** and a **<Fdp />**. In most cases, you'll want to use a <FdpProjectName />.
 
-* [!INCLUDE [hub-description](includes/hub-description)]
+import FdpDescription from '/snippets/ai-foundry/includes/fdp-description.mdx'
+
+* <FdpDescription />
+
+import HubDescription from '/snippets/ai-foundry/includes/hub-description.mdx'
+
+* <HubDescription />
 
 
 ### Which type of project do I need?
 
-* In general, you should use a [!INCLUDE [fdp-project-name](includes/fdp-project-name)] if you are looking to build agents or work with models. 
-* Use a [!INCLUDE [hub-project-name](includes/hub-project-name)] when you need features that are not available in a [!INCLUDE [fdp-project-name](includes/fdp-project-name)]. See the following table for more on feature availability.
+* In general, you should use a <FdpProjectName /> if you are looking to build agents or work with models. 
+import HubProjectName from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+import FdpProjectName from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+
+* Use a <HubProjectName /> when you need features that are not available in a <FdpProjectName />. See the following table for more on feature availability.
 
 
 This table summarizes features available in the two project types:  
 
 
-| Capability | [!INCLUDE [fdp](includes/fdp-project-name)] | [!INCLUDE[hub](includes/hub-project-name)] |
+| Capability | <Fdp /> | [!INCLUDE[hub](includes/hub-project-name)] |
 | --- | --- | --- |
 | Agents | ✅ (GA) | ✅ (Preview only) |
 | AI Foundry API to work with agents and across models| ✅ (Native support) | Available via connections |
@@ -58,8 +69,11 @@ Here are some of the ways to identify your project type:
 
 * From the **breadcrumb navigation** section
 
-    * A [!INCLUDE [fdp-project-name](includes/fdp-project-name)] displays **(AI Foundry)** on the second line
-    * A [!INCLUDE [hub-project-name](includes/hub-project-name)] displays **(Hub)** on the second line
+
+    * A <FdpProjectName /> displays **(AI Foundry)** on the second line
+import HubProjectName from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+
+    * A <HubProjectName /> displays **(Hub)** on the second line
 
     <Frame>
       ![](/images/ai-foundry/media/how-to/projects/breadcrumb.png)
@@ -67,8 +81,10 @@ Here are some of the ways to identify your project type:
 
 * From the **All resources** page
 
-    * A [!INCLUDE [fdp-project-name](includes/fdp-project-name)] displays **(AI Foundry)** as the parent resource
-    * A [!INCLUDE [hub-project-name](includes/hub-project-name)] displays **(Hub)** as the parent resource
+    * A <FdpProjectName /> displays **(AI Foundry)** as the parent resource
+import HubProjectName from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+
+    * A <HubProjectName /> displays **(Hub)** as the parent resource
 
     <Frame>
       ![](/images/ai-foundry/media/how-to/projects/all-resources.png)

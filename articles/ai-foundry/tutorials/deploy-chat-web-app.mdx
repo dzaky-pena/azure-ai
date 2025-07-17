@@ -20,7 +20,9 @@ The steps in this tutorial are:
 
 ## Prerequisites
 
-[!INCLUDE [hub-only-prereq](../includes/hub-only-prereq)]
+import HubOnlyPrereq from '/snippets/ai-foundry/includes/hub-only-prereq.mdx'
+
+<HubOnlyPrereq />
 
 - A [deployed Azure OpenAI](../how-to/deploy-models-openai) chat model. Complete the [Azure AI Foundry playground quickstart](../quickstarts/get-started-playground) to create this resource if you haven't already.
 
@@ -93,7 +95,9 @@ On the browser tab for the **Search service** resource in the Azure portal, set 
 
 You'll repeat this pattern multiple times in the bulleted items below.
 
-[!INCLUDE [Assign RBAC](../includes/assign-rbac)]
+import AssignRbac from '/snippets/ai-foundry/includes/assign-rbac.mdx'
+
+<AssignRbac />
 
 Use these steps to assign roles for the resources you're configuring in this tutorial:
 
@@ -119,7 +123,9 @@ You're done configuring resources. You can close the Azure portal browser tabs n
 
 In the [Azure AI Foundry playground quickstart](../quickstarts/get-started-playground) (that's a prerequisite for this tutorial), observe how your model responds without your data. Now add your data to the model to help it answer questions about your products.
 
-[!INCLUDE [Chat with your data](../includes/chat-with-data)] 
+import ChatWithYourData from '/snippets/ai-foundry/includes/chat-with-data.mdx'
+
+<ChatWithYourData /> 
 
 ## Deploy your web app
 

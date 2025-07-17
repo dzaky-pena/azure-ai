@@ -28,7 +28,9 @@ Content filters can be configured at the resource level. Once a new configuratio
 
 ## Understand content filter configurability
 
-[!INCLUDE [content-filter-configurability](../includes/content-filter-configurability)]
+import ContentFilterConfigurability from '/snippets/ai-foundry/openai/includes/content-filter-configurability.mdx'
+
+<ContentFilterConfigurability />
  
 ## Understand other filters
 
@@ -43,7 +45,9 @@ You can configure the following filter categories in addition to the default har
 | Groundedness | Preview |Off | Completion |Detects whether the text responses of large language models (LLMs) are grounded in the source materials provided by the users. Ungroundedness refers to instances where the LLMs produce information that is non-factual or inaccurate from what was present in the source materials. Requires: [Document embedding and formatting](/azure/ai-services/openai/concepts/content-filter?tabs=warning%2Cuser-prompt%2Cpython-new#embedding-documents-in-your-prompt).|
 
 
-[!INCLUDE [create-content-filter](../../../ai-foundry/includes/create-content-filter)]
+import CreateContentFilter from '/snippets/ai-foundry/includes/create-content-filter.mdx'
+
+<CreateContentFilter />
 
 ## Specify a content filtering configuration at request time (preview)
 

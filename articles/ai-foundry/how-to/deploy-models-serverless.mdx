@@ -5,19 +5,25 @@ description: Learn to deploy models as serverless API deployments, using Azure A
 
 # Deploy models as serverless API deployments
 
-[!INCLUDE [feature-preview](../includes/feature-preview)]
+import FeaturePreview from '/snippets/ai-foundry/includes/feature-preview.mdx'
+
+<FeaturePreview />
 
 In this article, you learn how to deploy an Azure AI Foundry Model as a serverless API deployment. [Certain models in the model catalog](deploy-models-serverless-availability) can be deployed as a serverless API deployment. This kind of deployment provides a way to consume models as an API without hosting them on your subscription, while keeping the enterprise security and compliance that organizations need. This deployment option doesn't require quota from your subscription. 
 
 Although serverless API deployment is one option for deploying Azure AI Foundry Models, we recommend that you deploy Foundry Models to **Azure AI Foundry resources**.
 
-[!INCLUDE [deploy-models-to-foundry-resources](../includes/deploy-models-to-foundry-resources)]
+import DeployModelsToFoundryResources from '/snippets/ai-foundry/includes/deploy-models-to-foundry-resources.mdx'
+
+<DeployModelsToFoundryResources />
 
 ## Prerequisites
 
 - An Azure subscription with a valid payment method. Free or trial Azure subscriptions won't work. If you don't have an Azure subscription, create a [paid Azure account](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to begin.
 
-- If you don't have one, [create a [!INCLUDE [hub](../includes/hub-project-name)]](create-projects.md?pivots=hub-project).
+import Hub from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+
+- If you don't have one, [create a <Hub />](create-projects).
 
 - Ensure that the **Deploy models to Azure AI Foundry resources** (preview) feature is turned off in the Azure AI Foundry portal. When this feature is on, serverless API deployments aren't available from the portal.
 
@@ -29,13 +35,16 @@ Although serverless API deployment is one option for deploying Azure AI Foundry 
 
 - Azure role-based access controls (Azure RBAC) are used to grant access to operations in Azure AI Foundry portal. To perform the steps in this article, your user account must be assigned the __Azure AI Developer role__ on the resource group. For more information on permissions, see [Role-based access control in Azure AI Foundry portal](../concepts/rbac-azure-ai-foundry).
 
+<Tabs>
 <Tab title="Foundry portal">
 
 - You can use any compatible web browser to navigate [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs).
 
 ## Find your model in the model catalog
 
-[!INCLUDE [open-catalog](../includes/open-catalog)]
+import OpenCatalog from '/snippets/ai-foundry/includes/open-catalog.mdx'
+
+<OpenCatalog />
 
 # [Models sold directly by Azure](#tab/azure-direct)
 
@@ -127,7 +136,9 @@ Read more about the [capabilities of this API](../../ai-foundry/model-inference/
 
 ## Delete endpoints and subscriptions
 
-[!INCLUDE [tip-left-pane](../includes/tip-left-pane)]
+import TipLeftPane from '/snippets/ai-foundry/includes/tip-left-pane.mdx'
+
+<TipLeftPane />
 
 You can delete model subscriptions and endpoints. Deleting a model subscription makes any associated endpoint become *Unhealthy* and unusable.
 
@@ -172,7 +183,7 @@ To delete the associated model subscription:
 
 ## Find your model in the model catalog
 
-[!INCLUDE [open-catalog](../includes/open-catalog)]
+<OpenCatalog />
 
 # [Models sold directly by Azure](#tab/azure-direct)
 
@@ -321,7 +332,7 @@ az ml marketplace-subscription delete \
 
 ## Find your model in the model catalog
 
-[!INCLUDE [open-catalog](../includes/open-catalog)]
+<OpenCatalog />
 
 # [Models sold directly by Azure](#tab/azure-direct)
 
@@ -470,7 +481,7 @@ client.marketplace_subscriptions.begin_delete(subscription_name).wait()
 
 ## Find your model in the model catalog
 
-[!INCLUDE [open-catalog](../includes/open-catalog)]
+<OpenCatalog />
 
 # [Models sold directly by Azure](#tab/azure-direct)
 
@@ -619,7 +630,7 @@ az resource delete --name <resource-name>
 ```
 
 </Tab>
-
+</Tabs>
 
 ## Cost and quota considerations for Foundry Models deployed as a serverless API deployment
 

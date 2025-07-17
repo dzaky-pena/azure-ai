@@ -1,10 +1,6 @@
 ---
 title: "How to get started with Azure AI Foundry SDK"
 description: This article provides an overview of the Azure AI Foundry SDK and how to get started using it.
-ms.custom:
-  - build-2024
-  - ignite-2024
-# customer intent: I want to learn how to use the Azure AI Foundry SDK to build AI applications on Azure.
 ---
 
 # Azure AI Foundry SDK client libraries
@@ -18,14 +14,21 @@ The Azure AI Foundry SDK is a comprehensive toolchain designed to simplify the d
 The Azure AI Foundry SDK is a set of client libraries and services designed to work together. 
 
 <Note>
-This article applies to a **[!INCLUDE [fdp](../../includes/fdp-project-name)]**. The code shown here doesn't work for a **[!INCLUDE [hub](../../includes/hub-project-name)]**. For more information, see [Types of projects](../../what-is-azure-ai-foundry.md#project-types).
+import Fdp from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+import Hub from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+
+This article applies to a **<Fdp />**. The code shown here doesn't work for a **<Hub />**. For more information, see [Types of projects](../../what-is-azure-ai-foundry.md#project-types).
 </Note>
 
 ## Prerequisites
 
 * An Azure subscription. If you don't have one, create a [free account](https://azure.microsoft.com/free/).
-* [Create a [!INCLUDE [fdp-project-name](../../includes/fdp-project-name)]](../create-projects.md?pivots=fdp-project) if you don't have one already.
-* [!INCLUDE [find-endpoint](../../includes/find-endpoint)]
+import FdpProjectName from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+
+* [Create a <FdpProjectName />](../create-projects) if you don't have one already.
+import FindEndpoint from '/snippets/ai-foundry/includes/find-endpoint.mdx'
+
+* <FindEndpoint />
 * Sign in with the Azure CLI using the same account that you use to access your project:
 
     ```bash
@@ -35,7 +38,7 @@ This article applies to a **[!INCLUDE [fdp](../../includes/fdp-project-name)]**.
 ## Unified Projects client library
 
 The Azure AI Foundry Projects client library is a unified library that enables you to use multiple client libraries together by connecting to a single project endpoint.
-
+<Tabs>
 <Tab title="Python">
 
 * Install the project client library 
@@ -59,7 +62,9 @@ The Azure AI Foundry Projects client library is a unified library that enables y
 
 <Tab title="Java">
 
-[!INCLUDE [feature-preview](../../includes/feature-preview)]
+import FeaturePreview from '/snippets/ai-foundry/includes/feature-preview.mdx'
+
+<FeaturePreview />
 
 * Add these packages to your installation (preview):
     * `com.azure.ai.projects`
@@ -84,7 +89,7 @@ The Azure AI Foundry Projects client library is a unified library that enables y
 
 <Tab title="JavaScript">
 
-[!INCLUDE [feature-preview](../../includes/feature-preview)]
+<FeaturePreview />
 
 * Install dependencies (preview):
 
@@ -142,6 +147,7 @@ The Azure AI Foundry Projects client library is a unified library that enables y
     ```
 
 </Tab>
+</Tabs>
 
 <a name="azure-ai-foundry-agent-service"></a>
 * Using the project endpoint, you can:
@@ -155,18 +161,28 @@ The Azure AI Foundry Projects client library is a unified library that enables y
 
 To use Azure AI services, you can use the following client libraries with the endpoints listed on the project homepage.
 
+<Tabs>
 <Tab title="C#">
-[!INCLUDE [C# include](../../includes/sdk/csharp)]
+import CSharpInclude from '/snippets/ai-foundry/includes/sdk/csharp.mdx'
+
+<CSharpInclude />
 </Tab>
 
 <Tab title="Java">
-[!INCLUDE [Java include](../../includes/sdk/java)]
+import JavaInclude from '/snippets/ai-foundry/includes/sdk/java.mdx'
+
+<JavaInclude />
 </Tab>
 
 <Tab title="JavaScript">
-[!INCLUDE [JavaScript include](../../includes/sdk/javascript)]
+import JavascriptInclude from '/snippets/ai-foundry/includes/sdk/javascript.mdx'
+
+<JavascriptInclude />
 </Tab>
 
 <Tab title="Python">
-[!INCLUDE [Python include](./../../includes/sdk/python)]
+import PythonInclude from '/snippets/ai-foundry/includes/sdk/python.mdx'
+
+<PythonInclude />
 </Tab>
+</Tabs>

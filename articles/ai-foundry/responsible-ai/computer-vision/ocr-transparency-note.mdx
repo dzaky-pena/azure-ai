@@ -5,7 +5,9 @@ description: Transparency note for optical character recognition (OCR) of images
 
 # Transparency note and use cases for optical character recognition
 
-[!INCLUDE [non-english-translation](../includes/non-english-translation)]
+import NonEnglishTranslation from '/snippets/ai-foundry/responsible-ai/includes/non-english-translation.mdx'
+
+<NonEnglishTranslation />
 
 This article provides information about use cases for optical character recognition (OCR).
 
@@ -49,4 +51,6 @@ Consider the following factors when you choose a use case.
 - **Avoid use for signature identification**: When you extract handwritten text, avoid using the OCR results on signatures to identify individuals. Signatures are hard to read for humans and machines alike. A better way to use OCR is to use it for detecting the presence of a signature for further analysis.
 - **Don’t use OCR for decisions that may have serious adverse impacts**: Examples of such use cases include processing medical prescriptions and dispensing medication. The machine learning models that extract text from prescriptions can result in undetected or incorrect text output. Decisions based on incorrect output could have serious adverse impacts. Additionally, it is advisable to include human review of decisions that have the potential for serious impacts on individuals.
 
-- [!INCLUDE [regulatory-considerations](../includes/regulatory-considerations)]
+import RegulatoryConsiderations from '/snippets/ai-foundry/responsible-ai/includes/regulatory-considerations.mdx'
+
+- <RegulatoryConsiderations />

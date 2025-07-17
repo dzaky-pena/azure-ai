@@ -5,18 +5,25 @@ description: Learn to use and configure the content filters that come with Azure
 
 # How to configure content filters for models in Azure AI Foundry
 
+<Tabs>
 <Tab title="Foundry portal">
-[!INCLUDE [portal](../../foundry-models/includes/configure-content-filters/portal)]
+import Portal from '/snippets/ai-foundry/foundry-models/includes/configure-content-filters/portal.mdx'
+
+<Portal />
 </Tab>
 
 <Tab title="Azure CLI">
-[!INCLUDE [cli](../../foundry-models/includes/configure-content-filters/cli)]
+import Cli from '/snippets/ai-foundry/foundry-models/includes/configure-content-filters/cli.mdx'
+
+<Cli />
 </Tab>
 
 <Tab title="Bicep">
-[!INCLUDE [bicep](../../foundry-models/includes/configure-content-filters/bicep)]
-</Tab>
+import Bicep from '/snippets/ai-foundry/foundry-models/includes/configure-content-filters/bicep.mdx'
 
+<Bicep />
+</Tab>
+</Tabs>
 ## Next steps
 
 - Read more about [content filtering categories and severity levels](../../model-inference/concepts/content-filter) with Azure OpenAI in Azure AI Foundry Models.

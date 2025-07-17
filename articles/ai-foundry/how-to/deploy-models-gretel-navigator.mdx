@@ -5,15 +5,19 @@ description: Learn how to use Gretel Navigator chat model with Azure AI Foundry.
 
 # How to use Gretel Navigator chat model
 
-[!INCLUDE [feature-preview](../includes/feature-preview)]
+import FeaturePreview from '/snippets/ai-foundry/includes/feature-preview.mdx'
+
+<FeaturePreview />
 
 In this article, you learn about Gretel Navigator chat model and how to use it.
 Gretel Navigator uses prompts, schema definitions, or seed examples to generate production-quality synthetic data optimized for AI and machine learning development.
 
-[!INCLUDE [models-preview](../includes/models-preview)]
+import ModelsPreview from '/snippets/ai-foundry/includes/models-preview.mdx'
+
+<ModelsPreview />
 
 
-
+<Tabs>
 <Tab title="Python">
 
 ## Gretel Navigator chat model
@@ -259,7 +263,9 @@ except HttpResponseError as ex:
 
 ```
 
-[!INCLUDE [content-safety-serverless-apis-note](../includes/content-safety-serverless-apis-note)]
+import ContentSafetyServerlessApisNote from '/snippets/ai-foundry/includes/content-safety-serverless-apis-note.mdx'
+
+<ContentSafetyServerlessApisNote />
 
 
 </Tab>
@@ -506,11 +512,11 @@ The following example shows how to handle events when the model detects harmful 
 }
 ```
 
-[!INCLUDE [content-safety-serverless-apis-note](../includes/content-safety-serverless-apis-note)]
+<ContentSafetyServerlessApisNote />
 
 
 </Tab>
-
+</Tabs>
 ## More inference examples
 
 For more examples of how to use Gretel models, see the following examples and tutorials:

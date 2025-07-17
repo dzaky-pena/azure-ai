@@ -5,14 +5,19 @@ description: This article provides instructions on how to create an Azure AI Fou
 
 # Create a hub using the Azure Machine Learning SDK and CLI
 
-[!INCLUDE [feature-preview](../../includes/feature-preview)]
+import FeaturePreview from '/snippets/ai-foundry/includes/feature-preview.mdx'
+
+<FeaturePreview />
 
 In this article, you learn how to create the following [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs) resources using the Azure Machine Learning SDK and Azure CLI (with machine learning extension):
 - An Azure AI Foundry hub
 - An Azure AI Services connection
 
 <Note>
-A hub is used only for a **[!INCLUDE [hub](../../includes/hub-project-name)]**. A **[!INCLUDE [fdp](../../includes/fdp-project-name)]** does not use a hub. For more information, see [Types of projects](../../what-is-azure-ai-foundry.md#project-types).
+import Hub from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+import Fdp from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+
+A hub is used only for a **<Hub />**. A **<Fdp />** does not use a hub. For more information, see [Types of projects](../../what-is-azure-ai-foundry.md#project-types).
 </Note>
 
 ## Prerequisites
@@ -25,7 +30,9 @@ Use the following tabs to select whether you're using the Python SDK or Azure CL
 
 # [Python SDK](#tab/python)
 
-[!INCLUDE [SDK setup](../../includes/development-environment-config)]
+import SdkSetup from '/snippets/ai-foundry/includes/development-environment-config.mdx'
+
+<SdkSetup />
 
 # [Azure CLI](#tab/azurecli)
 

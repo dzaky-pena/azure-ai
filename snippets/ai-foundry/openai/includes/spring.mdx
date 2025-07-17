@@ -12,9 +12,13 @@
 
 ## Set up
 
-[!INCLUDE [get-key-endpoint](get-key-endpoint)]
+import GetKeyEndpoint from '/snippets/ai-foundry/openai/includes/get-key-endpoint.mdx'
 
-[!INCLUDE [environment-variables](spring-environment-variables)]
+<GetKeyEndpoint />
+
+import EnvironmentVariables from '/snippets/ai-foundry/openai/includes/spring-environment-variables.mdx'
+
+<EnvironmentVariables />
 
 ## Create a new Spring application
 
@@ -202,8 +206,8 @@ ai-completion-demo/
 
 If you want to clean up and remove an Azure OpenAI resource, you can delete the resource. Before deleting the resource, you must first delete any deployed models.
 
-- [Azure portal](../../../ai-services/multi-service-resource.md?pivots=azportal#clean-up-resources)
-- [Azure CLI](../../../ai-services/multi-service-resource.md?pivots=azcli#clean-up-resources)
+- [Azure portal](../../../ai-services/multi-service-resource)
+- [Azure CLI](../../../ai-services/multi-service-resource)
 
 ## Next steps
 

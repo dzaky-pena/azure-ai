@@ -35,4 +35,6 @@ Queries that require data analysis would probably fail, such as "*Which health p
 
 Chats are constrained by the number of documents (chunks) returned in the response (limited to 3-20 in Azure AI Foundry portal playground). As you can imagine, posing a question about "all of the titles" requires a full scan of the entire vector store.
 
-[!INCLUDE [deploy-web-app](deploy-web-app)]
+import DeployWebApp from '/snippets/ai-foundry/openai/includes/deploy-web-app.mdx'
+
+<DeployWebApp />

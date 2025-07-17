@@ -1,7 +1,9 @@
 ---
 ---
 
-[!INCLUDE [Header](intro)]
+import Header from '/snippets/ai-foundry/foundry-models/includes/configure-content-filters/intro.mdx'
+
+<Header />
 
 * Install the [Azure CLI](/cli/azure/).
 
@@ -86,4 +88,6 @@
         --parameters accountName=$ACCOUNT_NAME raiPolicyName=$RAI_POLICY_NAME modelName=$MODEL_NAME modelVersion=$VERSION modelPublisherFormat=$PROVIDER
     ```
 
-[!INCLUDE [code](code)]
+import Code from '/snippets/ai-foundry/foundry-models/includes/configure-content-filters/code.mdx'
+
+<Code />

@@ -10,8 +10,11 @@ In this quickstart, you use [Azure AI Foundry](https://ai.azure.com/?cid=learnDo
 
 The Azure AI Foundry SDK is available in multiple languages, including Python, Java, JavaScript, and C#. This quickstart provides instructions for each of these languages.
 
+import Fdp from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+import Hub from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+
 <Tip>
-The rest of this article shows how to use a **[!INCLUDE [fdp](../includes/fdp-project-name)]**. Select **[!INCLUDE [hub](../includes/hub-project-name)]** at the top of this article if you want to use a [!INCLUDE [hub](../includes/hub-project-name)] instead. [Which type of project do I need?](../what-is-azure-ai-foundry.md#which-type-of-project-do-i-need)
+    The rest of this article shows how to use a **<Fdp />**. Select **<Hub />** at the top of this article if you want to use a <Hub /> instead. [Which type of project do I need?](../what-is-azure-ai-foundry.md#which-type-of-project-do-i-need)
 </Tip>
 
 ## Prerequisites
@@ -19,7 +22,9 @@ The rest of this article shows how to use a **[!INCLUDE [fdp](../includes/fdp-pr
 - An [Azure subscription](https://azure.microsoft.com/free/). If you don't have an Azure subscription, create a free account before you begin.
 - You must be **Owner** of the subscription to receive the appropriate access control needed to use your project.
 
-[!INCLUDE [feature-preview](feature-preview)]
+import FeaturePreview from '/snippets/ai-foundry/includes/feature-preview.mdx'
+
+<FeaturePreview />
 
 ## Start with a project and model
 
@@ -41,14 +46,16 @@ No installation is necessary to use the Azure AI Foundry portal.
 
 # [Python](#tab/python)
 
-1. [Install Python and Azure CLI](../how-to/develop/install-cli-sdk.md?pivots=programming-language-python)
+1. [Install Python and Azure CLI](../how-to/develop/install-cli-sdk)
 1. Install these packages:
 
     ```
     pip install openai azure-ai-projects azure-identity
     ```
 
-1. [!INCLUDE [find-endpoint](find-endpoint)]
+import FindEndpoint from '/snippets/ai-foundry/includes/find-endpoint.mdx'
+
+1. <FindEndpoint />
 1. Make sure to sign in using the CLI `az login` (or `az login --use-device-code`) command to authenticate before running your Python scripts.
 
 <Note>
@@ -57,8 +64,9 @@ All the code in this article is at [GitHub Quickstart](https://github.com/azure-
 
 # [Java (preview)](#tab/java)
 
-1. [Install Java and Azure CLI](../how-to/develop/install-cli-sdk.md?pivots=programming-language-java).
-1. [!INCLUDE [find-endpoint](find-endpoint)]
+1. [Install Java and Azure CLI](../how-to/develop/install-cli-sdk).
+
+1. <FindEndpoint />
 1. Set these environment variables to use in your scripts:
 
     ```txt
@@ -74,11 +82,12 @@ All the code in this article is at [GitHub Quickstart](https://github.com/azure-
 </Note>
 # [JavaScript](#tab/javascript)
 
-1. [Install Node.js and Azure CLI](../how-to/develop/install-cli-sdk.md?pivots=programming-language-javascript)
+1. [Install Node.js and Azure CLI](../how-to/develop/install-cli-sdk)
 1. Make sure to sign in using the CLI `az login` (or `az login --use-device-code`) command to authenticate before running your JavaScript scripts.
 1. Download [package.json](https://github.com/azure-ai-foundry/foundry-samples/blob/main/samples/microsoft/javascript/mslearn-resources/quickstart/package.json).
 1. Install packages with `npm install`
-1. [!INCLUDE [find-endpoint](find-endpoint)]
+
+1. <FindEndpoint />
 1. Set these environment variables to use in your scripts:
 
     :::code language="plaintext" source="~/foundry-samples-main/samples/microsoft/javascript/mslearn-resources/quickstart/.env.template":::
@@ -90,12 +99,14 @@ All the code in this article is at [GitHub Quickstart](https://github.com/azure-
 
 # [C#](#tab/csharp)
 
-1. [Install C# and Azure CLI](../how-to/develop/install-cli-sdk.md?pivots=programming-language-csharp)
+1. [Install C# and Azure CLI](../how-to/develop/install-cli-sdk)
 1. Install packages:
 
-    [!INCLUDE [install-csharp-packages](install-csharp-packages)]
+import InstallCsharpPackages from '/snippets/ai-foundry/includes/install-csharp-packages.mdx'
 
-1. [!INCLUDE [find-endpoint](find-endpoint)]
+    <InstallCsharpPackages />
+
+1. <FindEndpoint />
 
 1. Set these environment variables to use in your scripts:
 
@@ -250,7 +261,9 @@ Replace `YOUR-FOUNDRY-RESOURCE-NAME` and `YOUR-PROJECT-NAME` with your values:
 
 ## Clean up resources
 
-[!INCLUDE [clean-up-resources](clean-up-resources)]
+import CleanUpResources from '/snippets/ai-foundry/includes/clean-up-resources.mdx'
+
+<CleanUpResources />
 
 ## Next step
 

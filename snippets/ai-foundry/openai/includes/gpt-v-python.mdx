@@ -28,9 +28,13 @@ pip install openai
 This library is maintained by OpenAI. Refer to the [release history](https://github.com/openai/openai-python/releases) to track the latest updates to the library.
 </Note>
 
-[!INCLUDE [get-key-endpoint](get-key-endpoint)]
+import GetKeyEndpoint from '/snippets/ai-foundry/openai/includes/get-key-endpoint.mdx'
 
-[!INCLUDE [environment-variables](environment-variables)]
+<GetKeyEndpoint />
+
+import EnvironmentVariables from '/snippets/ai-foundry/openai/includes/environment-variables.mdx'
+
+<EnvironmentVariables />
 
 
 ## Create a new Python application
@@ -91,13 +95,15 @@ Create a new Python file named _quickstart.py_. Open the new file in your prefer
     ```console
     python quickstart.py
     ```
-[!INCLUDE [Azure Key Vault](~/reusable-content/ce-skilling/azure/includes/ai-services/security/azure-key-vault)]
+import AzureKeyVault from '/snippets/ai-foundry/openai/includes/~/reusable-content/ce-skilling/azure/includes/ai-services/security/azure-key-vault.mdx'
+
+<AzureKeyVault />
 
 ## Clean up resources
 
 If you want to clean up and remove an Azure OpenAI resource, you can delete the resource or resource group. Deleting the resource group also deletes any other resources associated with it.
 
-- [Azure portal](../../../ai-services/multi-service-resource.md?pivots=azportal#clean-up-resources)
-- [Azure CLI](../../../ai-services/multi-service-resource.md?pivots=azcli#clean-up-resources)
+- [Azure portal](../../../ai-services/multi-service-resource)
+- [Azure CLI](../../../ai-services/multi-service-resource)
 
 

@@ -10,6 +10,7 @@ ms.custom:
 
 Use this article to find step-by-step instructions and code samples for using the Grounding with Bing Custom Search tool in the Azure AI Foundry Agent Service.
 
+<Tabs>
 <Tab title="Foundry portal">
 
 
@@ -37,7 +38,9 @@ Use this article to find step-by-step instructions and code samples for using th
 
 * Your Azure AI Foundry Project endpoint.
 
-    [!INCLUDE [endpoint-string-portal](../../includes/endpoint-string-portal)]
+import EndpointStringPortal from '/snippets/ai-foundry/agents/includes/endpoint-string-portal.mdx'
+
+    <EndpointStringPortal />
 
     Save this endpoint to an environment variable named `PROJECT_ENDPOINT`. 
 
@@ -166,7 +169,7 @@ for msg in messages:
   * Your connection ID should be in this format: `/subscriptions/<sub-id>/resourceGroups/<your-rg-name>/providers/Microsoft.CognitiveServices/accounts/<your-ai-services-name>/projects/<your-project-name>/connections/<your-bing-connection-name>`
 </Info>
 
-Follow the [REST API Quickstart](../../quickstart.md?pivots=rest-api#api-call-information) to set the right values for the environment variables `AGENT_TOKEN`, `AZURE_AI_FOUNDRY_PROJECT_ENDPOINT` and `API_VERSION`.
+Follow the [REST API Quickstart](../../quickstart) to set the right values for the environment variables `AGENT_TOKEN`, `AZURE_AI_FOUNDRY_PROJECT_ENDPOINT` and `API_VERSION`.
 
 
 ## Create an Agent with the Grounding with Bing Custom Search tool enabled
@@ -256,3 +259,4 @@ curl --request GET \
 ```
 
 </Tab>
+</Tabs>

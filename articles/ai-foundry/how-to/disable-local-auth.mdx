@@ -6,7 +6,10 @@ description: "Disable shared key access to the default storage account used by y
 # Disable shared key access for your hub's storage account (preview)
 
 <Note>
-The information provided in this article is specific to a **[!INCLUDE [hub](../includes/hub-project-name)]**, and doesn't apply for a **[!INCLUDE [fdp](../includes/fdp-project-name)]**. For more information, see [Types of projects](../what-is-azure-ai-foundry.md#project-types).
+import Hub from '/snippets/ai-foundry/includes/hub-project-name.mdx'
+import Fdp from '/snippets/ai-foundry/includes/fdp-project-name.mdx'
+
+The information provided in this article is specific to a **<Hub />**, and doesn't apply for a **<Fdp />**. For more information, see [Types of projects](../what-is-azure-ai-foundry.md#project-types).
 </Note>
 
 An [Azure AI Foundry](https://ai.azure.com/?cid=learnDocs) hub defaults to use of a shared key to access its default Azure Storage account. With key-based authorization, anyone who has the key and access to the storage account can access data.
@@ -15,7 +18,9 @@ To reduce the risk of unauthorized access, you can disable key-based authorizati
 
 Use of your hub with a shared key disabled storage account is currently in preview.
 
-[!INCLUDE [machine-learning-preview-generic-disclaimer](../../machine-learning/includes/machine-learning-preview-generic-disclaimer)]
+import MachineLearningPreviewGenericDisclaimer from '/snippets/machine-learning/includes/machine-learning-preview-generic-disclaimer.mdx'
+
+<MachineLearningPreviewGenericDisclaimer />
 
 ## Prerequisites
 

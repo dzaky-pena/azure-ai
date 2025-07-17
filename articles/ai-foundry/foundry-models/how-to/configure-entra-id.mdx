@@ -5,18 +5,25 @@ description: Learn how to configure key-less authorization to use Azure AI Found
 
 # Configure key-less authentication with Microsoft Entra ID
 
+<Tabs>
 <Tab title="Foundry portal">
-[!INCLUDE [portal](../../foundry-models/includes/configure-entra-id/portal)]
+import Portal from '/snippets/ai-foundry/foundry-models/includes/configure-entra-id/portal.mdx'
+
+<Portal />
 </Tab>
 
 <Tab title="Azure CLI">
-[!INCLUDE [cli](../../foundry-models/includes/configure-entra-id/cli)]
+import Cli from '/snippets/ai-foundry/foundry-models/includes/configure-entra-id/cli.mdx'
+
+<Cli />
 </Tab>
 
 <Tab title="Bicep">
-[!INCLUDE [bicep](../../foundry-models/includes/configure-entra-id/bicep)]
-</Tab>
+import Bicep from '/snippets/ai-foundry/foundry-models/includes/configure-entra-id/bicep.mdx'
 
+<Bicep />
+</Tab>
+</Tabs>
 ## Next steps
 
 * [Develop applications using Azure AI Foundry Models](../../model-inference/supported-languages)
