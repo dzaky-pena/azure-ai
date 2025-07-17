@@ -62,11 +62,11 @@ Any identification of an individual is neither the result of facial recognition 
 
 Azure Content Understanding service includes a content filtering system that detects and blocks specific categories of potentially harmful content in both input prompts and output completions. Variations in API configurations and application design might affect completions and thus filtering behavior. Customers, who are approved, can customize the Content Understanding default content filtering system to annotate rather than block potentially harmful output.
 
->[!NOTE]
->
-> * Disabling the content filter may prevent the service from effectively blocking harmful content, including, but not limited to, *hate and fairness-related*, *sexual*, *violence* and *self-harm* categories. For more information, *see* [Content filtering](/azure/ai-services/openai/concepts/content-filter).
->
-> * Disabling Indirect Attack Prompt Shield could potentially expose the system to vulnerabilities, wherein third parties may embed malicious instructions within documents accessible to and processed by the Generative AI system. Analogous vulnerabilities may arise from jailbreak attempts that directly seek to circumvent and to override built-in safeguards through specific prompts.
+<Note>
+* Disabling the content filter may prevent the service from effectively blocking harmful content, including, but not limited to, *hate and fairness-related*, *sexual*, *violence* and *self-harm* categories. For more information, *see* [Content filtering](/azure/ai-services/openai/concepts/content-filter).
+
+* Disabling Indirect Attack Prompt Shield could potentially expose the system to vulnerabilities, wherein third parties may embed malicious instructions within documents accessible to and processed by the Generative AI system. Analogous vulnerabilities may arise from jailbreak attempts that directly seek to circumvent and to override built-in safeguards through specific prompts.
+</Note>
 
 ### Limited Access to Azure AI Content Understanding 
 

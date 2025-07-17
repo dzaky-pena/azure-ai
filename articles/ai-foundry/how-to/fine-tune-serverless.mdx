@@ -213,10 +213,11 @@ Here are some of the tasks you can do on the **Models** tab:
 
 Several enterprise scenarios are supported for serverless API deployment fine-tuning. The table below outlines the supported configurations for user storage networking and authentication to ensure smooth operation within enterprise scenarios:
 
->[!Note]  
->- Data connections auth can be changed via AI Foundry by clicking on the datastore connection which your dataset is stored in, and navigating to the **Access details** > **Authentication Method** setting.  
->- Storage auth can be changed in Azure Storage > **Settings** > **Configurations** page > **Allow storage account key access**.  
->- Storage networking can be changed in Azure Storage > **Networking** page.
+<Note>
+    - Data connections auth can be changed via AI Foundry by clicking on the datastore connection which your dataset is stored in, and navigating to the **Access details** > **Authentication Method** setting.  
+    - Storage auth can be changed in Azure Storage > **Settings** > **Configurations** page > **Allow storage account key access**.  
+    - Storage networking can be changed in Azure Storage > **Networking** page.
+</Note>
 
 | **Storage Networking** | **Storage Auth** | **Data Connection Auth** | **Support** |
 |--|--|--|--|
@@ -278,8 +279,9 @@ You can delete a fine-tuned model from the fine-tuning model list in [Azure AI F
 1. Select __Fine-tuning__ from the left navigation in your Azure AI Foundry project.
 1. Select the __Delete__ button to delete the fine-tuned model.
 
->[!NOTE]
-> You can't delete a custom model if it has an existing deployment. You must first delete your model deployment before you delete your custom model.
+<Note>
+    You can't delete a custom model if it has an existing deployment. You must first delete your model deployment before you delete your custom model.
+</Note>
 
 </Tab>
 
@@ -588,10 +590,12 @@ model_id = f"azureml://locations/{workspace.location}/workspaces/{workspace._wor
 
 Several enterprise scenarios are supported for serverless API deployment fine-tuning. The table below outlines the supported configurations for user storage networking and authentication to ensure smooth operation within enterprise scenarios:
 
->[!Note]  
->- Data connections auth can be changed via AI Foundry by clicking on the datastore connection which your dataset is stored in, and navigating to the **Access details** > **Authentication Method** setting.  
->- Storage auth can be changed in Azure Storage > **Settings** > **Configurations** page > **Allow storage account key access**.  
->- Storage networking can be changed in Azure Storage > **Networking** page.
+
+<Note>
+    - Data connections auth can be changed via AI Foundry by clicking on the datastore connection which your dataset is stored in, and navigating to the **Access details** > **Authentication Method** setting.  
+    - Storage auth can be changed in Azure Storage > **Settings** > **Configurations** page > **Allow storage account key access**.  
+    - Storage networking can be changed in Azure Storage > **Networking** page.
+</Note>
 
 | **Storage Networking**     |  **Storage Auth**   | **Data Connection Auth**         | **Support**             |
 | ------------------------------------------------------------ | ------------------------------ | --------------------------------- | ----------------------- |
